@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4CDEFF33-F567-4510-B2A7-49F954736C5C"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9B3B0B7E-310D-4ADD-A33F-118A1B96A30C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smenka/CalendarDataSourse.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "9B3B0B7E-310D-4ADD-A33F-118A1B96A30C - c565bfd73b2931cb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_67EFC019B1A33080847C3E69A97A5CF4_func2"
+                  moduleName = "Smenka"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viktor/Developer/Smenka/Smenka/CalendarDataSourse.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "182">
+               </Location>
+               <Location
+                  uuid = "9B3B0B7E-310D-4ADD-A33F-118A1B96A30C - 9557ab999c28dec0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Smenka.day.unsafeMutableAddressor : Swift.Int"
+                  moduleName = "Smenka"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viktor/Developer/Smenka/Smenka/CalendarDataSourse.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
