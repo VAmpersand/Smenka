@@ -14,6 +14,7 @@
 		774A851023D76A8500A653A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774A850F23D76A8500A653A6 /* Assets.xcassets */; };
 		774A851323D76A8500A653A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774A851123D76A8500A653A6 /* LaunchScreen.storyboard */; };
 		774A851B23D7712500A653A6 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A851A23D7712500A653A6 /* DateCollectionViewCell.swift */; };
+		774A851D23D772C800A653A6 /* CalendarDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A851C23D772C800A653A6 /* CalendarDataSourse.swift */; };
 		909A6A9704E534AC9468D35B /* Pods_Smenka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BC425899994F051C914AFA /* Pods_Smenka.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		774A851223D76A8500A653A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		774A851423D76A8500A653A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		774A851A23D7712500A653A6 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
+		774A851C23D772C800A653A6 /* CalendarDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataSourse.swift; sourceTree = "<group>"; };
 		D1BC425899994F051C914AFA /* Pods_Smenka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smenka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 				774A850823D76A8400A653A6 /* SceneDelegate.swift */,
 				774A850A23D76A8400A653A6 /* MainViewController.swift */,
 				774A851A23D7712500A653A6 /* DateCollectionViewCell.swift */,
+				774A851C23D772C800A653A6 /* CalendarDataSourse.swift */,
 				774A850C23D76A8400A653A6 /* Main.storyboard */,
 				774A850F23D76A8500A653A6 /* Assets.xcassets */,
 				774A851123D76A8500A653A6 /* LaunchScreen.storyboard */,
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				774A851B23D7712500A653A6 /* DateCollectionViewCell.swift in Sources */,
+				774A851D23D772C800A653A6 /* CalendarDataSourse.swift in Sources */,
 				774A850B23D76A8400A653A6 /* MainViewController.swift in Sources */,
 				774A850723D76A8400A653A6 /* AppDelegate.swift in Sources */,
 				774A850923D76A8400A653A6 /* SceneDelegate.swift in Sources */,

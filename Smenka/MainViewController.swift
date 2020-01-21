@@ -9,6 +9,28 @@
 import UIKit
 
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    @IBOutlet var Calendar: UICollectionView!
+    @IBOutlet  var MonthLabel: UILabel!
+    
+    var currentMonth = ""
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        currentMonth = months[month]
+        
+    }
+    
+    
+    
+    
+    @IBAction func Next(_ sender: Any) {
+    }
+    
+    @IBAction func Back(_ sender: Any) {
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         <#code#>
     }
@@ -17,23 +39,5 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         <#code#>
     }
     
-
-    @IBOutlet var Calendar: UICollectionView!
-    @IBOutlet  var MonthLabel: UILabel!
-       
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-    
-    @IBAction func Next(_ sender: Any) {
-    }
-    
-    @IBAction func Back(_ sender: Any) {
-    }
-    
-
 }
 
