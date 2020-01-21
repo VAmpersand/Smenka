@@ -13,7 +13,7 @@ let calendar = Calendar.current
 
 let day = calendar.component(.day, from: date)
 let weekday = calendar.component(.weekday, from: date)
-let month = calendar.component(.month, from: date)
+let month = calendar.component(.month, from: date) - 1
 let year = calendar.component(.year, from: date)
 
 let months = ["January", "February", "March", "April",
@@ -23,7 +23,7 @@ let months = ["January", "February", "March", "April",
 let daysOfWeek = ["Mondey", "Thuesday","Wednesday", "Thursday",
                   "Friday", "Saturday", "Sunday",]
 
-let dayInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+let daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 
 

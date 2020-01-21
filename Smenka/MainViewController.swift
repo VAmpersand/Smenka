@@ -19,6 +19,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         
         currentMonth = months[month]
+        MonthLabel.text = currentMonth + " \(year)"
         
     }
     
@@ -32,11 +33,17 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        return daysInMonth[month]
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Calendar", for: indexPath) as! DateCollectionViewCell
+        
+        cell.backgroundColor = UIColor.clear
+        cell.dateLabel.text = "\(indexPath.row + 1)"
+        
+        return cell
     }
     
 }
