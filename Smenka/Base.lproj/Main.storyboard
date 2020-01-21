@@ -66,6 +66,7 @@
                                                 </label>
                                             </subviews>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="40" height="40"/>
                                         <connections>
                                             <outlet property="DateLabel" destination="7bR-Mg-YhN" id="U9W-ZY-lwR"/>
                                         </connections>
@@ -81,8 +82,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="Calendar" destination="9DI-SY-hJO" id="meC-yu-co3"/>
                         <outlet property="MonthLabel" destination="JIp-0v-Pv6" id="8ib-oF-s6F"/>
+                        <outlet property="calendar" destination="9DI-SY-hJO" id="meC-yu-co3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
