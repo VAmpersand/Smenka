@@ -11,5 +11,5 @@ import UIKit
 class DateCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var dateLabel: UILabel!
-   
+    
 }

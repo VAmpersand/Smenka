@@ -16,7 +16,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     
     
-    var currentMonth = String()
+    var currentMonth = ""
     var numberOfEmptyBox = Int()
     var nextNumberOfEmptyBox = Int()
     var previousNumberOfEmptyBox = 0
@@ -26,59 +26,57 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentMonth = months[month]
-        monthLabel.text = currentMonth + " \(year)"
         
+        setMonthLabel()
+        getStartDateDayPosition()
+        print(weekday)
+        print(numberOfEmptyBox)
+        print(nextNumberOfEmptyBox)
+        print(previousNumberOfEmptyBox)
+        print(positionIndex)
     }
     
     
     @IBAction func Next(_ sender: Any) {
         
+        direction = 1
+        getStartDateDayPosition()
         
         switch currentMonth {
         case "December":
             
-            direction = 1
-            getStartDateDayPosition()
             
             month = 0
             year += 1
-            currentMonth = months[month]
-            monthLabel.text = currentMonth + " \(year)"
+            setMonthLabel()
             calendarCollectionView.reloadData()
         default:
             
-            direction = 1
-            getStartDateDayPosition()
+            
             
             month += 1
-            currentMonth = months[month]
-            monthLabel.text = currentMonth + " \(year)"
+            setMonthLabel()
             calendarCollectionView.reloadData()
         }
     }
     
-    @IBAction func Back(_ sender: Any) { 
+    @IBAction func Back(_ sender: Any) {
+        
+        direction = -1
+        getStartDateDayPosition()
         
         switch currentMonth {
         case "January":
             
-            direction = -1
-            getStartDateDayPosition()
             
             month = 11
             year -= 1
-            currentMonth = months[month]
-            monthLabel.text = currentMonth + " \(year)"
+            setMonthLabel()
             calendarCollectionView.reloadData()
         default:
-            
-            direction = -1
-            getStartDateDayPosition()
-            
+
             month -= 1
-            currentMonth = months[month]
-            monthLabel.text = currentMonth + " \(year)"
+            setMonthLabel()
             calendarCollectionView.reloadData()
         }
     }
@@ -128,12 +126,14 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         case 5, 6, 12, 13, 19, 20, 26, 27, 33, 34:
             if Int(cell.dateLabel.text!)! > 0 {
                 cell.dateLabel.textColor = UIColor.lightGray
-                   }
+            }
         default:
             break
         }
         
-        if currentMonth == months[month] && year == year && indexPath.row + 1 == day {
+        if currentMonth == months[calendar.component(.month, from: date) - 1 ] &&
+            year == calendar.component(.year, from: date) &&
+            Int(cell.dateLabel.text!)! == calendar.component(.day, from: date) {
             cell.backgroundColor = .red
         }
         
@@ -142,11 +142,11 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
 }
 
-//extension MainViewController {
-//
-//    func setMonthLabel() {
-//        currentMonth = months[month]
-//        monthLabel.text = currentMonth + " \(year)"
-//    }
-//}
+extension MainViewController {
+    
+    func setMonthLabel() {
+        currentMonth = months[month]
+        monthLabel.text = currentMonth + " \(year)"
+    }
+}
 

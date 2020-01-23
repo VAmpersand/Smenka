@@ -11,6 +11,7 @@ import UIKit
 extension MainViewController {
     
     func getStartDateDayPosition() {
+        
         switch direction{
         case 0:
             switch day{
@@ -29,7 +30,7 @@ extension MainViewController {
             }
             positionIndex = numberOfEmptyBox
             
-        case 1:
+        case 1...:
             nextNumberOfEmptyBox = (positionIndex + daysInMonth[month])%7
             positionIndex = nextNumberOfEmptyBox
             
