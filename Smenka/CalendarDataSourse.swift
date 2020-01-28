@@ -24,7 +24,9 @@ let months = ["January", "February", "March", "April",
 let daysOfWeek = ["Mondey", "Thuesday","Wednesday", "Thursday",
                   "Friday", "Saturday", "Sunday",]
 
-let daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+var numbersOfDaysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+
 
 
 
