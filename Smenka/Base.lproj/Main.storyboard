@@ -22,20 +22,26 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147" id="EQ9-gf-YCM"/>
                                     <constraint firstAttribute="height" constant="34" id="kyA-Gn-yf4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ta9-A9-H8k">
-                                <rect key="frame" x="331" y="87" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="347" y="84.5" width="30" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="&gt;">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="Next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Urx-6x-SHZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82K-Rb-mGn">
-                                <rect key="frame" x="37" y="85" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="37" y="82.5" width="30" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="Back:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KXR-Xv-XX5"/>
                                 </connections>

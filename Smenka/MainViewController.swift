@@ -15,7 +15,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet var monthLabel: UILabel!
     
     var currentMonth = 0
-
+    
     var currentMonthIndex: Int = 0
     var currentYear: Int = 0
     var firstWeekDayOfMonth = 0   //(Sunday-Saturday 1-7)
@@ -25,7 +25,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         currentMonthIndex = Calendar.current.component(.month, from: Date())
         currentYear = Calendar.current.component(.year, from: Date())
         todaysDate = Calendar.current.component(.day, from: Date())
@@ -66,7 +66,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         monthLabel.text="\(months[currentMonth]) \(currentYear)"
         
-         didChangeMonth(monthIndex: currentMonth, year: currentYear)
+        didChangeMonth(monthIndex: currentMonth, year: currentYear)
         calendarCollectionView.reloadData()
         
     }
@@ -90,12 +90,18 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             let calcDate = indexPath.row - firstWeekDayOfMonth + 2
             cell.isHidden = false
             cell.dateLabel.text = "\(calcDate)"
+            
+//            if calcDate < todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
+//                cell.isUserInteractionEnabled = false
+//                cell.dateLabel.textColor = UIColor.lightGray
+//            } else {
+//                cell.isUserInteractionEnabled = true
+//                //                                 cell.dateLabel.textColor = Style.activeCellLblColor
+//            }
+            
             if calcDate == todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
-                                      cell.isUserInteractionEnabled = false
-                                      cell.dateLabel.textColor = UIColor.lightGray
-                                  } else {
-                                      cell.isUserInteractionEnabled = true
-//                                 cell.dateLabel.textColor = Style.activeCellLblColor
+                cell.isUserInteractionEnabled = false
+                cell.dateLabel.textColor = UIColor.blue
             }
         }
         
@@ -110,14 +116,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             break
         }
         
-        // Mark the currend day in red
-//        if  currentYear == presentYear && currentMonthIndex == presentMonthIndex &&
-//            Int(cell.dateLabel.text!)! == todaysDate {
-//            cell.backgroundColor = .red
-//        }
-        
         return cell
     }
+    
     
     func getFirstWeekDay() -> Int {
         let day = ("\(currentYear)-\(currentMonthIndex)-01".dateStr?.firstDayOfTheMonth.weekday)!
@@ -144,28 +145,5 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
 }
 
-extension String {
-    static var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter
-    }()
-    
-    var dateStr: Date? {
-        return String.dateFormatter.date(from: self)
-    }
-}
 
-extension Date {
-    var weekday: Int {
-        var weekday = Calendar.current.component(.weekday, from: self) - 1
-        
-        if weekday == 0 {
-            weekday = 7
-        }
-        return weekday
-    }
-    var firstDayOfTheMonth: Date {
-        return Calendar.current.date(from: Calendar.current.dateComponents([.year,.month], from: self))!
-    }
-}
+
