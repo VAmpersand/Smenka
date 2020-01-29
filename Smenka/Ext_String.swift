@@ -1,5 +1,5 @@
 //
-//  Extension_String.swift
+//  Ext_String.swift
 //  Smenka
 //
 //  Created by Viktor on 28.01.2020.

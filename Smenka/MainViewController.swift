@@ -9,18 +9,20 @@
 import UIKit
 import Foundation
 
-class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class MainViewController: UIViewController {
     
     @IBOutlet var calendarCollectionView: UICollectionView!
     @IBOutlet var monthLabel: UILabel!
     
+    var currentYear = 0
+    var presentYear = 0
+    
     var currentMonth = 0
     
-    var currentMonthIndex: Int = 0
-    var currentYear: Int = 0
-    var firstWeekDayOfMonth = 0   //(Sunday-Saturday 1-7)
+    var currentMonthIndex = 0
     var presentMonthIndex = 0
-    var presentYear = 0
+    
+    var firstWeekDayOfMonth = 0   //(Sunday-Saturday 1-7)
     var todaysDate = 0
     
     override func viewDidLoad() {
@@ -30,10 +32,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         currentYear = Calendar.current.component(.year, from: Date())
         todaysDate = Calendar.current.component(.day, from: Date())
         
-        currentMonth = currentMonthIndex - 1
-        
         presentMonthIndex = currentMonthIndex
         presentYear = currentYear
+        
+        currentMonth = currentMonthIndex - 1
         
         firstWeekDayOfMonth = getFirstWeekDay()
         
@@ -50,10 +52,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         
         monthLabel.text="\(months[currentMonth]) \(currentYear)"
-        
         didChangeMonth(monthIndex: currentMonth, year: currentYear)
         calendarCollectionView.reloadData()
-        
     }
     
     @IBAction func Back(_ sender: Any) {
@@ -65,82 +65,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         
         monthLabel.text="\(months[currentMonth]) \(currentYear)"
-        
         didChangeMonth(monthIndex: currentMonth, year: currentYear)
         calendarCollectionView.reloadData()
-        
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return numbersOfDaysInMonth[currentMonthIndex - 1] + firstWeekDayOfMonth - 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Calendar", for: indexPath) as! DateCollectionViewCell
-        
-        cell.backgroundColor = .clear
-        cell.dateLabel.textColor = .black
-        
-        
-        if indexPath.item <= firstWeekDayOfMonth - 2 {
-            cell.isHidden = true
-        } else {
-            let calcDate = indexPath.row - firstWeekDayOfMonth + 2
-            cell.isHidden = false
-            cell.dateLabel.text = "\(calcDate)"
-            
-//            if calcDate < todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
-//                cell.isUserInteractionEnabled = false
-//                cell.dateLabel.textColor = UIColor.lightGray
-//            } else {
-//                cell.isUserInteractionEnabled = true
-//                //                                 cell.dateLabel.textColor = Style.activeCellLblColor
-//            }
-            
-            if calcDate == todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
-                cell.isUserInteractionEnabled = false
-                cell.dateLabel.textColor = UIColor.blue
-            }
-        }
-        
-        
-        //         Add weekend. Mark weekend in grey
-        switch indexPath.row {
-        case 5, 6, 12, 13, 19, 20, 26, 27, 33, 34:
-            if Int(cell.dateLabel.text!)! > 0 {
-                cell.dateLabel.textColor = UIColor.lightGray
-            }
-        default:
-            break
-        }
-        
-        return cell
-    }
-    
-    
-    func getFirstWeekDay() -> Int {
-        let day = ("\(currentYear)-\(currentMonthIndex)-01".dateStr?.firstDayOfTheMonth.weekday)!
-        //return day == 7 ? 1 : day
-        return day
-    }
-    
-    func didChangeMonth(monthIndex: Int, year: Int) {
-        currentMonthIndex = monthIndex+1
-        currentYear = year
-        
-        //for leap year, make february month of 29 days
-        if monthIndex == 1 {
-            if currentYear % 4 == 0 {
-                numbersOfDaysInMonth[monthIndex] = 29
-            } else {
-                numbersOfDaysInMonth[monthIndex] = 28
-            }
-        }
-        //end
-        
-        firstWeekDayOfMonth=getFirstWeekDay()
     }
     
 }

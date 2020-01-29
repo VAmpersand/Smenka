@@ -151,15 +151,24 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Q4-3c-esJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="1Q4-3c-esJ" secondAttribute="bottom" id="8nP-2h-UxW"/>
+                                                <constraint firstAttribute="trailing" secondItem="1Q4-3c-esJ" secondAttribute="trailing" id="Awm-2l-h0h"/>
+                                                <constraint firstItem="1Q4-3c-esJ" firstAttribute="top" secondItem="9Lm-3q-Iuq" secondAttribute="top" id="LNz-Y6-a1O"/>
                                                 <constraint firstItem="7bR-Mg-YhN" firstAttribute="centerX" secondItem="9Lm-3q-Iuq" secondAttribute="centerX" id="Qo9-Qi-srR"/>
                                                 <constraint firstItem="7bR-Mg-YhN" firstAttribute="centerY" secondItem="9Lm-3q-Iuq" secondAttribute="centerY" id="x5A-Z8-XOZ"/>
+                                                <constraint firstItem="1Q4-3c-esJ" firstAttribute="leading" secondItem="9Lm-3q-Iuq" secondAttribute="leading" id="zm3-8a-2AH"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="40" height="40"/>
                                         <connections>
                                             <outlet property="dateLabel" destination="7bR-Mg-YhN" id="QXq-zT-Se8"/>
+                                            <outlet property="shiftColorView" destination="1Q4-3c-esJ" id="Y04-ee-Yel"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
