@@ -42,7 +42,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 //                cell.isUserInteractionEnabled = false
 //                cell.dateLabel.textColor = UIColor.blue
                 cell.shiftColorView.isHidden = false
-                cell.drowCircle()
+                cell.drowCircleForToday()
                 
             }
         }
@@ -58,6 +58,14 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.backgroundColor = .red
+        cell?.layer.cornerRadius = 10
+//        let lbl = cell?.subviews[1] as! UILabel
+//        lbl.textColor = UIColor.white
     }
     
     

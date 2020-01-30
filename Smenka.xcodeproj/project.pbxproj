@@ -18,6 +18,9 @@
 		774A852123E0CA2C00A653A6 /* Ext_String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A852023E0CA2C00A653A6 /* Ext_String.swift */; };
 		774A852323E0CA4100A653A6 /* Ext_Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A852223E0CA4100A653A6 /* Ext_Date.swift */; };
 		774A852523E2103600A653A6 /* CollectionViewDataSourse_Ext_MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A852423E2103600A653A6 /* CollectionViewDataSourse_Ext_MainVC.swift */; };
+		774A852723E3554500A653A6 /* ShiftCalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A852623E3554500A653A6 /* ShiftCalendarModel.swift */; };
+		774A852923E3562900A653A6 /* ShiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A852823E3562900A653A6 /* ShiftModel.swift */; };
+		774A852B23E3572F00A653A6 /* StaffModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A852A23E3572F00A653A6 /* StaffModel.swift */; };
 		909A6A9704E534AC9468D35B /* Pods_Smenka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BC425899994F051C914AFA /* Pods_Smenka.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +40,9 @@
 		774A852023E0CA2C00A653A6 /* Ext_String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_String.swift; sourceTree = "<group>"; };
 		774A852223E0CA4100A653A6 /* Ext_Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_Date.swift; sourceTree = "<group>"; };
 		774A852423E2103600A653A6 /* CollectionViewDataSourse_Ext_MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSourse_Ext_MainVC.swift; sourceTree = "<group>"; };
+		774A852623E3554500A653A6 /* ShiftCalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftCalendarModel.swift; sourceTree = "<group>"; };
+		774A852823E3562900A653A6 /* ShiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftModel.swift; sourceTree = "<group>"; };
+		774A852A23E3572F00A653A6 /* StaffModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffModel.swift; sourceTree = "<group>"; };
 		D1BC425899994F051C914AFA /* Pods_Smenka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smenka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -83,6 +89,7 @@
 			children = (
 				774A850623D76A8400A653A6 /* AppDelegate.swift */,
 				774A850823D76A8400A653A6 /* SceneDelegate.swift */,
+				774A852C23E3582400A653A6 /* Model */,
 				774A851C23D772C800A653A6 /* CalendarDataSourse.swift */,
 				774A850A23D76A8400A653A6 /* MainViewController.swift */,
 				774A852423E2103600A653A6 /* CollectionViewDataSourse_Ext_MainVC.swift */,
@@ -95,6 +102,16 @@
 				774A851423D76A8500A653A6 /* Info.plist */,
 			);
 			path = Smenka;
+			sourceTree = "<group>";
+		};
+		774A852C23E3582400A653A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				774A852623E3554500A653A6 /* ShiftCalendarModel.swift */,
+				774A852823E3562900A653A6 /* ShiftModel.swift */,
+				774A852A23E3572F00A653A6 /* StaffModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7FBD475085E914001A7CAA15 /* Pods */ = {
@@ -222,12 +239,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				774A851B23D7712500A653A6 /* DateCollectionViewCell.swift in Sources */,
+				774A852723E3554500A653A6 /* ShiftCalendarModel.swift in Sources */,
 				774A851D23D772C800A653A6 /* CalendarDataSourse.swift in Sources */,
+				774A852B23E3572F00A653A6 /* StaffModel.swift in Sources */,
 				774A852323E0CA4100A653A6 /* Ext_Date.swift in Sources */,
 				774A852523E2103600A653A6 /* CollectionViewDataSourse_Ext_MainVC.swift in Sources */,
 				774A852123E0CA2C00A653A6 /* Ext_String.swift in Sources */,
 				774A850B23D76A8400A653A6 /* MainViewController.swift in Sources */,
 				774A850723D76A8400A653A6 /* AppDelegate.swift in Sources */,
+				774A852923E3562900A653A6 /* ShiftModel.swift in Sources */,
 				774A850923D76A8400A653A6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
