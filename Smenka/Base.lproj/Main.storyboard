@@ -46,6 +46,26 @@
                                     <action selector="Back:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KXR-Xv-XX5"/>
                                 </connections>
                             </button>
+                            <visualEffectView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7HO-V8-fb9">
+                                <rect key="frame" x="0.0" y="-2" width="414" height="898"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="d4w-8d-Zqo">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="898"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="systemMaterialDark"/>
+                            </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Snt-Ax-gg4">
+                                <rect key="frame" x="321" y="50" width="56" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56" id="K3g-pr-Lew"/>
+                                </constraints>
+                                <state key="normal" title="Edit">
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="editButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MG7-p8-QjT"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ipY-AM-d8K">
                                 <rect key="frame" x="37" y="134" width="340" height="40"/>
                                 <subviews>
@@ -125,10 +145,10 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9DI-SY-hJO">
-                                <rect key="frame" x="37" y="182" width="340" height="483"/>
+                                <rect key="frame" x="37" y="182" width="340" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="483" id="XZj-pw-KQh"/>
+                                    <constraint firstAttribute="height" constant="300" id="XZj-pw-KQh"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UVn-ro-jo2">
                                     <size key="itemSize" width="40" height="40"/>
@@ -182,15 +202,22 @@
                         <constraints>
                             <constraint firstItem="ipY-AM-d8K" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2BB-aC-bgD"/>
                             <constraint firstItem="82K-Rb-mGn" firstAttribute="centerY" secondItem="JIp-0v-Pv6" secondAttribute="centerY" id="8Jc-Zd-lUj"/>
+                            <constraint firstItem="7HO-V8-fb9" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="9bo-ld-PKa"/>
                             <constraint firstItem="JIp-0v-Pv6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GfK-ET-vWj"/>
                             <constraint firstItem="Ta9-A9-H8k" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JIp-0v-Pv6" secondAttribute="trailing" constant="8" symbolic="YES" id="GlB-JW-zMi"/>
                             <constraint firstItem="ipY-AM-d8K" firstAttribute="top" secondItem="JIp-0v-Pv6" secondAttribute="bottom" constant="17" id="ILA-J8-Cj0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7HO-V8-fb9" secondAttribute="trailing" id="JGF-vO-8hc"/>
+                            <constraint firstItem="7HO-V8-fb9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RIL-yN-T5e"/>
+                            <constraint firstItem="Snt-Ax-gg4" firstAttribute="trailing" secondItem="Ta9-A9-H8k" secondAttribute="trailing" id="SNJ-3K-O9m"/>
                             <constraint firstItem="Ta9-A9-H8k" firstAttribute="trailing" secondItem="ipY-AM-d8K" secondAttribute="trailing" id="TNe-6K-UJX"/>
                             <constraint firstItem="JIp-0v-Pv6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="114" id="UBv-KT-k7j"/>
+                            <constraint firstItem="Snt-Ax-gg4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="321" id="bpn-Bz-gta"/>
                             <constraint firstItem="9DI-SY-hJO" firstAttribute="top" secondItem="ipY-AM-d8K" secondAttribute="bottom" constant="8" id="dRb-Ma-T12"/>
                             <constraint firstItem="82K-Rb-mGn" firstAttribute="leading" secondItem="ipY-AM-d8K" secondAttribute="leading" id="hIA-t3-RPQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JIp-0v-Pv6" secondAttribute="trailing" constant="114" id="nHc-LL-EZb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="7HO-V8-fb9" secondAttribute="top" constant="46" id="qMB-AX-82q"/>
                             <constraint firstItem="9DI-SY-hJO" firstAttribute="width" secondItem="ipY-AM-d8K" secondAttribute="width" multiplier="1.01471" constant="-5" id="qYr-xn-KVS"/>
+                            <constraint firstItem="Snt-Ax-gg4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="6" id="rkY-0e-nod"/>
                             <constraint firstItem="Ta9-A9-H8k" firstAttribute="centerY" secondItem="JIp-0v-Pv6" secondAttribute="centerY" constant="2" id="uZE-9K-PMy"/>
                             <constraint firstItem="JIp-0v-Pv6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="39" id="ubg-hh-i1u"/>
                             <constraint firstItem="JIp-0v-Pv6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="82K-Rb-mGn" secondAttribute="trailing" constant="8" symbolic="YES" id="uhg-Gv-YV0"/>
@@ -199,7 +226,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="blurEffect" destination="7HO-V8-fb9" id="uVL-CS-1ZE"/>
                         <outlet property="calendarCollectionView" destination="9DI-SY-hJO" id="veV-6b-pnV"/>
+                        <outlet property="editButton" destination="Snt-Ax-gg4" id="utS-Iv-Y9Y"/>
                         <outlet property="monthLabel" destination="JIp-0v-Pv6" id="k0H-DK-dh5"/>
                     </connections>
                 </viewController>

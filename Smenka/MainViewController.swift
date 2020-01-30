@@ -15,6 +15,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet var calendarCollectionView: UICollectionView!
     @IBOutlet var monthLabel: UILabel!
+    @IBOutlet weak var blurEffect: UIVisualEffectView!
+    @IBOutlet weak var editButton: UIButton!
     
     var shifts: Results<Shift>!
     
@@ -28,6 +30,8 @@ class MainViewController: UIViewController {
     
     var firstWeekDayOfMonth = 0   //(Sunday-Saturday 1-7)
     var todaysDate = 0
+    
+    var editButtonPressCheck = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +48,8 @@ class MainViewController: UIViewController {
         firstWeekDayOfMonth = getFirstWeekDay()
         
         monthLabel.text="\(months[currentMonth]) \(currentYear)"
+        
+        calendarCollectionView.layer.cornerRadius = 15
     }
     
     
@@ -73,7 +79,24 @@ class MainViewController: UIViewController {
         calendarCollectionView.reloadData()
     }
     
+    @IBAction func editButtonPressed(_ sender: Any) {
+        
+        editButtonPressCheck.toggle()
+        
+        if editButtonPressCheck {
+            editButton.setTitle("Save", for: .normal)
+//            editButton.isHidden = false
+            UIView.animate(withDuration: 1) {
+                self.blurEffect.alpha = 1
+            }
+        } else {
+            editButton.setTitle("Edit", for: .normal)
+            UIView.animate(withDuration: 1) {
+                self.blurEffect.alpha = 0
+            }
+        }
+        
+    }
 }
-
 
 
