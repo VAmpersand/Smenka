@@ -16,6 +16,8 @@ class MainViewController: UIViewController {
     @IBOutlet var calendarCollectionView: UICollectionView!
     @IBOutlet var monthLabel: UILabel!
     
+    var shifts: Results<Shift>!
+    
     var currentYear = 0
     var presentYear = 0
     

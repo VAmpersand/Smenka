@@ -92,9 +92,8 @@
 				774A850623D76A8400A653A6 /* AppDelegate.swift */,
 				774A850823D76A8400A653A6 /* SceneDelegate.swift */,
 				774A852C23E3582400A653A6 /* Model */,
+				774A852F23E35EAC00A653A6 /* Manager */,
 				774A850A23D76A8400A653A6 /* MainViewController.swift */,
-				774A852D23E35C5C00A653A6 /* StorageManager.swift */,
-				774A851C23D772C800A653A6 /* CalendarDataSourse.swift */,
 				774A852423E2103600A653A6 /* CollectionViewDataSourse_Ext_MainVC.swift */,
 				774A852023E0CA2C00A653A6 /* Ext_String.swift */,
 				774A852223E0CA4100A653A6 /* Ext_Date.swift */,
@@ -113,8 +112,17 @@
 				774A852623E3554500A653A6 /* ScheduleShiftsModel.swift */,
 				774A852823E3562900A653A6 /* ShiftModel.swift */,
 				774A852A23E3572F00A653A6 /* StaffModel.swift */,
+				774A851C23D772C800A653A6 /* CalendarDataSourse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		774A852F23E35EAC00A653A6 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				774A852D23E35C5C00A653A6 /* StorageManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		7FBD475085E914001A7CAA15 /* Pods */ = {

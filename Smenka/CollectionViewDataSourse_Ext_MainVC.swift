@@ -40,7 +40,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
             if calcDate == todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
                 //                cell.isUserInteractionEnabled = false
-//                cell.dateLabel.textColor = UIColor.blue
+                //                cell.dateLabel.textColor = UIColor.blue
                 cell.shiftColorView.isHidden = false
                 cell.drowCircleForToday()
                 
@@ -64,8 +64,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.backgroundColor = .red
         cell?.layer.cornerRadius = 10
-//        let lbl = cell?.subviews[1] as! UILabel
-//        lbl.textColor = UIColor.white
+        //        let lbl = cell?.subviews[1] as! UILabel
+        //        lbl.textColor = UIColor.white
     }
     
     
