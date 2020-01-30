@@ -1,5 +1,5 @@
 //
-//  ShiftCalendarModel.swift
+//  ScheduleShiftsModel.swift
 //  Smenka
 //
 //  Created by Viktor on 30.01.2020.
@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-class MonthShiftSchedule: Object {
+class ScheduleShifts: Object {
     
     let shifts = List<Shift>()
     

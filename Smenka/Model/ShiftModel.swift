@@ -14,7 +14,7 @@ class Shift: Object {
     @objc dynamic var startShift = Date()
     @objc dynamic var endShift = Date()
     @objc dynamic var shiftColor = UIColor.self
-    let shiftStaff = List<Staff>()
+    var shiftStaff = List<Staff>()
     
 }
 
