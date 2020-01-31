@@ -7,9 +7,7 @@
 //
 
 import UIKit
-import Foundation
 import RealmSwift
-
 
 class MainViewController: UIViewController {
     
@@ -18,9 +16,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var blurEffect: UIVisualEffectView!
     @IBOutlet weak var editButton: UIButton!
     
-    var schedalShifts: Results<Shift>!
-    var shiftsList: Results<Shift>!
-    var staff: Results<Staff>!
+    var shifts: Results<Shift>!
+    var types: Results<ShiftType>!
+    
+//    var staff: Results<Staff>!
     
     var currentYear = 0
     var presentYear = 0
@@ -38,6 +37,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(Realm.Configuration.defaultConfiguration.description)
+        
         currentMonthIndex = Calendar.current.component(.month, from: Date())
         currentYear = Calendar.current.component(.year, from: Date())
         todaysDate = Calendar.current.component(.day, from: Date())
@@ -52,6 +53,11 @@ class MainViewController: UIViewController {
         monthLabel.text="\(months[currentMonth]) \(currentYear)"
         
         calendarCollectionView.layer.cornerRadius = 15
+                
+        shifts = realm.objects(Shift.self)
+        types = realm.objects(ShiftType.self)
+//        staff = realm.objects(Staff.self)
+        
     }
     
     
@@ -87,7 +93,6 @@ class MainViewController: UIViewController {
         
         if editButtonPressCheck {
             editButton.setTitle("Save", for: .normal)
-//            editButton.isHidden = false
             UIView.animate(withDuration: 1) {
                 self.blurEffect.alpha = 1
             }

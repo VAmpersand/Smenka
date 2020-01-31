@@ -11,24 +11,23 @@ import RealmSwift
 let realm = try! Realm()
 
 class StorageManager {
-    
-    static func saveSift(_ shift: Shift) {
+
+    static func saveShift(_ shift: Shift) {
         try! realm.write {
             realm.add(shift)
         }
     }
-    
+
     static func removeShift(_ shift: Shift) {
         try! realm.write {
             realm.delete(shift)
         }
     }
-    
+
     static func editShift(_ shift: Shift, _ newShift: Shift) {
         try! realm.write {
-            shift.shiftDate = newShift.shiftDate
             shift.shiftType = newShift.shiftType
-            shift.shiftStaff = newShift.shiftStaff
         }
     }
+//    
 }

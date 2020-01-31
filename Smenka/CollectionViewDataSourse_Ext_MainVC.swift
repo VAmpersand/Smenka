@@ -63,7 +63,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         if editButtonPressCheck {
-            cell?.backgroundColor = .red
+            cell?.backgroundColor = .lightGray
             cell?.layer.cornerRadius = 10
             //        let lbl = cell?.subviews[1] as! UILabel
             //        lbl.textColor = UIColor.white

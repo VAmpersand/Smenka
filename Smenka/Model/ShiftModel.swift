@@ -11,9 +11,10 @@ import RealmSwift
 class Shift: Object {
     
     @objc dynamic var shiftDate = Date()
-    @objc dynamic var shiftType = ShiftType()
+    @objc dynamic var shiftType = "Shift Type"
     var shiftStaff = List<Staff>()
-    
+
 }
+
 
 
