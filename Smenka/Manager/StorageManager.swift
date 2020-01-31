@@ -26,10 +26,8 @@ class StorageManager {
     
     static func editShift(_ shift: Shift, _ newShift: Shift) {
         try! realm.write {
-            shift.shiftName = newShift.shiftName
-            shift.startShift = newShift.startShift
-            shift.endShift = newShift.endShift
-            shift.shiftColor = newShift.shiftColor
+            shift.shiftDate = newShift.shiftDate
+            shift.shiftType = newShift.shiftType
             shift.shiftStaff = newShift.shiftStaff
         }
     }

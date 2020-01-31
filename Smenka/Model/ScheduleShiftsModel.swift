@@ -8,9 +8,10 @@
 
 import RealmSwift
 
-class ScheduleShifts: Object {
+class SchedulsShifts: Object {
     
-    let shifts = List<Shift>()
+    let schedalShifts = List<Shift>()
+    let shiftTypes = List<ShiftType>()
     
 }
 

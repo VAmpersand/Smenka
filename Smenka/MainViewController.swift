@@ -18,7 +18,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var blurEffect: UIVisualEffectView!
     @IBOutlet weak var editButton: UIButton!
     
-    var shifts: Results<Shift>!
+    var schedalShifts: Results<Shift>!
+    var shiftsList: Results<Shift>!
+    var staff: Results<Staff>!
     
     var currentYear = 0
     var presentYear = 0

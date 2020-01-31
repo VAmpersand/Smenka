@@ -10,10 +10,8 @@ import RealmSwift
 
 class Shift: Object {
     
-    @objc dynamic var shiftName = "Sift name"
-    @objc dynamic var startShift = Date()
-    @objc dynamic var endShift = Date()
-    @objc dynamic var shiftColor = UIColor.self
+    @objc dynamic var shiftDate = Date()
+    @objc dynamic var shiftType = ShiftType()
     var shiftStaff = List<Staff>()
     
 }
