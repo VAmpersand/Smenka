@@ -12,6 +12,9 @@ extension String {
     
     static var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "eu_EU")
+        formatter.timeZone = NSTimeZone(name:"UTC+00:00") as TimeZone?
+        formatter.calendar = Calendar(identifier: .gregorian)
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
@@ -19,4 +22,5 @@ extension String {
     var dateStr: Date? {
         return String.dateFormatter.date(from: self)
     }
+    
 }

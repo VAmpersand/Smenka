@@ -11,6 +11,7 @@ import UIKit
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return numbersOfDaysInMonth[currentMonthIndex - 1] + firstWeekDayOfMonth - 1
     }
     
@@ -61,10 +62,19 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
+        let cell = collectionView.cellForItem(at: indexPath) as! DateCollectionViewCell
+        let dateLabel = cell.dateLabel.text
+        
         if editButtonPressCheck {
-            cell?.backgroundColor = .lightGray
-            cell?.layer.cornerRadius = 10
+            
+            guard let dateLabel = dateLabel else { return }
+            guard let dateInt = Int(dateLabel) else { return }
+            
+            let day = ("\(currentYear)-\(currentMonthIndex)-\(dateInt)").dateStr!
+            print(day)
+            
+            cell.backgroundColor = .brown
+            cell.layer.cornerRadius = 10
             //        let lbl = cell?.subviews[1] as! UILabel
             //        lbl.textColor = UIColor.white
         }
@@ -72,13 +82,14 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     
     func getFirstWeekDay() -> Int {
-        let day = ("\(currentYear)-\(currentMonthIndex)-01".dateStr?.firstDayOfTheMonth.weekday)!
+        let date = "\(currentYear)-\(currentMonthIndex)-01"
+        let day = (date.dateStr?.firstDayOfTheMonth.weekday)!
         return day
     }
     
     
     func didChangeMonth(monthIndex: Int, year: Int) {
-        currentMonthIndex = monthIndex+1
+        currentMonthIndex = monthIndex + 1
         currentYear = year
         
         //for leap year, make february month of 29 days

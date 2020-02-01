@@ -34,6 +34,8 @@ class MainViewController: UIViewController {
     
     var editButtonPressCheck = false
     
+    var clickCounter = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,6 +59,16 @@ class MainViewController: UIViewController {
         shifts = realm.objects(Shift.self)
         types = realm.objects(ShiftType.self)
 //        staff = realm.objects(Staff.self)
+        
+        let dayTest = ("2025-01-01").dateStr!
+        print(dayTest)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        didChangeMonth(monthIndex: currentMonth, year: currentYear)
         
     }
     
