@@ -16,10 +16,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var blurEffect: UIVisualEffectView!
     @IBOutlet weak var editButton: UIButton!
     
-    var shifts: Results<Shift>!
-    var types: Results<ShiftType>!
+    var schedalShifts: Results<SchedalShifts>!
+    //    var shifts: Results<Shift>!
+    //    var types: Results<ShiftType>!
     
-//    var staff: Results<Staff>!
+    //    var staff: Results<Staff>!
     
     var currentYear = 0
     var presentYear = 0
@@ -34,7 +35,8 @@ class MainViewController: UIViewController {
     
     var editButtonPressCheck = false
     
-    var clickCounter = 0
+    var testSchedalaShifts = SchedalShifts()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,19 +57,20 @@ class MainViewController: UIViewController {
         monthLabel.text="\(months[currentMonth]) \(currentYear)"
         
         calendarCollectionView.layer.cornerRadius = 15
-                
-        shifts = realm.objects(Shift.self)
-        types = realm.objects(ShiftType.self)
-//        staff = realm.objects(Staff.self)
         
-        let dayTest = ("2025-01-01").dateStr!
-        print(dayTest)
+        schedalShifts = realm.objects(SchedalShifts.self)
+        //        shifts = realm.objects(Shift.self)
+        //        types = realm.objects(ShiftType.self)
+        //        staff = realm.objects(Staff.self)
         
+        setTestShifts()
+        setTestSchedalShifts()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
+        // Leap year check before calendar display
         didChangeMonth(monthIndex: currentMonth, year: currentYear)
         
     }
@@ -84,6 +87,7 @@ class MainViewController: UIViewController {
         monthLabel.text="\(months[currentMonth]) \(currentYear)"
         didChangeMonth(monthIndex: currentMonth, year: currentYear)
         calendarCollectionView.reloadData()
+        print("\(currentYear)-\(currentMonthIndex)")
     }
     
     @IBAction func Back(_ sender: Any) {
@@ -106,15 +110,48 @@ class MainViewController: UIViewController {
         if editButtonPressCheck {
             editButton.setTitle("Save", for: .normal)
             UIView.animate(withDuration: 1) {
-                self.blurEffect.alpha = 1
+                self.blurEffect.alpha = 0.9
             }
+            checkTheSchedallForExistence()
         } else {
             editButton.setTitle("Edit", for: .normal)
             UIView.animate(withDuration: 1) {
                 self.blurEffect.alpha = 0
             }
         }
+    }
+    
+    
+    func setTestSchedalShifts() {
         
+        let schedalaShifts = SchedalShifts()
+        schedalaShifts.monthlyScheduleName = "\(currentYear)-\(currentMonthIndex)"
+        
+        var counter = 0
+        while counter != 40 {
+            counter += 1
+            schedalaShifts.shifts.append(Shift())
+            
+        }
+        
+        StorageManager.saveSchedalShift(schedalaShifts)
+        
+    }
+    
+    func checkTheSchedallForExistence() {
+        
+        let currentSchedalName = "\(currentYear)-\(currentMonthIndex)"
+        var nameMatch = false
+        
+        for schedalShift in schedalShifts {
+            if schedalShift.monthlyScheduleName == currentSchedalName {
+                nameMatch = true
+            }
+        }
+        
+        if !nameMatch {
+            setTestSchedalShifts()
+        }
     }
 }
 

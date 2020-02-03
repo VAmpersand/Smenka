@@ -11,10 +11,14 @@ import RealmSwift
 class Shift: Object {
     
     @objc dynamic var shiftDate = Date()
-    @objc dynamic var shiftType = "Shift Type"
+    @objc dynamic var shiftTypeIndex = 0
     var shiftStaff = List<Staff>()
 
+    override var description: String {
+        return "Date - \(shiftDate), type index - \(shiftTypeIndex)"
+    }
 }
+
 
 
 

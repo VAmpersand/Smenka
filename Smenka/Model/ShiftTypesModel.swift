@@ -10,6 +10,12 @@ import RealmSwift
 
 class ShiftType: Object {
     
-    let shiftTypes = List<ShiftType>()
-
+    @objc dynamic var shiftTypeName = "Shift Type"
+    @objc dynamic var startTime = Date()
+    @objc dynamic var endTime = Date()
+    @objc dynamic var shiftColor = Int()
+    
 }
+
+
+

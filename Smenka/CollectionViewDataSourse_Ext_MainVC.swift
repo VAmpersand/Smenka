@@ -15,12 +15,15 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return numbersOfDaysInMonth[currentMonthIndex - 1] + firstWeekDayOfMonth - 1
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Calendar", for: indexPath) as! DateCollectionViewCell
         
-        cell.backgroundColor = .clear
+        cell.backgroundColor = testColors[testShifts[indexPath.row].shiftTypeIndex]
+        
         cell.dateLabel.textColor = .black
+        cell.layer.cornerRadius = 10
         cell.shiftColorView.isHidden = true
         
         
@@ -39,6 +42,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             //                //                                 cell.dateLabel.textColor = Style.activeCellLblColor
             //            }
             
+            // Mark today in red circle
             if calcDate == todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
                 //                cell.isUserInteractionEnabled = false
                 //                cell.dateLabel.textColor = UIColor.blue
@@ -47,6 +51,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 
             }
         }
+        
         
         //         Add weekend. Mark weekend in grey
         switch indexPath.row {
@@ -65,15 +70,25 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.cellForItem(at: indexPath) as! DateCollectionViewCell
         let dateLabel = cell.dateLabel.text
         
+        let shift = testShifts[indexPath.row]
+        
         if editButtonPressCheck {
             
             guard let dateLabel = dateLabel else { return }
-            guard let dateInt = Int(dateLabel) else { return }
             
-            let day = ("\(currentYear)-\(currentMonthIndex)-\(dateInt)").dateStr!
-            print(day)
+            let day = ("\(currentYear)-\(currentMonthIndex)-\(dateLabel)").dateStr!
             
-            cell.backgroundColor = .brown
+            shift.shiftDate = day
+            
+            testShifts[indexPath.row].shiftTypeIndex += 1
+            
+            if testShifts[indexPath.row].shiftTypeIndex == testShiftTypes.count {
+                testShifts[indexPath.row].shiftTypeIndex = 0
+            }
+            
+            print(testShifts)
+            
+            cell.backgroundColor = testColors[testShifts[indexPath.row].shiftTypeIndex]
             cell.layer.cornerRadius = 10
             //        let lbl = cell?.subviews[1] as! UILabel
             //        lbl.textColor = UIColor.white
@@ -81,6 +96,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     
+    // Getting the index of the first day of the month
     func getFirstWeekDay() -> Int {
         let date = "\(currentYear)-\(currentMonthIndex)-01"
         let day = (date.dateStr?.firstDayOfTheMonth.weekday)!

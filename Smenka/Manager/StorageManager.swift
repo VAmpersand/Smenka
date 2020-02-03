@@ -11,6 +11,26 @@ import RealmSwift
 let realm = try! Realm()
 
 class StorageManager {
+    
+    static func saveSchedalShift(_ schedalShifts: SchedalShifts) {
+        try! realm.write {
+            realm.add(schedalShifts)
+        }
+    }
+
+    static func removeShift(_ schedalShifts: SchedalShifts) {
+        try! realm.write {
+            realm.delete(schedalShifts)
+        }
+    }
+
+    static func editShift(_ schedalShifts: SchedalShifts, _ newSchedalShifts: SchedalShifts) {
+        try! realm.write {
+            schedalShifts.shifts = newSchedalShifts.shifts
+        }
+    }
+    
+
 
     static func saveShift(_ shift: Shift) {
         try! realm.write {
@@ -26,8 +46,7 @@ class StorageManager {
 
     static func editShift(_ shift: Shift, _ newShift: Shift) {
         try! realm.write {
-            shift.shiftType = newShift.shiftType
+            shift.shiftTypeIndex = newShift.shiftTypeIndex
         }
     }
-//    
 }
