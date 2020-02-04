@@ -1,5 +1,5 @@
 //
-//  SchedalShiftsModel.swift
+//  ScheduleShiftsModel.swift
 //  Smenka
 //
 //  Created by Viktor on 03.02.2020.
@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-class SchedaleShifts: Object {
+class ScheduleShifts: Object {
     
     @objc dynamic var monthlyScheduleName = "yyyy-MM"
     var shifts = List<Shift>()

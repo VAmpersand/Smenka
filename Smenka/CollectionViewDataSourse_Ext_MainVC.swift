@@ -96,14 +96,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     
-    // Getting the index of the first day of the month
-//    func getIndexFirstWeekDay() -> Int {
-//        let date = "\(currentYear)-\(currentMonthIndex)-01"
-//        let day = (date.dateStr?.firstDayOfTheMonth.weekday)!
-//        return day
-//    }
-//
-    
     func didChangeMonth(monthIndex: Int, year: Int) {
         currentMonthIndex = monthIndex + 1
         currentYear = year

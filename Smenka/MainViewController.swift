@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var blurEffect: UIVisualEffectView!
     @IBOutlet weak var editButton: UIButton!
     
-    var schedaleShifts: Results<SchedaleShifts>!
+    var schedulesShifts: Results<ScheduleShifts>!
     //    var shifts: Results<Shift>!
     //    var types: Results<ShiftType>!
     
@@ -35,7 +35,7 @@ class MainViewController: UIViewController {
     
     var editButtonPressCheck = false
     
-    var testSchedalaShifts = SchedaleShifts()
+//    var testSchedulaShifts = ScheduleShifts()
     
     
     override func viewDidLoad() {
@@ -58,13 +58,24 @@ class MainViewController: UIViewController {
         
         calendarCollectionView.layer.cornerRadius = 15
         
-        schedaleShifts = realm.objects(SchedaleShifts.self)
+        schedulesShifts = realm.objects(ScheduleShifts.self)
         //        shifts = realm.objects(Shift.self)
         //        types = realm.objects(ShiftType.self)
         //        staff = realm.objects(Staff.self)
         
         setTestShifts()
-        setTestSchedalShifts()
+        
+        
+        // Test creatng scheduleShifts
+        guard let schedulesShifts = schedulesShifts else { return }
+        let nameIsMatch = checkTheScheduleForExistence(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
+        
+        if  !nameIsMatch {
+            let scheduleShifts = setEmptyScheduleShifts(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
+            DispatchQueue.main.async {
+                StorageManager.saveSchedaleShift(scheduleShifts)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,7 +98,6 @@ class MainViewController: UIViewController {
         monthLabel.text="\(months[currentMonth]) \(currentYear)"
         didChangeMonth(monthIndex: currentMonth, year: currentYear)
         calendarCollectionView.reloadData()
-        print("\(currentYear)-\(currentMonthIndex)")
     }
     
     @IBAction func Back(_ sender: Any) {
@@ -112,59 +122,34 @@ class MainViewController: UIViewController {
             UIView.animate(withDuration: 1) {
                 self.blurEffect.alpha = 0.9
             }
-            checkTheSchedallForExistence()
+            
+            // Create empty schedulShifts if is has not been previously created
+            guard let scheduleShifts = schedulesShifts else { return }
+            let nameIsMatch = checkTheScheduleForExistence(schedulesShifts: scheduleShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
+            
+            if  !nameIsMatch {
+                let scheduleShifts = setEmptyScheduleShifts(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
+                DispatchQueue.main.async {
+                    StorageManager.saveSchedaleShift(scheduleShifts)
+                }
+            }
+            
         } else {
             editButton.setTitle("Edit", for: .normal)
             UIView.animate(withDuration: 1) {
                 self.blurEffect.alpha = 0
             }
-        }
-    }
-    
-    
-    func setTestSchedalShifts() {
-        
-        let schedaleShifts = SchedaleShifts()
-        schedaleShifts.monthlyScheduleName = "\(currentYear)-\(currentMonthIndex)"
-        
-        var emptyBoxCounter = 0
-        var counter = 0
-        
-        while counter != 31 {
-            counter += 1
-            let shift = Shift()
-            shift.shiftDate = ("\(currentYear)-\(currentMonthIndex)-\(counter)").dateStr!
-            schedaleShifts.shifts.append(shift)
             
-        }
-        
-        while emptyBoxCounter != firstWeekDayOfMonth - 1 {
-            emptyBoxCounter += 1
-            schedaleShifts.shifts.insert(Shift(), at: 0)
-        }
-        
-        
-        
-        
-        StorageManager.saveSchedaleShift(schedaleShifts)
-        
-    }
-    
-    func checkTheSchedallForExistence() {
-        
-        let currentSchedalName = "\(currentYear)-\(currentMonthIndex)"
-        var nameMatch = false
-        
-        for schedalShift in schedaleShifts {
-            if schedalShift.monthlyScheduleName == currentSchedalName {
-                nameMatch = true
+           // Delete empty schedulShifts if is has not been previously edited
+            guard let schedulesShifts = schedulesShifts else { return }
+            let shiftIsEdited = checkTheScheduleForEmptiness(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
+            
+            if !shiftIsEdited {
+            removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
             }
         }
-        
-        if !nameMatch {
-            setTestSchedalShifts()
-        }
     }
+     
 }
 
 

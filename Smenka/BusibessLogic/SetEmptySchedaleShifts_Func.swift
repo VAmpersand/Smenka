@@ -9,10 +9,10 @@
 import UIKit
 import RealmSwift
 
-func setEmptySchedaleShifts(currentYear: Int, currentMonthIndex: Int) -> SchedaleShifts {
+func setEmptyScheduleShifts(currentYear: Int, currentMonthIndex: Int) -> ScheduleShifts {
     
-    let schedaleShifts = SchedaleShifts()
-    schedaleShifts.monthlyScheduleName = "\(currentYear)-\(currentMonthIndex)"
+    let scheduleShifts = ScheduleShifts()
+    scheduleShifts.monthlyScheduleName = "\(currentYear)-\(currentMonthIndex)"
     
     var emptyCellsCounter = 0
     var dateCounter = 0
@@ -21,17 +21,17 @@ func setEmptySchedaleShifts(currentYear: Int, currentMonthIndex: Int) -> Schedal
         dateCounter += 1
         let shift = Shift()
         shift.shiftDate = ("\(currentYear)-\(currentMonthIndex)-\(dateCounter)").dateStr!
-        schedaleShifts.shifts.append(shift)
+        scheduleShifts.shifts.append(shift)
     }
     
     let firstWeekDayOfMonth = getIndexFirstWeekDay(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
     
     while emptyCellsCounter != firstWeekDayOfMonth - 1 {
         emptyCellsCounter += 1
-        schedaleShifts.shifts.insert(Shift(), at: 0)
+        scheduleShifts.shifts.insert(Shift(), at: 0)
     }
 
-    return schedaleShifts
+    return scheduleShifts
 }
 
 
