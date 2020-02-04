@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-class SchedalShifts: Object {
+class SchedaleShifts: Object {
     
     @objc dynamic var monthlyScheduleName = "yyyy-MM"
     var shifts = List<Shift>()

@@ -12,21 +12,21 @@ let realm = try! Realm()
 
 class StorageManager {
     
-    static func saveSchedalShift(_ schedalShifts: SchedalShifts) {
+    static func saveSchedaleShift(_ schedaleShifts: SchedaleShifts) {
         try! realm.write {
-            realm.add(schedalShifts)
+            realm.add(schedaleShifts)
         }
     }
 
-    static func removeShift(_ schedalShifts: SchedalShifts) {
+    static func removeShift(_ schedaleShifts: SchedaleShifts) {
         try! realm.write {
-            realm.delete(schedalShifts)
+            realm.delete(schedaleShifts)
         }
     }
 
-    static func editShift(_ schedalShifts: SchedalShifts, _ newSchedalShifts: SchedalShifts) {
+    static func editShift(_ schedaleShifts: SchedaleShifts, _ newSchedaleShifts: SchedaleShifts) {
         try! realm.write {
-            schedalShifts.shifts = newSchedalShifts.shifts
+            schedaleShifts.shifts = newSchedaleShifts.shifts
         }
     }
     

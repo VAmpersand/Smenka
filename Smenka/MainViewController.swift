@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var blurEffect: UIVisualEffectView!
     @IBOutlet weak var editButton: UIButton!
     
-    var schedalShifts: Results<SchedalShifts>!
+    var schedaleShifts: Results<SchedaleShifts>!
     //    var shifts: Results<Shift>!
     //    var types: Results<ShiftType>!
     
@@ -35,7 +35,7 @@ class MainViewController: UIViewController {
     
     var editButtonPressCheck = false
     
-    var testSchedalaShifts = SchedalShifts()
+    var testSchedalaShifts = SchedaleShifts()
     
     
     override func viewDidLoad() {
@@ -58,7 +58,7 @@ class MainViewController: UIViewController {
         
         calendarCollectionView.layer.cornerRadius = 15
         
-        schedalShifts = realm.objects(SchedalShifts.self)
+        schedaleShifts = realm.objects(SchedaleShifts.self)
         //        shifts = realm.objects(Shift.self)
         //        types = realm.objects(ShiftType.self)
         //        staff = realm.objects(Staff.self)
@@ -124,17 +124,17 @@ class MainViewController: UIViewController {
     
     func setTestSchedalShifts() {
         
-        let schedalaShifts = SchedalShifts()
-        schedalaShifts.monthlyScheduleName = "\(currentYear)-\(currentMonthIndex)"
+        let schedaleShifts = SchedaleShifts()
+        schedaleShifts.monthlyScheduleName = "\(currentYear)-\(currentMonthIndex)"
         
         var counter = 0
         while counter != 40 {
             counter += 1
-            schedalaShifts.shifts.append(Shift())
+            schedaleShifts.shifts.append(Shift())
             
         }
         
-        StorageManager.saveSchedalShift(schedalaShifts)
+        StorageManager.saveSchedaleShift(schedaleShifts)
         
     }
     
@@ -143,7 +143,7 @@ class MainViewController: UIViewController {
         let currentSchedalName = "\(currentYear)-\(currentMonthIndex)"
         var nameMatch = false
         
-        for schedalShift in schedalShifts {
+        for schedalShift in schedaleShifts {
             if schedalShift.monthlyScheduleName == currentSchedalName {
                 nameMatch = true
             }
