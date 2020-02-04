@@ -52,7 +52,7 @@ class MainViewController: UIViewController {
         
         currentMonth = currentMonthIndex - 1
         
-        firstWeekDayOfMonth = getFirstWeekDay()
+        firstWeekDayOfMonth = getIndexFirstWeekDay(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
         
         monthLabel.text="\(months[currentMonth]) \(currentYear)"
         
@@ -127,12 +127,24 @@ class MainViewController: UIViewController {
         let schedaleShifts = SchedaleShifts()
         schedaleShifts.monthlyScheduleName = "\(currentYear)-\(currentMonthIndex)"
         
+        var emptyBoxCounter = 0
         var counter = 0
-        while counter != 40 {
+        
+        while counter != 31 {
             counter += 1
-            schedaleShifts.shifts.append(Shift())
+            let shift = Shift()
+            shift.shiftDate = ("\(currentYear)-\(currentMonthIndex)-\(counter)").dateStr!
+            schedaleShifts.shifts.append(shift)
             
         }
+        
+        while emptyBoxCounter != firstWeekDayOfMonth - 1 {
+            emptyBoxCounter += 1
+            schedaleShifts.shifts.insert(Shift(), at: 0)
+        }
+        
+        
+        
         
         StorageManager.saveSchedaleShift(schedaleShifts)
         
