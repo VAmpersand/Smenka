@@ -73,7 +73,7 @@ class MainViewController: UIViewController {
         if  !nameIsMatch {
             let scheduleShifts = setEmptyScheduleShifts(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
             DispatchQueue.main.async {
-                StorageManager.saveSchedaleShift(scheduleShifts)
+                StorageManager.saveScheduleShift(scheduleShifts)
             }
         }
     }
@@ -130,7 +130,7 @@ class MainViewController: UIViewController {
             if  !nameIsMatch {
                 let scheduleShifts = setEmptyScheduleShifts(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
                 DispatchQueue.main.async {
-                    StorageManager.saveSchedaleShift(scheduleShifts)
+                    StorageManager.saveScheduleShift(scheduleShifts)
                 }
             }
             

@@ -15,7 +15,7 @@ func removeSchedulleShifts(schedulesShifts: Results<ScheduleShifts>, currentYear
         if scheduleShift.monthlyScheduleName == "\(currentYear)-\(currentMonthIndex)" {
             
             DispatchQueue.main.async {
-                StorageManager.removeShift(scheduleShift)
+                StorageManager.removeScheduleShift(scheduleShift)
             }
         }
     }

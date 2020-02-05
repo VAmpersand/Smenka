@@ -17,43 +17,33 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Calendar", for: indexPath) as! DateCollectionViewCell
         
-        cell.backgroundColor = testColors[testShifts[indexPath.row].shiftTypeIndex]
+        var calcDate = 0
         
         cell.dateLabel.textColor = .black
-        cell.layer.cornerRadius = 10
+        cell.layer.cornerRadius = cell.bounds.width / 2 
         cell.shiftColorView.isHidden = true
         
         
         if indexPath.item <= firstWeekDayOfMonth - 2 {
             cell.isHidden = true
         } else {
-            let calcDate = indexPath.row - firstWeekDayOfMonth + 2
+            calcDate = indexPath.row - firstWeekDayOfMonth + 2
             cell.isHidden = false
             cell.dateLabel.text = "\(calcDate)"
-            
-            //            if calcDate < todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
-            //                cell.isUserInteractionEnabled = false
-            //                cell.dateLabel.textColor = UIColor.lightGray
-            //            } else {
-            //                cell.isUserInteractionEnabled = true
-            //                //                                 cell.dateLabel.textColor = Style.activeCellLblColor
-            //            }
-            
-            // Mark today in red circle
-            if calcDate == todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
-                //                cell.isUserInteractionEnabled = false
-                //                cell.dateLabel.textColor = UIColor.blue
-                cell.shiftColorView.isHidden = false
-                cell.drowCircleForToday()
-                
-            }
         }
         
+        //  Mark today in red circle
+        if calcDate == todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
+            //                cell.isUserInteractionEnabled = false
+            //                cell.dateLabel.textColor = UIColor.blue
+            cell.shiftColorView.isHidden = false
+            cell.drowCircleForToday()
+            
+        }
         
-        //         Add weekend. Mark weekend in grey
+        //  Add weekend. Mark weekend in grey
         switch indexPath.row {
         case 5, 6, 12, 13, 19, 20, 26, 27, 33, 34:
             if Int(cell.dateLabel.text!)! > 0 {
@@ -63,33 +53,47 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             break
         }
         
+        //  Filling/display the calendar with shifts from the schedule
+        guard let schedulesShifts = schedulesShifts else { return cell }
+        for scheduleShift in schedulesShifts {
+            if scheduleShift.monthlyScheduleName == "\(currentYear)-\(currentMonthIndex)" {
+                cell.backgroundColor = testColors[scheduleShift.shifts[indexPath.row].shiftTypeIndex]
+            } else {
+                cell.backgroundColor = testColors[0]
+            }
+        }
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! DateCollectionViewCell
-        let dateLabel = cell.dateLabel.text
         
-        let shift = testShifts[indexPath.row]
+        var shift = Shift()
+        let newShift = Shift()
+        
+        guard let schedulesShifts = schedulesShifts else { return }
+              for scheduleShift in schedulesShifts {
+                  if scheduleShift.monthlyScheduleName == "\(currentYear)-\(currentMonthIndex)" {
+                    shift = scheduleShift.shifts[indexPath.row]
+                  }
+              }
+        
         
         if editButtonPressCheck {
             
-            guard let dateLabel = dateLabel else { return }
+            newShift.shiftTypeIndex = shift.shiftTypeIndex
             
-            let day = ("\(currentYear)-\(currentMonthIndex)-\(dateLabel)").dateStr!
-            
-            shift.shiftDate = day
-            
-            testShifts[indexPath.row].shiftTypeIndex += 1
-            
-            if testShifts[indexPath.row].shiftTypeIndex == testShiftTypes.count {
-                testShifts[indexPath.row].shiftTypeIndex = 0
+            newShift.shiftTypeIndex += 1
+            if newShift.shiftTypeIndex == testShiftTypes.count {
+                newShift.shiftTypeIndex = 0
+            }
+
+            DispatchQueue.main.async {
+                StorageManager.editShift(shift, newShift)
+                cell.backgroundColor = testColors[newShift.shiftTypeIndex]
             }
             
-            print(testShifts)
-            
-            cell.backgroundColor = testColors[testShifts[indexPath.row].shiftTypeIndex]
-            cell.layer.cornerRadius = 10
             //        let lbl = cell?.subviews[1] as! UILabel
             //        lbl.textColor = UIColor.white
         }
@@ -112,3 +116,12 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         firstWeekDayOfMonth = getIndexFirstWeekDay(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
     }
 }
+
+
+//            if calcDate < todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
+      //                cell.isUserInteractionEnabled = false
+      //                cell.dateLabel.textColor = UIColor.lightGray
+      //            } else {
+      //                cell.isUserInteractionEnabled = true
+      //                //                                 cell.dateLabel.textColor = Style.activeCellLblColor
+      //            }
