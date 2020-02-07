@@ -22,6 +22,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var deleteButton: UIButton!
     
     var schedulesShifts: Results<ScheduleShifts>!
+    var shiftType: Results<ShiftType>!
+    var staff: Results<Staff>!
+    
     
     var currentYear = 0
     var presentYear = 0
@@ -64,6 +67,8 @@ class MainViewController: UIViewController {
         stuffShiftTableView.dataSource = self
         
         schedulesShifts = realm.objects(ScheduleShifts.self)
+        shiftType = realm.objects(ShiftType.self)
+        staff = realm.objects(Staff.self)
             
         // Test creatng scheduleShifts
         guard let schedulesShifts = schedulesShifts else { return }

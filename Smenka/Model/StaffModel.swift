@@ -12,8 +12,7 @@ class Staff: Object {
     
     @objc dynamic var employeeName = "Employee name"
     @objc dynamic var employeeSurname = "Employee surname"
-    @objc dynamic var startEmployeesSift = Date()
-    @objc dynamic var endEmployeesSift = Date()
-   
+    @objc dynamic var employeePosition = "Employee position"
+    
 }
 
