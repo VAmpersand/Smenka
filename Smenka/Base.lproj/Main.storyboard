@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staff shift" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzN-wC-k5R">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shift staff" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzN-wC-k5R">
                                 <rect key="frame" x="133.5" y="453" width="147" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="AaT-v7-WrO"/>
@@ -234,9 +234,49 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="bOn-e0-jWg"/>
                                 </connections>
                             </collectionView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ec4-yU-v0e">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ec4-yU-v0e">
                                 <rect key="frame" x="37.5" y="487" width="339" height="321"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="50" id="QAC-Hq-3Uv" customClass="StaffTableViewCell" customModule="Smenka" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="339" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QAC-Hq-3Uv" id="Ysa-E3-QJu">
+                                            <rect key="frame" x="0.0" y="0.0" width="339" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91C-on-dnK">
+                                                    <rect key="frame" x="12" y="11" width="266" height="28"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zSs-kY-2dd">
+                                                    <rect key="frame" x="286" y="5" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="Rbo-VD-44n"/>
+                                                        <constraint firstAttribute="width" constant="40" id="UPF-sq-mBl"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zSs-kY-2dd" firstAttribute="leading" secondItem="91C-on-dnK" secondAttribute="trailing" constant="8" id="YKc-Q2-KMe"/>
+                                                <constraint firstItem="zSs-kY-2dd" firstAttribute="top" secondItem="91C-on-dnK" secondAttribute="bottom" constant="-34" id="rZy-S3-pP8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="zSs-kY-2dd" secondAttribute="trailing" constant="13" id="IAE-3i-Wul"/>
+                                            <constraint firstItem="91C-on-dnK" firstAttribute="centerY" secondItem="QAC-Hq-3Uv" secondAttribute="centerY" id="S2N-fe-3PY"/>
+                                            <constraint firstAttribute="bottom" secondItem="zSs-kY-2dd" secondAttribute="bottom" constant="5" id="Vzm-Np-Fqc"/>
+                                            <constraint firstItem="91C-on-dnK" firstAttribute="leading" secondItem="QAC-Hq-3Uv" secondAttribute="leading" constant="12" id="XAz-gw-b1r"/>
+                                            <constraint firstItem="zSs-kY-2dd" firstAttribute="top" secondItem="QAC-Hq-3Uv" secondAttribute="top" constant="5" id="unj-Sh-UrI"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="staffLable" destination="91C-on-dnK" id="a9g-UR-JD2"/>
+                                            <outlet property="staffShiftColor" destination="zSs-kY-2dd" id="b2H-XB-YBa"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -296,7 +336,7 @@
         <!--Settings-->
         <scene sceneID="CQp-BE-Qvg">
             <objects>
-                <viewController id="a6V-XU-tL5" sceneMemberID="viewController">
+                <viewController id="a6V-XU-tL5" customClass="SettingsViewController" customModule="Smenka" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f62-3w-MeZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -307,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4I0-pp-kzL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3307" y="104"/>
+            <point key="canvasLocation" x="2903" y="104"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Nx8-WN-UYs">

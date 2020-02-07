@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet var calendarCollectionView: UICollectionView!
     @IBOutlet weak var stuffShiftTableView: UITableView!
+    
     @IBOutlet weak var addStaffButton: UIButton!
     
     @IBOutlet var monthLabel: UILabel!
@@ -58,6 +59,9 @@ class MainViewController: UIViewController {
         stuffShiftTableView.layer.cornerRadius = 15
         deleteButton.isHidden = true
         addStaffButton.isHidden = true
+        
+        stuffShiftTableView.delegate = self
+        stuffShiftTableView.dataSource = self
         
         schedulesShifts = realm.objects(ScheduleShifts.self)
             
@@ -152,6 +156,7 @@ class MainViewController: UIViewController {
             }
         }
     }
+    
     
     @IBAction func deleteCurrentScheduleShifts(_ sender: Any) {
         
