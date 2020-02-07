@@ -14,17 +14,15 @@ class MainViewController: UIViewController {
     @IBOutlet var calendarCollectionView: UICollectionView!
     @IBOutlet weak var stuffShiftTableView: UITableView!
     
-    @IBOutlet weak var addStaffButton: UIButton!
-    
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet weak var blurEffect: UIVisualEffectView!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var addStaffButton: UIButton!
     
     var schedulesShifts: Results<ScheduleShifts>!
     var shiftType: Results<ShiftType>!
     var staff: Results<Staff>!
-    
     
     var currentYear = 0
     var presentYear = 0
@@ -65,6 +63,7 @@ class MainViewController: UIViewController {
         
         stuffShiftTableView.delegate = self
         stuffShiftTableView.dataSource = self
+       
         
         schedulesShifts = realm.objects(ScheduleShifts.self)
         shiftType = realm.objects(ShiftType.self)
@@ -81,6 +80,7 @@ class MainViewController: UIViewController {
             }
         }
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)

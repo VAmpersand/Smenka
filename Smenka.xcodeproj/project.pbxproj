@@ -114,12 +114,8 @@
 				774A852C23E3582400A653A6 /* Model */,
 				774A852F23E35EAC00A653A6 /* Manager */,
 				7793C70523E9FBE50063BBA4 /* BusibessLogic */,
-				774A850A23D76A8400A653A6 /* MainViewController.swift */,
-				774A852423E2103600A653A6 /* CollectionViewDataSourse_Ext_MainVC.swift */,
-				774A851A23D7712500A653A6 /* DateCollectionViewCell.swift */,
-				7793C70823EDE3720063BBA4 /* TableViewDataSourse_Ext_MainVC.swift */,
-				7793C70C23EDEF270063BBA4 /* StaffTableViewCell.swift */,
-				7793C70A23EDEDFC0063BBA4 /* SettingsViewController.swift */,
+				7793C71023EDFAA00063BBA4 /* MainVC */,
+				7793C71123EDFD780063BBA4 /* SettingsVC */,
 				774A852023E0CA2C00A653A6 /* Ext_String.swift */,
 				774A852223E0CA4100A653A6 /* Ext_Date.swift */,
 				774A850C23D76A8400A653A6 /* Main.storyboard */,
@@ -161,6 +157,26 @@
 				7793C70623EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift */,
 			);
 			path = BusibessLogic;
+			sourceTree = "<group>";
+		};
+		7793C71023EDFAA00063BBA4 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				774A850A23D76A8400A653A6 /* MainViewController.swift */,
+				774A852423E2103600A653A6 /* CollectionViewDataSourse_Ext_MainVC.swift */,
+				774A851A23D7712500A653A6 /* DateCollectionViewCell.swift */,
+				7793C70823EDE3720063BBA4 /* TableViewDataSourse_Ext_MainVC.swift */,
+				7793C70C23EDEF270063BBA4 /* StaffTableViewCell.swift */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
+		7793C71123EDFD780063BBA4 /* SettingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				7793C70A23EDEDFC0063BBA4 /* SettingsViewController.swift */,
+			);
+			path = SettingsVC;
 			sourceTree = "<group>";
 		};
 		7FBD475085E914001A7CAA15 /* Pods */ = {

@@ -25,7 +25,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.staffShiftColor.backgroundColor = .red
         cell.staffShiftColor.layer.cornerRadius = 20
         
-        
         return cell
         
     }
