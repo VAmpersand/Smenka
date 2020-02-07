@@ -11,7 +11,6 @@ import UIKit
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return numbersOfDaysInMonth[currentMonthIndex - 1] + firstWeekDayOfMonth - 1
     }
     
@@ -85,7 +84,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             newShift.shiftTypeIndex = shift.shiftTypeIndex
             
             newShift.shiftTypeIndex += 1
-            if newShift.shiftTypeIndex == testShiftTypes.count {
+            if newShift.shiftTypeIndex == testColors.count {
                 newShift.shiftTypeIndex = 0
             }
 

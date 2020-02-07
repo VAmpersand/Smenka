@@ -12,15 +12,15 @@ import RealmSwift
 class MainViewController: UIViewController {
     
     @IBOutlet var calendarCollectionView: UICollectionView!
+    @IBOutlet weak var stuffShiftTableView: UITableView!
+    @IBOutlet weak var addStaffButton: UIButton!
+    
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet weak var blurEffect: UIVisualEffectView!
     @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     
     var schedulesShifts: Results<ScheduleShifts>!
-    //    var shifts: Results<Shift>!
-    //    var types: Results<ShiftType>!
-    
-    //    var staff: Results<Staff>!
     
     var currentYear = 0
     var presentYear = 0
@@ -34,8 +34,6 @@ class MainViewController: UIViewController {
     var todaysDate = 0
     
     var editButtonPressCheck = false
-    
-//    var testSchedulaShifts = ScheduleShifts()
     
     
     override func viewDidLoad() {
@@ -57,15 +55,12 @@ class MainViewController: UIViewController {
         monthLabel.text="\(months[currentMonth]) \(currentYear)"
         
         calendarCollectionView.layer.cornerRadius = 15
+        stuffShiftTableView.layer.cornerRadius = 15
+        deleteButton.isHidden = true
+        addStaffButton.isHidden = true
         
         schedulesShifts = realm.objects(ScheduleShifts.self)
-        //        shifts = realm.objects(Shift.self)
-        //        types = realm.objects(ShiftType.self)
-        //        staff = realm.objects(Staff.self)
-        
-        setTestShifts()
-        
-        
+            
         // Test creatng scheduleShifts
         guard let schedulesShifts = schedulesShifts else { return }
         let nameIsMatch = checkTheScheduleForExistence(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
@@ -119,6 +114,11 @@ class MainViewController: UIViewController {
         
         if editButtonPressCheck {
             editButton.setTitle("Save", for: .normal)
+            editButton.setTitleColor(.white, for: .normal)
+            deleteButton.isHidden = false
+            deleteButton.setTitleColor(.white, for: .normal)
+            addStaffButton.isHidden = false
+            addStaffButton.setTitleColor(.white, for: .normal)
             UIView.animate(withDuration: 1) {
                 self.blurEffect.alpha = 0.9
             }
@@ -136,6 +136,9 @@ class MainViewController: UIViewController {
             
         } else {
             editButton.setTitle("Edit", for: .normal)
+            editButton.setTitleColor(.blue, for: .normal)
+            deleteButton.isHidden = true
+            addStaffButton.isHidden = true
             UIView.animate(withDuration: 1) {
                 self.blurEffect.alpha = 0
             }
@@ -149,7 +152,20 @@ class MainViewController: UIViewController {
             }
         }
     }
-     
+    
+    @IBAction func deleteCurrentScheduleShifts(_ sender: Any) {
+        
+        guard let schedulesShifts = schedulesShifts else { return }
+        DispatchQueue.main.async {
+            removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: self.currentYear, currentMonthIndex: self.currentMonthIndex)
+            self.calendarCollectionView.reloadData()
+        }
+    }
+    
+    
+    @IBAction func addStaff(_ sender: Any) {
+    }
+    
 }
 
 

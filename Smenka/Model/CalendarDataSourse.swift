@@ -23,21 +23,7 @@ var numbersOfDaysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 // Add test data
 
 let testColors: [UIColor] = [.clear, .red, .blue, .green, .black, .yellow]
-let testShiftTypes = [testShiftTipe, testShiftTipe, testShiftTipe,
-                      testShiftTipe, testShiftTipe, testShiftTipe]
 
-var testShifts: [Shift] = []
-let testShiftTipe = ShiftType()
-
-func setTestShifts() {
-    
-    var counter = 0
-    while counter != 40 {
-        counter += 1
-
-        testShifts.append(Shift())
-    }
-}
 
 
 
