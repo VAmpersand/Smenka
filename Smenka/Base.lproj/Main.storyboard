@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shift staff" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzN-wC-k5R">
-                                <rect key="frame" x="133.5" y="453" width="147" height="34"/>
+                                <rect key="frame" x="133.5" y="438" width="147" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="AaT-v7-WrO"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147" id="OTh-lU-zDO"/>
@@ -78,7 +78,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIA-0d-kRu">
-                                <rect key="frame" x="321" y="453.5" width="56" height="33"/>
+                                <rect key="frame" x="321" y="438.5" width="56" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56" id="Jxa-eI-NsL"/>
                                 </constraints>
@@ -182,12 +182,12 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9DI-SY-hJO">
-                                <rect key="frame" x="37" y="148" width="340" height="300"/>
+                                <rect key="frame" x="37" y="148" width="340" height="280"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="XZj-pw-KQh"/>
+                                    <constraint firstAttribute="height" constant="280" id="XZj-pw-KQh"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UVn-ro-jo2">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="UVn-ro-jo2">
                                     <size key="itemSize" width="40" height="40"/>
                                     <size key="estimatedItemSize" width="40" height="40"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -235,7 +235,7 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ec4-yU-v0e">
-                                <rect key="frame" x="37.5" y="487" width="339" height="321"/>
+                                <rect key="frame" x="37.5" y="472" width="339" height="336"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="50" id="QAC-Hq-3Uv" customClass="StaffTableViewCell" customModule="Smenka" customModuleProvider="target">
@@ -291,7 +291,7 @@
                             <constraint firstItem="ipY-AM-d8K" firstAttribute="top" secondItem="JIp-0v-Pv6" secondAttribute="bottom" id="ILA-J8-Cj0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7HO-V8-fb9" secondAttribute="trailing" id="JGF-vO-8hc"/>
                             <constraint firstItem="ec4-yU-v0e" firstAttribute="centerX" secondItem="ipY-AM-d8K" secondAttribute="centerX" id="L1r-hu-I1W"/>
-                            <constraint firstItem="DzN-wC-k5R" firstAttribute="top" secondItem="9DI-SY-hJO" secondAttribute="bottom" constant="5" id="LWn-3O-x8t"/>
+                            <constraint firstItem="DzN-wC-k5R" firstAttribute="top" secondItem="9DI-SY-hJO" secondAttribute="bottom" constant="10" id="LWn-3O-x8t"/>
                             <constraint firstItem="DzN-wC-k5R" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Pgk-3E-3tB"/>
                             <constraint firstItem="tIA-0d-kRu" firstAttribute="centerY" secondItem="DzN-wC-k5R" secondAttribute="centerY" id="QHe-Ze-BuI"/>
                             <constraint firstItem="7HO-V8-fb9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RIL-yN-T5e"/>

@@ -13,9 +13,16 @@ func removeSchedulleShifts(schedulesShifts: Results<ScheduleShifts>, currentYear
     
     for scheduleShift in schedulesShifts {
         if scheduleShift.monthlyScheduleName == "\(currentYear)-\(currentMonthIndex)" {
-            
+//            var shiftCounter = 0
+//            let scheduleShiftCount = scheduleShift.shifts.count - 1
             DispatchQueue.main.async {
-                StorageManager.removeScheduleShift(scheduleShift)
+//                while shiftCounter != scheduleShiftCount  {
+//                    StorageManager.removeShift(scheduleShift.shifts[shiftCounter])
+//                    shiftCounter += 1
+//                }
+//                if scheduleShift.shifts.isEmpty {
+                    StorageManager.removeScheduleShift(scheduleShift)
+//                }
             }
         }
     }
