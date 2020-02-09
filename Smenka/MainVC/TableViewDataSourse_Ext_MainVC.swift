@@ -12,8 +12,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        let staffCount = 10
-        
+        let staffCount = 5
+    
         return staffCount
     }
     

@@ -1,5 +1,5 @@
 //
-//  ShiftTypesModel.swift
+//  ShiftTypeModel.swift
 //  Smenka
 //
 //  Created by Viktor on 31.01.2020.

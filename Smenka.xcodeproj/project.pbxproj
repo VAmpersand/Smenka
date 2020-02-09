@@ -21,7 +21,7 @@
 		774A852923E3562900A653A6 /* ShiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A852823E3562900A653A6 /* ShiftModel.swift */; };
 		774A852B23E3572F00A653A6 /* StaffModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A852A23E3572F00A653A6 /* StaffModel.swift */; };
 		774A852E23E35C5C00A653A6 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A852D23E35C5C00A653A6 /* StorageManager.swift */; };
-		7793C6F823E4BA8D0063BBA4 /* ShiftTypesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C6F723E4BA8D0063BBA4 /* ShiftTypesModel.swift */; };
+		7793C6F823E4BA8D0063BBA4 /* ShiftTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C6F723E4BA8D0063BBA4 /* ShiftTypeModel.swift */; };
 		7793C6FA23E840C00063BBA4 /* ScheduleShiftsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C6F923E840C00063BBA4 /* ScheduleShiftsModel.swift */; };
 		7793C6FE23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C6FD23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift */; };
 		7793C70023E9F5380063BBA4 /* GetIndexFirstWeekDay_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C6FF23E9F5380063BBA4 /* GetIndexFirstWeekDay_Func.swift */; };
@@ -29,9 +29,11 @@
 		7793C70423E9FBD60063BBA4 /* CheckTheSchudaleForEmptiness_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C70323E9FBD60063BBA4 /* CheckTheSchudaleForEmptiness_Func.swift */; };
 		7793C70723EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C70623EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift */; };
 		7793C70923EDE3720063BBA4 /* TableViewDataSourse_Ext_MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C70823EDE3720063BBA4 /* TableViewDataSourse_Ext_MainVC.swift */; };
-		7793C70B23EDEDFC0063BBA4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C70A23EDEDFC0063BBA4 /* SettingsViewController.swift */; };
 		7793C70D23EDEF270063BBA4 /* StaffTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C70C23EDEF270063BBA4 /* StaffTableViewCell.swift */; };
 		7793C70F23EDF6760063BBA4 /* ShiftStaffModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C70E23EDF6760063BBA4 /* ShiftStaffModel.swift */; };
+		7793C71323F045E40063BBA4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C71223F045E30063BBA4 /* SettingsViewController.swift */; };
+		7793C71523F04A960063BBA4 /* TableViewDataSourse_Ext_SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C71423F04A960063BBA4 /* TableViewDataSourse_Ext_SettingsVC.swift */; };
+		7793C71723F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C71623F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift */; };
 		909A6A9704E534AC9468D35B /* Pods_Smenka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BC425899994F051C914AFA /* Pods_Smenka.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +56,7 @@
 		774A852823E3562900A653A6 /* ShiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftModel.swift; sourceTree = "<group>"; };
 		774A852A23E3572F00A653A6 /* StaffModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffModel.swift; sourceTree = "<group>"; };
 		774A852D23E35C5C00A653A6 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
-		7793C6F723E4BA8D0063BBA4 /* ShiftTypesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypesModel.swift; sourceTree = "<group>"; };
+		7793C6F723E4BA8D0063BBA4 /* ShiftTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeModel.swift; sourceTree = "<group>"; };
 		7793C6F923E840C00063BBA4 /* ScheduleShiftsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleShiftsModel.swift; sourceTree = "<group>"; };
 		7793C6FD23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEmptySchedaleShifts_Func.swift; sourceTree = "<group>"; };
 		7793C6FF23E9F5380063BBA4 /* GetIndexFirstWeekDay_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndexFirstWeekDay_Func.swift; sourceTree = "<group>"; };
@@ -62,9 +64,11 @@
 		7793C70323E9FBD60063BBA4 /* CheckTheSchudaleForEmptiness_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTheSchudaleForEmptiness_Func.swift; sourceTree = "<group>"; };
 		7793C70623EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveScheduleShifts_Func.swift; sourceTree = "<group>"; };
 		7793C70823EDE3720063BBA4 /* TableViewDataSourse_Ext_MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourse_Ext_MainVC.swift; sourceTree = "<group>"; };
-		7793C70A23EDEDFC0063BBA4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7793C70C23EDEF270063BBA4 /* StaffTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffTableViewCell.swift; sourceTree = "<group>"; };
 		7793C70E23EDF6760063BBA4 /* ShiftStaffModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftStaffModel.swift; sourceTree = "<group>"; };
+		7793C71223F045E30063BBA4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = /Users/viktor/Developer/Smenka/Smenka/MainVC/SettingsViewController.swift; sourceTree = "<absolute>"; };
+		7793C71423F04A960063BBA4 /* TableViewDataSourse_Ext_SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourse_Ext_SettingsVC.swift; sourceTree = "<group>"; };
+		7793C71623F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeTableViewCell.swift; sourceTree = "<group>"; };
 		D1BC425899994F051C914AFA /* Pods_Smenka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smenka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -131,7 +135,7 @@
 			children = (
 				7793C6F923E840C00063BBA4 /* ScheduleShiftsModel.swift */,
 				774A852823E3562900A653A6 /* ShiftModel.swift */,
-				7793C6F723E4BA8D0063BBA4 /* ShiftTypesModel.swift */,
+				7793C6F723E4BA8D0063BBA4 /* ShiftTypeModel.swift */,
 				7793C70E23EDF6760063BBA4 /* ShiftStaffModel.swift */,
 				774A852A23E3572F00A653A6 /* StaffModel.swift */,
 				774A851C23D772C800A653A6 /* CalendarDataSourse.swift */,
@@ -174,7 +178,9 @@
 		7793C71123EDFD780063BBA4 /* SettingsVC */ = {
 			isa = PBXGroup;
 			children = (
-				7793C70A23EDEDFC0063BBA4 /* SettingsViewController.swift */,
+				7793C71223F045E30063BBA4 /* SettingsViewController.swift */,
+				7793C71423F04A960063BBA4 /* TableViewDataSourse_Ext_SettingsVC.swift */,
+				7793C71623F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift */,
 			);
 			path = SettingsVC;
 			sourceTree = "<group>";
@@ -304,19 +310,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				7793C6FE23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift in Sources */,
-				7793C6F823E4BA8D0063BBA4 /* ShiftTypesModel.swift in Sources */,
+				7793C6F823E4BA8D0063BBA4 /* ShiftTypeModel.swift in Sources */,
 				774A851B23D7712500A653A6 /* DateCollectionViewCell.swift in Sources */,
-				7793C70B23EDEDFC0063BBA4 /* SettingsViewController.swift in Sources */,
 				774A851D23D772C800A653A6 /* CalendarDataSourse.swift in Sources */,
 				7793C70223E9F6010063BBA4 /* CheckTheSchudaleForExistence_Func.swift in Sources */,
 				7793C70723EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift in Sources */,
 				774A852E23E35C5C00A653A6 /* StorageManager.swift in Sources */,
 				7793C70923EDE3720063BBA4 /* TableViewDataSourse_Ext_MainVC.swift in Sources */,
+				7793C71523F04A960063BBA4 /* TableViewDataSourse_Ext_SettingsVC.swift in Sources */,
 				774A852B23E3572F00A653A6 /* StaffModel.swift in Sources */,
+				7793C71723F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift in Sources */,
 				7793C6FA23E840C00063BBA4 /* ScheduleShiftsModel.swift in Sources */,
 				7793C70023E9F5380063BBA4 /* GetIndexFirstWeekDay_Func.swift in Sources */,
 				774A852323E0CA4100A653A6 /* Ext_Date.swift in Sources */,
 				774A852523E2103600A653A6 /* CollectionViewDataSourse_Ext_MainVC.swift in Sources */,
+				7793C71323F045E40063BBA4 /* SettingsViewController.swift in Sources */,
 				774A852123E0CA2C00A653A6 /* Ext_String.swift in Sources */,
 				774A850B23D76A8400A653A6 /* MainViewController.swift in Sources */,
 				7793C70423E9FBD60063BBA4 /* CheckTheSchudaleForEmptiness_Func.swift in Sources */,
