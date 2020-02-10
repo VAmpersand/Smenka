@@ -35,8 +35,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         //  Mark today in red circle
         if calcDate == todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
-            //                cell.isUserInteractionEnabled = false
-            //                cell.dateLabel.textColor = UIColor.blue
             cell.shiftColorView.isHidden = false
             cell.drowCircleForToday()
             
@@ -72,11 +70,11 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let newShift = Shift()
         
         guard let schedulesShifts = schedulesShifts else { return }
-              for scheduleShift in schedulesShifts {
-                  if scheduleShift.monthlyScheduleName == "\(currentYear)-\(currentMonthIndex)" {
-                    shift = scheduleShift.shifts[indexPath.row]
-                  }
-              }
+        for scheduleShift in schedulesShifts {
+            if scheduleShift.monthlyScheduleName == "\(currentYear)-\(currentMonthIndex)" {
+                shift = scheduleShift.shifts[indexPath.row]
+            }
+        }
         
         
         if editButtonPressCheck {
@@ -87,14 +85,14 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             if newShift.shiftTypeIndex == testColors.count {
                 newShift.shiftTypeIndex = 0
             }
-
+            
             DispatchQueue.main.async {
                 StorageManager.editShift(shift, newShift)
                 cell.backgroundColor = testColors[newShift.shiftTypeIndex]
             }
             
-            //        let lbl = cell?.subviews[1] as! UILabel
-            //        lbl.textColor = UIColor.white
+//            let label = cell.subviews[1] as! UILabel
+//            label.textColor = UIColor.white
         }
     }
     

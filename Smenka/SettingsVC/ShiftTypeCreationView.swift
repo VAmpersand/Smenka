@@ -28,7 +28,11 @@ class ShiftTypeCreationView: UIView {
     @IBOutlet weak var saveBatton: UIButton!
     
     var delegate: ShiftTypeCreationViewDelegate?
+    
     var shiftType = ShiftType()
+    var startTime = Date().getTime()
+    var endTime = Date().getTime()
+    var indicesSelectedColor: [Int] = []
     
     let reuseIdentifier = "shiftTypeColorCell"
     let localeID = Locale.preferredLanguages.first
@@ -45,7 +49,6 @@ class ShiftTypeCreationView: UIView {
         startTimePicker.addTarget(self, action: #selector(getStartTime), for: .valueChanged)
         endTimePicker.addTarget(self, action: #selector(getEndTime), for: .valueChanged)
         
-        viewController.view.addSubview(self)
         
         self.frame.origin.x = (viewController.view.frame.width - 360) / 2
         self.frame.origin.y = viewController.view.frame.height
@@ -54,6 +57,8 @@ class ShiftTypeCreationView: UIView {
         UIView.animate(withDuration: 0.6, animations: {
             self.frame.origin.y = 85
         })
+        
+        viewController.view.addSubview(self)
     }
     
     
@@ -64,8 +69,8 @@ class ShiftTypeCreationView: UIView {
     
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-//        delegate?.pushButton(shiftTypeCreationView: self)
-//        hidingShiftTypeCreationView()
+        //        delegate?.pushButton(shiftTypeCreationView: self)
+        //        hidingShiftTypeCreationView()
         getShiftType()
         print(shiftType)
     }
@@ -75,6 +80,7 @@ class ShiftTypeCreationView: UIView {
 
 extension ShiftTypeCreationView {
     
+    // Hiding animation for ShiftTypeCreationView
     func hidingShiftTypeCreationView() {
         self.frame.origin.y = 85
         self.layer.cornerRadius = 15
@@ -87,23 +93,17 @@ extension ShiftTypeCreationView {
     }
     
     func getShiftType() {
-        
         shiftType.shiftTypeName = typeNameTextField.text ?? "Default value"
-        startTimePicker.timeZone = NSTimeZone(name:"UTC+03:00") as TimeZone?
-        shiftType.startTime = startTimePicker.date
-        endTimePicker.timeZone = NSTimeZone(name:"UTC+00:00") as TimeZone?
-        shiftType.endTime = endTimePicker.date
-        
+        shiftType.startTime = startTime
+        shiftType.endTime = endTime
     }
     
     @objc func getStartTime() {
-        shiftType.startTime = startTimePicker.date
-        print(shiftType.startTime)
+        startTime = startTimePicker.date.getTime()
     }
     
     @objc func getEndTime() {
-           shiftType.endTime = endTimePicker.date
-           print(shiftType.endTime)
-       }
+        endTime = endTimePicker.date.getTime()
+    }
     
 }

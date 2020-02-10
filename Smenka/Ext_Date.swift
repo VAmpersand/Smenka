@@ -22,4 +22,11 @@ extension Date {
     var firstDayOfTheMonth: Date {
         return Calendar.current.date(from: Calendar.current.dateComponents([.year,.month], from: self))!
     }
+    
+    func getTime() -> String{
+           let formatter = DateFormatter()
+           formatter.dateFormat = "HH-mm"
+           let date = formatter.string(from: self as Date)
+           return date
+       }
 }

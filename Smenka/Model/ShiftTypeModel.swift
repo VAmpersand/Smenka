@@ -11,8 +11,8 @@ import RealmSwift
 class ShiftType: Object {
     
     @objc dynamic var shiftTypeName = "Shift Type"
-    @objc dynamic var startTime = Date()
-    @objc dynamic var endTime = Date()
+    @objc dynamic var startTime = "Time formater"
+    @objc dynamic var endTime = "Time formater"
     @objc dynamic var shiftColorIndex = Int()
     
     override var description: String {
