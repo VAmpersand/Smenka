@@ -36,7 +36,6 @@ class ShiftTypeCreationView: UIView {
         startTimePicker.datePickerMode = .time
         endTimePicker.datePickerMode = .time
         
-        
         viewController.view.addSubview(self)
         
         self.frame.origin.x = (viewController.view.frame.width - 360) / 2

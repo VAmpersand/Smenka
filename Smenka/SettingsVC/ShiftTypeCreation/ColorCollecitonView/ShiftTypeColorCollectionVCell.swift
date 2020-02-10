@@ -14,7 +14,9 @@ class ShiftTypeColorCollectionVCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        colorImage.layer.cornerRadius = 20
+        
     }
 
 }

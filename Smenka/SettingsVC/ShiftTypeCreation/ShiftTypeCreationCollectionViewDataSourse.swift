@@ -34,7 +34,7 @@ extension ShiftTypeCreationView: UICollectionViewDelegate, UICollectionViewDataS
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shiftTypeColorCell", for: indexPath) as! ShiftTypeColorCollectionVCell
         
         cell.colorImage.backgroundColor = .red
-        cell.colorImage.layer.cornerRadius = 20
+        
         return cell
     
     }
