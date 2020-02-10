@@ -411,9 +411,6 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jS3-OS-AOx">
                                                             <rect key="frame" x="0.0" y="0.0" width="265" height="20.5"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="260" id="PSl-ax-f8P"/>
-                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -471,6 +468,15 @@
                                     <action selector="addShiftType:" destination="a6V-XU-tL5" eventType="touchUpInside" id="zjo-40-bJD"/>
                                 </connections>
                             </button>
+                            <visualEffectView opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SHs-kg-01Y">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="m1M-QB-sH8">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -495,6 +501,7 @@
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="NYm-8X-sTe"/>
                     <connections>
                         <outlet property="addTypeButton" destination="h8z-p7-sgW" id="J65-uT-Ao6"/>
+                        <outlet property="blurEffect" destination="SHs-kg-01Y" id="y5F-De-18k"/>
                         <outlet property="screenModeLabel" destination="x9a-cl-4vG" id="2Ya-dn-i8I"/>
                         <outlet property="screenModeSwitch" destination="yxh-Yy-eXS" id="gfd-8f-C9d"/>
                         <outlet property="shiftTypeTable" destination="Jiz-Wd-lXm" id="GwV-YT-iZX"/>
@@ -502,7 +509,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4I0-pp-kzL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2903" y="104"/>
+            <point key="canvasLocation" x="2902.898550724638" y="103.79464285714285"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Nx8-WN-UYs">
@@ -510,6 +517,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="X8X-nF-HsC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0rO-IU-E5l">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

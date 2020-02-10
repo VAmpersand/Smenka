@@ -34,6 +34,11 @@
 		7793C71323F045E40063BBA4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C71223F045E30063BBA4 /* SettingsViewController.swift */; };
 		7793C71523F04A960063BBA4 /* TableViewDataSourse_Ext_SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C71423F04A960063BBA4 /* TableViewDataSourse_Ext_SettingsVC.swift */; };
 		7793C71723F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C71623F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift */; };
+		7793C71B23F05FC70063BBA4 /* ShiftTypeCreationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7793C71A23F05FC70063BBA4 /* ShiftTypeCreationView.xib */; };
+		7793C71F23F062870063BBA4 /* ShiftTypeCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C71E23F062870063BBA4 /* ShiftTypeCreationView.swift */; };
+		7793C72123F177390063BBA4 /* ShiftTypeCreationCollectionViewDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C72023F177390063BBA4 /* ShiftTypeCreationCollectionViewDataSourse.swift */; };
+		7793C72823F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C72623F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.swift */; };
+		7793C72923F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7793C72723F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib */; };
 		909A6A9704E534AC9468D35B /* Pods_Smenka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BC425899994F051C914AFA /* Pods_Smenka.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +74,11 @@
 		7793C71223F045E30063BBA4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = /Users/viktor/Developer/Smenka/Smenka/MainVC/SettingsViewController.swift; sourceTree = "<absolute>"; };
 		7793C71423F04A960063BBA4 /* TableViewDataSourse_Ext_SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourse_Ext_SettingsVC.swift; sourceTree = "<group>"; };
 		7793C71623F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeTableViewCell.swift; sourceTree = "<group>"; };
+		7793C71A23F05FC70063BBA4 /* ShiftTypeCreationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShiftTypeCreationView.xib; sourceTree = "<group>"; };
+		7793C71E23F062870063BBA4 /* ShiftTypeCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShiftTypeCreationView.swift; path = /Users/viktor/Developer/Smenka/Smenka/SettingsVC/ShiftTypeCreationView.swift; sourceTree = "<absolute>"; };
+		7793C72023F177390063BBA4 /* ShiftTypeCreationCollectionViewDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeCreationCollectionViewDataSourse.swift; sourceTree = "<group>"; };
+		7793C72623F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeColorCollectionVCell.swift; sourceTree = "<group>"; };
+		7793C72723F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShiftTypeColorCollectionVCell.xib; sourceTree = "<group>"; };
 		D1BC425899994F051C914AFA /* Pods_Smenka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smenka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -181,8 +191,29 @@
 				7793C71223F045E30063BBA4 /* SettingsViewController.swift */,
 				7793C71423F04A960063BBA4 /* TableViewDataSourse_Ext_SettingsVC.swift */,
 				7793C71623F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift */,
+				7793C72A23F180C10063BBA4 /* ShiftTypeCreation */,
 			);
 			path = SettingsVC;
+			sourceTree = "<group>";
+		};
+		7793C72A23F180C10063BBA4 /* ShiftTypeCreation */ = {
+			isa = PBXGroup;
+			children = (
+				7793C71E23F062870063BBA4 /* ShiftTypeCreationView.swift */,
+				7793C72023F177390063BBA4 /* ShiftTypeCreationCollectionViewDataSourse.swift */,
+				7793C71A23F05FC70063BBA4 /* ShiftTypeCreationView.xib */,
+				7793C72B23F180ED0063BBA4 /* ColorCollecitonView */,
+			);
+			path = ShiftTypeCreation;
+			sourceTree = "<group>";
+		};
+		7793C72B23F180ED0063BBA4 /* ColorCollecitonView */ = {
+			isa = PBXGroup;
+			children = (
+				7793C72623F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.swift */,
+				7793C72723F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib */,
+			);
+			path = ColorCollecitonView;
 			sourceTree = "<group>";
 		};
 		7FBD475085E914001A7CAA15 /* Pods */ = {
@@ -254,8 +285,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7793C72923F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib in Resources */,
 				774A851323D76A8500A653A6 /* LaunchScreen.storyboard in Resources */,
 				774A851023D76A8500A653A6 /* Assets.xcassets in Resources */,
+				7793C71B23F05FC70063BBA4 /* ShiftTypeCreationView.xib in Resources */,
 				774A850E23D76A8400A653A6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,11 +350,14 @@
 				7793C70723EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift in Sources */,
 				774A852E23E35C5C00A653A6 /* StorageManager.swift in Sources */,
 				7793C70923EDE3720063BBA4 /* TableViewDataSourse_Ext_MainVC.swift in Sources */,
+				7793C71F23F062870063BBA4 /* ShiftTypeCreationView.swift in Sources */,
 				7793C71523F04A960063BBA4 /* TableViewDataSourse_Ext_SettingsVC.swift in Sources */,
 				774A852B23E3572F00A653A6 /* StaffModel.swift in Sources */,
 				7793C71723F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift in Sources */,
 				7793C6FA23E840C00063BBA4 /* ScheduleShiftsModel.swift in Sources */,
+				7793C72823F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.swift in Sources */,
 				7793C70023E9F5380063BBA4 /* GetIndexFirstWeekDay_Func.swift in Sources */,
+				7793C72123F177390063BBA4 /* ShiftTypeCreationCollectionViewDataSourse.swift in Sources */,
 				774A852323E0CA4100A653A6 /* Ext_Date.swift in Sources */,
 				774A852523E2103600A653A6 /* CollectionViewDataSourse_Ext_MainVC.swift in Sources */,
 				7793C71323F045E40063BBA4 /* SettingsViewController.swift in Sources */,
