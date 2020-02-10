@@ -13,8 +13,11 @@ class ShiftType: Object {
     @objc dynamic var shiftTypeName = "Shift Type"
     @objc dynamic var startTime = Date()
     @objc dynamic var endTime = Date()
-    @objc dynamic var shiftColor = Int()
+    @objc dynamic var shiftColorIndex = Int()
     
+    override var description: String {
+        return "Shift Type - \(shiftTypeName), start time - \(startTime), end time - \(endTime), color index - \(shiftColorIndex)"
+    }
 }
 
 

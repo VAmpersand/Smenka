@@ -64,7 +64,7 @@ class StorageManager {
     static func editShiftType(_ shiftType: ShiftType, _ newShiftType: ShiftType) {
         try! realm.write {
             shiftType.shiftTypeName = newShiftType.shiftTypeName
-            shiftType.shiftColor = newShiftType.shiftColor
+            shiftType.shiftColorIndex = newShiftType.shiftColorIndex
             shiftType.startTime = newShiftType.startTime
             shiftType.endTime = newShiftType.endTime
         }

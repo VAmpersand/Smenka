@@ -115,12 +115,3 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         firstWeekDayOfMonth = getIndexFirstWeekDay(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
     }
 }
-
-
-//            if calcDate < todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
-      //                cell.isUserInteractionEnabled = false
-      //                cell.dateLabel.textColor = UIColor.lightGray
-      //            } else {
-      //                cell.isUserInteractionEnabled = true
-      //                //                                 cell.dateLabel.textColor = Style.activeCellLblColor
-      //            }

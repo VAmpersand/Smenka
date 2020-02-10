@@ -24,7 +24,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="d5Y-bS-fHQ">
-                    <rect key="frame" x="13.5" y="153" width="333.5" height="97"/>
+                    <rect key="frame" x="8.5" y="153" width="343.5" height="97"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="from" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1p-FX-JKF">
                             <rect key="frame" x="0.0" y="38" width="38" height="21.5"/>
@@ -33,20 +33,22 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="jt7-LE-f9L">
-                            <rect key="frame" x="41" y="0.0" width="135" height="97"/>
+                            <rect key="frame" x="41" y="0.0" width="140" height="97"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="135" id="f3s-21-aQL"/>
+                                <constraint firstAttribute="width" constant="140" id="f3s-21-aQL"/>
                                 <constraint firstAttribute="height" constant="97" id="ga5-bZ-KTn"/>
                             </constraints>
+                            <locale key="locale" localeIdentifier="ru"/>
                         </datePicker>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0B-Mc-sUs">
-                            <rect key="frame" x="179" y="38" width="16.5" height="21.5"/>
+                            <rect key="frame" x="184" y="38" width="16.5" height="21.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="tVJ-hx-00C">
-                            <rect key="frame" x="198.5" y="0.0" width="135" height="97"/>
+                            <rect key="frame" x="203.5" y="0.0" width="140" height="97"/>
+                            <locale key="locale" localeIdentifier="ru"/>
                         </datePicker>
                     </subviews>
                     <constraints>

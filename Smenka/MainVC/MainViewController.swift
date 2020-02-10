@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var addStaffButton: UIButton!
     
     var schedulesShifts: Results<ScheduleShifts>!
-    var shiftType: Results<ShiftType>!
+//    var shiftType: Results<ShiftType>!
     var staff: Results<Staff>!
     
     var currentYear = 0
@@ -66,7 +66,7 @@ class MainViewController: UIViewController {
        
         
         schedulesShifts = realm.objects(ScheduleShifts.self)
-        shiftType = realm.objects(ShiftType.self)
+//        shiftType = realm.objects(ShiftType.self)
         staff = realm.objects(Staff.self)
             
         // Test creatng scheduleShifts
@@ -112,7 +112,7 @@ class MainViewController: UIViewController {
             currentYear -= 1
         }
         
-        monthLabel.text="\(months[currentMonth]) \(currentYear)"
+        monthLabel.text = "\(months[currentMonth]) \(currentYear)"
         didChangeMonth(monthIndex: currentMonth, year: currentYear)
         calendarCollectionView.reloadData()
     }
@@ -174,6 +174,7 @@ class MainViewController: UIViewController {
     
     
     @IBAction func addStaff(_ sender: Any) {
+        
     }
     
 }

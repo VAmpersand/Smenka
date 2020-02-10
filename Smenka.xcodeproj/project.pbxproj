@@ -164,8 +164,8 @@
 		7793C70523E9FBE50063BBA4 /* BusibessLogic */ = {
 			isa = PBXGroup;
 			children = (
-				7793C6FD23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift */,
 				7793C6FF23E9F5380063BBA4 /* GetIndexFirstWeekDay_Func.swift */,
+				7793C6FD23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift */,
 				7793C70123E9F6010063BBA4 /* CheckTheSchudaleForExistence_Func.swift */,
 				7793C70323E9FBD60063BBA4 /* CheckTheSchudaleForEmptiness_Func.swift */,
 				7793C70623EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift */,

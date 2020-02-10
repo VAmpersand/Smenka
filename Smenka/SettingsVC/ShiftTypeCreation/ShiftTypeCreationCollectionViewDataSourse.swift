@@ -20,25 +20,25 @@ extension ShiftTypeCreationView: UICollectionViewDelegate, UICollectionViewDataS
      }
 
     
-//    func setSelected(_ selected: Bool, animated: Bool) {
-//           super.setSelected(selected, animated: animated)
-//       }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 18
         
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shiftTypeColorCell", for: indexPath) as! ShiftTypeColorCollectionVCell
         
-        cell.colorImage.backgroundColor = .red
+        cell.colorImage.backgroundColor = colors[indexPath.row]
         
         return cell
-    
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+        shiftType.shiftColorIndex = indexPath.row
+        
+    }
 
 
 }
