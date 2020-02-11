@@ -29,5 +29,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         return 50
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     
 }

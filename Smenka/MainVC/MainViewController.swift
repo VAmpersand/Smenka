@@ -69,7 +69,7 @@ class MainViewController: UIViewController {
 //        shiftType = realm.objects(ShiftType.self)
         staff = realm.objects(Staff.self)
             
-        // Test creatng scheduleShifts
+        //MARK: Test creatng scheduleShifts
         guard let schedulesShifts = schedulesShifts else { return }
         let nameIsMatch = checkTheScheduleForExistence(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
         

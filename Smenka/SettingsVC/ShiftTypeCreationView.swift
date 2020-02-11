@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ShiftTypeCreationViewDelegate {
-    func pushButton(shiftTypeCreationView: ShiftTypeCreationView)
+    func pushButton()
 }
 
 
@@ -26,6 +26,7 @@ class ShiftTypeCreationView: UIView {
     @IBOutlet weak var shiftColorCollectionView: UICollectionView!
     @IBOutlet weak var cancelBatton: UIButton!
     @IBOutlet weak var saveBatton: UIButton!
+ 
     
     var delegate: ShiftTypeCreationViewDelegate?
     
@@ -33,6 +34,9 @@ class ShiftTypeCreationView: UIView {
     var startTime = Date().getTime()
     var endTime = Date().getTime()
     var indicesSelectedColor: [Int] = []
+    
+    var previousSelected : IndexPath?
+    var currentSelected : Int?
     
     let reuseIdentifier = "shiftTypeColorCell"
     let localeID = Locale.preferredLanguages.first
@@ -63,16 +67,19 @@ class ShiftTypeCreationView: UIView {
     
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
-        delegate?.pushButton(shiftTypeCreationView: self)
+        delegate?.pushButton()
         hidingShiftTypeCreationView()
     }
     
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        //        delegate?.pushButton(shiftTypeCreationView: self)
-        //        hidingShiftTypeCreationView()
+        delegate?.pushButton()
+        hidingShiftTypeCreationView()
         getShiftType()
-        print(shiftType)
+        
+        DispatchQueue.main.async {
+            StorageManager.saveShiftType(self.shiftType)
+        }
     }
     
 }
@@ -105,5 +112,5 @@ extension ShiftTypeCreationView {
     @objc func getEndTime() {
         endTime = endTimePicker.date.getTime()
     }
-    
 }
+

@@ -19,12 +19,35 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Calendar", for: indexPath) as! DateCollectionViewCell
         
         var calcDate = 0
+        var shift = Shift()
         
-        cell.dateLabel.textColor = .black
-        cell.layer.cornerRadius = cell.bounds.width / 2 
+        cell.layer.cornerRadius = cell.bounds.width / 2
         cell.shiftColorView.isHidden = true
         
+        //MARK:  Get data from database, for current display text color
+        guard let schedulesShifts = schedulesShifts else { return cell }
+        for scheduleShift in schedulesShifts {
+            if scheduleShift.monthlyScheduleName == "\(currentYear)-\(currentMonthIndex)" {
+                shift = scheduleShift.shifts[indexPath.row]
+            }
+        }
         
+        //MARK:  Set text color in dateLabel in cell
+        if  shift.shiftTypeIndex != 0 {
+            cell.dateLabel.textColor = .white
+        } else {
+            
+            //MARK:   Add weekend. Mark weekend in grey
+            switch indexPath.row {
+            case 5, 6, 12, 13, 19, 20, 26, 27, 33, 34:
+                    cell.dateLabel.textColor = .lightGray
+            default:
+                cell.dateLabel.textColor = .black
+            }
+        }
+        
+        
+        //MARK:  Hide empty cell's
         if indexPath.item <= firstWeekDayOfMonth - 2 {
             cell.isHidden = true
         } else {
@@ -33,25 +56,15 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.dateLabel.text = "\(calcDate)"
         }
         
-        //  Mark today in red circle
+        
+        //MARK:   Mark today in red circle
         if calcDate == todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
             cell.shiftColorView.isHidden = false
             cell.drowCircleForToday()
-            
         }
         
-        //  Add weekend. Mark weekend in grey
-        switch indexPath.row {
-        case 5, 6, 12, 13, 19, 20, 26, 27, 33, 34:
-            if Int(cell.dateLabel.text!)! > 0 {
-                cell.dateLabel.textColor = UIColor.lightGray
-            }
-        default:
-            break
-        }
         
-        //  Filling/display the calendar with shifts from the schedule
-        guard let schedulesShifts = schedulesShifts else { return cell }
+        //MARK:   Filling/display the calendar with shifts from the schedule
         for scheduleShift in schedulesShifts {
             if scheduleShift.monthlyScheduleName == "\(currentYear)-\(currentMonthIndex)" {
                 cell.backgroundColor = testColors[scheduleShift.shifts[indexPath.row].shiftTypeIndex]
@@ -59,9 +72,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 cell.backgroundColor = testColors[0]
             }
         }
-        
         return cell
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! DateCollectionViewCell
@@ -76,7 +89,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
         }
         
-        
+        //MARK: Change shift type index
         if editButtonPressCheck {
             
             newShift.shiftTypeIndex = shift.shiftTypeIndex
@@ -89,10 +102,19 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             DispatchQueue.main.async {
                 StorageManager.editShift(shift, newShift)
                 cell.backgroundColor = testColors[newShift.shiftTypeIndex]
+                if  newShift.shiftTypeIndex != 0 {
+                    cell.dateLabel.textColor = .white
+                } else {
+                    
+                    //  Add weekend. Mark weekend in grey
+                    switch indexPath.row {
+                    case 5, 6, 12, 13, 19, 20, 26, 27, 33, 34:
+                            cell.dateLabel.textColor = .lightGray
+                    default:
+                        cell.dateLabel.textColor = .black
+                    }
+                }
             }
-            
-//            let label = cell.subviews[1] as! UILabel
-//            label.textColor = UIColor.white
         }
     }
     
@@ -101,7 +123,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         currentMonthIndex = monthIndex + 1
         currentYear = year
         
-        //for leap year, make february month of 29 days
+        // For leap year, make february month of 29 days
         if monthIndex == 1 {
             if currentYear % 4 == 0 {
                 numbersOfDaysInMonth[monthIndex] = 29
