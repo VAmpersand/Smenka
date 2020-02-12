@@ -26,8 +26,6 @@ extension String {
     
     static var timeFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "eu_EU")
-        formatter.timeZone = NSTimeZone(name:"UTC+00:00") as TimeZone?
         formatter.calendar = Calendar(identifier: .gregorian)
         formatter.dateFormat = "HH-mm"
         return formatter

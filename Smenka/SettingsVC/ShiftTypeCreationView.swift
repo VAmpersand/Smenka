@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 protocol ShiftTypeCreationViewDelegate {
     func pushButton()
@@ -26,23 +27,25 @@ class ShiftTypeCreationView: UIView {
     @IBOutlet weak var shiftColorCollectionView: UICollectionView!
     @IBOutlet weak var cancelBatton: UIButton!
     @IBOutlet weak var saveBatton: UIButton!
- 
     
     var delegate: ShiftTypeCreationViewDelegate?
+    var shiftTypes: Results<ShiftType>!
     
     var shiftType = ShiftType()
     var startTime = Date().getTime()
     var endTime = Date().getTime()
-    var indicesSelectedColor: [Int] = []
     
-    var previousSelected : IndexPath?
-    var currentSelected : Int?
+    //    var indicesSelectedColor: [Int] = []
+    
+    var indexEditableType: Int!
     
     let reuseIdentifier = "shiftTypeColorCell"
     let localeID = Locale.preferredLanguages.first
     
-    
+    //MARK: ShiftTypeCreationView display function
     func showShiftTypeCreationViewInController(viewController: UIViewController) {
+        
+        shiftTypes = realm.objects(ShiftType.self)
         
         startTimePicker.datePickerMode = .time
         endTimePicker.datePickerMode = .time
@@ -52,7 +55,6 @@ class ShiftTypeCreationView: UIView {
         
         startTimePicker.addTarget(self, action: #selector(getStartTime), for: .valueChanged)
         endTimePicker.addTarget(self, action: #selector(getEndTime), for: .valueChanged)
-        
         
         self.frame.origin.x = (viewController.view.frame.width - 360) / 2
         self.frame.origin.y = viewController.view.frame.height
@@ -77,11 +79,17 @@ class ShiftTypeCreationView: UIView {
         hidingShiftTypeCreationView()
         getShiftType()
         
-        DispatchQueue.main.async {
-            StorageManager.saveShiftType(self.shiftType)
+        //MARK: Сhoose to save new or overwrite editable
+        if indexEditableType != nil {
+            DispatchQueue.main.async {
+                StorageManager.editShiftType(self.shiftTypes[self.indexEditableType], self.shiftType)
+            }
+        } else {
+            DispatchQueue.main.async {
+                StorageManager.saveShiftType(self.shiftType)
+            }
         }
     }
-    
 }
 
 

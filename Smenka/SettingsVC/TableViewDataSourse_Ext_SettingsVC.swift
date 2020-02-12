@@ -11,15 +11,19 @@ import UIKit
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        guard let shiftTypes = shiftTypes else { return 0 }
+        return shiftTypes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShiftTypeCell", for: indexPath) as! ShiftTypeTableViewCell
         
-        cell.typeNameLabel.text = "Test name"
-        cell.shiftTimeLabel.text = "From 10:00 to 19:00"
-        cell.typeColor.backgroundColor = .red
+        guard let shiftTypes = shiftTypes else { return cell }
+        let shiftType = shiftTypes[indexPath.row]
+        
+        cell.typeNameLabel.text = shiftType.shiftTypeName
+        cell.shiftTimeLabel.text = "Frome \(shiftType.startTime) to \(shiftType.endTime)"
+        cell.typeColor.backgroundColor = colors[shiftType.shiftColorIndex]
         cell.typeColor.layer.cornerRadius = 20
         
         return cell
@@ -33,5 +37,12 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+          
+          let editing = editingShiftType(at: indexPath)
+          let delete = deleteShiftType(at: indexPath)
+          
+          return UISwipeActionsConfiguration(actions: [delete, editing])
+      }
+
 }

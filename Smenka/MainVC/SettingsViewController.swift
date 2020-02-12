@@ -16,7 +16,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var shiftTypeTable: UITableView!
     @IBOutlet weak var blurEffect: UIVisualEffectView!
     
-    var shiftType: Results<ShiftType>!
+    var shiftTypes: Results<ShiftType>!
     
     
     override func viewDidLoad() {
@@ -25,7 +25,13 @@ class SettingsViewController: UIViewController {
         shiftTypeTable.delegate = self
         shiftTypeTable.dataSource = self
         
-        shiftType = realm.objects(ShiftType.self)
+        shiftTypes = realm.objects(ShiftType.self)
+    }
+    
+    //MARK: Reload shift type table after return from MainVC
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+            self.shiftTypeTable.reloadData()
     }
     
     

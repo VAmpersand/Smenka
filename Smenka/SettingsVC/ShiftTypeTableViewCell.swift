@@ -14,4 +14,7 @@ class ShiftTypeTableViewCell: UITableViewCell {
     @IBOutlet weak var shiftTimeLabel: UILabel!
     @IBOutlet weak var typeColor: UIImageView!
     
+    
+    
+    
 }

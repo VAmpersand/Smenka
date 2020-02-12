@@ -34,17 +34,13 @@ extension ShiftTypeCreationView: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! ShiftTypeColorCollectionVCell
-    
+        
         UIView.animate(withDuration: 0.7) {
             cell.blurEffect.alpha = 1
         }
         UIView.animate(withDuration: 1.3) {
             cell.blurEffect.alpha = 0
         }
-       
-        
-//        cell.colorImage.layer.borderWidth = 3
-//        cell.colorImage.layer.borderColor = (UIColor.lightGray).cgColor
 
         shiftType.shiftColorIndex = indexPath.row
     }
