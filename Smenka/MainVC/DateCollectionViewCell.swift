@@ -13,7 +13,7 @@ class DateCollectionViewCell: UICollectionViewCell {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet weak var shiftColorView: UIView!
     
-    func drowCircleForToday() {
+    func drowCircleForToday(color: UIColor) {
         
         let center = shiftColorView.center
         
@@ -21,14 +21,14 @@ class DateCollectionViewCell: UICollectionViewCell {
         
         let circleLayer = CAShapeLayer()
         circleLayer.path = circlePath.cgPath
-        circleLayer.strokeColor = UIColor.red.cgColor
+        circleLayer.strokeColor = color.cgColor
         circleLayer.lineWidth = 2
         circleLayer.strokeEnd = 0
         circleLayer.fillColor = UIColor.clear.cgColor
         circleLayer.lineCap = CAShapeLayerLineCap.round
         
         let animation = CABasicAnimation(keyPath: "strokeEnd")
-        animation.duration = 1.5
+        animation.duration = 0.5
         animation.toValue = 1
         animation.fillMode = CAMediaTimingFillMode.forwards
         animation.isRemovedOnCompletion = false

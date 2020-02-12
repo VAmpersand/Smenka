@@ -32,19 +32,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
         }
         
-        //MARK:  Set text color in dateLabel in cell
-        if  shift.shiftTypeIndex != 0 {
-            cell.dateLabel.textColor = .white
-        } else {
-            
-            //MARK:   Add weekend. Mark weekend in grey
-            switch indexPath.row {
-            case 5, 6, 12, 13, 19, 20, 26, 27, 33, 34:
-                    cell.dateLabel.textColor = .lightGray
-            default:
-                cell.dateLabel.textColor = .black
-            }
-        }
+        //  Set text color in dateLabel in cell
+        setColorInDateLableText(cell: cell, indexPath: indexPath, shift: shift)
         
         
         //MARK:  Hide empty cell's
@@ -57,10 +46,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         
-        //MARK:   Mark today in red circle
+        //MARK:   Mark today in circle
         if calcDate == todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
             cell.shiftColorView.isHidden = false
-            cell.drowCircleForToday()
         }
         
         
@@ -102,18 +90,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             DispatchQueue.main.async {
                 StorageManager.editShift(shift, newShift)
                 cell.backgroundColor = testColors[newShift.shiftTypeIndex]
-                if  newShift.shiftTypeIndex != 0 {
-                    cell.dateLabel.textColor = .white
-                } else {
-                    
-                    //  Add weekend. Mark weekend in grey
-                    switch indexPath.row {
-                    case 5, 6, 12, 13, 19, 20, 26, 27, 33, 34:
-                            cell.dateLabel.textColor = .lightGray
-                    default:
-                        cell.dateLabel.textColor = .black
-                    }
-                }
+                self.setColorInDateLableText(cell: cell, indexPath: indexPath, shift: newShift)
             }
         }
     }
@@ -134,4 +111,26 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         firstWeekDayOfMonth = getIndexFirstWeekDay(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
     }
+    
+    //MARK:  Set text color in dateLabel in cell
+    func setColorInDateLableText(cell: UICollectionViewCell, indexPath: IndexPath, shift: Shift) {
+        let cell = cell  as! DateCollectionViewCell
+        if  shift.shiftTypeIndex != 0 {
+            cell.dateLabel.textColor = .white
+            cell.drowCircleForToday(color: .white)
+        } else {
+            
+            //  Add weekend. Mark weekend in grey
+            switch indexPath.row {
+            case 5, 6, 12, 13, 19, 20, 26, 27, 33, 34:
+                cell.dateLabel.textColor = .lightGray
+            default:
+                cell.dateLabel.textColor = .black
+            }
+            cell.drowCircleForToday(color: .red)
+        }
+    }
 }
+
+
+
