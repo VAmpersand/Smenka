@@ -22,8 +22,8 @@ extension SettingsViewController  {
             
             // Set shift type parametr's when editing
             shiftTypeCreation.typeNameTextField.text = shiftType.shiftTypeName
-            shiftTypeCreation.startTimePicker.setDate(shiftType.startTime.timeStr!, animated: false)
-            shiftTypeCreation.endTimePicker.setDate(shiftType.endTime.timeStr!, animated: false)
+            shiftTypeCreation.startTimePicker.setDate(shiftType.startTime.roundedTimeStr!, animated: false)
+            shiftTypeCreation.endTimePicker.setDate(shiftType.endTime.roundedTimeStr!, animated: false)
             
             UIView.animate(withDuration: 1) {
                 self.blurEffect.alpha = 0.9

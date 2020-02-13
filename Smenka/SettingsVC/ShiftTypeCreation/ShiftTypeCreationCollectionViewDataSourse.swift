@@ -41,8 +41,8 @@ extension ShiftTypeCreationView: UICollectionViewDelegate, UICollectionViewDataS
         UIView.animate(withDuration: 1.3) {
             cell.blurEffect.alpha = 0
         }
-
-        shiftType.shiftColorIndex = indexPath.row
+        
+        selectedColorIndex = indexPath
     }
     
 }

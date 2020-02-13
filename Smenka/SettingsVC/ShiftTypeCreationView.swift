@@ -28,17 +28,18 @@ class ShiftTypeCreationView: UIView {
     @IBOutlet weak var cancelBatton: UIButton!
     @IBOutlet weak var saveBatton: UIButton!
     
-    let settingsVC = SettingsViewController()
+    
     var delegate: ShiftTypeCreationViewDelegate?
     var shiftTypes: Results<ShiftType>!
     
     var shiftType = ShiftType()
+    
     var startTime = Date().getTime()
     var endTime = Date().getTime()
+    var indexEditableType: IndexPath!  // Editing сheck
+    var selectedColorIndex: IndexPath! // Checking color selection
     
     //    var indicesSelectedColor: [Int] = []
-    
-    var indexEditableType: IndexPath!
     
     let reuseIdentifier = "shiftTypeColorCell"
     let localeID = Locale.preferredLanguages.first
@@ -76,7 +77,6 @@ class ShiftTypeCreationView: UIView {
     
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        hidingShiftTypeCreationView()
         getShiftType()
         
         //MARK: Сhoose to save new or overwrite editable
@@ -90,13 +90,14 @@ class ShiftTypeCreationView: UIView {
             }
         }
         delegate?.pushButton()
+        hidingShiftTypeCreationView()
     }
 }
 
 
 extension ShiftTypeCreationView {
     
-    // Hiding animation for ShiftTypeCreationView
+    //MARK: Hiding animation for ShiftTypeCreationView
     func hidingShiftTypeCreationView() {
         self.frame.origin.y = 85
         self.layer.cornerRadius = 15
@@ -108,10 +109,17 @@ extension ShiftTypeCreationView {
         }
     }
     
+    //MARK: Geting shiftType item
     func getShiftType() {
-        shiftType.shiftTypeName = typeNameTextField.text ?? "Default value"
+        shiftType.shiftTypeName = typeNameTextField.text ?? ""
         shiftType.startTime = startTime
         shiftType.endTime = endTime
+        
+        if selectedColorIndex != nil {
+            shiftType.shiftColorIndex = selectedColorIndex.row
+        } else if indexEditableType != nil {
+            shiftType.shiftColorIndex = shiftTypes[indexEditableType.row].shiftColorIndex
+        }
     }
     
     @objc func getStartTime() {

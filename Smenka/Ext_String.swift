@@ -24,15 +24,15 @@ extension String {
     }
     
     
-    static var timeFormatter: DateFormatter = {
+    static var roundedTimeFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.calendar = Calendar(identifier: .gregorian)
         formatter.dateFormat = "HH-mm"
         return formatter
     }()
     
-    var timeStr: Date? {
-        return String.timeFormatter.date(from: self)
+    var roundedTimeStr: Date? {
+        return String.roundedTimeFormatter.date(from: self)
     }
     
 }

@@ -30,13 +30,6 @@ class SettingsViewController: UIViewController {
         shiftTypes = realm.objects(ShiftType.self)
     }
     
-    //MARK: Reload shift type table after return from MainVC
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        self.shiftTypeTable.reloadData()
-    }
-    
-    
     @IBAction func screenModeToggle(_ sender: Any) {
         
     }
