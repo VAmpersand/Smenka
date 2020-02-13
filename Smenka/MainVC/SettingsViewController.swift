@@ -18,6 +18,8 @@ class SettingsViewController: UIViewController {
     
     var shiftTypes: Results<ShiftType>!
     
+    var currentIndexPath: IndexPath!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,7 @@ class SettingsViewController: UIViewController {
     //MARK: Reload shift type table after return from MainVC
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-            self.shiftTypeTable.reloadData()
+        self.shiftTypeTable.reloadData()
     }
     
     
@@ -55,6 +57,9 @@ extension SettingsViewController: ShiftTypeCreationViewDelegate {
     func pushButton() {
         UIView.animate(withDuration: 1) {
             self.blurEffect.alpha = 0
+        }
+        DispatchQueue.main.async {
+            self.shiftTypeTable.reloadData()
         }
     }
 }

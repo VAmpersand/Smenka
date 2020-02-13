@@ -21,8 +21,14 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         guard let shiftTypes = shiftTypes else { return cell }
         let shiftType = shiftTypes[indexPath.row]
         
-        cell.typeNameLabel.text = shiftType.shiftTypeName
-        cell.shiftTimeLabel.text = "Frome \(shiftType.startTime) to \(shiftType.endTime)"
+        if shiftType.shiftTypeName == "" {
+           cell.typeNameLabel.text = "From \(shiftType.startTime) to \(shiftType.endTime)"
+           cell.shiftTimeLabel.isHidden = true
+        } else {
+            cell.typeNameLabel.text = shiftType.shiftTypeName
+            cell.shiftTimeLabel.text = "From \(shiftType.startTime) to \(shiftType.endTime)"
+            cell.shiftTimeLabel.isHidden = false
+        }
         cell.typeColor.backgroundColor = colors[shiftType.shiftColorIndex]
         cell.typeColor.layer.cornerRadius = 20
         

@@ -28,6 +28,7 @@ class ShiftTypeCreationView: UIView {
     @IBOutlet weak var cancelBatton: UIButton!
     @IBOutlet weak var saveBatton: UIButton!
     
+    let settingsVC = SettingsViewController()
     var delegate: ShiftTypeCreationViewDelegate?
     var shiftTypes: Results<ShiftType>!
     
@@ -37,7 +38,7 @@ class ShiftTypeCreationView: UIView {
     
     //    var indicesSelectedColor: [Int] = []
     
-    var indexEditableType: Int!
+    var indexEditableType: IndexPath!
     
     let reuseIdentifier = "shiftTypeColorCell"
     let localeID = Locale.preferredLanguages.first
@@ -75,20 +76,20 @@ class ShiftTypeCreationView: UIView {
     
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        delegate?.pushButton()
         hidingShiftTypeCreationView()
         getShiftType()
         
         //MARK: Сhoose to save new or overwrite editable
         if indexEditableType != nil {
             DispatchQueue.main.async {
-                StorageManager.editShiftType(self.shiftTypes[self.indexEditableType], self.shiftType)
+                StorageManager.editShiftType(self.shiftTypes[self.indexEditableType.row], self.shiftType)
             }
         } else {
             DispatchQueue.main.async {
                 StorageManager.saveShiftType(self.shiftType)
             }
         }
+        delegate?.pushButton()
     }
 }
 

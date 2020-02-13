@@ -15,7 +15,8 @@ extension SettingsViewController  {
             
             let shiftTypeCreation = ShiftTypeCreationView.initShiftTypeCreationView(delegate: self)
             shiftTypeCreation.showShiftTypeCreationViewInController(viewController: self)
-            shiftTypeCreation.indexEditableType = indexPath.row
+            shiftTypeCreation.indexEditableType = indexPath
+            self.currentIndexPath = indexPath
             
             let shiftType = self.shiftTypes[indexPath.row]
             
