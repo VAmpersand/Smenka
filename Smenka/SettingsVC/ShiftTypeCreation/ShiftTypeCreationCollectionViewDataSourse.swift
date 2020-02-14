@@ -53,6 +53,7 @@ extension ShiftTypeCreationView: UICollectionViewDelegate, UICollectionViewDataS
                 cell.blurEffect.alpha = 0
             }
         }
+        
         selectedColorIndex = indexPath
     }
     

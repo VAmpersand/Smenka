@@ -117,6 +117,8 @@ extension ShiftTypeCreationView {
             shiftType.shiftColorIndex = selectedColorIndex.row
         } else if indexEditableType != nil {    // If editing
             shiftType.shiftColorIndex = shiftTypes[indexEditableType.row].shiftColorIndex
+        } else {
+            shiftType.shiftColorIndex = getColor()
         }
         
         if startTime != nil {                   // Picker use
@@ -132,7 +134,7 @@ extension ShiftTypeCreationView {
         } else if indexEditableType != nil {    // If editing
             shiftType.endTime = shiftTypes[indexEditableType.row].endTime
         } else {                                // If creation new item
-             shiftType.endTime = Date().getRoundedTime()
+            shiftType.endTime = Date().getRoundedTime()
         }
         
     }
@@ -143,6 +145,24 @@ extension ShiftTypeCreationView {
     
     @objc func getEndTime() {
         endTime = endTimePicker.date.getRoundedTime()
+    }
+    
+    func getColor() -> Int! {
+
+        var indexesIsMatch: [Bool] = [false, false, false, false, false, false,
+                                      false, false, false, false, false, false,
+                                      false, false, false, false, false, false,]
+        var setColorIndex = 0
+        
+        guard let shiftTypes = shiftTypes else { return setColorIndex }
+        
+            for shiftTipe in shiftTypes {
+                indexesIsMatch[shiftTipe.shiftColorIndex] = true
+        }
+
+        setColorIndex = indexesIsMatch.firstIndex(of: false) ?? 0
+
+        return setColorIndex
     }
 }
 

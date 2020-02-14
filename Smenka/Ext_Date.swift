@@ -35,7 +35,7 @@ extension Date {
         let minuteFormatter = DateFormatter()
         minuteFormatter.dateFormat = "mm"
         let minuteStr = minuteFormatter.string(from: self as Date)
-
+        
         let hourFormatter = DateFormatter()
         hourFormatter.dateFormat = "HH"
         let hourStr = hourFormatter.string(from: self as Date)
@@ -50,20 +50,8 @@ extension Date {
             hour = hourIntOpt ?? 0
         }
         
-        let remainderMinute = minuteInt % 15
-        let roundedMinute = Int(minuteInt / 15)
+        minute = Int(minuteInt / 15) * 15
 
-        if remainderMinute < 8 {
-            minute = roundedMinute * 15
-        } else if remainderMinute >= 8 {
-            if roundedMinute == 3 {
-                hour += 1
-            }
-            if roundedMinute == 0 {
-               minute = 15
-            }
-        }
-        
         if minute == 0{
             time = "\(hour)-00"
         } else {
