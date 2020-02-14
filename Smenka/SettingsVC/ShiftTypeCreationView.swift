@@ -34,8 +34,8 @@ class ShiftTypeCreationView: UIView {
     
     var shiftType = ShiftType()
     
-    var startTime = Date().getTime()
-    var endTime = Date().getTime()
+    var startTime: String!
+    var endTime: String!
     var indexEditableType: IndexPath!  // Editing сheck
     var selectedColorIndex: IndexPath! // Checking color selection
     
@@ -112,22 +112,37 @@ extension ShiftTypeCreationView {
     //MARK: Geting shiftType item
     func getShiftType() {
         shiftType.shiftTypeName = typeNameTextField.text ?? ""
-        shiftType.startTime = startTime
-        shiftType.endTime = endTime
         
         if selectedColorIndex != nil {
             shiftType.shiftColorIndex = selectedColorIndex.row
         } else if indexEditableType != nil {
             shiftType.shiftColorIndex = shiftTypes[indexEditableType.row].shiftColorIndex
         }
+        
+        if startTime != nil {
+            shiftType.startTime = startTime
+        } else if indexEditableType != nil {
+            shiftType.startTime = shiftTypes[indexEditableType.row].startTime
+        } else {
+            shiftType.startTime = Date().getRoundedTime()
+        }
+        
+        if endTime != nil {
+            shiftType.endTime = endTime
+        } else if indexEditableType != nil {
+            shiftType.endTime = shiftTypes[indexEditableType.row].endTime
+        } else {
+             shiftType.endTime = Date().getRoundedTime()
+        }
+        
     }
     
     @objc func getStartTime() {
-        startTime = startTimePicker.date.getTime()
+        startTime = startTimePicker.date.getRoundedTime()
     }
     
     @objc func getEndTime() {
-        endTime = endTimePicker.date.getTime()
+        endTime = endTimePicker.date.getRoundedTime()
     }
 }
 

@@ -23,10 +23,54 @@ extension Date {
         return Calendar.current.date(from: Calendar.current.dateComponents([.year,.month], from: self))!
     }
     
-    func getTime() -> String{
-           let formatter = DateFormatter()
-           formatter.dateFormat = "HH-mm"
-           let date = formatter.string(from: self as Date)
-           return date
-       }
+    //MARK: Get time for present in shiftTypeTable with rounded to 15 minute
+    func getRoundedTime() -> String{
+        
+        var minute = 0
+        var hour = 0
+        
+        var minuteInt = 0
+        var time = ""
+        
+        let minuteFormatter = DateFormatter()
+        minuteFormatter.dateFormat = "mm"
+        let minuteStr = minuteFormatter.string(from: self as Date)
+
+        let hourFormatter = DateFormatter()
+        hourFormatter.dateFormat = "HH"
+        let hourStr = hourFormatter.string(from: self as Date)
+        
+        let minuteIntOpt: Int?  = Int(minuteStr)
+        if minuteIntOpt != nil {
+            minuteInt = minuteIntOpt ?? 0
+            print(minute)
+        }
+        
+        let hourIntOpt: Int? = Int(hourStr)
+        if hourIntOpt != nil {
+            hour = hourIntOpt ?? 0
+            print(hour)
+        }
+        
+        let remainderMinute = minuteInt % 15
+        let roundedMinute = Int(minuteInt / 15)
+
+        if remainderMinute < 8 {
+            minute = roundedMinute * 15
+        } else if remainderMinute >= 8 {
+            if roundedMinute == 3 {
+                hour += 1
+            }
+            if roundedMinute == 0 {
+               minute = 15
+            }
+        }
+        
+        if minute == 0{
+            time = "\(hour)-00"
+        } else {
+            time = "\(hour)-\(minute)"
+        }
+        return time
+    }
 }
