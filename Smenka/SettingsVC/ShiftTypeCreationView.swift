@@ -113,25 +113,25 @@ extension ShiftTypeCreationView {
     func getShiftType() {
         shiftType.shiftTypeName = typeNameTextField.text ?? ""
         
-        if selectedColorIndex != nil {
+        if selectedColorIndex != nil {          // Color was select
             shiftType.shiftColorIndex = selectedColorIndex.row
-        } else if indexEditableType != nil {
+        } else if indexEditableType != nil {    // If editing
             shiftType.shiftColorIndex = shiftTypes[indexEditableType.row].shiftColorIndex
         }
         
-        if startTime != nil {
+        if startTime != nil {                   // Picker use
             shiftType.startTime = startTime
-        } else if indexEditableType != nil {
+        } else if indexEditableType != nil {    // If editing
             shiftType.startTime = shiftTypes[indexEditableType.row].startTime
-        } else {
+        } else {                                // If creation new item
             shiftType.startTime = Date().getRoundedTime()
         }
         
-        if endTime != nil {
+        if endTime != nil {                     // Picker use
             shiftType.endTime = endTime
-        } else if indexEditableType != nil {
+        } else if indexEditableType != nil {    // If editing
             shiftType.endTime = shiftTypes[indexEditableType.row].endTime
-        } else {
+        } else {                                // If creation new item
              shiftType.endTime = Date().getRoundedTime()
         }
         

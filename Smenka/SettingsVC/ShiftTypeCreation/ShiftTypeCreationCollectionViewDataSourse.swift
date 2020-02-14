@@ -27,6 +27,12 @@ extension ShiftTypeCreationView: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shiftTypeColorCell", for: indexPath) as! ShiftTypeColorCollectionVCell
+        
+        let colorWasUsed = colorCheckForUse(indexPath: indexPath)
+        if colorWasUsed {
+            cell.blurEffect.alpha = 1
+        }
+        
         cell.colorImage.backgroundColor = colors[indexPath.row]
         
         return cell
@@ -35,14 +41,31 @@ extension ShiftTypeCreationView: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! ShiftTypeColorCollectionVCell
         
-        UIView.animate(withDuration: 0.7) {
-            cell.blurEffect.alpha = 1
-        }
-        UIView.animate(withDuration: 1.3) {
-            cell.blurEffect.alpha = 0
-        }
         
+        let colorWasUsed = colorCheckForUse(indexPath: indexPath)
+        if colorWasUsed {
+            print("Color was used")
+        } else {
+            UIView.animate(withDuration: 0.7) {
+                cell.blurEffect.alpha = 1
+            }
+            UIView.animate(withDuration: 1.3) {
+                cell.blurEffect.alpha = 0
+            }
+        }
         selectedColorIndex = indexPath
     }
     
+    func colorCheckForUse(indexPath: IndexPath) -> Bool {
+        
+        var colorWasUsed = false
+        
+        guard let shiftTypes = shiftTypes else { return colorWasUsed }
+        for shiftTipe in shiftTypes {
+            if indexPath.row == shiftTipe.shiftColorIndex {
+                colorWasUsed = true
+            }
+        }
+        return colorWasUsed
+    }
 }

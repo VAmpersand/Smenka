@@ -43,13 +43,11 @@ extension Date {
         let minuteIntOpt: Int?  = Int(minuteStr)
         if minuteIntOpt != nil {
             minuteInt = minuteIntOpt ?? 0
-            print(minute)
         }
         
         let hourIntOpt: Int? = Int(hourStr)
         if hourIntOpt != nil {
             hour = hourIntOpt ?? 0
-            print(hour)
         }
         
         let remainderMinute = minuteInt % 15
