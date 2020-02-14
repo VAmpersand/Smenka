@@ -148,11 +148,13 @@ extension ShiftTypeCreationView {
     }
     
     func getColor() -> Int! {
-
-        var indexesIsMatch: [Bool] = [false, false, false, false, false, false,
-                                      false, false, false, false, false, false,
-                                      false, false, false, false, false, false,]
+        
+        var indexesIsMatch: [Bool] = []
         var setColorIndex = 0
+        
+        for _ in 0..<colors.count {
+            indexesIsMatch.append(false)
+        }
         
         guard let shiftTypes = shiftTypes else { return setColorIndex }
         
@@ -161,6 +163,7 @@ extension ShiftTypeCreationView {
         }
 
         setColorIndex = indexesIsMatch.firstIndex(of: false) ?? 0
+        print(indexesIsMatch)
 
         return setColorIndex
     }
