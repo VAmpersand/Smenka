@@ -21,9 +21,15 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         guard let shiftTypes = shiftTypes else { return cell }
         let shiftType = shiftTypes[indexPath.row]
         
+        if shiftType.shiftTypeName == "Clear shift type" {
+            cell.frame.size.height = 0
+        } else {
+            cell.frame.size.height = 50
+        }
+        
         if shiftType.shiftTypeName == "" {
-           cell.typeNameLabel.text = "From \(shiftType.startTime) to \(shiftType.endTime)"
-           cell.shiftTimeLabel.isHidden = true
+            cell.typeNameLabel.text = "From \(shiftType.startTime) to \(shiftType.endTime)"
+            cell.shiftTimeLabel.isHidden = true
         } else {
             cell.typeNameLabel.text = shiftType.shiftTypeName
             cell.shiftTimeLabel.text = "From \(shiftType.startTime) to \(shiftType.endTime)"
@@ -36,7 +42,14 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        var height: CGFloat = 50
+        
+        guard let shiftTypes = shiftTypes else { return height }
+        let shiftType = shiftTypes[indexPath.row]
+        if shiftType.shiftTypeName == "Clear shift type" {
+            height = 0
+        }
+        return height
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -44,11 +57,11 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-          
-          let editing = editingShiftType(at: indexPath)
-          let delete = deleteShiftType(at: indexPath)
-          
-          return UISwipeActionsConfiguration(actions: [delete, editing])
-      }
-
+        
+        let editing = editingShiftType(at: indexPath)
+        let delete = deleteShiftType(at: indexPath)
+        
+        return UISwipeActionsConfiguration(actions: [delete, editing])
+    }
+    
 }
