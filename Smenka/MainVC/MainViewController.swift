@@ -79,6 +79,10 @@ class MainViewController: UIViewController {
                 StorageManager.saveScheduleShift(scheduleShifts)
             }
         }
+        
+        if !checkTheShidtTypeForExistence(shiftTypes: shiftTypes, shiftTypeName: "Clear shift type") {
+            setFirstClearShiftType()
+        }
     }
     
     
@@ -175,6 +179,19 @@ class MainViewController: UIViewController {
     
     @IBAction func addStaff(_ sender: Any) {
         
+    }
+    
+    
+}
+extension MainViewController {
+    
+    func setFirstClearShiftType() {
+        let shiftType = ShiftType()
+        shiftType.shiftTypeName = "Clear shift type"
+        shiftType.shiftColorIndex = 18
+        DispatchQueue.main.async {
+            StorageManager.saveShiftType(shiftType)
+        }
     }
     
 }

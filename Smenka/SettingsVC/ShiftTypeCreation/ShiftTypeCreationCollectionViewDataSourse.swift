@@ -21,7 +21,7 @@ extension ShiftTypeCreationView: UICollectionViewDelegate, UICollectionViewDataS
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 18
+        return colors.count - 1
     }
     
     
