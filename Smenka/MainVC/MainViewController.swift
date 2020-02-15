@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var addStaffButton: UIButton!
     
     var schedulesShifts: Results<ScheduleShifts>!
-//    var shiftType: Results<ShiftType>!
+    var shiftTypes: Results<ShiftType>!
     var staff: Results<Staff>!
     
     var currentYear = 0
@@ -66,7 +66,7 @@ class MainViewController: UIViewController {
        
         
         schedulesShifts = realm.objects(ScheduleShifts.self)
-//        shiftType = realm.objects(ShiftType.self)
+        shiftTypes = realm.objects(ShiftType.self)
         staff = realm.objects(Staff.self)
             
         //MARK: Test creatng scheduleShifts

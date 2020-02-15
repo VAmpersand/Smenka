@@ -53,9 +53,11 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         
         //MARK:   Filling/display the calendar with shifts from the schedule
+        guard let shiftTipes = shiftTypes else { return cell }
         for scheduleShift in schedulesShifts {
             if scheduleShift.monthlyScheduleName == "\(currentYear)-\(currentMonthIndex)" {
-                cell.backgroundColor = testColors[scheduleShift.shifts[indexPath.row].shiftTypeIndex]
+                let shiftTypeIndex = scheduleShift.shifts[indexPath.row].shiftTypeIndex
+                cell.backgroundColor = colors[shiftTipes[shiftTypeIndex].shiftColorIndex]
             } else {
                 cell.backgroundColor = testColors[0]
             }
@@ -80,16 +82,17 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         //MARK: Change shift type index
         if editButtonPressCheck {
             
+            guard let shiftTipes = shiftTypes else { return }
             newShift.shiftTypeIndex = shift.shiftTypeIndex
             
             newShift.shiftTypeIndex += 1
-            if newShift.shiftTypeIndex == testColors.count {
+            if newShift.shiftTypeIndex == shiftTipes.count {
                 newShift.shiftTypeIndex = 0
             }
             
             DispatchQueue.main.async {
                 StorageManager.editShift(shift, newShift)
-                cell.backgroundColor = testColors[newShift.shiftTypeIndex]
+                cell.backgroundColor = colors[shiftTipes[newShift.shiftTypeIndex].shiftColorIndex]
                 self.setColorInDateLableText(cell: cell, indexPath: indexPath, shift: newShift)
             }
         }
