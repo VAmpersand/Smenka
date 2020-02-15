@@ -153,7 +153,7 @@ extension ShiftTypeCreationView {
         var indexesIsMatch: [Bool] = []
         var setColorIndex = 0
         
-        for _ in 0..<colors.count - 1 {
+        for _ in 0..<colors.count {
             indexesIsMatch.append(false)
         }
         

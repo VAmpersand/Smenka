@@ -61,7 +61,7 @@ class MainViewController: UIViewController {
         deleteButton.isHidden = true
         addStaffButton.isHidden = true
         
-        stuffShiftTableView.delegate = self
+        stuffShiftTableView.delegate = self 
         stuffShiftTableView.dataSource = self
         
         schedulesShifts = realm.objects(ScheduleShifts.self)
@@ -167,6 +167,8 @@ class MainViewController: UIViewController {
         removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
         
         calendarCollectionView.reloadData()
+        
+        
     }
     
     
