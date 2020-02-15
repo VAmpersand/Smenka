@@ -117,7 +117,7 @@ extension ShiftTypeCreationView {
             shiftType.shiftColorIndex = selectedColorIndex.row
         } else if indexEditableType != nil {    // If editing
             shiftType.shiftColorIndex = shiftTypes[indexEditableType.row].shiftColorIndex
-        } else {
+        } else {                                // If creation new item
             shiftType.shiftColorIndex = getColor()
         }
         
@@ -147,12 +147,13 @@ extension ShiftTypeCreationView {
         endTime = endTimePicker.date.getRoundedTime()
     }
     
+    //MARK: Consistent setting of free colors
     func getColor() -> Int! {
         
         var indexesIsMatch: [Bool] = []
         var setColorIndex = 0
         
-        for _ in 0..<colors.count {
+        for _ in 0..<colors.count - 1 {
             indexesIsMatch.append(false)
         }
         

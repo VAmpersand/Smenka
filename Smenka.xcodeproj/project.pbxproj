@@ -23,6 +23,7 @@
 		774A852E23E35C5C00A653A6 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A852D23E35C5C00A653A6 /* StorageManager.swift */; };
 		774F98D223F480D700596B08 /* TrailingSwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774F98D123F480D700596B08 /* TrailingSwipeAction.swift */; };
 		7783940223F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783940123F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift */; };
+		7783940423F8166F000BD2D4 /* RealmCascadeDeleteion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783940323F8166F000BD2D4 /* RealmCascadeDeleteion.swift */; };
 		7793C6F823E4BA8D0063BBA4 /* ShiftTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C6F723E4BA8D0063BBA4 /* ShiftTypeModel.swift */; };
 		7793C6FA23E840C00063BBA4 /* ScheduleShiftsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C6F923E840C00063BBA4 /* ScheduleShiftsModel.swift */; };
 		7793C6FE23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C6FD23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift */; };
@@ -65,6 +66,7 @@
 		774A852D23E35C5C00A653A6 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		774F98D123F480D700596B08 /* TrailingSwipeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingSwipeAction.swift; sourceTree = "<group>"; };
 		7783940123F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTheShiftTypeForExistence_Func.swift; sourceTree = "<group>"; };
+		7783940323F8166F000BD2D4 /* RealmCascadeDeleteion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCascadeDeleteion.swift; sourceTree = "<group>"; };
 		7793C6F723E4BA8D0063BBA4 /* ShiftTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeModel.swift; sourceTree = "<group>"; };
 		7793C6F923E840C00063BBA4 /* ScheduleShiftsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleShiftsModel.swift; sourceTree = "<group>"; };
 		7793C6FD23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEmptySchedaleShifts_Func.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				774A852D23E35C5C00A653A6 /* StorageManager.swift */,
+				7783940323F8166F000BD2D4 /* RealmCascadeDeleteion.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -168,12 +171,12 @@
 		7793C70523E9FBE50063BBA4 /* BusibessLogic */ = {
 			isa = PBXGroup;
 			children = (
-				7793C6FF23E9F5380063BBA4 /* GetIndexFirstWeekDay_Func.swift */,
 				7793C6FD23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift */,
 				7793C70123E9F6010063BBA4 /* CheckTheSchudaleForExistence_Func.swift */,
 				7793C70323E9FBD60063BBA4 /* CheckTheSchudaleForEmptiness_Func.swift */,
 				7793C70623EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift */,
 				7783940123F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift */,
+				7793C6FF23E9F5380063BBA4 /* GetIndexFirstWeekDay_Func.swift */,
 			);
 			path = BusibessLogic;
 			sourceTree = "<group>";
@@ -182,9 +185,9 @@
 			isa = PBXGroup;
 			children = (
 				774A850A23D76A8400A653A6 /* MainViewController.swift */,
+				7793C70823EDE3720063BBA4 /* TableViewDataSourse_Ext_MainVC.swift */,
 				774A852423E2103600A653A6 /* CollectionViewDataSourse_Ext_MainVC.swift */,
 				774A851A23D7712500A653A6 /* DateCollectionViewCell.swift */,
-				7793C70823EDE3720063BBA4 /* TableViewDataSourse_Ext_MainVC.swift */,
 				7793C70C23EDEF270063BBA4 /* StaffTableViewCell.swift */,
 			);
 			path = MainVC;
@@ -374,6 +377,7 @@
 				7783940223F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift in Sources */,
 				774A850723D76A8400A653A6 /* AppDelegate.swift in Sources */,
 				774A852923E3562900A653A6 /* ShiftModel.swift in Sources */,
+				7783940423F8166F000BD2D4 /* RealmCascadeDeleteion.swift in Sources */,
 				7793C70D23EDEF270063BBA4 /* StaffTableViewCell.swift in Sources */,
 				774A850923D76A8400A653A6 /* SceneDelegate.swift in Sources */,
 				7793C70F23EDF6760063BBA4 /* ShiftStaffModel.swift in Sources */,
