@@ -35,7 +35,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         //  Set text color in dateLabel in cell
         setColorInDateLableText(cell: cell, indexPath: indexPath, shift: shift)
         
-        
         //MARK:  Hide empty cell's
         if indexPath.item <= firstWeekDayOfMonth - 2 {
             cell.isHidden = true
@@ -45,12 +44,10 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.dateLabel.text = "\(calcDate)"
         }
         
-        
         //MARK:   Mark today in circle
         if calcDate == todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
             cell.shiftColorView.isHidden = false
         }
-        
         
         //MARK:   Filling/display the calendar with shifts from the schedule
         guard let shiftTipes = shiftTypes else { return cell }

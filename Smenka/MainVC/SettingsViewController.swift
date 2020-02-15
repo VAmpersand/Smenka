@@ -48,6 +48,7 @@ class SettingsViewController: UIViewController {
 extension SettingsViewController: ShiftTypeCreationViewDelegate {
     
     func pushButton() {
+        
         UIView.animate(withDuration: 1) {
             self.blurEffect.alpha = 0
         }

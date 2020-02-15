@@ -63,22 +63,10 @@ class MainViewController: UIViewController {
         
         stuffShiftTableView.delegate = self
         stuffShiftTableView.dataSource = self
-       
         
         schedulesShifts = realm.objects(ScheduleShifts.self)
         shiftTypes = realm.objects(ShiftType.self)
         staff = realm.objects(Staff.self)
-            
-        //MARK: Test creatng scheduleShifts
-        guard let schedulesShifts = schedulesShifts else { return }
-        let nameIsMatch = checkTheScheduleForExistence(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
-        
-        if  !nameIsMatch {
-            let scheduleShifts = setEmptyScheduleShifts(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
-            DispatchQueue.main.async {
-                StorageManager.saveScheduleShift(scheduleShifts)
-            }
-        }
         
         if !checkTheShidtTypeForExistence(shiftTypes: shiftTypes, shiftTypeName: "Clear shift type") {
             setFirstClearShiftType()
@@ -90,8 +78,7 @@ class MainViewController: UIViewController {
         super.viewWillAppear(true)
         
         // Leap year check before calendar display
-        didChangeMonth(monthIndex: currentMonth, year: currentYear)
-        
+        didChangeMonth(monthIndex: currentMonth, year: currentYear)        
     }
     
     
@@ -136,7 +123,7 @@ class MainViewController: UIViewController {
                 self.blurEffect.alpha = 0.9
             }
             
-            // Create empty schedulShifts if is has not been previously created
+            //MARK: Create empty schedulShifts if is has not been previously created
             guard let scheduleShifts = schedulesShifts else { return }
             let nameIsMatch = checkTheScheduleForExistence(schedulesShifts: scheduleShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
             
@@ -145,35 +132,41 @@ class MainViewController: UIViewController {
                 DispatchQueue.main.async {
                     StorageManager.saveScheduleShift(scheduleShifts)
                 }
-            }
-            
+            }    
         } else {
-            editButton.setTitle("Edit", for: .normal)
-            editButton.setTitleColor(.blue, for: .normal)
-            deleteButton.isHidden = true
-            addStaffButton.isHidden = true
+            self.editButton.setTitle("Edit", for: .normal)
+            self.editButton.setTitleColor(.blue, for: .normal)
+            self.deleteButton.isHidden = true
+            self.addStaffButton.isHidden = true
             UIView.animate(withDuration: 1) {
                 self.blurEffect.alpha = 0
             }
             
-           // Delete empty schedulShifts if is has not been previously edited
+            //MARK: Delete empty schedulShifts if is has not been previously edited
             guard let schedulesShifts = schedulesShifts else { return }
             let shiftIsEdited = checkTheScheduleForEmptiness(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
             
             if !shiftIsEdited {
-            removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
+                removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
             }
         }
     }
     
-    
+    //MARK: Delete current schedule shifts
     @IBAction func deleteCurrentScheduleShifts(_ sender: Any) {
+        editButtonPressCheck.toggle()
+        editButton.setTitle("Edit", for: .normal)
+        editButton.setTitleColor(.blue, for: .normal)
+        deleteButton.isHidden = true
+        addStaffButton.isHidden = true
+        UIView.animate(withDuration: 1) {
+            self.blurEffect.alpha = 0
+        }
         
         guard let schedulesShifts = schedulesShifts else { return }
-        DispatchQueue.main.async {
-            removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: self.currentYear, currentMonthIndex: self.currentMonthIndex)
-            self.calendarCollectionView.reloadData()
-        }
+        removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
+        
+        calendarCollectionView.reloadData()
     }
     
     

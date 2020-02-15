@@ -158,14 +158,11 @@ extension ShiftTypeCreationView {
         }
         
         guard let shiftTypes = shiftTypes else { return setColorIndex }
-        
         for shiftTipe in shiftTypes {
             indexesIsMatch[shiftTipe.shiftColorIndex] = true
         }
         
         setColorIndex = indexesIsMatch.firstIndex(of: false) ?? 0
-        print(indexesIsMatch)
-        
         return setColorIndex
     }
 }
