@@ -13,8 +13,8 @@ let months = ["January", "February", "March", "April",
               "May", "June", "July", "August", "September",
               "October", "November", "December"]
 
-let daysOfWeek = ["Mondey", "Thuesday","Wednesday", "Thursday",
-                  "Friday", "Saturday", "Sunday",]
+//let daysOfWeek = ["Mondey", "Thuesday","Wednesday", "Thursday",
+//                  "Friday", "Saturday", "Sunday",]
 
 var numbersOfDaysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 

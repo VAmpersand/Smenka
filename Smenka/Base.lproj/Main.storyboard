@@ -425,7 +425,9 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="sKE-0G-09i" secondAttribute="bottom" constant="7.5" id="0tm-uw-qYu"/>
                                                 <constraint firstItem="PGQ-mS-FAP" firstAttribute="leading" secondItem="sKE-0G-09i" secondAttribute="trailing" constant="10" id="cal-Wq-13r"/>
+                                                <constraint firstItem="sKE-0G-09i" firstAttribute="leading" secondItem="S20-ca-5p2" secondAttribute="leading" constant="10" id="kb0-Ba-n1n"/>
                                                 <constraint firstItem="sKE-0G-09i" firstAttribute="centerY" secondItem="PGQ-mS-FAP" secondAttribute="centerY" id="yzS-bc-qqt"/>
                                             </constraints>
                                         </tableViewCellContentView>

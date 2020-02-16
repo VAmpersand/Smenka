@@ -23,7 +23,6 @@ class StorageManager {
     static func removeScheduleShift(_ scheduleShifts: ScheduleShifts) {
         try! realm.write {
             realm.delete(scheduleShifts, cascading: true)
-//            realm.delete(scheduleShifts.shifts, cascading: true)
         }
     }
     

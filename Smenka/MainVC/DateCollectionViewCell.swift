@@ -11,7 +11,7 @@ import UIKit
 class DateCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var dateLabel: UILabel!
-    @IBOutlet weak var shiftColorView: UIView!
+    @IBOutlet var shiftColorView: UIView!
     
     func drowCircleForToday(color: UIColor) {
         

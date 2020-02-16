@@ -188,7 +188,7 @@ extension MainViewController {
             StorageManager.saveShiftType(shiftType)
         }
     }
-    
+  
 }
 
 

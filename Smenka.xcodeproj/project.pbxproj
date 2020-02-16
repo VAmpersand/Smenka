@@ -158,8 +158,6 @@
 				7793C70E23EDF6760063BBA4 /* ShiftStaffModel.swift */,
 				774A852A23E3572F00A653A6 /* StaffModel.swift */,
 				774A851C23D772C800A653A6 /* CalendarDataSourse.swift */,
-				774A852023E0CA2C00A653A6 /* Ext_String.swift */,
-				774A852223E0CA4100A653A6 /* Ext_Date.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +189,8 @@
 				7793C70623EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift */,
 				7783940123F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift */,
 				7793C6FF23E9F5380063BBA4 /* GetIndexFirstWeekDay_Func.swift */,
+				774A852023E0CA2C00A653A6 /* Ext_String.swift */,
+				774A852223E0CA4100A653A6 /* Ext_Date.swift */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
