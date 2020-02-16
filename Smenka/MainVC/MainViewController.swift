@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var blurEffect: UIVisualEffectView!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
-    @IBOutlet weak var addStaffButton: UIButton!
+
     
     var schedulesShifts: Results<ScheduleShifts>!
     var shiftTypes: Results<ShiftType>!
@@ -60,7 +60,6 @@ class MainViewController: UIViewController {
         calendarCollectionView.layer.cornerRadius = 15
         shiftTypeTable.layer.cornerRadius = 15
         deleteButton.isHidden = true
-        addStaffButton.isHidden = true
         
         shiftTypeTable.delegate = self 
         shiftTypeTable.dataSource = self
@@ -119,8 +118,6 @@ class MainViewController: UIViewController {
             editButton.setTitleColor(.white, for: .normal)
             deleteButton.isHidden = false
             deleteButton.setTitleColor(.white, for: .normal)
-            addStaffButton.isHidden = false
-            addStaffButton.setTitleColor(.white, for: .normal)
             UIView.animate(withDuration: 1) {
                 self.blurEffect.alpha = 0.9
             }
@@ -139,7 +136,6 @@ class MainViewController: UIViewController {
             self.editButton.setTitle("Edit", for: .normal)
             self.editButton.setTitleColor(.blue, for: .normal)
             self.deleteButton.isHidden = true
-            self.addStaffButton.isHidden = true
             UIView.animate(withDuration: 1) {
                 self.blurEffect.alpha = 0
             }
@@ -160,7 +156,6 @@ class MainViewController: UIViewController {
         editButton.setTitle("Edit", for: .normal)
         editButton.setTitleColor(.blue, for: .normal)
         deleteButton.isHidden = true
-        addStaffButton.isHidden = true
         UIView.animate(withDuration: 1) {
             self.blurEffect.alpha = 0
         }
@@ -171,15 +166,9 @@ class MainViewController: UIViewController {
         calendarCollectionView.reloadData()
         
         
-    }
-    
-    
-    @IBAction func addStaff(_ sender: Any) {
-        
-    }
-    
-    
+    }    
 }
+
 extension MainViewController {
     
     func setFirstClearShiftType() {
