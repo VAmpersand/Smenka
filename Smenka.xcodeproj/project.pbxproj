@@ -137,12 +137,10 @@
 				774A850823D76A8400A653A6 /* SceneDelegate.swift */,
 				774A852C23E3582400A653A6 /* Model */,
 				774A852F23E35EAC00A653A6 /* Manager */,
-				7793C70523E9FBE50063BBA4 /* BusibessLogic */,
+				7793C70523E9FBE50063BBA4 /* BusinessLogic */,
 				7793C71023EDFAA00063BBA4 /* MainVC */,
 				7793C71123EDFD780063BBA4 /* SettingsVC */,
 				7783940923F88A32000BD2D4 /* Alert's */,
-				774A852023E0CA2C00A653A6 /* Ext_String.swift */,
-				774A852223E0CA4100A653A6 /* Ext_Date.swift */,
 				774A850C23D76A8400A653A6 /* Main.storyboard */,
 				774A850F23D76A8500A653A6 /* Assets.xcassets */,
 				774A851123D76A8500A653A6 /* LaunchScreen.storyboard */,
@@ -160,6 +158,8 @@
 				7793C70E23EDF6760063BBA4 /* ShiftStaffModel.swift */,
 				774A852A23E3572F00A653A6 /* StaffModel.swift */,
 				774A851C23D772C800A653A6 /* CalendarDataSourse.swift */,
+				774A852023E0CA2C00A653A6 /* Ext_String.swift */,
+				774A852223E0CA4100A653A6 /* Ext_Date.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,7 +182,7 @@
 			path = "Alert's";
 			sourceTree = "<group>";
 		};
-		7793C70523E9FBE50063BBA4 /* BusibessLogic */ = {
+		7793C70523E9FBE50063BBA4 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
 				7793C6FD23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift */,
@@ -192,7 +192,7 @@
 				7783940123F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift */,
 				7793C6FF23E9F5380063BBA4 /* GetIndexFirstWeekDay_Func.swift */,
 			);
-			path = BusibessLogic;
+			path = BusinessLogic;
 			sourceTree = "<group>";
 		};
 		7793C71023EDFAA00063BBA4 /* MainVC */ = {

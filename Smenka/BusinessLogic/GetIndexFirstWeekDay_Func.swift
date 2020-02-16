@@ -14,3 +14,4 @@ func getIndexFirstWeekDay(currentYear: Int, currentMonthIndex: Int ) -> Int {
     let day = (date.dateStr?.firstDayOfTheMonth.weekday)!
     return day
 }
+
