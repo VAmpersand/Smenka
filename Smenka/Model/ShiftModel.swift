@@ -12,7 +12,7 @@ class Shift: Object {
     
     @objc dynamic var shiftDate = Date()
     @objc dynamic var shiftTypeIndex = 0
-    var shiftStaff: List<ShiftStaff>!
+    var shiftStaff = List<ShiftStaff>()
 
     override var description: String {
         return "Date - \(shiftDate), type index - \(shiftTypeIndex)"

@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/viktor/Developer/Smenka/Smenka/SettingsVC/ShiftTypeCreationView.swift">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/viktor/Developer/Smenka/Smenka/MainVC/SettingsViewController.swift">
-   </FileRef>
-   <FileRef
       location = "group:Smenka.xcodeproj">
    </FileRef>
    <FileRef
