@@ -12,12 +12,12 @@ import RealmSwift
 class MainViewController: UIViewController {
     
     @IBOutlet var calendarCollectionView: UICollectionView!
-    @IBOutlet weak var shiftTypeTable: UITableView!
+    @IBOutlet var shiftTypeTable: UITableView!
     
     @IBOutlet var monthLabel: UILabel!
-    @IBOutlet weak var blurEffect: UIVisualEffectView!
-    @IBOutlet weak var editButton: UIButton!
-    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet var blurEffect: UIVisualEffectView!
+    @IBOutlet var editButton: UIButton!
+    @IBOutlet var deleteButton: UIButton!
     
     
     var schedulesShifts: Results<ScheduleShifts>!
@@ -147,7 +147,8 @@ class MainViewController: UIViewController {
             if !shiftIsEdited {
                 removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
             }
-            showMessageView()
+           
+            showMessageView(text: "The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in <UIKitCore/UIView.h> may also be helpful.")
             
         }
     }
@@ -182,13 +183,14 @@ extension MainViewController {
         }
     }
     
-    func showMessageView() {
+    func showMessageView(text: String) {
         let alertView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alertView") as! AlertView
-        
+
         self.addChild(alertView)
         alertView.view.frame = self.view.frame
         self.view.addSubview(alertView.view)
         alertView.didMove(toParent: self)
+        alertView.textMessageLabel.text = text
     }
 }
 

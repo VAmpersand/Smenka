@@ -550,10 +550,10 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oNc-Tb-k87">
-                                <rect key="frame" x="82" y="385" width="250" height="136"/>
+                                <rect key="frame" x="72" y="368" width="270" height="170"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thr-Fl-xr6">
-                                        <rect key="frame" x="10" y="10" width="230" height="87"/>
+                                        <rect key="frame" x="10" y="10" width="250" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="87" id="F2K-3W-hfT"/>
                                         </constraints>
@@ -562,26 +562,27 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4FP-Pg-8yN">
-                                        <rect key="frame" x="90.5" y="98" width="69" height="30"/>
+                                        <rect key="frame" x="100.5" y="130" width="69" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="69" id="fkP-De-S4b"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="69" id="fkP-De-S4b"/>
                                             <constraint firstAttribute="height" constant="30" id="ysq-1f-vQq"/>
                                         </constraints>
                                         <state key="normal" title="OK"/>
                                         <connections>
-                                            <action selector="okButton:" destination="mLa-UX-tx8" eventType="touchUpInside" id="kKJ-an-BQh"/>
+                                            <action selector="okButtonPressed:" destination="mLa-UX-tx8" eventType="touchUpInside" id="kKJ-an-BQh"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="4FP-Pg-8yN" firstAttribute="centerX" secondItem="oNc-Tb-k87" secondAttribute="centerX" id="5at-ZR-b7C"/>
-                                    <constraint firstAttribute="trailing" secondItem="Thr-Fl-xr6" secondAttribute="trailing" constant="10" id="6Lp-qu-Rob"/>
-                                    <constraint firstAttribute="width" constant="250" id="Cn3-9m-z6v"/>
-                                    <constraint firstItem="Thr-Fl-xr6" firstAttribute="leading" secondItem="oNc-Tb-k87" secondAttribute="leading" constant="10" id="N1Z-Do-GQY"/>
-                                    <constraint firstAttribute="bottom" secondItem="4FP-Pg-8yN" secondAttribute="bottom" constant="8" id="sXZ-nv-TuG"/>
-                                    <constraint firstItem="Thr-Fl-xr6" firstAttribute="top" secondItem="oNc-Tb-k87" secondAttribute="top" constant="10" id="wGV-qs-2a2"/>
-                                    <constraint firstAttribute="height" constant="136" id="x4d-wS-VbO"/>
+                                    <constraint firstItem="Thr-Fl-xr6" firstAttribute="top" secondItem="oNc-Tb-k87" secondAttribute="top" constant="10" id="BVV-PJ-WYC"/>
+                                    <constraint firstAttribute="width" constant="270" id="Cn3-9m-z6v"/>
+                                    <constraint firstItem="Thr-Fl-xr6" firstAttribute="leading" secondItem="oNc-Tb-k87" secondAttribute="leading" constant="10" id="GZ2-3j-A03"/>
+                                    <constraint firstAttribute="trailing" secondItem="Thr-Fl-xr6" secondAttribute="trailing" constant="10" id="JxZ-KK-iBN"/>
+                                    <constraint firstItem="4FP-Pg-8yN" firstAttribute="top" secondItem="Thr-Fl-xr6" secondAttribute="bottom" constant="10" id="Mrr-6A-47l"/>
+                                    <constraint firstItem="4FP-Pg-8yN" firstAttribute="centerX" secondItem="oNc-Tb-k87" secondAttribute="centerX" id="Mvb-ea-BQf"/>
+                                    <constraint firstAttribute="bottom" secondItem="4FP-Pg-8yN" secondAttribute="bottom" constant="10" id="wHC-tm-I7t"/>
+                                    <constraint firstAttribute="height" constant="170" id="x4d-wS-VbO"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -589,22 +590,23 @@
                         <constraints>
                             <constraint firstItem="95m-KC-J8I" firstAttribute="trailing" secondItem="vYG-gV-e1Y" secondAttribute="trailing" id="2aq-Nf-Abc"/>
                             <constraint firstItem="vYG-gV-e1Y" firstAttribute="bottom" secondItem="95m-KC-J8I" secondAttribute="bottom" constant="34" id="F6P-3o-Xby"/>
+                            <constraint firstItem="oNc-Tb-k87" firstAttribute="centerX" secondItem="95m-KC-J8I" secondAttribute="centerX" id="Soe-X4-TDz"/>
                             <constraint firstItem="vYG-gV-e1Y" firstAttribute="leading" secondItem="95m-KC-J8I" secondAttribute="leading" id="UHm-yj-rPB"/>
-                            <constraint firstItem="oNc-Tb-k87" firstAttribute="centerY" secondItem="95m-KC-J8I" secondAttribute="centerY" id="Xgo-Rh-sLq"/>
                             <constraint firstItem="95m-KC-J8I" firstAttribute="top" secondItem="vYG-gV-e1Y" secondAttribute="top" constant="44" id="c5K-sY-5MQ"/>
-                            <constraint firstItem="oNc-Tb-k87" firstAttribute="centerX" secondItem="95m-KC-J8I" secondAttribute="centerX" id="hwF-ba-kfA"/>
+                            <constraint firstItem="oNc-Tb-k87" firstAttribute="centerY" secondItem="95m-KC-J8I" secondAttribute="centerY" id="kjH-Mx-0nz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="95m-KC-J8I"/>
                     </view>
                     <connections>
                         <outlet property="blurEffect" destination="vYG-gV-e1Y" id="okq-Ou-loV"/>
-                        <outlet property="messageView" destination="Thr-Fl-xr6" id="B6f-nK-gMM"/>
+                        <outlet property="messageView" destination="oNc-Tb-k87" id="8T2-XW-pQU"/>
+                        <outlet property="okButton" destination="4FP-Pg-8yN" id="Id3-9D-wXV"/>
                         <outlet property="textMessageLabel" destination="Thr-Fl-xr6" id="Jfm-y1-klg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cA4-m6-xUZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1973.913043478261" y="844.41964285714278"/>
+            <point key="canvasLocation" x="1974" y="795"/>
         </scene>
     </scenes>
     <resources>
