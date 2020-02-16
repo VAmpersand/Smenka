@@ -57,3 +57,18 @@ extension SettingsViewController: ShiftTypeCreationViewDelegate {
         }
     }
 }
+
+extension SettingsViewController {
+    
+    func showMessageView() {
+        let alertView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alertView") as! AlertView 
+        
+        self.addChild(alertView) // 2
+        alertView.view.frame = self.view.frame
+        self.view.addSubview(alertView.view)
+        
+        alertView.didMove(toParent: self)
+        
+        
+    }
+}

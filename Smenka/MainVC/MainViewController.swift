@@ -18,11 +18,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var blurEffect: UIVisualEffectView!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
-
+    
     
     var schedulesShifts: Results<ScheduleShifts>!
     var shiftTypes: Results<ShiftType>!
-//    var staff: Results<Staff>!
+    //    var staff: Results<Staff>!
     
     var currentYear = 0
     var presentYear = 0
@@ -66,7 +66,7 @@ class MainViewController: UIViewController {
         
         schedulesShifts = realm.objects(ScheduleShifts.self)
         shiftTypes = realm.objects(ShiftType.self)
-//        staff = realm.objects(Staff.self)
+        //        staff = realm.objects(Staff.self)
         
         if !checkTheShidtTypeForExistence(shiftTypes: shiftTypes, shiftTypeName: "Clear shift type") {
             setFirstClearShiftType()
@@ -147,6 +147,8 @@ class MainViewController: UIViewController {
             if !shiftIsEdited {
                 removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
             }
+            showMessageView()
+            
         }
     }
     
@@ -179,7 +181,15 @@ extension MainViewController {
             StorageManager.saveShiftType(shiftType)
         }
     }
-  
+    
+    func showMessageView() {
+        let alertView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alertView") as! AlertView
+        
+        self.addChild(alertView)
+        alertView.view.frame = self.view.frame
+        self.view.addSubview(alertView.view)
+        alertView.didMove(toParent: self)
+    }
 }
 
 

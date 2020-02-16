@@ -24,7 +24,6 @@
 		774F98D223F480D700596B08 /* TrailingSwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774F98D123F480D700596B08 /* TrailingSwipeAction.swift */; };
 		7783940223F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783940123F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift */; };
 		7783940423F8166F000BD2D4 /* RealmCascadeDeleteion_Ext_Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783940323F8166F000BD2D4 /* RealmCascadeDeleteion_Ext_Realm.swift */; };
-		7783940623F889FE000BD2D4 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7783940523F889FE000BD2D4 /* AlertView.xib */; };
 		7783940823F88A22000BD2D4 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783940723F88A22000BD2D4 /* AlertView.swift */; };
 		7793C6F823E4BA8D0063BBA4 /* ShiftTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C6F723E4BA8D0063BBA4 /* ShiftTypeModel.swift */; };
 		7793C6FA23E840C00063BBA4 /* ScheduleShiftsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C6F923E840C00063BBA4 /* ScheduleShiftsModel.swift */; };
@@ -69,7 +68,6 @@
 		774F98D123F480D700596B08 /* TrailingSwipeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingSwipeAction.swift; sourceTree = "<group>"; };
 		7783940123F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTheShiftTypeForExistence_Func.swift; sourceTree = "<group>"; };
 		7783940323F8166F000BD2D4 /* RealmCascadeDeleteion_Ext_Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCascadeDeleteion_Ext_Realm.swift; sourceTree = "<group>"; };
-		7783940523F889FE000BD2D4 /* AlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 		7783940723F88A22000BD2D4 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		7793C6F723E4BA8D0063BBA4 /* ShiftTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeModel.swift; sourceTree = "<group>"; };
 		7793C6F923E840C00063BBA4 /* ScheduleShiftsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleShiftsModel.swift; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				7783940723F88A22000BD2D4 /* AlertView.swift */,
-				7783940523F889FE000BD2D4 /* AlertView.xib */,
 			);
 			path = "Alert's";
 			sourceTree = "<group>";
@@ -311,7 +308,6 @@
 				7793C72923F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib in Resources */,
 				774A851323D76A8500A653A6 /* LaunchScreen.storyboard in Resources */,
 				774A851023D76A8500A653A6 /* Assets.xcassets in Resources */,
-				7783940623F889FE000BD2D4 /* AlertView.xib in Resources */,
 				7793C71B23F05FC70063BBA4 /* ShiftTypeCreationView.xib in Resources */,
 				774A850E23D76A8400A653A6 /* Main.storyboard in Resources */,
 			);
