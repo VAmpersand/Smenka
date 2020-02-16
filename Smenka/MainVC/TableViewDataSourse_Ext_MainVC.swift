@@ -11,31 +11,53 @@ import UIKit
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        let staffCount = 5
-    
-        return staffCount
+        guard let shiftTypes = shiftTypes else { return 0 }
+        return shiftTypes.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! StaffTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ShiftTypeCell
         
-        cell.staffLable.text = "Test staff"
-        cell.staffShiftColor.backgroundColor = .red
-        cell.staffShiftColor.layer.cornerRadius = 20
+        guard let shiftTypes = shiftTypes else { return cell }
+        let shiftType = shiftTypes[indexPath.row]
+        
+        if shiftType.shiftTypeName == "Clear shift type" {
+            cell.frame.size.height = 0
+        } else {
+            cell.frame.size.height = 50
+        }
+        
+        if shiftType.shiftTypeName == "" {
+            cell.typeNameLabel.text = "From \(shiftType.startTime) to \(shiftType.endTime)"
+            cell.shiftTimeLabel.isHidden = true
+        } else {
+            cell.typeNameLabel.text = shiftType.shiftTypeName
+            cell.shiftTimeLabel.text = "From \(shiftType.startTime) to \(shiftType.endTime)"
+            cell.shiftTimeLabel.isHidden = false
+        }
+        cell.typeColor.backgroundColor = colors[shiftType.shiftColorIndex]
+        cell.typeColor.layer.cornerRadius = 20
         
         return cell
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        var height: CGFloat = 50
+        
+        guard let shiftTypes = shiftTypes else { return height }
+        let shiftType = shiftTypes[indexPath.row]
+        if shiftType.shiftTypeName == "Clear shift type" {
+            height = 0
+        }
+        return height
     }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-    
 }
+
+

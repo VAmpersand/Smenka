@@ -12,7 +12,7 @@ import RealmSwift
 class MainViewController: UIViewController {
     
     @IBOutlet var calendarCollectionView: UICollectionView!
-    @IBOutlet weak var stuffShiftTableView: UITableView!
+    @IBOutlet weak var shiftTypeTable: UITableView!
     
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet weak var blurEffect: UIVisualEffectView!
@@ -22,7 +22,7 @@ class MainViewController: UIViewController {
     
     var schedulesShifts: Results<ScheduleShifts>!
     var shiftTypes: Results<ShiftType>!
-    var staff: Results<Staff>!
+//    var staff: Results<Staff>!
     
     var currentYear = 0
     var presentYear = 0
@@ -36,6 +36,7 @@ class MainViewController: UIViewController {
     var todaysDate = 0
     
     var editButtonPressCheck = false
+    var currentIndexPath: IndexPath!
     
     
     override func viewDidLoad() {
@@ -57,16 +58,16 @@ class MainViewController: UIViewController {
         monthLabel.text="\(months[currentMonth]) \(currentYear)"
         
         calendarCollectionView.layer.cornerRadius = 15
-        stuffShiftTableView.layer.cornerRadius = 15
+        shiftTypeTable.layer.cornerRadius = 15
         deleteButton.isHidden = true
         addStaffButton.isHidden = true
         
-        stuffShiftTableView.delegate = self 
-        stuffShiftTableView.dataSource = self
+        shiftTypeTable.delegate = self 
+        shiftTypeTable.dataSource = self
         
         schedulesShifts = realm.objects(ScheduleShifts.self)
         shiftTypes = realm.objects(ShiftType.self)
-        staff = realm.objects(Staff.self)
+//        staff = realm.objects(Staff.self)
         
         if !checkTheShidtTypeForExistence(shiftTypes: shiftTypes, shiftTypeName: "Clear shift type") {
             setFirstClearShiftType()
@@ -78,7 +79,8 @@ class MainViewController: UIViewController {
         super.viewWillAppear(true)
         
         // Leap year check before calendar display
-        didChangeMonth(monthIndex: currentMonth, year: currentYear)        
+        didChangeMonth(monthIndex: currentMonth, year: currentYear)
+        shiftTypeTable.reloadData()
     }
     
     

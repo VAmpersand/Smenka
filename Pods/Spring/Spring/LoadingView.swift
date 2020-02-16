@@ -68,7 +68,7 @@ public extension UIView {
         })
     }
 
-    func deLoading() {
+    func hideLoading() {
 
         if let loadingXibView = self.viewWithTag(LoadingViewConstants.Tag) {
             loadingXibView.alpha = 1

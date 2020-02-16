@@ -34,7 +34,7 @@
 		7793C70423E9FBD60063BBA4 /* CheckTheSchudaleForEmptiness_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C70323E9FBD60063BBA4 /* CheckTheSchudaleForEmptiness_Func.swift */; };
 		7793C70723EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C70623EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift */; };
 		7793C70923EDE3720063BBA4 /* TableViewDataSourse_Ext_MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C70823EDE3720063BBA4 /* TableViewDataSourse_Ext_MainVC.swift */; };
-		7793C70D23EDEF270063BBA4 /* StaffTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C70C23EDEF270063BBA4 /* StaffTableViewCell.swift */; };
+		7793C70D23EDEF270063BBA4 /* ShiftTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C70C23EDEF270063BBA4 /* ShiftTypeCell.swift */; };
 		7793C70F23EDF6760063BBA4 /* ShiftStaffModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C70E23EDF6760063BBA4 /* ShiftStaffModel.swift */; };
 		7793C71323F045E40063BBA4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C71223F045E30063BBA4 /* SettingsViewController.swift */; };
 		7793C71523F04A960063BBA4 /* TableViewDataSourse_Ext_SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C71423F04A960063BBA4 /* TableViewDataSourse_Ext_SettingsVC.swift */; };
@@ -79,7 +79,7 @@
 		7793C70323E9FBD60063BBA4 /* CheckTheSchudaleForEmptiness_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTheSchudaleForEmptiness_Func.swift; sourceTree = "<group>"; };
 		7793C70623EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveScheduleShifts_Func.swift; sourceTree = "<group>"; };
 		7793C70823EDE3720063BBA4 /* TableViewDataSourse_Ext_MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourse_Ext_MainVC.swift; sourceTree = "<group>"; };
-		7793C70C23EDEF270063BBA4 /* StaffTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffTableViewCell.swift; sourceTree = "<group>"; };
+		7793C70C23EDEF270063BBA4 /* ShiftTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeCell.swift; sourceTree = "<group>"; };
 		7793C70E23EDF6760063BBA4 /* ShiftStaffModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftStaffModel.swift; sourceTree = "<group>"; };
 		7793C71223F045E30063BBA4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = /Users/viktor/Developer/Smenka/Smenka/MainVC/SettingsViewController.swift; sourceTree = "<absolute>"; };
 		7793C71423F04A960063BBA4 /* TableViewDataSourse_Ext_SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourse_Ext_SettingsVC.swift; sourceTree = "<group>"; };
@@ -199,10 +199,10 @@
 			isa = PBXGroup;
 			children = (
 				774A850A23D76A8400A653A6 /* MainViewController.swift */,
-				7793C70823EDE3720063BBA4 /* TableViewDataSourse_Ext_MainVC.swift */,
 				774A852423E2103600A653A6 /* CollectionViewDataSourse_Ext_MainVC.swift */,
 				774A851A23D7712500A653A6 /* DateCollectionViewCell.swift */,
-				7793C70C23EDEF270063BBA4 /* StaffTableViewCell.swift */,
+				7793C70823EDE3720063BBA4 /* TableViewDataSourse_Ext_MainVC.swift */,
+				7793C70C23EDEF270063BBA4 /* ShiftTypeCell.swift */,
 			);
 			path = MainVC;
 			sourceTree = "<group>";
@@ -394,7 +394,7 @@
 				774A850723D76A8400A653A6 /* AppDelegate.swift in Sources */,
 				774A852923E3562900A653A6 /* ShiftModel.swift in Sources */,
 				7783940423F8166F000BD2D4 /* RealmCascadeDeleteion_Ext_Realm.swift in Sources */,
-				7793C70D23EDEF270063BBA4 /* StaffTableViewCell.swift in Sources */,
+				7793C70D23EDEF270063BBA4 /* ShiftTypeCell.swift in Sources */,
 				774A850923D76A8400A653A6 /* SceneDelegate.swift in Sources */,
 				7793C70F23EDF6760063BBA4 /* ShiftStaffModel.swift in Sources */,
 			);
