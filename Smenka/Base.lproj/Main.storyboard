@@ -531,7 +531,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSn-lX-6Be" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046.376811594203" y="104.46428571428571"/>
+            <point key="canvasLocation" x="1268" y="104"/>
         </scene>
         <!--Validation Check Removal View-->
         <scene sceneID="SVU-aM-o53">
@@ -624,7 +624,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cA4-m6-xUZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1974" y="795"/>
+            <point key="canvasLocation" x="1974" y="769"/>
         </scene>
     </scenes>
     <resources>

@@ -39,8 +39,6 @@ class ShiftTypeCreationView: UIView {
     var indexEditableType: IndexPath!  // Editing сheck
     var selectedColorIndex: IndexPath! // Checking color selection
     
-    //    var indicesSelectedColor: [Int] = []
-    
     let reuseIdentifier = "shiftTypeColorCell"
     let localeID = Locale.preferredLanguages.first
     

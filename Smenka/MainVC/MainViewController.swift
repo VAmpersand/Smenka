@@ -19,8 +19,6 @@ class MainViewController: UIViewController {
     @IBOutlet var editButton: UIButton!
     @IBOutlet var deleteButton: UIButton!
     
-    let validationCheckRemovalView = ValidationCheckRemovalView()
-    
     var schedulesShifts: Results<ScheduleShifts>!
     var shiftTypes: Results<ShiftType>!
     //    var staff: Results<Staff>!
@@ -65,12 +63,10 @@ class MainViewController: UIViewController {
         shiftTypeTable.delegate = self 
         shiftTypeTable.dataSource = self
         
-        validationCheckRemovalView.delegate = self
-        
         schedulesShifts = realm.objects(ScheduleShifts.self)
         shiftTypes = realm.objects(ShiftType.self)
         //        staff = realm.objects(Staff.self)
-
+        
     }
     
     
@@ -80,6 +76,7 @@ class MainViewController: UIViewController {
         // Leap year check before calendar display
         didChangeMonth(monthIndex: currentMonth, year: currentYear)
         shiftTypeTable.reloadData()
+        calendarCollectionView.reloadData()
     }
     
     
@@ -147,7 +144,7 @@ class MainViewController: UIViewController {
             if !shiftIsEdited {
                 removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
             }
-
+            
         }
     }
     
@@ -157,18 +154,19 @@ class MainViewController: UIViewController {
         showMessageView(text: "Are you sure you want to delete the shift schedule for \(months[currentMonth]) \(currentYear)")
     }
     
-    
-    
     func showMessageView(text: String) {
-        let alertView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "validationCheckRemovalView") as! ValidationCheckRemovalView
         
-        self.addChild(alertView)
-        alertView.view.frame = self.view.frame
-        self.view.addSubview(alertView.view)
-        alertView.didMove(toParent: self)
-        alertView.textMessageLabel.text = text
+        let validationCheckRemovalView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "validationCheckRemovalView") as! ValidationCheckRemovalView
+        validationCheckRemovalView.delegate = self
+        
+        self.addChild(validationCheckRemovalView)
+        validationCheckRemovalView.view.frame = self.view.frame
+        self.view.addSubview(validationCheckRemovalView.view)
+        validationCheckRemovalView.didMove(toParent: self)
+        validationCheckRemovalView.textMessageLabel.text = text
     }
     
+    //MARK: Creation clear shiftType for day withaut shift
     func setFirstClearShiftType() {
         let shiftType = ShiftType()
         shiftType.shiftTypeName = "Clear shift type"
@@ -182,20 +180,22 @@ class MainViewController: UIViewController {
 extension MainViewController: ButtonDelegate {
     
     func okButtonPressed() {
-         
-             editButtonPressCheck.toggle()
-             editButton.setTitle("Edit", for: .normal)
-             editButton.setTitleColor(.blue, for: .normal)
-             deleteButton.isHidden = true
-             UIView.animate(withDuration: 1) {
-                 self.blurEffect.alpha = 0
-             }
-             
-             guard let schedulesShifts = schedulesShifts else { return }
-             removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
-             
-             calendarCollectionView.reloadData()
-     }
+        
+        editButtonPressCheck.toggle()
+        editButton.setTitle("Edit", for: .normal)
+        editButton.setTitleColor(.blue, for: .normal)
+        deleteButton.isHidden = true
+        UIView.animate(withDuration: 1) {
+            self.blurEffect.alpha = 0
+        }
+        
+        guard let schedulesShifts = schedulesShifts else { return }
+        DispatchQueue.main.async {
+            removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: self.currentYear, currentMonthIndex: self.currentMonthIndex)
+              self.calendarCollectionView.reloadData()
+        }
+        self.calendarCollectionView.reloadData()
+    }
 }
 
 

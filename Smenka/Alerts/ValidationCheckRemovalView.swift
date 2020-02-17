@@ -13,7 +13,7 @@ protocol  ButtonDelegate {
 }
 
 class ValidationCheckRemovalView: UIViewController {
-    
+        
     @IBOutlet var messageView: UIView!
     @IBOutlet var textMessageLabel: UILabel!
     @IBOutlet var okButton: UIButton!
@@ -67,7 +67,7 @@ class ValidationCheckRemovalView: UIViewController {
             self.view.transform = CGAffineTransform(scaleX: 1.35, y: 1.35)
             self.view.alpha = 0
             self.blurEffect.alpha = 0
-        }) { _ in
+        }){ _ in
             self.view.removeFromSuperview()
         }
     }
