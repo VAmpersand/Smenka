@@ -21,12 +21,12 @@ class ShiftTypeCreationView: UIView {
         return shiftTypeCreation
     }
     
-    @IBOutlet weak var typeNameTextField: UITextField!
-    @IBOutlet weak var startTimePicker: UIDatePicker!
-    @IBOutlet weak var endTimePicker: UIDatePicker!
-    @IBOutlet weak var shiftColorCollectionView: UICollectionView!
-    @IBOutlet weak var cancelBatton: UIButton!
-    @IBOutlet weak var saveBatton: UIButton!
+    @IBOutlet var typeNameTextField: UITextField!
+    @IBOutlet var startTimePicker: UIDatePicker!
+    @IBOutlet var endTimePicker: UIDatePicker!
+    @IBOutlet var shiftColorCollectionView: UICollectionView!
+    @IBOutlet var cancelBatton: UIButton!
+    @IBOutlet var saveBatton: UIButton!
     
     
     var delegate: ShiftTypeCreationViewDelegate?

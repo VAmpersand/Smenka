@@ -10,9 +10,9 @@ import UIKit
 
 class ShiftTypeTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var typeNameLabel: UILabel!
-    @IBOutlet weak var shiftTimeLabel: UILabel!
-    @IBOutlet weak var typeColor: UIImageView!
+    @IBOutlet var typeNameLabel: UILabel!
+    @IBOutlet var shiftTimeLabel: UILabel!
+    @IBOutlet var typeColor: UIImageView!
     
  
 }

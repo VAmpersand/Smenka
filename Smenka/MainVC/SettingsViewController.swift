@@ -10,11 +10,11 @@ import RealmSwift
 
 class SettingsViewController: UIViewController {
     
-    @IBOutlet weak var screenModeLabel: UILabel!
-    @IBOutlet weak var screenModeSwitch: UISwitch!
-    @IBOutlet weak var addTypeButton: UIButton!
-    @IBOutlet weak var shiftTypeTable: UITableView!
-    @IBOutlet weak var blurEffect: UIVisualEffectView!
+    @IBOutlet var screenModeLabel: UILabel!
+    @IBOutlet var screenModeSwitch: UISwitch!
+    @IBOutlet var addTypeButton: UIButton!
+    @IBOutlet var shiftTypeTable: UITableView!
+    @IBOutlet var blurEffect: UIVisualEffectView!
     
     var shiftTypes: Results<ShiftType>!
     

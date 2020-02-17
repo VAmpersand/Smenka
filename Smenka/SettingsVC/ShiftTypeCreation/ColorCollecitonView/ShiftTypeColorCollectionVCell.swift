@@ -10,8 +10,8 @@ import UIKit
 
 class ShiftTypeColorCollectionVCell: UICollectionViewCell {
     
-    @IBOutlet weak var colorImage: UIImageView!
-    @IBOutlet weak var blurEffect: UIVisualEffectView!
+    @IBOutlet var colorImage: UIImageView!
+    @IBOutlet var blurEffect: UIVisualEffectView!
     
     
     override func awakeFromNib() {
