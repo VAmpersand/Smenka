@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 protocol  ButtonDelegate {
    func okButtonPressed()
@@ -21,7 +22,7 @@ class ValidationCheckRemovalView: UIViewController {
     @IBOutlet var blurEffect: UIVisualEffectView!
     
     var delegate: ButtonDelegate?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         

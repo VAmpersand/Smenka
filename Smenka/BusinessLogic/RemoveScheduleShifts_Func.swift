@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 
+
 func removeSchedulleShifts(schedulesShifts: Results<ScheduleShifts>, currentYear: Int, currentMonthIndex: Int) {
     
     for scheduleShift in schedulesShifts {
@@ -19,4 +20,5 @@ func removeSchedulleShifts(schedulesShifts: Results<ScheduleShifts>, currentYear
         }
     }
 }
+
 

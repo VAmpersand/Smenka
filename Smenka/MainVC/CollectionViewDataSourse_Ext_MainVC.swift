@@ -22,6 +22,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         var shift = Shift()
         
         cell.layer.cornerRadius = cell.bounds.width / 2
+        cell.backgroundColor = colors.last
         cell.shiftColorView.isHidden = true
         
         //MARK:  Get data from database, for current display text color
@@ -49,14 +50,12 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.shiftColorView.isHidden = false
         }
         
-        //MARK:   Filling/display the calendar with shifts from the schedule
+        //MARK:   Filling/display the calendar with shifts color from the schedule
         guard let shiftTipes = shiftTypes else { return cell }
         for scheduleShift in schedulesShifts {
             if scheduleShift.monthlyScheduleName == "\(currentYear)-\(currentMonthIndex)" {
                 let shiftTypeIndex = scheduleShift.shifts[indexPath.row].shiftTypeIndex
                 cell.backgroundColor = colors[shiftTipes[shiftTypeIndex].shiftColorIndex]
-            } else {
-                cell.backgroundColor = testColors[0]
             }
         }
         return cell

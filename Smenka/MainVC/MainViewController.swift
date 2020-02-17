@@ -76,7 +76,6 @@ class MainViewController: UIViewController {
         // Leap year check before calendar display
         didChangeMonth(monthIndex: currentMonth, year: currentYear)
         shiftTypeTable.reloadData()
-        calendarCollectionView.reloadData()
     }
     
     
@@ -190,11 +189,8 @@ extension MainViewController: ButtonDelegate {
         }
         
         guard let schedulesShifts = schedulesShifts else { return }
-        DispatchQueue.main.async {
-            removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: self.currentYear, currentMonthIndex: self.currentMonthIndex)
-              self.calendarCollectionView.reloadData()
-        }
-        self.calendarCollectionView.reloadData()
+        removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: self.currentMonthIndex)
+        calendarCollectionView.reloadData()
     }
 }
 
