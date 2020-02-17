@@ -19,6 +19,7 @@ class MainViewController: UIViewController {
     @IBOutlet var editButton: UIButton!
     @IBOutlet var deleteButton: UIButton!
     
+    let validationCheckRemovalView = ValidationCheckRemovalView()
     
     var schedulesShifts: Results<ScheduleShifts>!
     var shiftTypes: Results<ShiftType>!
@@ -64,13 +65,12 @@ class MainViewController: UIViewController {
         shiftTypeTable.delegate = self 
         shiftTypeTable.dataSource = self
         
+        validationCheckRemovalView.delegate = self
+        
         schedulesShifts = realm.objects(ScheduleShifts.self)
         shiftTypes = realm.objects(ShiftType.self)
         //        staff = realm.objects(Staff.self)
-        
-        if !checkTheShidtTypeForExistence(shiftTypes: shiftTypes, shiftTypeName: "Clear shift type") {
-            setFirstClearShiftType()
-        }
+
     }
     
     
@@ -147,32 +147,27 @@ class MainViewController: UIViewController {
             if !shiftIsEdited {
                 removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
             }
-           
-            showMessageView(text: "The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in <UIKitCore/UIView.h> may also be helpful.")
-            
+
         }
     }
     
     //MARK: Delete current schedule shifts
     @IBAction func deleteCurrentScheduleShifts(_ sender: Any) {
-        editButtonPressCheck.toggle()
-        editButton.setTitle("Edit", for: .normal)
-        editButton.setTitleColor(.blue, for: .normal)
-        deleteButton.isHidden = true
-        UIView.animate(withDuration: 1) {
-            self.blurEffect.alpha = 0
-        }
         
-        guard let schedulesShifts = schedulesShifts else { return }
-        removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
+        showMessageView(text: "Are you sure you want to delete the shift schedule for \(months[currentMonth]) \(currentYear)")
+    }
+    
+    
+    
+    func showMessageView(text: String) {
+        let alertView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "validationCheckRemovalView") as! ValidationCheckRemovalView
         
-        calendarCollectionView.reloadData()
-        
-        
-    }    
-}
-
-extension MainViewController {
+        self.addChild(alertView)
+        alertView.view.frame = self.view.frame
+        self.view.addSubview(alertView.view)
+        alertView.didMove(toParent: self)
+        alertView.textMessageLabel.text = text
+    }
     
     func setFirstClearShiftType() {
         let shiftType = ShiftType()
@@ -182,16 +177,25 @@ extension MainViewController {
             StorageManager.saveShiftType(shiftType)
         }
     }
-    
-    func showMessageView(text: String) {
-        let alertView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alertView") as! AlertView
+}
 
-        self.addChild(alertView)
-        alertView.view.frame = self.view.frame
-        self.view.addSubview(alertView.view)
-        alertView.didMove(toParent: self)
-        alertView.textMessageLabel.text = text
-    }
+extension MainViewController: ButtonDelegate {
+    
+    func okButtonPressed() {
+         
+             editButtonPressCheck.toggle()
+             editButton.setTitle("Edit", for: .normal)
+             editButton.setTitleColor(.blue, for: .normal)
+             deleteButton.isHidden = true
+             UIView.animate(withDuration: 1) {
+                 self.blurEffect.alpha = 0
+             }
+             
+             guard let schedulesShifts = schedulesShifts else { return }
+             removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
+             
+             calendarCollectionView.reloadData()
+     }
 }
 
 

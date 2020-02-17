@@ -24,7 +24,7 @@
 		774F98D223F480D700596B08 /* TrailingSwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774F98D123F480D700596B08 /* TrailingSwipeAction.swift */; };
 		7783940223F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783940123F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift */; };
 		7783940423F8166F000BD2D4 /* RealmCascadeDeleteion_Ext_Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783940323F8166F000BD2D4 /* RealmCascadeDeleteion_Ext_Realm.swift */; };
-		7783940823F88A22000BD2D4 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783940723F88A22000BD2D4 /* AlertView.swift */; };
+		7783940823F88A22000BD2D4 /* ValidationCheckRemovalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783940723F88A22000BD2D4 /* ValidationCheckRemovalView.swift */; };
 		7793C6F823E4BA8D0063BBA4 /* ShiftTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C6F723E4BA8D0063BBA4 /* ShiftTypeModel.swift */; };
 		7793C6FA23E840C00063BBA4 /* ScheduleShiftsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C6F923E840C00063BBA4 /* ScheduleShiftsModel.swift */; };
 		7793C6FE23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C6FD23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift */; };
@@ -68,7 +68,7 @@
 		774F98D123F480D700596B08 /* TrailingSwipeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingSwipeAction.swift; sourceTree = "<group>"; };
 		7783940123F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTheShiftTypeForExistence_Func.swift; sourceTree = "<group>"; };
 		7783940323F8166F000BD2D4 /* RealmCascadeDeleteion_Ext_Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCascadeDeleteion_Ext_Realm.swift; sourceTree = "<group>"; };
-		7783940723F88A22000BD2D4 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		7783940723F88A22000BD2D4 /* ValidationCheckRemovalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationCheckRemovalView.swift; sourceTree = "<group>"; };
 		7793C6F723E4BA8D0063BBA4 /* ShiftTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeModel.swift; sourceTree = "<group>"; };
 		7793C6F923E840C00063BBA4 /* ScheduleShiftsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleShiftsModel.swift; sourceTree = "<group>"; };
 		7793C6FD23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEmptySchedaleShifts_Func.swift; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 				7793C70523E9FBE50063BBA4 /* BusinessLogic */,
 				7793C71023EDFAA00063BBA4 /* MainVC */,
 				7793C71123EDFD780063BBA4 /* SettingsVC */,
-				7783940923F88A32000BD2D4 /* Alert's */,
+				7783940923F88A32000BD2D4 /* Alerts */,
 				774A850C23D76A8400A653A6 /* Main.storyboard */,
 				774A850F23D76A8500A653A6 /* Assets.xcassets */,
 				774A851123D76A8500A653A6 /* LaunchScreen.storyboard */,
@@ -169,12 +169,12 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		7783940923F88A32000BD2D4 /* Alert's */ = {
+		7783940923F88A32000BD2D4 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
-				7783940723F88A22000BD2D4 /* AlertView.swift */,
+				7783940723F88A22000BD2D4 /* ValidationCheckRemovalView.swift */,
 			);
-			path = "Alert's";
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 		7793C70523E9FBE50063BBA4 /* BusinessLogic */ = {
@@ -366,7 +366,7 @@
 				7793C6F823E4BA8D0063BBA4 /* ShiftTypeModel.swift in Sources */,
 				774A851B23D7712500A653A6 /* DateCollectionViewCell.swift in Sources */,
 				774A851D23D772C800A653A6 /* CalendarDataSourse.swift in Sources */,
-				7783940823F88A22000BD2D4 /* AlertView.swift in Sources */,
+				7783940823F88A22000BD2D4 /* ValidationCheckRemovalView.swift in Sources */,
 				7793C70223E9F6010063BBA4 /* CheckTheSchudaleForExistence_Func.swift in Sources */,
 				7793C70723EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift in Sources */,
 				774A852E23E35C5C00A653A6 /* StorageManager.swift in Sources */,
