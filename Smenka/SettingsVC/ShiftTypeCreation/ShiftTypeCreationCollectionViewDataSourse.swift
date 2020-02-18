@@ -41,7 +41,7 @@ extension ShiftTypeCreationView: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! ShiftTypeColorCollectionVCell
         
-        
+
         let colorWasUsed = colorCheckForUse(indexPath: indexPath)
         if colorWasUsed {
             print("Color was used")

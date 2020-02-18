@@ -178,7 +178,7 @@ class MainViewController: UIViewController {
 
 extension MainViewController: ButtonDelegate {
     
-    func okButtonPressed() {
+    func okButtonPressedWhenDeleting() {
         
         editButtonPressCheck.toggle()
         editButton.setTitle("Edit", for: .normal)

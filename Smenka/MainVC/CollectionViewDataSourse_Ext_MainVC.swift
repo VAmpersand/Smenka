@@ -34,20 +34,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         
-        //MARK:  Hide empty cell's
-        if indexPath.item <= firstWeekDayOfMonth - 2 {
-            cell.isHidden = true
-        } else {
-            calcDate = indexPath.row - firstWeekDayOfMonth + 2
-            cell.isHidden = false
-            cell.dateLabel.text = "\(calcDate)"
-        }
-        
-        //MARK:   Mark today in circle
-        if calcDate == todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
-            cell.shiftColorView.isHidden = false
-        }
-        
         //MARK:   Filling/display the calendar with shifts color from the schedule
         guard let shiftTipes = shiftTypes else { return cell }
         for scheduleShift in schedulesShifts {
@@ -71,8 +57,22 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
         }
         
-        //  Set text color in dateLabel in cell
+        // Set text color in dateLabel in cell
         setColorInDateLableText(cell: cell, indexPath: indexPath, shift: shift)
+        
+        //MARK:  Hide empty cell's
+        if indexPath.item <= firstWeekDayOfMonth - 2 {
+            cell.isHidden = true
+        } else {
+            calcDate = indexPath.row - firstWeekDayOfMonth + 2
+            cell.isHidden = false
+            cell.dateLabel.text = "\(calcDate)"
+        }
+        
+        //MARK:   Mark today in circle
+        if calcDate == todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
+            cell.shiftColorView.isHidden = false
+        }
         
         return cell
     }
@@ -111,7 +111,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 cell.backgroundColor = colors[shiftTipes[newShift.shiftTypeIndex].shiftColorIndex]
                 self.setColorInDateLableText(cell: cell, indexPath: indexPath, shift: newShift)
             }
-            
         }
     }
     

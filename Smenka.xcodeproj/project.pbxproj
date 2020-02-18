@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		771943E723FC687800861758 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 771943E623FC687800861758 /* NotificationCenter.framework */; };
+		771943EA23FC687800861758 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771943E923FC687800861758 /* TodayViewController.swift */; };
+		771943ED23FC687800861758 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 771943EB23FC687800861758 /* MainInterface.storyboard */; };
+		771943F123FC687800861758 /* Shifts.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 771943E523FC687800861758 /* Shifts.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		774A850723D76A8400A653A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A850623D76A8400A653A6 /* AppDelegate.swift */; };
 		774A850923D76A8400A653A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A850823D76A8400A653A6 /* SceneDelegate.swift */; };
 		774A850B23D76A8400A653A6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A850A23D76A8400A653A6 /* MainViewController.swift */; };
@@ -46,9 +50,38 @@
 		909A6A9704E534AC9468D35B /* Pods_Smenka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BC425899994F051C914AFA /* Pods_Smenka.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		771943EF23FC687800861758 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 774A84FB23D76A8300A653A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 771943E423FC687800861758;
+			remoteInfo = Shifts;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		771943F223FC687800861758 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				771943F123FC687800861758 /* Shifts.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		38CDAE717FB3AA3D1B574B61 /* Pods-Smenka.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smenka.debug.xcconfig"; path = "Target Support Files/Pods-Smenka/Pods-Smenka.debug.xcconfig"; sourceTree = "<group>"; };
 		567F2514FF79E89DF21301B1 /* Pods-Smenka.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smenka.release.xcconfig"; path = "Target Support Files/Pods-Smenka/Pods-Smenka.release.xcconfig"; sourceTree = "<group>"; };
+		771943E523FC687800861758 /* Shifts.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Shifts.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		771943E623FC687800861758 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		771943E923FC687800861758 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		771943EC23FC687800861758 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		771943EE23FC687800861758 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		774A850323D76A8400A653A6 /* Smenka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smenka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		774A850623D76A8400A653A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		774A850823D76A8400A653A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +124,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		771943E223FC687800861758 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				771943E723FC687800861758 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		774A850023D76A8300A653A6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -106,14 +147,26 @@
 			isa = PBXGroup;
 			children = (
 				D1BC425899994F051C914AFA /* Pods_Smenka.framework */,
+				771943E623FC687800861758 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		771943E823FC687800861758 /* Shifts */ = {
+			isa = PBXGroup;
+			children = (
+				771943E923FC687800861758 /* TodayViewController.swift */,
+				771943EB23FC687800861758 /* MainInterface.storyboard */,
+				771943EE23FC687800861758 /* Info.plist */,
+			);
+			path = Shifts;
 			sourceTree = "<group>";
 		};
 		774A84FA23D76A8300A653A6 = {
 			isa = PBXGroup;
 			children = (
 				774A850523D76A8400A653A6 /* Smenka */,
+				771943E823FC687800861758 /* Shifts */,
 				774A850423D76A8400A653A6 /* Products */,
 				7FBD475085E914001A7CAA15 /* Pods */,
 				6FC2CA33A4ACEA8CD21558C4 /* Frameworks */,
@@ -124,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				774A850323D76A8400A653A6 /* Smenka.app */,
+				771943E523FC687800861758 /* Shifts.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,6 +302,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		771943E423FC687800861758 /* Shifts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 771943F523FC687800861758 /* Build configuration list for PBXNativeTarget "Shifts" */;
+			buildPhases = (
+				771943E123FC687800861758 /* Sources */,
+				771943E223FC687800861758 /* Frameworks */,
+				771943E323FC687800861758 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Shifts;
+			productName = Shifts;
+			productReference = 771943E523FC687800861758 /* Shifts.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		774A850223D76A8300A653A6 /* Smenka */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 774A851723D76A8500A653A6 /* Build configuration list for PBXNativeTarget "Smenka" */;
@@ -257,10 +328,12 @@
 				774A850023D76A8300A653A6 /* Frameworks */,
 				774A850123D76A8300A653A6 /* Resources */,
 				AF604FFF56EEA986B305EB83 /* [CP] Embed Pods Frameworks */,
+				771943F223FC687800861758 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				771943F023FC687800861758 /* PBXTargetDependency */,
 			);
 			name = Smenka;
 			productName = Smenka;
@@ -277,6 +350,9 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = Viktor;
 				TargetAttributes = {
+					771943E423FC687800861758 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 					774A850223D76A8300A653A6 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -296,11 +372,20 @@
 			projectRoot = "";
 			targets = (
 				774A850223D76A8300A653A6 /* Smenka */,
+				771943E423FC687800861758 /* Shifts */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		771943E323FC687800861758 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				771943ED23FC687800861758 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		774A850123D76A8300A653A6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,6 +443,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		771943E123FC687800861758 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				771943EA23FC687800861758 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		774A84FF23D76A8300A653A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -398,7 +491,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		771943F023FC687800861758 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 771943E423FC687800861758 /* Shifts */;
+			targetProxy = 771943EF23FC687800861758 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		771943EB23FC687800861758 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				771943EC23FC687800861758 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		774A850C23D76A8400A653A6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -418,6 +527,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		771943F323FC687800861758 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Shifts/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "VP-P.Smenka.Shifts";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		771943F423FC687800861758 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Shifts/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "VP-P.Smenka.Shifts";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		774A851523D76A8500A653A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -536,6 +681,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 38CDAE717FB3AA3D1B574B61 /* Pods-Smenka.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Smenka/Info.plist;
@@ -554,6 +700,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 567F2514FF79E89DF21301B1 /* Pods-Smenka.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Smenka/Info.plist;
@@ -571,6 +718,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		771943F523FC687800861758 /* Build configuration list for PBXNativeTarget "Shifts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				771943F323FC687800861758 /* Debug */,
+				771943F423FC687800861758 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		774A84FE23D76A8300A653A6 /* Build configuration list for PBXProject "Smenka" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

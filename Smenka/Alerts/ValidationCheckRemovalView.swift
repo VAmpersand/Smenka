@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 protocol  ButtonDelegate {
-   func okButtonPressed()
+   func okButtonPressedWhenDeleting()
 }
 
 class ValidationCheckRemovalView: UIViewController {
@@ -43,7 +43,7 @@ class ValidationCheckRemovalView: UIViewController {
     }
     
     @IBAction func okButtonPressed(_ sender: Any) {
-        delegate?.okButtonPressed()
+        delegate?.okButtonPressedWhenDeleting()
         moveOut()
     }
     
