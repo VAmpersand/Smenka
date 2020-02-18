@@ -13,57 +13,64 @@
             <objects>
                 <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="Shifts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="350"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="349"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kUj-vd-mWQ">
-                                <rect key="frame" x="0.0" y="74" width="320" height="276"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="7" minimumInteritemSpacing="6" id="HkL-sS-Ncw">
-                                    <size key="itemSize" width="40" height="40"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="64g-Pb-htp">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kUG-Vg-mE4">
-                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="40" height="40"/>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sq3-pU-eHf">
-                                <rect key="frame" x="27.5" y="44" width="265" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="265" id="bwB-sz-IYH"/>
-                                    <constraint firstAttribute="height" constant="25" id="lSo-ku-9c6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Sqw-rx-Ulc">
+                                <rect key="frame" x="0.0" y="44" width="320" height="305"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sq3-pU-eHf">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="Kty-kR-mLH"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="qzM-CV-Tkg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kUj-vd-mWQ">
+                                        <rect key="frame" x="0.0" y="29" width="320" height="276"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="9m7-hN-4d3"/>
+                                            <constraint firstAttribute="height" constant="276" id="VOL-EZ-2wE"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="7" minimumInteritemSpacing="6" id="HkL-sS-Ncw">
+                                            <size key="itemSize" width="40" height="40"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="64g-Pb-htp">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kUG-Vg-mE4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionViewCellContentView>
+                                                <size key="customSize" width="40" height="40"/>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Sq3-pU-eHf" firstAttribute="centerX" secondItem="ssy-KU-ocm" secondAttribute="centerX" id="0D4-p3-HR8"/>
-                            <constraint firstItem="kUj-vd-mWQ" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="81y-sa-Nra"/>
-                            <constraint firstItem="kUj-vd-mWQ" firstAttribute="bottom" secondItem="ssy-KU-ocm" secondAttribute="bottom" id="Y1H-4j-IT0"/>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="top" secondItem="Sq3-pU-eHf" secondAttribute="top" id="dx9-Vo-SgJ"/>
-                            <constraint firstItem="kUj-vd-mWQ" firstAttribute="trailing" secondItem="ssy-KU-ocm" secondAttribute="trailing" id="iMv-3E-fUE"/>
-                            <constraint firstItem="kUj-vd-mWQ" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="30" id="tzD-dk-1vt"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="Sqw-rx-Ulc" secondAttribute="bottom" id="BbY-06-OWb"/>
+                            <constraint firstItem="Sqw-rx-Ulc" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="bnW-FO-hA0"/>
+                            <constraint firstItem="Sqw-rx-Ulc" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" id="g3i-ZR-JGE"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="Sqw-rx-Ulc" secondAttribute="trailing" id="kUJ-qj-8R0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="350"/>
+                    <size key="freeformSize" width="320" height="349"/>
                     <connections>
-                        <outlet property="calendarCollectionView" destination="kUj-vd-mWQ" id="YVl-cC-Ocg"/>
-                        <outlet property="monthLabel" destination="Sq3-pU-eHf" id="OLf-f4-rO7"/>
+                        <outlet property="calendarCollectionView" destination="kUj-vd-mWQ" id="h3N-4w-6Bh"/>
+                        <outlet property="monthLabel" destination="Sq3-pU-eHf" id="LTs-PI-hxG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>

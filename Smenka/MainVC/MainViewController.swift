@@ -42,6 +42,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         print(Realm.Configuration.defaultConfiguration.description)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         currentMonthIndex = Calendar.current.component(.month, from: Date())
         currentYear = Calendar.current.component(.year, from: Date())

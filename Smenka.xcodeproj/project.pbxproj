@@ -11,6 +11,7 @@
 		771943EA23FC687800861758 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771943E923FC687800861758 /* TodayViewController.swift */; };
 		771943ED23FC687800861758 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 771943EB23FC687800861758 /* MainInterface.storyboard */; };
 		771943F123FC687800861758 /* Shifts.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 771943E523FC687800861758 /* Shifts.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		77302A6523FC7C21004DB165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774A850F23D76A8500A653A6 /* Assets.xcassets */; };
 		774A850723D76A8400A653A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A850623D76A8400A653A6 /* AppDelegate.swift */; };
 		774A850923D76A8400A653A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A850823D76A8400A653A6 /* SceneDelegate.swift */; };
 		774A850B23D76A8400A653A6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A850A23D76A8400A653A6 /* MainViewController.swift */; };
@@ -82,6 +83,7 @@
 		771943E923FC687800861758 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		771943EC23FC687800861758 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		771943EE23FC687800861758 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77302A6423FC7937004DB165 /* Shifts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Shifts.entitlements; sourceTree = "<group>"; };
 		774A850323D76A8400A653A6 /* Smenka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smenka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		774A850623D76A8400A653A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		774A850823D76A8400A653A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		771943E823FC687800861758 /* Shifts */ = {
 			isa = PBXGroup;
 			children = (
+				77302A6423FC7937004DB165 /* Shifts.entitlements */,
 				771943E923FC687800861758 /* TodayViewController.swift */,
 				771943EB23FC687800861758 /* MainInterface.storyboard */,
 				771943EE23FC687800861758 /* Info.plist */,
@@ -382,6 +385,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77302A6523FC7C21004DB165 /* Assets.xcassets in Resources */,
 				771943ED23FC687800861758 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,7 +534,10 @@
 		771943F323FC687800861758 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Shifts/Shifts.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YL752VZ4SN;
 				INFOPLIST_FILE = Shifts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -539,6 +546,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "VP-P.Smenka.Shifts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -548,7 +556,10 @@
 		771943F423FC687800861758 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Shifts/Shifts.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YL752VZ4SN;
 				INFOPLIST_FILE = Shifts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -557,6 +568,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "VP-P.Smenka.Shifts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
