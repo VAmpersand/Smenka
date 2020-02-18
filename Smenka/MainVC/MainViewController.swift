@@ -190,7 +190,9 @@ extension MainViewController: ButtonDelegate {
         
         guard let schedulesShifts = schedulesShifts else { return }
         removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: self.currentMonthIndex)
-        calendarCollectionView.reloadData()
+        DispatchQueue.main.async {
+            self.calendarCollectionView.reloadData()
+        }
     }
 }
 

@@ -33,8 +33,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
         }
         
-        //  Set text color in dateLabel in cell
-        setColorInDateLableText(cell: cell, indexPath: indexPath, shift: shift)
         
         //MARK:  Hide empty cell's
         if indexPath.item <= firstWeekDayOfMonth - 2 {
@@ -54,10 +52,28 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         guard let shiftTipes = shiftTypes else { return cell }
         for scheduleShift in schedulesShifts {
             if scheduleShift.monthlyScheduleName == "\(currentYear)-\(currentMonthIndex)" {
-                let shiftTypeIndex = scheduleShift.shifts[indexPath.row].shiftTypeIndex
-                cell.backgroundColor = colors[shiftTipes[shiftTypeIndex].shiftColorIndex]
+                let shift = scheduleShift.shifts[indexPath.row]
+                let shiftTypeIndex = shift.shiftTypeIndex
+                
+                // Сondition for checking the number of types array. Вoes not allow type deletion error
+                if shift.shiftTypeIndex >= shiftTipes.count {
+                    let newShift = Shift()
+                    newShift.shiftTypeIndex = 0
+                    
+                    DispatchQueue.main.async {
+                        StorageManager.editShift(shift, newShift)
+                        cell.backgroundColor = colors[shiftTipes[newShift.shiftTypeIndex].shiftColorIndex]
+                        self.setColorInDateLableText(cell: cell, indexPath: indexPath, shift: newShift)
+                    }
+                } else {
+                    cell.backgroundColor = colors[shiftTipes[shiftTypeIndex].shiftColorIndex]
+                }
             }
         }
+        
+        //  Set text color in dateLabel in cell
+        setColorInDateLableText(cell: cell, indexPath: indexPath, shift: shift)
+        
         return cell
     }
     
@@ -81,16 +97,21 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             guard let shiftTipes = shiftTypes else { return }
             newShift.shiftTypeIndex = shift.shiftTypeIndex
             
-            newShift.shiftTypeIndex += 1
-            if newShift.shiftTypeIndex == shiftTipes.count {
+            // Сondition for checking the number of types array. Вoes not allow type deletion error
+            if newShift.shiftTypeIndex >= shiftTipes.count {
                 newShift.shiftTypeIndex = 0
+            } else {
+                newShift.shiftTypeIndex += 1
+                if newShift.shiftTypeIndex == shiftTipes.count {
+                    newShift.shiftTypeIndex = 0
+                }
             }
-            
             DispatchQueue.main.async {
                 StorageManager.editShift(shift, newShift)
                 cell.backgroundColor = colors[shiftTipes[newShift.shiftTypeIndex].shiftColorIndex]
                 self.setColorInDateLableText(cell: cell, indexPath: indexPath, shift: newShift)
             }
+            
         }
     }
     
