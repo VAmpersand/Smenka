@@ -12,6 +12,7 @@
 		771943ED23FC687800861758 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 771943EB23FC687800861758 /* MainInterface.storyboard */; };
 		771943F123FC687800861758 /* Shifts.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 771943E523FC687800861758 /* Shifts.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		77302A6523FC7C21004DB165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774A850F23D76A8500A653A6 /* Assets.xcassets */; };
+		77302A6723FDC315004DB165 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771943E923FC687800861758 /* TodayViewController.swift */; };
 		774A850723D76A8400A653A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A850623D76A8400A653A6 /* AppDelegate.swift */; };
 		774A850923D76A8400A653A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A850823D76A8400A653A6 /* SceneDelegate.swift */; };
 		774A850B23D76A8400A653A6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A850A23D76A8400A653A6 /* MainViewController.swift */; };
@@ -84,6 +85,7 @@
 		771943EC23FC687800861758 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		771943EE23FC687800861758 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77302A6423FC7937004DB165 /* Shifts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Shifts.entitlements; sourceTree = "<group>"; };
+		77302A6623FDB577004DB165 /* Smenka.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Smenka.entitlements; sourceTree = "<group>"; };
 		774A850323D76A8400A653A6 /* Smenka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smenka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		774A850623D76A8400A653A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		774A850823D76A8400A653A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		774A850523D76A8400A653A6 /* Smenka */ = {
 			isa = PBXGroup;
 			children = (
+				77302A6623FDB577004DB165 /* Smenka.entitlements */,
 				774A850623D76A8400A653A6 /* AppDelegate.swift */,
 				774A850823D76A8400A653A6 /* SceneDelegate.swift */,
 				774A852C23E3582400A653A6 /* Model */,
@@ -479,6 +482,7 @@
 				7793C72123F177390063BBA4 /* ShiftTypeCreationCollectionViewDataSourse.swift in Sources */,
 				774A852323E0CA4100A653A6 /* Ext_Date.swift in Sources */,
 				774A852523E2103600A653A6 /* CollectionViewDataSourse_Ext_MainVC.swift in Sources */,
+				77302A6723FDC315004DB165 /* TodayViewController.swift in Sources */,
 				7793C71323F045E40063BBA4 /* SettingsViewController.swift in Sources */,
 				774A852123E0CA2C00A653A6 /* Ext_String.swift in Sources */,
 				774A850B23D76A8400A653A6 /* MainViewController.swift in Sources */,
@@ -695,7 +699,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Smenka/Smenka.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YL752VZ4SN;
 				INFOPLIST_FILE = Smenka/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -714,7 +720,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Smenka/Smenka.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YL752VZ4SN;
 				INFOPLIST_FILE = Smenka/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -9,6 +9,8 @@
 import UIKit
 import RealmSwift
 
+var fileUrl: URL!
+
 class MainViewController: UIViewController {
     
     @IBOutlet var calendarCollectionView: UICollectionView!
@@ -37,12 +39,12 @@ class MainViewController: UIViewController {
     var editButtonPressCheck = false
     var currentIndexPath: IndexPath!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print(Realm.Configuration.defaultConfiguration.description)
         print(Realm.Configuration.defaultConfiguration.fileURL!)
+        fileUrl = Realm.Configuration.defaultConfiguration.fileURL!
         
         currentMonthIndex = Calendar.current.component(.month, from: Date())
         currentYear = Calendar.current.component(.year, from: Date())
@@ -55,7 +57,7 @@ class MainViewController: UIViewController {
         
         firstWeekDayOfMonth = getIndexFirstWeekDay(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
         
-        monthLabel.text="\(months[currentMonth]) \(currentYear)"
+        monthLabel.text = "\(months[currentMonth]) \(currentYear)"
         
         calendarCollectionView.layer.cornerRadius = 15
         shiftTypeTable.layer.cornerRadius = 15
@@ -68,6 +70,9 @@ class MainViewController: UIViewController {
         shiftTypes = realm.objects(ShiftType.self)
         //        staff = realm.objects(Staff.self)
         
+        setFirstClearShiftType()
+//        let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
+//               widgetUserDefaults?.set(fileUrl, forKey: "fileURL")
     }
     
     
@@ -154,6 +159,7 @@ class MainViewController: UIViewController {
         showMessageView(text: "Are you sure you want to delete the shift schedule for \(months[currentMonth]) \(currentYear)")
     }
     
+    //MARK: Show view with question about deleting schedule shifts
     func showMessageView(text: String) {
         
         let validationCheckRemovalView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "validationCheckRemovalView") as! ValidationCheckRemovalView
