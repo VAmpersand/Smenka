@@ -22,12 +22,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         guard let shiftTypes = shiftTypes else { return cell }
         let shiftType = shiftTypes[indexPath.row]
         
-        if shiftType.shiftTypeName == "Clear shift type" {
-            cell.frame.size.height = 0
-        } else {
-            cell.frame.size.height = 50
-        }
-        
         if shiftType.shiftTypeName == "" {
             cell.typeNameLabel.text = "From \(shiftType.startTime) to \(shiftType.endTime)"
             cell.shiftTimeLabel.isHidden = true

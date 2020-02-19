@@ -70,9 +70,9 @@ class MainViewController: UIViewController {
         shiftTypes = realm.objects(ShiftType.self)
         //        staff = realm.objects(Staff.self)
         
-        setFirstClearShiftType()
-//        let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
-//               widgetUserDefaults?.set(fileUrl, forKey: "fileURL")
+        if !checkTheShiftTypeForExistence(shiftTypes: shiftTypes, shiftTypeName: "Clear shift type") {
+            setFirstClearShiftType()
+        }
     }
     
     
@@ -162,7 +162,7 @@ class MainViewController: UIViewController {
     //MARK: Show view with question about deleting schedule shifts
     func showMessageView(text: String) {
         
-        let validationCheckRemovalView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "validationCheckRemovalView") as! ValidationCheckRemovalView
+        let validationCheckRemovalView = UIStoryboard(name: "Alert", bundle: nil).instantiateViewController(withIdentifier: "validationCheckRemovalView") as! ValidationCheckRemovalView
         validationCheckRemovalView.delegate = self
         
         self.addChild(validationCheckRemovalView)

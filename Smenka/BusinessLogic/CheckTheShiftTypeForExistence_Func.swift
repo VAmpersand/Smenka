@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-func checkTheShidtTypeForExistence(shiftTypes: Results<ShiftType>!, shiftTypeName: String) -> Bool {
+func checkTheShiftTypeForExistence(shiftTypes: Results<ShiftType>!, shiftTypeName: String) -> Bool {
     
     var nameIsMatch = false
     

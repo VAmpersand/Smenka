@@ -49,6 +49,7 @@
 		7793C72123F177390063BBA4 /* ShiftTypeCreationCollectionViewDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C72023F177390063BBA4 /* ShiftTypeCreationCollectionViewDataSourse.swift */; };
 		7793C72823F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C72623F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.swift */; };
 		7793C72923F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7793C72723F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib */; };
+		7798341623FDD38300CB5180 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7798341523FDD38300CB5180 /* Alert.storyboard */; };
 		909A6A9704E534AC9468D35B /* Pods_Smenka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BC425899994F051C914AFA /* Pods_Smenka.framework */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +125,7 @@
 		7793C72023F177390063BBA4 /* ShiftTypeCreationCollectionViewDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeCreationCollectionViewDataSourse.swift; sourceTree = "<group>"; };
 		7793C72623F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeColorCollectionVCell.swift; sourceTree = "<group>"; };
 		7793C72723F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShiftTypeColorCollectionVCell.xib; sourceTree = "<group>"; };
+		7798341523FDD38300CB5180 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
 		D1BC425899994F051C914AFA /* Pods_Smenka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smenka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -200,6 +202,7 @@
 				7793C71123EDFD780063BBA4 /* SettingsVC */,
 				7783940923F88A32000BD2D4 /* Alerts */,
 				774A850C23D76A8400A653A6 /* Main.storyboard */,
+				7798341523FDD38300CB5180 /* Alert.storyboard */,
 				774A850F23D76A8500A653A6 /* Assets.xcassets */,
 				774A851123D76A8500A653A6 /* LaunchScreen.storyboard */,
 				774A851423D76A8500A653A6 /* Info.plist */,
@@ -402,6 +405,7 @@
 				774A851023D76A8500A653A6 /* Assets.xcassets in Resources */,
 				7793C71B23F05FC70063BBA4 /* ShiftTypeCreationView.xib in Resources */,
 				774A850E23D76A8400A653A6 /* Main.storyboard in Resources */,
+				7798341623FDD38300CB5180 /* Alert.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

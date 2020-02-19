@@ -37,8 +37,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let url = widgetUserDefaults?.url(forKey: "fileURL")
         
         print(url!)
-
-        
         completionHandler(NCUpdateResult.newData)
     }
     
