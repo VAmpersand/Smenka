@@ -34,11 +34,39 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         
         let widgetUserDefaults = UserDefaults.init(suiteName: "group.Smenka.widgetShare")
-        let url = widgetUserDefaults?.url(forKey: "fileURL")
+        let urlStr = widgetUserDefaults?.value(forKey: "fileURL")
         
-        print(url!)
+        guard let url = URL(string: urlStr as! String) else { return }
+        
+//        guard let url = url else { return }
+//        guard let data = try? Data(contentsOf: url!) else {
+//            print("There was an error!")
+//            return
+//        }
+//        print(data)
+        
+//        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+//            
+//            guard let data = data else { return }
+//            guard error == nil else { return }
+//            print(data)
+//            
+//        }
+//        
+//
+//        do {
+//            let data = try? Data(contentsOf: url!)
+//            print(data)
+//        } catch {
+//            print(error.localizedDescription)
+//        }
+
+        
+        print(urlStr!)
+        print(url)
         completionHandler(NCUpdateResult.newData)
     }
+    
     
 }
 

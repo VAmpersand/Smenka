@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-var fileUrl: URL!
+var fileUrl: String!
 
 class MainViewController: UIViewController {
     
@@ -44,7 +44,9 @@ class MainViewController: UIViewController {
         
         print(Realm.Configuration.defaultConfiguration.description)
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        fileUrl = Realm.Configuration.defaultConfiguration.fileURL!
+        let url = Realm.Configuration.defaultConfiguration.fileURL!
+        fileUrl = url.absoluteString
+        
         
         currentMonthIndex = Calendar.current.component(.month, from: Date())
         currentYear = Calendar.current.component(.year, from: Date())
@@ -73,6 +75,9 @@ class MainViewController: UIViewController {
         if !checkTheShiftTypeForExistence(shiftTypes: shiftTypes, shiftTypeName: "Clear shift type") {
             setFirstClearShiftType()
         }
+        
+        let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
+        widgetUserDefaults?.set(fileUrl, forKey: "fileURL")
     }
     
     
