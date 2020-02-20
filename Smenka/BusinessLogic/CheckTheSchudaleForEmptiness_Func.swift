@@ -9,10 +9,11 @@
 import UIKit
 import RealmSwift
 
-func checkTheScheduleForEmptiness(schedulesShifts: Results<ScheduleShifts>, currentYear: Int, currentMonthIndex: Int) -> Bool {
+func checkTheScheduleForEmptiness(schedulesShifts: Results<ScheduleShifts>!, currentYear: Int, currentMonthIndex: Int) -> Bool {
     
     var shiftIsEdited = false
     
+    guard let schedulesShifts = schedulesShifts else { return shiftIsEdited}
     for scheduleShift in schedulesShifts {
         if scheduleShift.monthlyScheduleName == "\(currentYear)-\(currentMonthIndex)" {
             for shift in scheduleShift.shifts {
@@ -24,6 +25,7 @@ func checkTheScheduleForEmptiness(schedulesShifts: Results<ScheduleShifts>, curr
     }
     return shiftIsEdited
 }
+
 
 
 

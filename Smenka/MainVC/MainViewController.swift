@@ -125,9 +125,8 @@ class MainViewController: UIViewController {
             }
             
             //MARK: Create empty schedulShifts if is has not been previously created
-            guard let scheduleShifts = schedulesShifts else { return }
-            let nameIsMatch = checkTheScheduleForExistence(schedulesShifts: scheduleShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
-            
+            let nameIsMatch = checkTheScheduleForExistence(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
+         
             if  !nameIsMatch {
                 let scheduleShifts = setEmptyScheduleShifts(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
                 DispatchQueue.main.async {
@@ -143,7 +142,6 @@ class MainViewController: UIViewController {
             }
             
             //MARK: Delete empty schedulShifts if is has not been previously edited
-            guard let schedulesShifts = schedulesShifts else { return }
             let shiftIsEdited = checkTheScheduleForEmptiness(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
             
             if !shiftIsEdited {
