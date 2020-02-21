@@ -19,6 +19,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+        setDelegate()
     }
     
     
@@ -46,8 +47,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 //            print(data)
 //            
 //        }
-//        
-//
+
         do {
             let data = try Data(contentsOf: url)
             print(data)
@@ -55,12 +55,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             print(error.localizedDescription)
         }
 
-        
-        print(urlStr!)
         print(url)
         completionHandler(NCUpdateResult.newData)
     }
     
     
+    func setDelegate() {
+        calendarCollectionView.delegate = (self as! UICollectionViewDelegate)
+        calendarCollectionView.dataSource = (self as! UICollectionViewDataSource)
+    }
 }
 

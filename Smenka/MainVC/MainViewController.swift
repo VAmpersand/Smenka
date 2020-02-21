@@ -43,7 +43,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         shareDBRealm()
-        print(fileUrl) // Print URL db.realm
+        print(fileUrl!) // Print URL db.realm
         
         
         currentMonthIndex = Calendar.current.component(.month, from: Date())
