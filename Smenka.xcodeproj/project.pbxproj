@@ -39,7 +39,7 @@
 		7793C70223E9F6010063BBA4 /* CheckTheSchudaleForExistence_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C70123E9F6010063BBA4 /* CheckTheSchudaleForExistence_Func.swift */; };
 		7793C70423E9FBD60063BBA4 /* CheckTheSchudaleForEmptiness_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C70323E9FBD60063BBA4 /* CheckTheSchudaleForEmptiness_Func.swift */; };
 		7793C70723EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C70623EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift */; };
-		7793C70923EDE3720063BBA4 /* TableViewDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C70823EDE3720063BBA4 /* TableViewDataSourse.swift */; };
+		7793C70923EDE3720063BBA4 /* TableViewDataSourse_Ext_MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C70823EDE3720063BBA4 /* TableViewDataSourse_Ext_MainVC.swift */; };
 		7793C70D23EDEF270063BBA4 /* ShiftTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C70C23EDEF270063BBA4 /* ShiftTypeCell.swift */; };
 		7793C70F23EDF6760063BBA4 /* ShiftStaffModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C70E23EDF6760063BBA4 /* ShiftStaffModel.swift */; };
 		7793C71323F045E40063BBA4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C71223F045E30063BBA4 /* SettingsViewController.swift */; };
@@ -116,7 +116,7 @@
 		7793C70123E9F6010063BBA4 /* CheckTheSchudaleForExistence_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTheSchudaleForExistence_Func.swift; sourceTree = "<group>"; };
 		7793C70323E9FBD60063BBA4 /* CheckTheSchudaleForEmptiness_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTheSchudaleForEmptiness_Func.swift; sourceTree = "<group>"; };
 		7793C70623EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveScheduleShifts_Func.swift; sourceTree = "<group>"; };
-		7793C70823EDE3720063BBA4 /* TableViewDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourse.swift; sourceTree = "<group>"; };
+		7793C70823EDE3720063BBA4 /* TableViewDataSourse_Ext_MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourse_Ext_MainVC.swift; sourceTree = "<group>"; };
 		7793C70C23EDEF270063BBA4 /* ShiftTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeCell.swift; sourceTree = "<group>"; };
 		7793C70E23EDF6760063BBA4 /* ShiftStaffModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftStaffModel.swift; sourceTree = "<group>"; };
 		7793C71223F045E30063BBA4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = /Users/viktor/Developer/Smenka/Smenka/MainVC/SettingsViewController.swift; sourceTree = "<absolute>"; };
@@ -264,7 +264,7 @@
 				774A850A23D76A8400A653A6 /* MainViewController.swift */,
 				774A852423E2103600A653A6 /* CollectionViewDataSourse.swift */,
 				774A851A23D7712500A653A6 /* DateCollectionViewCell.swift */,
-				7793C70823EDE3720063BBA4 /* TableViewDataSourse.swift */,
+				7793C70823EDE3720063BBA4 /* TableViewDataSourse_Ext_MainVC.swift */,
 				7793C70C23EDEF270063BBA4 /* ShiftTypeCell.swift */,
 			);
 			path = MainVC;
@@ -478,7 +478,7 @@
 				7793C70223E9F6010063BBA4 /* CheckTheSchudaleForExistence_Func.swift in Sources */,
 				7793C70723EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift in Sources */,
 				774A852E23E35C5C00A653A6 /* StorageManager.swift in Sources */,
-				7793C70923EDE3720063BBA4 /* TableViewDataSourse.swift in Sources */,
+				7793C70923EDE3720063BBA4 /* TableViewDataSourse_Ext_MainVC.swift in Sources */,
 				7793C71F23F062870063BBA4 /* ShiftTypeCreationView.swift in Sources */,
 				7793C71523F04A960063BBA4 /* TableViewDataSourse.swift in Sources */,
 				774A852B23E3572F00A653A6 /* StaffModel.swift in Sources */,
