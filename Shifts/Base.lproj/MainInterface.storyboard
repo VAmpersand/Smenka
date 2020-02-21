@@ -43,14 +43,45 @@
                                             <inset key="sectionInset" minX="3" minY="3" maxX="3" maxY="3"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="64g-Pb-htp">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="64g-Pb-htp" customClass="CalendarCollectionViewCell" customModule="Shifts" customModuleProvider="target">
                                                 <rect key="frame" x="3" y="3" width="40" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kUG-Vg-mE4">
                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qO1-AP-Wqg">
+                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArF-qF-PWJ">
+                                                                    <rect key="frame" x="0.0" y="11" width="40" height="18"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="y2F-QY-top"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <constraints>
+                                                                <constraint firstItem="ArF-qF-PWJ" firstAttribute="centerY" secondItem="qO1-AP-Wqg" secondAttribute="centerY" id="Zbm-Df-ysH"/>
+                                                                <constraint firstItem="ArF-qF-PWJ" firstAttribute="centerX" secondItem="qO1-AP-Wqg" secondAttribute="centerX" id="lXh-13-iWO"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="qO1-AP-Wqg" secondAttribute="bottom" id="ifN-km-76w"/>
+                                                        <constraint firstItem="qO1-AP-Wqg" firstAttribute="leading" secondItem="kUG-Vg-mE4" secondAttribute="leading" id="jLv-aM-3nT"/>
+                                                        <constraint firstItem="qO1-AP-Wqg" firstAttribute="top" secondItem="kUG-Vg-mE4" secondAttribute="top" id="jMz-zK-59M"/>
+                                                        <constraint firstAttribute="trailing" secondItem="qO1-AP-Wqg" secondAttribute="trailing" id="zFQ-xn-KEW"/>
+                                                    </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="40" height="40"/>
+                                                <connections>
+                                                    <outlet property="cellLabel" destination="ArF-qF-PWJ" id="Gkw-2z-p3E"/>
+                                                    <outlet property="cellView" destination="qO1-AP-Wqg" id="NwL-xA-zIh"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -75,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="79.6875"/>
+            <point key="canvasLocation" x="137.68115942028987" y="79.352678571428569"/>
         </scene>
     </scenes>
 </document>

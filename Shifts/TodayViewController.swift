@@ -20,6 +20,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
         self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         setDelegate()
+        
+        let color = CGColor(srgbRed: 1, green: 1, blue: 1, alpha: 0.3)
+        calendarCollectionView.backgroundColor = UIColor(cgColor: color)
+        calendarCollectionView.layer.cornerRadius = 15
     }
     
     
@@ -64,5 +68,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         calendarCollectionView.delegate = (self as! UICollectionViewDelegate)
         calendarCollectionView.dataSource = (self as! UICollectionViewDataSource)
     }
+    
+    
 }
 
