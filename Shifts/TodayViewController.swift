@@ -42,15 +42,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let urlStr = widgetUserDefaults?.value(forKey: "fileURL")
         
         guard let url = URL(string: urlStr as! String) else { return }
-        
-        
-//        URLSession.shared.dataTask(with: url!) { (data, response, error) in
-//            
-//            guard let data = data else { return }
-//            guard error == nil else { return }
-//            print(data)
-//            
-//        }
 
         do {
             let data = try Data(contentsOf: url)
@@ -58,6 +49,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         } catch {
             print(error.localizedDescription)
         }
+        
+        //        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+        //
+        //            guard let data = data else { return }
+        //            guard error == nil else { return }
+        //            print(data)
+        //
+        //        }
 
         print(url)
         completionHandler(NCUpdateResult.newData)
