@@ -38,12 +38,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         guard let url = URL(string: urlStr as! String) else { return }
         
-//        guard let url = url else { return }
-//        guard let data = try? Data(contentsOf: url!) else {
-//            print("There was an error!")
-//            return
-//        }
-//        print(data)
         
 //        URLSession.shared.dataTask(with: url!) { (data, response, error) in
 //            
@@ -54,12 +48,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 //        }
 //        
 //
-//        do {
-//            let data = try? Data(contentsOf: url!)
-//            print(data)
-//        } catch {
-//            print(error.localizedDescription)
-//        }
+        do {
+            let data = try Data(contentsOf: url)
+            print(data)
+        } catch {
+            print(error.localizedDescription)
+        }
 
         
         print(urlStr!)

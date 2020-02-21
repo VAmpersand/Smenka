@@ -42,10 +42,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(Realm.Configuration.defaultConfiguration.description)
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
-        let url = Realm.Configuration.defaultConfiguration.fileURL!
-        fileUrl = url.absoluteString
+        shareDBRealm()
+        print(fileUrl) // Print URL db.realm
         
         
         currentMonthIndex = Calendar.current.component(.month, from: Date())
@@ -65,7 +63,7 @@ class MainViewController: UIViewController {
         shiftTypeTable.layer.cornerRadius = 15
         deleteButton.isHidden = true
         
-        shiftTypeTable.delegate = self 
+        shiftTypeTable.delegate = self
         shiftTypeTable.dataSource = self
         
         schedulesShifts = realm.objects(ScheduleShifts.self)
@@ -76,8 +74,6 @@ class MainViewController: UIViewController {
             setFirstClearShiftType()
         }
         
-        let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
-        widgetUserDefaults?.set(fileUrl, forKey: "fileURL")
     }
     
     
@@ -184,6 +180,23 @@ class MainViewController: UIViewController {
             StorageManager.saveShiftType(shiftType)
         }
     }
+    
+    func shareDBRealm() {
+        
+        let identifire = "group.Smenka.widgetShare"
+        var directory: URL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: identifire)!
+        directory.appendPathComponent("db.realm", isDirectory: true)
+        
+        let config = Realm.Configuration(
+        fileURL: directory,
+        schemaVersion: 1, migrationBlock: { migration, oldschemaVersion in })
+        
+        Realm.Configuration.defaultConfiguration = config
+        fileUrl = directory.absoluteString
+        let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
+        widgetUserDefaults?.set(fileUrl, forKey: "fileURL")
+    }
+    
 }
 
 extension MainViewController: ButtonDelegate {
