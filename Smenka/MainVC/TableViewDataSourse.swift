@@ -1,5 +1,5 @@
 //
-//  TableViewDataSourse_Ext_MainVC.swift
+//  TableViewDataSourse.swift
 //  Smenka
 //
 //  Created by Viktor on 07.02.2020.
