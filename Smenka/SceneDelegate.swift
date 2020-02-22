@@ -48,8 +48,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
         
         let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
-        widgetUserDefaults?.setValue(fileUrl, forKey: "fileURL")
         widgetUserDefaults?.setValue(colorIndexes, forKey: "colorIndexes")
+        widgetUserDefaults?.setValue(sharedDate, forKey: "sharedDate")
     }  
 }
 

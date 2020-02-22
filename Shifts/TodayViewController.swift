@@ -14,21 +14,25 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var calendarCollectionView: UICollectionView!
     
-    var colorIndexes = [18, 18, 18, 18, 18, 18, 18,
-                        18, 18, 18, 18, 18, 18, 18,
-                        18, 18, 18, 18, 18, 18, 18,
-                        18, 18, 18, 18, 18, 18, 18,
-                        18, 18, 18, 18, 18, 18, 18,
-                        18]
-    
+    var currentDay = 0
+    var colorIndexes: [Int] = []
+    var sharedDate: [Int] = []
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+        
         setDelegate()
         
         let color = CGColor(srgbRed: 1, green: 1, blue: 1, alpha: 0.3)
         calendarCollectionView.backgroundColor = UIColor(cgColor: color)
         calendarCollectionView.layer.cornerRadius = 15
+        
+        let currentMonth = Calendar.current.component(.month, from: Date()) - 1
+        let currentYear = Calendar.current.component(.year, from: Date())
+        currentDay = Calendar.current.component(.day, from: Date())
+        monthLabel.text = "\(months[currentMonth]) \(currentYear)"
     }
     
     
@@ -40,7 +44,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
     }
     
-    
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         getData()
         completionHandler(NCUpdateResult.newData)
@@ -48,27 +51,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func getData() {
         
-        var data: Data!
         let widgetUserDefaults = UserDefaults.init(suiteName: "group.Smenka.widgetShare")
-        let urlStr = widgetUserDefaults?.value(forKey: "fileURL")
         colorIndexes = widgetUserDefaults?.value(forKey: "colorIndexes") as! [Int]
+        sharedDate = widgetUserDefaults?.value(forKey: "sharedDate") as! [Int]
         
-        guard let url = URL(string: urlStr as! String) else { return }
-        
-        do {
-            data = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            //            let schedaleShifts = try? decoder.decode(ScheduleShifts.self, from: data)
-            
-            //            print(schedaleShifts)
-        } catch {
-            print(error.localizedDescription)
-        }
-        print(url)
-        print(colorIndexes)
-        print(data)
-        
+        calendarCollectionView.reloadData()
     }
     
     

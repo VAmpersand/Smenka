@@ -11,13 +11,13 @@ import UIKit
 class DateCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var shiftColorView: UIView!
+    @IBOutlet var shiftView: UIView!
     
     func drowCircleForToday(color: UIColor) {
         
-        let center = shiftColorView.center
+        let center = shiftView.center
         
-        let circlePath = UIBezierPath(arcCenter: center, radius: (shiftColorView.bounds.width / 2 - 5), startAngle: (3 * CGFloat.pi / 2), endAngle: (9 * CGFloat.pi / 2), clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: center, radius: (shiftView.bounds.width / 2 - 5), startAngle: (3 * CGFloat.pi / 2), endAngle: (9 * CGFloat.pi / 2), clockwise: true)
         
         let circleLayer = CAShapeLayer()
         circleLayer.path = circlePath.cgPath
@@ -35,8 +35,8 @@ class DateCollectionViewCell: UICollectionViewCell {
         
         circleLayer.add(animation, forKey: nil)
         
-        shiftColorView.layer.addSublayer(circleLayer)
-        shiftColorView.layer.backgroundColor = UIColor.clear.cgColor
+        shiftView.layer.addSublayer(circleLayer)
+        shiftView.layer.backgroundColor = UIColor.clear.cgColor
     }
     
 //    func drowCircleForSelectedDay(color: UIColor) {

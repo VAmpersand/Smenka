@@ -34,9 +34,6 @@
 		778F4BE823FFD74D0072C38D /* CalendarCollectionViewDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778F4BE723FFD74D0072C38D /* CalendarCollectionViewDataSourse.swift */; };
 		778F4BEA23FFE47C0072C38D /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778F4BE923FFE47C0072C38D /* CalendarCollectionViewCell.swift */; };
 		778F4BEE240004390072C38D /* CalendarDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778F4BED240004390072C38D /* CalendarDataSourse.swift */; };
-		778F4BF024006A150072C38D /* ScheduleShiftsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778F4BEF24006A150072C38D /* ScheduleShiftsModel.swift */; };
-		778F4BF224006B120072C38D /* ShiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778F4BF124006B120072C38D /* ShiftModel.swift */; };
-		778F4BF424006BFB0072C38D /* ShiftTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778F4BF324006BFB0072C38D /* ShiftTypeModel.swift */; };
 		7793C6F823E4BA8D0063BBA4 /* ShiftTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C6F723E4BA8D0063BBA4 /* ShiftTypeModel.swift */; };
 		7793C6FA23E840C00063BBA4 /* ScheduleShiftsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C6F923E840C00063BBA4 /* ScheduleShiftsModel.swift */; };
 		7793C6FE23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C6FD23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift */; };
@@ -116,9 +113,6 @@
 		778F4BE723FFD74D0072C38D /* CalendarCollectionViewDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewDataSourse.swift; sourceTree = "<group>"; };
 		778F4BE923FFE47C0072C38D /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		778F4BED240004390072C38D /* CalendarDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataSourse.swift; sourceTree = "<group>"; };
-		778F4BEF24006A150072C38D /* ScheduleShiftsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleShiftsModel.swift; sourceTree = "<group>"; };
-		778F4BF124006B120072C38D /* ShiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftModel.swift; sourceTree = "<group>"; };
-		778F4BF324006BFB0072C38D /* ShiftTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeModel.swift; sourceTree = "<group>"; };
 		7793C6F723E4BA8D0063BBA4 /* ShiftTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeModel.swift; sourceTree = "<group>"; };
 		7793C6F923E840C00063BBA4 /* ScheduleShiftsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleShiftsModel.swift; sourceTree = "<group>"; };
 		7793C6FD23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEmptySchedaleShifts_Func.swift; sourceTree = "<group>"; };
@@ -258,9 +252,6 @@
 		778F4BF524006C290072C38D /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				778F4BEF24006A150072C38D /* ScheduleShiftsModel.swift */,
-				778F4BF124006B120072C38D /* ShiftModel.swift */,
-				778F4BF324006BFB0072C38D /* ShiftTypeModel.swift */,
 				778F4BED240004390072C38D /* CalendarDataSourse.swift */,
 			);
 			path = DataModel;
@@ -484,13 +475,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				778F4BF224006B120072C38D /* ShiftModel.swift in Sources */,
 				778F4BEE240004390072C38D /* CalendarDataSourse.swift in Sources */,
 				778F4BEA23FFE47C0072C38D /* CalendarCollectionViewCell.swift in Sources */,
-				778F4BF024006A150072C38D /* ScheduleShiftsModel.swift in Sources */,
 				778F4BE823FFD74D0072C38D /* CalendarCollectionViewDataSourse.swift in Sources */,
 				771943EA23FC687800861758 /* TodayViewController.swift in Sources */,
-				778F4BF424006BFB0072C38D /* ShiftTypeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

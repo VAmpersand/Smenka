@@ -11,19 +11,54 @@ import UIKit
 extension TodayViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 36
+        return sharedDate.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCollectionViewCell
         
+        cell.cellView.isHidden = true
+        
         cell.cellView.layer.cornerRadius = cell.bounds.width / 2
-        cell.cellLabel.text = "\(indexPath.row)"
-        cell.cellView.backgroundColor = colors[colorIndexes[indexPath.row]]
+        if sharedDate[indexPath.row] == 0 {
+            cell.isHidden = true
+        }
+        cell.cellLabel.text = "\(sharedDate[indexPath.row])"
+        if !colorIndexes.isEmpty {
+            cell.cellView.backgroundColor = colors[colorIndexes[indexPath.row]]
+            cell.backgroundColor = colors[colorIndexes[indexPath.row]]
+        }
         cell.layer.cornerRadius = cell.bounds.width / 2
-//        cell.backgroundColor = colors[colorIndexes[indexPath.row]]
-     
+        
+        //MARK:   Mark today in circle
+        if sharedDate[indexPath.row] == currentDay {
+            cell.cellView.isHidden = false
+        }
+        
+        setColorInDateLableText(cell: cell, indexPath: indexPath)
+        
         return cell
     }
-
+    
+    //MARK:  Set text color in dateLabel in cell
+    func setColorInDateLableText(cell: UICollectionViewCell, indexPath: IndexPath) {
+        let cell = cell  as! CalendarCollectionViewCell
+        if  colorIndexes[indexPath.row] != 18 {
+            cell.cellLabel.textColor = .white
+            cell.drowCircleForToday(color: .white)
+        } else {
+            
+            //  Add weekend. Mark weekend in grey
+            switch indexPath.row {
+            case 5, 6, 12, 13, 19, 20, 26, 27, 33, 34:
+                cell.cellLabel.textColor = .white
+            default:
+                cell.cellLabel.textColor = .black
+            }
+            cell.drowCircleForToday(color: .red)
+        }
+    }
+    
+    
+    
 }

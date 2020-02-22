@@ -9,23 +9,13 @@
 import UIKit
 import RealmSwift
 
-@objcMembers public class Shift: Object, Decodable {
+@objcMembers class Shift: Object, Decodable {
     
     dynamic var shiftDate = Date()
     dynamic var shiftTypeIndex = 0
     var shiftStaff = List<ShiftStaff>()
     
-    private enum CodingKeys: String, CodingKey {
-        case shiftTypeIndex
-    }
-    
-    required convenience public init(from decoder: Decoder) throws {
-        self.init()
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.shiftTypeIndex = try container.decode(Int.self, forKey: .shiftTypeIndex)
-    }
- 
-    override public var description: String {
+    override var description: String {
         return "Date - \(shiftDate), type index - \(shiftTypeIndex)"
     }
 }

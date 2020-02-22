@@ -25,7 +25,7 @@
                                             <constraint firstAttribute="height" constant="24" id="Kty-kR-mLH"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="qzM-CV-Tkg"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -50,27 +50,23 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArF-qF-PWJ">
+                                                            <rect key="frame" x="0.0" y="11" width="40" height="18"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="y2F-QY-top"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qO1-AP-Wqg">
                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArF-qF-PWJ">
-                                                                    <rect key="frame" x="0.0" y="11" width="40" height="18"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="y2F-QY-top"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                            <constraints>
-                                                                <constraint firstItem="ArF-qF-PWJ" firstAttribute="centerY" secondItem="qO1-AP-Wqg" secondAttribute="centerY" id="Zbm-Df-ysH"/>
-                                                                <constraint firstItem="ArF-qF-PWJ" firstAttribute="centerX" secondItem="qO1-AP-Wqg" secondAttribute="centerX" id="lXh-13-iWO"/>
-                                                            </constraints>
                                                         </view>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="ArF-qF-PWJ" firstAttribute="centerY" secondItem="kUG-Vg-mE4" secondAttribute="centerY" id="SAr-Mf-bxN"/>
+                                                        <constraint firstItem="ArF-qF-PWJ" firstAttribute="centerX" secondItem="kUG-Vg-mE4" secondAttribute="centerX" id="gPH-O7-0yW"/>
                                                         <constraint firstAttribute="bottom" secondItem="qO1-AP-Wqg" secondAttribute="bottom" id="ifN-km-76w"/>
                                                         <constraint firstItem="qO1-AP-Wqg" firstAttribute="leading" secondItem="kUG-Vg-mE4" secondAttribute="leading" id="jLv-aM-3nT"/>
                                                         <constraint firstItem="qO1-AP-Wqg" firstAttribute="top" secondItem="kUG-Vg-mE4" secondAttribute="top" id="jMz-zK-59M"/>

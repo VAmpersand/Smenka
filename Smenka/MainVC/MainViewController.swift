@@ -9,13 +9,9 @@
 import UIKit
 import RealmSwift
 
-var fileUrl: String!
-var colorIndexes: [Int] = [18, 18, 18, 18, 18, 18, 18,
-                           18, 18, 18, 18, 18, 18, 18,
-                           18, 18, 18, 18, 18, 18, 18,
-                           18, 18, 18, 18, 18, 18, 18,
-                           18, 18, 18, 18, 18, 18, 18,
-                           18]
+var colorIndexes: [Int] = []
+var sharedDate: [Int] = []
+
 
 class MainViewController: UIViewController {
     
@@ -49,7 +45,9 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        shareDBRealm()
+        setDefaultDBRealmDirectory()
+        getEmptySharedData()
+        getEmptyColorIndexes()
         
         currentMonthIndex = Calendar.current.component(.month, from: Date())
         currentYear = Calendar.current.component(.year, from: Date())
@@ -81,6 +79,7 @@ class MainViewController: UIViewController {
         
         let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
         widgetUserDefaults?.setValue(colorIndexes, forKey: "colorIndexes")
+        widgetUserDefaults?.setValue(sharedDate, forKey: "sharedDate")
     }
     
     
@@ -155,10 +154,10 @@ class MainViewController: UIViewController {
             if !shiftIsEdited {
                 removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
             }
-            print(colorIndexes)
             
             let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
             widgetUserDefaults?.setValue(colorIndexes, forKey: "colorIndexes")
+            widgetUserDefaults?.setValue(sharedDate, forKey: "sharedDate")
         }
     }
     
@@ -191,8 +190,28 @@ class MainViewController: UIViewController {
         }
     }
     
+    func getEmptySharedData() {
+        var counter = 0
+        sharedDate = []
+        
+        while counter != 35 {
+            sharedDate.append(0)
+            counter += 1
+        }
+    }
     
-    func shareDBRealm() {
+    func getEmptyColorIndexes() {
+           var counter = 0
+           colorIndexes = []
+           while counter != 35 {
+               colorIndexes.append(18)
+               counter += 1
+           }
+       }
+       
+    
+    
+    func setDefaultDBRealmDirectory() {
         
         let identifire = "group.Smenka.widgetShare"
         var directory: URL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: identifire)!
@@ -203,12 +222,8 @@ class MainViewController: UIViewController {
             schemaVersion: 1, migrationBlock: { migration, oldschemaVersion in })
         
         Realm.Configuration.defaultConfiguration = config
-        fileUrl = directory.absoluteString
-        let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
-        widgetUserDefaults?.set(fileUrl, forKey: "fileURL")
     }
 }
-
 
 extension MainViewController: ButtonDelegate {
     
@@ -230,16 +245,15 @@ extension MainViewController: ButtonDelegate {
         
         for scheduleShift in schedulesShifts {
             if scheduleShift.monthlyScheduleName == "\(currentYear)-\(currentMonthIndex)" {
-                colorIndexes = [18, 18, 18, 18, 18, 18, 18,
-                                18, 18, 18, 18, 18, 18, 18,
-                                18, 18, 18, 18, 18, 18, 18,
-                                18, 18, 18, 18, 18, 18, 18,
-                                18, 18, 18, 18, 18, 18, 18,
-                                18]
+                getEmptyColorIndexes()
             }
         }
+        
+        let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
+        widgetUserDefaults?.setValue(colorIndexes, forKey: "colorIndexes")
     }
 }
+
 
 
 

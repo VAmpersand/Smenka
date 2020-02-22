@@ -23,7 +23,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         cell.layer.cornerRadius = cell.bounds.width / 2
         cell.backgroundColor = colors.last
-        cell.shiftColorView.isHidden = true
+        cell.shiftView.isHidden = true
         
         //MARK:  Get data from database, for current display text color
         guard let schedulesShifts = schedulesShifts else { return cell }
@@ -33,6 +33,14 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
         }
         
+        //MARK:  Hide empty cell's
+        if indexPath.item <= firstWeekDayOfMonth - 2 {
+            cell.isHidden = true
+        } else {
+            calcDate = indexPath.row - firstWeekDayOfMonth + 2
+            cell.isHidden = false
+            cell.dateLabel.text = "\(calcDate)"
+        }
         
         //MARK:   Filling/display the calendar with shifts color from the schedule
         guard let shiftTipes = shiftTypes else { return cell }
@@ -55,25 +63,16 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     cell.backgroundColor = colors[shiftTipes[shiftTypeIndex].shiftColorIndex]
                 }
                 colorIndexes[indexPath.row] = shiftTypes[shift.shiftTypeIndex].shiftColorIndex
-                
+                sharedDate[indexPath.row] = calcDate
             }
         }
         
         // Set text color in dateLabel in cell
         setColorInDateLableText(cell: cell, indexPath: indexPath, shift: shift)
         
-        //MARK:  Hide empty cell's
-        if indexPath.item <= firstWeekDayOfMonth - 2 {
-            cell.isHidden = true
-        } else {
-            calcDate = indexPath.row - firstWeekDayOfMonth + 2
-            cell.isHidden = false
-            cell.dateLabel.text = "\(calcDate)"
-        }
-        
         //MARK:   Mark today in circle
         if calcDate == todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
-            cell.shiftColorView.isHidden = false
+            cell.shiftView.isHidden = false
         }
         
         return cell
