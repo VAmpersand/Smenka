@@ -6,25 +6,18 @@
 //  Copyright © 2020 Viktor. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class ScheduleShifts: Codable {
+class ScheduleShifts: Decodable {
+    
+    
+    let monthlyScheduleName: String?
+    let shifts: [Shift]
     
     enum CodingKeys: String, CodingKey {
         case monthlyScheduleName
         case shifts
     }
-    
-    let monthlyScheduleName: String?
-    let shifts: [Shift]
-    
-    
-//    func encode(to encoder: Encoder) throws {
-//        var container = encoder.container(keyedBy: CodingKeys.self)
-//        try container.encode(title, forKey: .title)
-//        try container.encode(price, forKey: .price)
-//        try container.encode(quantity, forKey: .quantity)
-//    }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

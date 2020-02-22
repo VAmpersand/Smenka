@@ -41,30 +41,30 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         completionHandler(NCUpdateResult.newData)
     }
     
-    
-    
     func decodeData() {
         
+        var data: Data!
         let widgetUserDefaults = UserDefaults.init(suiteName: "group.Smenka.widgetShare")
         let urlStr = widgetUserDefaults?.value(forKey: "fileURL")
         
         guard let url = URL(string: urlStr as! String) else { return }
         
         do {
-            let data = try Data(contentsOf: url)
+            data = try Data(contentsOf: url)
             
 //            let schedaleShifts: ScheduleShifts = try! JSONDecoder().decode(ScheduleShifts.self, for: data)
-            
-            print(data)
+                  
+            print(data!)
         } catch {
             print(error.localizedDescription)
         }
          print(url)
     }
     
+    
     func setDelegate() {
-        calendarCollectionView.delegate = self as! UICollectionViewDelegate
-        calendarCollectionView.dataSource = self  as! UICollectionViewDataSource
+        calendarCollectionView.delegate = (self as! UICollectionViewDelegate)
+        calendarCollectionView.dataSource = (self  as! UICollectionViewDataSource)
     }
     
     

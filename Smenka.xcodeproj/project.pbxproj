@@ -218,7 +218,6 @@
 				7793C71123EDFD780063BBA4 /* SettingsVC */,
 				7783940923F88A32000BD2D4 /* Alerts */,
 				774A850C23D76A8400A653A6 /* Main.storyboard */,
-				7798341523FDD38300CB5180 /* Alert.storyboard */,
 				774A850F23D76A8500A653A6 /* Assets.xcassets */,
 				774A851123D76A8500A653A6 /* LaunchScreen.storyboard */,
 				774A851423D76A8500A653A6 /* Info.plist */,
@@ -252,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				7783940723F88A22000BD2D4 /* ValidationCheckRemovalView.swift */,
+				7798341523FDD38300CB5180 /* Alert.storyboard */,
 			);
 			path = Alerts;
 			sourceTree = "<group>";

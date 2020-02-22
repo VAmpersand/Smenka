@@ -100,13 +100,13 @@
                                     <action selector="deleteCurrentScheduleShifts:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f8O-Uz-7Bo"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ipY-AM-d8K">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ipY-AM-d8K">
                                 <rect key="frame" x="37" y="128" width="340" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dx-NE-prP">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="48" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="WBL-d8-MDb"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="WBL-d8-MDb"/>
                                             <constraint firstAttribute="height" constant="40" id="bzN-In-voL"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -114,7 +114,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Te" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZH-o0-tCq">
-                                        <rect key="frame" x="50" y="0.0" width="40" height="40"/>
+                                        <rect key="frame" x="54" y="0.0" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="0Tz-IR-mpT"/>
                                             <constraint firstAttribute="height" constant="40" id="0Uw-oH-4kZ"/>
@@ -124,7 +124,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpW-lK-cGD">
-                                        <rect key="frame" x="100" y="0.0" width="40" height="40"/>
+                                        <rect key="frame" x="104" y="0.0" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="Kqo-ai-6da"/>
                                             <constraint firstAttribute="height" constant="40" id="tlN-n6-xR5"/>
@@ -134,7 +134,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Th" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7o7-qD-YxW">
-                                        <rect key="frame" x="150" y="0.0" width="40" height="40"/>
+                                        <rect key="frame" x="154" y="0.0" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="DUc-Wu-66d"/>
                                             <constraint firstAttribute="height" constant="40" id="Nrq-cb-hIQ"/>
@@ -154,7 +154,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pir-Lt-Gt5">
-                                        <rect key="frame" x="250" y="0.0" width="40" height="40"/>
+                                        <rect key="frame" x="246" y="0.0" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="9CA-mJ-uXc"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="tt5-5n-Va3"/>
@@ -164,10 +164,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Su" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijX-07-AS4">
-                                        <rect key="frame" x="300" y="0.0" width="40" height="40"/>
+                                        <rect key="frame" x="292" y="0.0" width="48" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="WCu-vz-bgS"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="jR6-E4-5ev"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="jR6-E4-5ev"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
@@ -189,11 +189,11 @@
                                     <size key="estimatedItemSize" width="40" height="40"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="4" minY="4" maxX="4" maxY="4"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Calendar" reuseIdentifier="Calendar" id="Ha4-LW-QoB" customClass="DateCollectionViewCell" customModule="Smenka" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <rect key="frame" x="4" y="4" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9Lm-3q-Iuq">
                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ShiftType: Codable {
+class ShiftType: Decodable {
     
     let shiftColorIndex: Int?
     
