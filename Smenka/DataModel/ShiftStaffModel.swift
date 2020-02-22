@@ -8,9 +8,9 @@
 
 import RealmSwift
 
-class ShiftStaff: Object {
+@objcMembers class ShiftStaff: Object {
     
-    @objc dynamic var employee: Staff!
-    @objc dynamic var shiftType: ShiftType!
+    dynamic var employee: Staff!
+    dynamic var shiftType: ShiftType!
     
 }

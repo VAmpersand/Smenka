@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension TodayViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 36

@@ -8,11 +8,11 @@
 
 import RealmSwift
 
-class Staff: Object {
+@objcMembers class Staff: Object {
     
-    @objc dynamic var employeeName = "Employee name"
-    @objc dynamic var employeeSurname = "Employee surname"
-    @objc dynamic var employeePosition = "Employee position"
+    dynamic var employeeName = "Employee name"
+    dynamic var employeeSurname = "Employee surname"
+    dynamic var employeePosition = "Employee position"
     
 }
 

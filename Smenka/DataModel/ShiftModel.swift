@@ -8,10 +8,10 @@
 
 import RealmSwift
 
-class Shift: Object {
+@objcMembers class Shift: Object {
     
-    @objc dynamic var shiftDate = Date()
-    @objc dynamic var shiftTypeIndex = 0
+    dynamic var shiftDate = Date()
+    dynamic var shiftTypeIndex = 0
     var shiftStaff = List<ShiftStaff>()
 
     override var description: String {

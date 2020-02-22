@@ -1,5 +1,5 @@
 //
-//  CollectionViewDataSourse.swift
+//  CollectionViewDataSource.swift
 //  Smenka
 //
 //  Created by Viktor on 29.01.2020.

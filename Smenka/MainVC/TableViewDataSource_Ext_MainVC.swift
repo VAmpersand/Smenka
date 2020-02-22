@@ -1,22 +1,23 @@
 //
-//  TableViewDataSourse.swift
+//  TableViewDataSource.swift
 //  Smenka
 //
-//  Created by Viktor on 09.02.2020.
+//  Created by Viktor on 07.02.2020.
 //  Copyright © 2020 Viktor. All rights reserved.
 //
 
 import UIKit
 
-extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let shiftTypes = shiftTypes else { return 0 }
         return shiftTypes.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ShiftTypeCell", for: indexPath) as! ShiftTypeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ShiftTypeCell
         
         guard let shiftTypes = shiftTypes else { return cell }
         let shiftType = shiftTypes[indexPath.row]
@@ -33,6 +34,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.typeColor.layer.cornerRadius = 20
         
         return cell
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -46,16 +48,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         return height
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let editing = editingShiftType(at: indexPath)
-        let delete = deleteShiftType(at: indexPath)
-        
-        return UISwipeActionsConfiguration(actions: [delete, editing])
-    }
-    
 }
+
+
