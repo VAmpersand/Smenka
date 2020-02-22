@@ -6,7 +6,7 @@
 //  Copyright © 2020 Viktor. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class ShiftType: Decodable {
     

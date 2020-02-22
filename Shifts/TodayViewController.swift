@@ -9,12 +9,17 @@
 import UIKit
 import NotificationCenter
 
-
 class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var calendarCollectionView: UICollectionView!
     
+    var colorIndexes = [18, 18, 18, 18, 18, 18, 18,
+                        18, 18, 18, 18, 18, 18, 18,
+                        18, 18, 18, 18, 18, 18, 18,
+                        18, 18, 18, 18, 18, 18, 18,
+                        18, 18, 18, 18, 18, 18, 18,
+                        18]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,28 +42,33 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        decodeData()
+        getData()
         completionHandler(NCUpdateResult.newData)
     }
     
-    func decodeData() {
+    func getData() {
         
         var data: Data!
         let widgetUserDefaults = UserDefaults.init(suiteName: "group.Smenka.widgetShare")
         let urlStr = widgetUserDefaults?.value(forKey: "fileURL")
+        colorIndexes = widgetUserDefaults?.value(forKey: "colorIndexes") as! [Int]
         
         guard let url = URL(string: urlStr as! String) else { return }
         
         do {
             data = try Data(contentsOf: url)
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            //            let schedaleShifts = try? decoder.decode(ScheduleShifts.self, from: data)
             
-//            let schedaleShifts: ScheduleShifts = try! JSONDecoder().decode(ScheduleShifts.self, for: data)
-                  
-            print(data!)
+            //            print(schedaleShifts)
         } catch {
             print(error.localizedDescription)
         }
-         print(url)
+        print(url)
+        print(colorIndexes)
+        print(data)
+        
     }
     
     
@@ -66,7 +76,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         calendarCollectionView.delegate = (self as! UICollectionViewDelegate)
         calendarCollectionView.dataSource = (self  as! UICollectionViewDataSource)
     }
-    
     
 }
 

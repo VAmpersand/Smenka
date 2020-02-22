@@ -54,6 +54,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 } else {
                     cell.backgroundColor = colors[shiftTipes[shiftTypeIndex].shiftColorIndex]
                 }
+                colorIndexes[indexPath.row] = shiftTypes[shift.shiftTypeIndex].shiftColorIndex
+                
             }
         }
         
@@ -110,6 +112,12 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 StorageManager.editShift(shift, newShift)
                 cell.backgroundColor = colors[shiftTipes[newShift.shiftTypeIndex].shiftColorIndex]
                 self.setColorInDateLableText(cell: cell, indexPath: indexPath, shift: newShift)
+            }
+            
+            for scheduleShift in schedulesShifts {
+                if scheduleShift.monthlyScheduleName == "\(currentYear)-\(currentMonthIndex)" {
+                    colorIndexes[indexPath.row] = shiftTypes[newShift.shiftTypeIndex].shiftColorIndex
+                }
             }
         }
     }

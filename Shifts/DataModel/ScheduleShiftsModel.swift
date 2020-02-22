@@ -6,9 +6,9 @@
 //  Copyright © 2020 Viktor. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class ScheduleShifts: Decodable {
+class Schedule: Decodable {
     
     
     let monthlyScheduleName: String?
@@ -23,8 +23,11 @@ class ScheduleShifts: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         monthlyScheduleName = try container.decode(String.self, forKey: .monthlyScheduleName)
         shifts = try container.decode([Shift].self, forKey: .shifts)
-     
     }
+    
+    var description: String {
+        return "Date - \(monthlyScheduleName ?? "Error"), shifts - \(shifts)"
+      }
 }
 
 

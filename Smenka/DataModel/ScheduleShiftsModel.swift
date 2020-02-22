@@ -6,49 +6,28 @@
 //  Copyright © 2020 Viktor. All rights reserved.
 //
 
-import Realm
+import UIKit
 import RealmSwift
 
-@objcMembers class ScheduleShifts: Object {
+@objcMembers public class ScheduleShifts: Object, Decodable {
     
     dynamic var monthlyScheduleName = "yyyy-MM"
     var shifts = List<Shift>()
     
+    private enum CodingKeys: String, CodingKey {
+        case monthlyScheduleName
+        case shifts
+    }
     
-//    enum CodingKeys: String, CodingKey {
-//        case monthlyScheduleName
-//        case shifts
-//    }
-//
-//    required init(from decoder: Decoder) throws
-//    {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//
-//        monthlyScheduleName = try container.decode(String.self, forKey: .monthlyScheduleName)
-//
-//        let shift = try container.decode([Shift].self, forKey: .shifts)
-//        shifts.append(objectsIn: shift)
-//
-//        super.init()
-//    }
-//
-//    override static func primaryKey() -> String?
-//     {
-//         return "monthlyScheduleName"
-//     }
-//
-//     required init()
-//     {
-//         super.init()
-//     }
-//
-//    required init(value: Any, schema: Schema)
-//     {
-//         super.init(value: value, schema: schema)
-//     }
-//
-//    required init(realm: Realm, schema: RLMSchema.objectSchema)
-//     {
-//         super.init(realm: realm, schema: schema)
-//     }
+    required convenience public init(from decoder: Decoder) throws {
+        self.init()
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.monthlyScheduleName = try container.decode(String.self, forKey: .monthlyScheduleName)
+        self.shifts = try container.decode(List<Shift>.self, forKey: .shifts)
+    }
+    
+    override public var description: String {
+        return "Date - \(monthlyScheduleName), shifts - \(shifts)"
+    }
+    
 }

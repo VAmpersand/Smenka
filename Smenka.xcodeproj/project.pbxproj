@@ -178,7 +178,6 @@
 				771943E923FC687800861758 /* TodayViewController.swift */,
 				778F4BE723FFD74D0072C38D /* CalendarCollectionViewDataSourse.swift */,
 				778F4BE923FFE47C0072C38D /* CalendarCollectionViewCell.swift */,
-				778F4BED240004390072C38D /* CalendarDataSourse.swift */,
 				771943EB23FC687800861758 /* MainInterface.storyboard */,
 				771943EE23FC687800861758 /* Info.plist */,
 			);
@@ -262,6 +261,7 @@
 				778F4BEF24006A150072C38D /* ScheduleShiftsModel.swift */,
 				778F4BF124006B120072C38D /* ShiftModel.swift */,
 				778F4BF324006BFB0072C38D /* ShiftTypeModel.swift */,
+				778F4BED240004390072C38D /* CalendarDataSourse.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";

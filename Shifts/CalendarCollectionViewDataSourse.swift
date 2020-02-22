@@ -19,6 +19,9 @@ extension TodayViewController: UICollectionViewDataSource, UICollectionViewDeleg
         
         cell.cellView.layer.cornerRadius = cell.bounds.width / 2
         cell.cellLabel.text = "\(indexPath.row)"
+        cell.cellView.backgroundColor = colors[colorIndexes[indexPath.row]]
+        cell.layer.cornerRadius = cell.bounds.width / 2
+//        cell.backgroundColor = colors[colorIndexes[indexPath.row]]
      
         return cell
     }

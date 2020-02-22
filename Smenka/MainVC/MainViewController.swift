@@ -10,6 +10,12 @@ import UIKit
 import RealmSwift
 
 var fileUrl: String!
+var colorIndexes: [Int] = [18, 18, 18, 18, 18, 18, 18,
+                           18, 18, 18, 18, 18, 18, 18,
+                           18, 18, 18, 18, 18, 18, 18,
+                           18, 18, 18, 18, 18, 18, 18,
+                           18, 18, 18, 18, 18, 18, 18,
+                           18]
 
 class MainViewController: UIViewController {
     
@@ -39,12 +45,11 @@ class MainViewController: UIViewController {
     var editButtonPressCheck = false
     var currentIndexPath: IndexPath!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         shareDBRealm()
-        print(fileUrl!) // Print URL db.realm
-        
         
         currentMonthIndex = Calendar.current.component(.month, from: Date())
         currentYear = Calendar.current.component(.year, from: Date())
@@ -74,6 +79,8 @@ class MainViewController: UIViewController {
             setFirstClearShiftType()
         }
         
+        let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
+        widgetUserDefaults?.setValue(colorIndexes, forKey: "colorIndexes")
     }
     
     
@@ -127,13 +134,13 @@ class MainViewController: UIViewController {
             
             //MARK: Create empty schedulShifts if is has not been previously created
             let nameIsMatch = checkTheScheduleForExistence(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
-         
+            
             if  !nameIsMatch {
                 let scheduleShifts = setEmptyScheduleShifts(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
                 DispatchQueue.main.async {
                     StorageManager.saveScheduleShift(scheduleShifts)
                 }
-            }    
+            }
         } else {
             self.editButton.setTitle("Edit", for: .normal)
             self.editButton.setTitleColor(.blue, for: .normal)
@@ -148,7 +155,10 @@ class MainViewController: UIViewController {
             if !shiftIsEdited {
                 removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
             }
+            print(colorIndexes)
             
+            let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
+            widgetUserDefaults?.setValue(colorIndexes, forKey: "colorIndexes")
         }
     }
     
@@ -181,6 +191,7 @@ class MainViewController: UIViewController {
         }
     }
     
+    
     func shareDBRealm() {
         
         let identifire = "group.Smenka.widgetShare"
@@ -188,16 +199,16 @@ class MainViewController: UIViewController {
         directory.appendPathComponent("db.realm", isDirectory: true)
         
         let config = Realm.Configuration(
-        fileURL: directory,
-        schemaVersion: 1, migrationBlock: { migration, oldschemaVersion in })
+            fileURL: directory,
+            schemaVersion: 1, migrationBlock: { migration, oldschemaVersion in })
         
         Realm.Configuration.defaultConfiguration = config
         fileUrl = directory.absoluteString
         let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
         widgetUserDefaults?.set(fileUrl, forKey: "fileURL")
     }
-    
 }
+
 
 extension MainViewController: ButtonDelegate {
     
@@ -216,7 +227,19 @@ extension MainViewController: ButtonDelegate {
         DispatchQueue.main.async {
             self.calendarCollectionView.reloadData()
         }
+        
+        for scheduleShift in schedulesShifts {
+            if scheduleShift.monthlyScheduleName == "\(currentYear)-\(currentMonthIndex)" {
+                colorIndexes = [18, 18, 18, 18, 18, 18, 18,
+                                18, 18, 18, 18, 18, 18, 18,
+                                18, 18, 18, 18, 18, 18, 18,
+                                18, 18, 18, 18, 18, 18, 18,
+                                18, 18, 18, 18, 18, 18, 18,
+                                18]
+            }
+        }
     }
 }
+
 
 

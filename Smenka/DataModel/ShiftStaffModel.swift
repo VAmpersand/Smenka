@@ -6,9 +6,10 @@
 //  Copyright © 2020 Viktor. All rights reserved.
 //
 
+import UIKit
 import RealmSwift
 
-@objcMembers class ShiftStaff: Object {
+@objcMembers class ShiftStaff: Object, Decodable {
     
     dynamic var employee: Staff!
     dynamic var shiftType: ShiftType!
