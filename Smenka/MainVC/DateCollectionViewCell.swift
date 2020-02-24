@@ -15,9 +15,9 @@ class DateCollectionViewCell: UICollectionViewCell {
     
     func drowCircleForToday(color: UIColor) {
         
-        let center = shiftView.center
+        let centerXY = CGPoint(x: 23.5, y: 23.5)
         
-        let circlePath = UIBezierPath(arcCenter: center, radius: (shiftView.bounds.width / 2 - 5), startAngle: (3 * CGFloat.pi / 2), endAngle: (9 * CGFloat.pi / 2), clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: centerXY, radius: CGFloat(20), startAngle: (3 * CGFloat.pi / 2), endAngle: (9 * CGFloat.pi / 2), clockwise: true)
         
         let circleLayer = CAShapeLayer()
         circleLayer.path = circlePath.cgPath

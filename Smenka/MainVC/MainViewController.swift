@@ -51,9 +51,6 @@ class MainViewController: UIViewController {
         getEmptySharedData()
         getEmptyColorIndexes()
         
-        if !checkTheShiftTypeForExistence(shiftTypes: shiftTypes, shiftTypeName: "Clear shift type") {
-            setFirstClearShiftType()
-        }
         
         currentMonthIndex = Calendar.current.component(.month, from: Date())
         currentYear = Calendar.current.component(.year, from: Date())
@@ -79,6 +76,9 @@ class MainViewController: UIViewController {
         shiftTypes = realm.objects(ShiftType.self)
         //        staff = realm.objects(Staff.self)
         
+        if !checkTheShiftTypeForExistence(shiftTypes: shiftTypes, shiftTypeName: "Clear shift type") {
+            setFirstClearShiftType()
+        }
         
         shareDataInWidget()
     }

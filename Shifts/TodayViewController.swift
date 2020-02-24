@@ -25,6 +25,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         setDelegate()
         
+        
         let color = CGColor(srgbRed: 1, green: 1, blue: 1, alpha: 0.3)
         calendarCollectionView.backgroundColor = UIColor(cgColor: color)
         calendarCollectionView.layer.cornerRadius = 10
@@ -43,7 +44,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         if activeDisplayMode == .compact {
             self.preferredContentSize = maxSize
         } else if activeDisplayMode == .expanded {
-            self.preferredContentSize = CGSize(width: maxSize.width, height: 370)
+            self.preferredContentSize = CGSize(width: maxSize.width, height: 330)
         }
     }
     

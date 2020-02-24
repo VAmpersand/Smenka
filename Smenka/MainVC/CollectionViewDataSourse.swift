@@ -127,7 +127,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 if shiftTipes.isEmpty {
                     colorIndexes[indexPath.row] = 18
                 } else {
-                    colorIndexes[indexPath.row] = shiftTypes[shift.shiftTypeIndex].shiftColorIndex
+                    colorIndexes[indexPath.row] = shiftTypes[newShift.shiftTypeIndex].shiftColorIndex
                 }
             }
         }

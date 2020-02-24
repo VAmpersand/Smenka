@@ -55,5 +55,5 @@ extension TodayViewController: UICollectionViewDataSource, UICollectionViewDeleg
             }
             cell.drowCircleForToday(color: .red)
         }
-    } 
+    }
 }
