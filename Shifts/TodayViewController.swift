@@ -35,7 +35,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         monthLabel.text = "\(months[currentMonth]) \(currentYear)"
     }
     
-    
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         if activeDisplayMode == .compact {
             self.preferredContentSize = maxSize
@@ -46,6 +45,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         getData()
+        calendarCollectionView.reloadData()
         completionHandler(NCUpdateResult.newData)
     }
     
@@ -54,8 +54,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let widgetUserDefaults = UserDefaults.init(suiteName: "group.Smenka.widgetShare")
         colorIndexes = widgetUserDefaults?.value(forKey: "colorIndexes") as! [Int]
         sharedDate = widgetUserDefaults?.value(forKey: "sharedDate") as! [Int]
-        
-        calendarCollectionView.reloadData()
     }
     
     

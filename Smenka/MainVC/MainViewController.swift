@@ -30,6 +30,9 @@ class MainViewController: UIViewController {
     var currentYear = 0
     var presentYear = 0
     
+    var month = 0
+    var year = 0
+    
     var currentMonth = 0
     
     var currentMonthIndex = 0
@@ -52,6 +55,10 @@ class MainViewController: UIViewController {
         currentMonthIndex = Calendar.current.component(.month, from: Date())
         currentYear = Calendar.current.component(.year, from: Date())
         todaysDate = Calendar.current.component(.day, from: Date())
+        
+        month = Calendar.current.component(.month, from: Date())
+        year = Calendar.current.component(.year, from: Date())
+              
         
         presentMonthIndex = currentMonthIndex
         presentYear = currentYear
@@ -77,9 +84,7 @@ class MainViewController: UIViewController {
             setFirstClearShiftType()
         }
         
-        let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
-        widgetUserDefaults?.setValue(colorIndexes, forKey: "colorIndexes")
-        widgetUserDefaults?.setValue(sharedDate, forKey: "sharedDate")
+        shareDataInWidget()
     }
     
     
@@ -89,6 +94,9 @@ class MainViewController: UIViewController {
         // Leap year check before calendar display
         didChangeMonth(monthIndex: currentMonth, year: currentYear)
         shiftTypeTable.reloadData()
+        
+        shareDataInWidget()
+        
     }
     
     
@@ -155,9 +163,7 @@ class MainViewController: UIViewController {
                 removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
             }
             
-            let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
-            widgetUserDefaults?.setValue(colorIndexes, forKey: "colorIndexes")
-            widgetUserDefaults?.setValue(sharedDate, forKey: "sharedDate")
+            shareDataInWidget()
         }
     }
     
@@ -194,21 +200,27 @@ class MainViewController: UIViewController {
         var counter = 0
         sharedDate = []
         
-        while counter != 35 {
+        while counter != 37 {
             sharedDate.append(0)
             counter += 1
         }
     }
     
     func getEmptyColorIndexes() {
-           var counter = 0
-           colorIndexes = []
-           while counter != 35 {
-               colorIndexes.append(18)
-               counter += 1
-           }
-       }
-       
+        var counter = 0
+        colorIndexes = []
+        while counter != 37 {
+            colorIndexes.append(18)
+            counter += 1
+        }
+    }
+    
+    
+    func shareDataInWidget() {
+        let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
+        widgetUserDefaults?.setValue(colorIndexes, forKey: "colorIndexes")
+        widgetUserDefaults?.setValue(sharedDate, forKey: "sharedDate")
+    }
     
     
     func setDefaultDBRealmDirectory() {
@@ -249,8 +261,7 @@ extension MainViewController: ButtonDelegate {
             }
         }
         
-        let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
-        widgetUserDefaults?.setValue(colorIndexes, forKey: "colorIndexes")
+        shareDataInWidget()
     }
 }
 

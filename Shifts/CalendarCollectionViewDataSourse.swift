@@ -19,13 +19,11 @@ extension TodayViewController: UICollectionViewDataSource, UICollectionViewDeleg
         
         cell.cellView.isHidden = true
         
-        cell.cellView.layer.cornerRadius = cell.bounds.width / 2
         if sharedDate[indexPath.row] == 0 {
             cell.isHidden = true
         }
         cell.cellLabel.text = "\(sharedDate[indexPath.row])"
         if !colorIndexes.isEmpty {
-            cell.cellView.backgroundColor = colors[colorIndexes[indexPath.row]]
             cell.backgroundColor = colors[colorIndexes[indexPath.row]]
         }
         cell.layer.cornerRadius = cell.bounds.width / 2
@@ -57,8 +55,5 @@ extension TodayViewController: UICollectionViewDataSource, UICollectionViewDeleg
             }
             cell.drowCircleForToday(color: .red)
         }
-    }
-    
-    
-    
+    } 
 }

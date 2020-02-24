@@ -62,10 +62,17 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 } else {
                     cell.backgroundColor = colors[shiftTipes[shiftTypeIndex].shiftColorIndex]
                 }
-                colorIndexes[indexPath.row] = shiftTypes[shift.shiftTypeIndex].shiftColorIndex
-                sharedDate[indexPath.row] = calcDate
             }
         }
+        
+      
+        for scheduleShift in schedulesShifts {
+            if scheduleShift.monthlyScheduleName == "\(year)-\(month)" {
+            colorIndexes[indexPath.row] = shiftTypes[shift.shiftTypeIndex].shiftColorIndex
+            sharedDate[indexPath.row] = calcDate
+            }
+        }
+        
         
         // Set text color in dateLabel in cell
         setColorInDateLableText(cell: cell, indexPath: indexPath, shift: shift)
@@ -114,7 +121,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
             
             for scheduleShift in schedulesShifts {
-                if scheduleShift.monthlyScheduleName == "\(currentYear)-\(currentMonthIndex)" {
+                if scheduleShift.monthlyScheduleName == "\(year)-\(month)" {
                     colorIndexes[indexPath.row] = shiftTypes[newShift.shiftTypeIndex].shiftColorIndex
                 }
             }
