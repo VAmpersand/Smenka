@@ -12,7 +12,6 @@ import RealmSwift
 var colorIndexes: [Int] = []
 var sharedDate: [Int] = []
 
-
 class MainViewController: UIViewController {
     
     @IBOutlet var calendarCollectionView: UICollectionView!
@@ -30,8 +29,8 @@ class MainViewController: UIViewController {
     var currentYear = 0
     var presentYear = 0
     
-    var month = 0
-    var year = 0
+//    var month = 0
+//    var year = 0
     
     var currentMonth = 0
     
@@ -52,14 +51,14 @@ class MainViewController: UIViewController {
         getEmptySharedData()
         getEmptyColorIndexes()
         
+        if !checkTheShiftTypeForExistence(shiftTypes: shiftTypes, shiftTypeName: "Clear shift type") {
+            setFirstClearShiftType()
+        }
+        
         currentMonthIndex = Calendar.current.component(.month, from: Date())
         currentYear = Calendar.current.component(.year, from: Date())
         todaysDate = Calendar.current.component(.day, from: Date())
-        
-        month = Calendar.current.component(.month, from: Date())
-        year = Calendar.current.component(.year, from: Date())
-              
-        
+                      
         presentMonthIndex = currentMonthIndex
         presentYear = currentYear
         
@@ -80,9 +79,6 @@ class MainViewController: UIViewController {
         shiftTypes = realm.objects(ShiftType.self)
         //        staff = realm.objects(Staff.self)
         
-        if !checkTheShiftTypeForExistence(shiftTypes: shiftTypes, shiftTypeName: "Clear shift type") {
-            setFirstClearShiftType()
-        }
         
         shareDataInWidget()
     }
@@ -213,6 +209,7 @@ class MainViewController: UIViewController {
             colorIndexes.append(18)
             counter += 1
         }
+        print(colorIndexes)
     }
     
     
@@ -234,6 +231,7 @@ class MainViewController: UIViewController {
             schemaVersion: 1, migrationBlock: { migration, oldschemaVersion in })
         
         Realm.Configuration.defaultConfiguration = config
+        print(directory)
     }
 }
 

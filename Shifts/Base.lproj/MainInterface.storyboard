@@ -16,13 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="349"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Sqw-rx-Ulc">
-                                <rect key="frame" x="0.0" y="44" width="320" height="305"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="f8d-3X-6Cc">
+                                <rect key="frame" x="5" y="44" width="310" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sq3-pU-eHf">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="310" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="Kty-kR-mLH"/>
+                                            <constraint firstAttribute="height" constant="30" id="Kty-kR-mLH"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="qzM-CV-Tkg"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="21"/>
@@ -30,13 +30,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kUj-vd-mWQ">
-                                        <rect key="frame" x="0.0" y="29" width="320" height="276"/>
+                                        <rect key="frame" x="0.0" y="34" width="310" height="266"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="320" id="9m7-hN-4d3"/>
-                                            <constraint firstAttribute="height" constant="276" id="VOL-EZ-2wE"/>
+                                            <constraint firstAttribute="width" constant="310" id="9m7-hN-4d3"/>
+                                            <constraint firstAttribute="height" constant="266" id="VOL-EZ-2wE"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="7" minimumInteritemSpacing="6" id="HkL-sS-Ncw">
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="4" minimumInteritemSpacing="4" sectionInsetReference="safeArea" id="HkL-sS-Ncw">
                                             <size key="itemSize" width="40" height="40"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -48,7 +48,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kUG-Vg-mE4">
                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArF-qF-PWJ">
                                                             <rect key="frame" x="0.0" y="11" width="40" height="18"/>
@@ -85,10 +85,10 @@
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="Sqw-rx-Ulc" secondAttribute="bottom" id="BbY-06-OWb"/>
-                            <constraint firstItem="Sqw-rx-Ulc" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="bnW-FO-hA0"/>
-                            <constraint firstItem="Sqw-rx-Ulc" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" id="g3i-ZR-JGE"/>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="Sqw-rx-Ulc" secondAttribute="trailing" id="kUJ-qj-8R0"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="f8d-3X-6Cc" secondAttribute="trailing" constant="5" id="Ns2-cP-ieu"/>
+                            <constraint firstItem="f8d-3X-6Cc" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="5" id="VbN-9i-Cw7"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="f8d-3X-6Cc" secondAttribute="bottom" constant="5" id="Wbs-Jx-iVL"/>
+                            <constraint firstItem="f8d-3X-6Cc" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" id="vIY-99-5cc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
                     </view>

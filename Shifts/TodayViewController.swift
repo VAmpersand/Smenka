@@ -27,12 +27,16 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         let color = CGColor(srgbRed: 1, green: 1, blue: 1, alpha: 0.3)
         calendarCollectionView.backgroundColor = UIColor(cgColor: color)
-        calendarCollectionView.layer.cornerRadius = 15
+        calendarCollectionView.layer.cornerRadius = 10
         
         let currentMonth = Calendar.current.component(.month, from: Date()) - 1
         let currentYear = Calendar.current.component(.year, from: Date())
         currentDay = Calendar.current.component(.day, from: Date())
         monthLabel.text = "\(months[currentMonth]) \(currentYear)"
+        
+        monthLabel.backgroundColor = UIColor(cgColor: color)
+        monthLabel.layer.cornerRadius = 10
+        monthLabel.clipsToBounds = true
     }
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {

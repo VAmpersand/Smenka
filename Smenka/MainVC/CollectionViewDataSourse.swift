@@ -49,7 +49,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 let shift = scheduleShift.shifts[indexPath.row]
                 let shiftTypeIndex = shift.shiftTypeIndex
                 
-                // Сondition for checking the number of types array. Вoes not allow type deletion error
+                // Сondition for checking the number of types array. Does not allow type deletion error
                 if shift.shiftTypeIndex >= shiftTipes.count {
                     let newShift = Shift()
                     newShift.shiftTypeIndex = 0
@@ -65,14 +65,15 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
         }
         
-      
-        for scheduleShift in schedulesShifts {
-            if scheduleShift.monthlyScheduleName == "\(year)-\(month)" {
-            colorIndexes[indexPath.row] = shiftTypes[shift.shiftTypeIndex].shiftColorIndex
-            sharedDate[indexPath.row] = calcDate
+        //MARK: Data preparation for the current month only
+        if currentYear == presentYear && currentMonthIndex == presentMonthIndex {
+            if shiftTipes.isEmpty {
+                 colorIndexes[indexPath.row] = 0
+            } else {
+                colorIndexes[indexPath.row] = shiftTypes[shift.shiftTypeIndex].shiftColorIndex
             }
+            sharedDate[indexPath.row] = calcDate
         }
-        
         
         // Set text color in dateLabel in cell
         setColorInDateLableText(cell: cell, indexPath: indexPath, shift: shift)
@@ -114,15 +115,19 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     newShift.shiftTypeIndex = 0
                 }
             }
+            
             DispatchQueue.main.async {
                 StorageManager.editShift(shift, newShift)
                 cell.backgroundColor = colors[shiftTipes[newShift.shiftTypeIndex].shiftColorIndex]
                 self.setColorInDateLableText(cell: cell, indexPath: indexPath, shift: newShift)
             }
             
-            for scheduleShift in schedulesShifts {
-                if scheduleShift.monthlyScheduleName == "\(year)-\(month)" {
-                    colorIndexes[indexPath.row] = shiftTypes[newShift.shiftTypeIndex].shiftColorIndex
+            // Change color index in aharedData only for current mounth
+            if currentYear == presentYear && currentMonthIndex == presentMonthIndex  {
+                if shiftTipes.isEmpty {
+                    colorIndexes[indexPath.row] = 18
+                } else {
+                    colorIndexes[indexPath.row] = shiftTypes[shift.shiftTypeIndex].shiftColorIndex
                 }
             }
         }
