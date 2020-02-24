@@ -17,27 +17,16 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     var currentDay = 0
     var colorIndexes: [Int] = []
     var sharedDate: [Int] = []
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         
-        setDelegate()
+        calendarCollectionView.delegate = (self as! UICollectionViewDelegate)
+        calendarCollectionView.dataSource = (self  as! UICollectionViewDataSource)
         
-        
-        let color = CGColor(srgbRed: 1, green: 1, blue: 1, alpha: 0.3)
-        calendarCollectionView.backgroundColor = UIColor(cgColor: color)
-        calendarCollectionView.layer.cornerRadius = 10
-        
-        let currentMonth = Calendar.current.component(.month, from: Date()) - 1
-        let currentYear = Calendar.current.component(.year, from: Date())
-        currentDay = Calendar.current.component(.day, from: Date())
-        monthLabel.text = "\(months[currentMonth]) \(currentYear)"
-        
-        monthLabel.backgroundColor = UIColor(cgColor: color)
-        monthLabel.layer.cornerRadius = 10
-        monthLabel.clipsToBounds = true
+        setDesign()
     }
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
@@ -54,6 +43,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         completionHandler(NCUpdateResult.newData)
     }
     
+    // Getting data from UserDefaults
     func getData() {
         
         let widgetUserDefaults = UserDefaults.init(suiteName: "group.Smenka.widgetShare")
@@ -61,10 +51,21 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         sharedDate = widgetUserDefaults?.value(forKey: "sharedDate") as! [Int]
     }
     
-    
-    func setDelegate() {
-        calendarCollectionView.delegate = (self as! UICollectionViewDelegate)
-        calendarCollectionView.dataSource = (self  as! UICollectionViewDataSource)
+    // Setting widget's design
+    func setDesign() {
+        
+        let color = CGColor(srgbRed: 1, green: 1, blue: 1, alpha: 0.3)
+        calendarCollectionView.backgroundColor = UIColor(cgColor: color)
+        calendarCollectionView.layer.cornerRadius = 10
+        
+        let currentMonth = Calendar.current.component(.month, from: Date()) - 1
+        let currentYear = Calendar.current.component(.year, from: Date())
+        currentDay = Calendar.current.component(.day, from: Date())
+        monthLabel.text = "\(months[currentMonth]) \(currentYear)"
+        
+        monthLabel.backgroundColor = UIColor(cgColor: color)
+        monthLabel.layer.cornerRadius = 10
+        monthLabel.clipsToBounds = true
     }
     
 }

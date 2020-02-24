@@ -17,16 +17,19 @@ extension TodayViewController: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCollectionViewCell
         
+        cell.layer.cornerRadius = cell.bounds.width / 2
         cell.cellView.isHidden = true
         
+        // Hide empty cell's
         if sharedDate[indexPath.row] == 0 {
             cell.isHidden = true
         }
+        
         cell.cellLabel.text = "\(sharedDate[indexPath.row])"
+        
         if !colorIndexes.isEmpty {
             cell.backgroundColor = colors[colorIndexes[indexPath.row]]
         }
-        cell.layer.cornerRadius = cell.bounds.width / 2
         
         //MARK:   Mark today in circle
         if sharedDate[indexPath.row] == currentDay {
