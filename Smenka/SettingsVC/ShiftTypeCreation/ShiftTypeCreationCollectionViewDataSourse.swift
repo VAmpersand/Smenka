@@ -41,22 +41,37 @@ extension ShiftTypeCreationView: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! ShiftTypeColorCollectionVCell
         
-
-        let colorWasUsed = colorCheckForUse(indexPath: indexPath)
-        if colorWasUsed {
-            print("Color was used")
-        } else {
-            UIView.animate(withDuration: 0.7) {
-                cell.blurEffect.alpha = 1
+        if !colorIsChoosed {
+            let colorWasUsed = colorCheckForUse(indexPath: indexPath)
+            if colorWasUsed {
+                animateChoosingColorView(colorImage: cell.colorImage, indexPath: indexPath)
+            } else {
+                UIView.animate(withDuration: 0.5) {
+                    cell.blurEffect.alpha = 1
+                }
+                colorIsChoosed = true
+                selectedColorIndex = indexPath
             }
-            UIView.animate(withDuration: 1.3) {
-                cell.blurEffect.alpha = 0
+        } else {
+            let previousСolorCell = collectionView.cellForItem(at: selectedColorIndex) as! ShiftTypeColorCollectionVCell
+            
+            let colorWasUsed = colorCheckForUse(indexPath: indexPath)
+            if colorWasUsed {
+                animateChoosingColorView(colorImage: cell.colorImage, indexPath: indexPath)
+            } else {
+                UIView.animate(withDuration: 0.5) {
+                    previousСolorCell.blurEffect.alpha = 0
+                }
+                UIView.animate(withDuration: 0.5) {
+                    cell.blurEffect.alpha = 1
+                }
+                colorIsChoosed = true
+                selectedColorIndex = indexPath
             }
         }
-        
-        selectedColorIndex = indexPath
     }
     
+    // Сolor check for use
     func colorCheckForUse(indexPath: IndexPath) -> Bool {
         
         var colorWasUsed = false
@@ -68,5 +83,16 @@ extension ShiftTypeCreationView: UICollectionViewDelegate, UICollectionViewDataS
             }
         }
         return colorWasUsed
+    }
+    
+    // Animate color view. 
+    func animateChoosingColorView(colorImage: UIImageView, indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseOut], animations: {
+            colorImage.transform = .init(scaleX: 0.0, y: 0.0)
+        }) { (finished) in
+            UIView.animate(withDuration: 0.3, animations: {
+                colorImage.transform = .identity
+            })
+        }
     }
 }

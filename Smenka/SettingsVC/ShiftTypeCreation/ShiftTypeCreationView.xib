@@ -168,7 +168,7 @@
                 <outlet property="startTimePicker" destination="jt7-LE-f9L" id="Lko-uX-gOj"/>
                 <outlet property="typeNameTextField" destination="Zvc-dR-Jnr" id="Ftf-Vw-6Lx"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="100.78125"/>
+            <point key="canvasLocation" x="137.68115942028987" y="100.44642857142857"/>
         </view>
     </objects>
 </document>

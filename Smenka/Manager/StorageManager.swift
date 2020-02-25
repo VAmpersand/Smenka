@@ -19,7 +19,6 @@ class StorageManager {
         }
     }
     
-    //  !!!An error when deleting a shift schedule does not delete the shift list!!!
     static func removeScheduleShift(_ scheduleShifts: ScheduleShifts) {
         try! realm.write {
             realm.delete(scheduleShifts, cascading: true)
