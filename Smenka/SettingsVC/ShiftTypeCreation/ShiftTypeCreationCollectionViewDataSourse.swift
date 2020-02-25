@@ -41,32 +41,28 @@ extension ShiftTypeCreationView: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! ShiftTypeColorCollectionVCell
         
-        if !colorIsChoosed {           // Fist choice after display ShiftTypeCreationView
-            let colorWasUsed = colorCheckForUse(indexPath: indexPath)
-            if colorWasUsed {          // Show animation if color was used early
-                animateChoosingColorView(colorImage: cell.colorImage, indexPath: indexPath)
-            } else {
-                UIView.animate(withDuration: 0.5) {
-                    cell.blurEffect.alpha = 1
-                }
-                colorIsChoosed = true
-                selectedColorIndex = indexPath
+        // Fist choice after display ShiftTypeCreationView
+        let colorWasUsed = colorCheckForUse(indexPath: indexPath)
+        if colorWasUsed {          // Show animation if color was used early
+            cell.blurEffect.alpha = 1
+            animateChoosingColorView(colorImage: cell.colorImage, indexPath: indexPath)
+        } else {
+            UIView.animate(withDuration: 0.5) {
+                cell.blurEffect.alpha = 1
             }
-        } else {                        // Second and next choice's after display ShiftTypeCreationView
-            let previousСolorCell = collectionView.cellForItem(at: selectedColorIndex) as! ShiftTypeColorCollectionVCell
-            
-            let colorWasUsed = colorCheckForUse(indexPath: indexPath)
-            if colorWasUsed {           // Show animation if color was used early
-                animateChoosingColorView(colorImage: cell.colorImage, indexPath: indexPath)
-            } else {
-                UIView.animate(withDuration: 0.5) {
-                    previousСolorCell.blurEffect.alpha = 0
-                }
-                UIView.animate(withDuration: 0.5) {
-                    cell.blurEffect.alpha = 1
-                }
-                colorIsChoosed = true
-                selectedColorIndex = indexPath
+            selectedColorIndex = indexPath
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! ShiftTypeColorCollectionVCell
+        
+        let colorWasUsed = colorCheckForUse(indexPath: indexPath)
+        if colorWasUsed {
+            cell.blurEffect.alpha = 1
+        } else {
+            UIView.animate(withDuration: 0.5) {
+                cell.blurEffect.alpha = 0
             }
         }
     }

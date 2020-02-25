@@ -53,6 +53,7 @@
 		7793C72823F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C72623F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.swift */; };
 		7793C72923F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7793C72723F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib */; };
 		7798341623FDD38300CB5180 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7798341523FDD38300CB5180 /* Alert.storyboard */; };
+		77E6A1162405C0C500F4A655 /* ViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E6A1152405C0C500F4A655 /* ViewStyle.swift */; };
 		909A6A9704E534AC9468D35B /* Pods_Smenka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BC425899994F051C914AFA /* Pods_Smenka.framework */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +133,7 @@
 		7793C72623F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeColorCollectionVCell.swift; sourceTree = "<group>"; };
 		7793C72723F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShiftTypeColorCollectionVCell.xib; sourceTree = "<group>"; };
 		7798341523FDD38300CB5180 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
+		77E6A1152405C0C500F4A655 /* ViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStyle.swift; sourceTree = "<group>"; };
 		D1BC425899994F051C914AFA /* Pods_Smenka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smenka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -227,6 +229,7 @@
 				7793C70E23EDF6760063BBA4 /* ShiftStaffModel.swift */,
 				774A852A23E3572F00A653A6 /* StaffModel.swift */,
 				774A851C23D772C800A653A6 /* CalendarDataSource.swift */,
+				77E6A1152405C0C500F4A655 /* ViewStyle.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				774A852923E3562900A653A6 /* ShiftModel.swift in Sources */,
 				7783940423F8166F000BD2D4 /* RealmCascadeDeleteion_Ext_Realm.swift in Sources */,
 				7793C70D23EDEF270063BBA4 /* ShiftTypeCell.swift in Sources */,
+				77E6A1162405C0C500F4A655 /* ViewStyle.swift in Sources */,
 				774A850923D76A8400A653A6 /* SceneDelegate.swift in Sources */,
 				7793C70F23EDF6760063BBA4 /* ShiftStaffModel.swift in Sources */,
 			);

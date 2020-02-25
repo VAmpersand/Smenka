@@ -38,8 +38,6 @@ class ShiftTypeCreationView: UIView {
     var endTime: String!
     var indexEditableType: IndexPath!  // Editing сheck
     var selectedColorIndex: IndexPath! // Checking color selection
-    
-    var colorIsChoosed = false
  
     let reuseIdentifier = "shiftTypeColorCell"
     let localeID = Locale.preferredLanguages.first
@@ -71,7 +69,6 @@ class ShiftTypeCreationView: UIView {
     
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
-        colorIsChoosed = false
         delegate?.pushButton()
         hidingShiftTypeCreationView()
     }
@@ -90,7 +87,6 @@ class ShiftTypeCreationView: UIView {
                 StorageManager.saveShiftType(self.shiftType)
             }
         }
-        colorIsChoosed = false
         delegate?.pushButton()
         hidingShiftTypeCreationView()
     }

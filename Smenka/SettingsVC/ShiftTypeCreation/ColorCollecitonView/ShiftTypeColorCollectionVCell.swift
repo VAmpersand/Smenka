@@ -9,11 +9,10 @@
 import UIKit
 
 class ShiftTypeColorCollectionVCell: UICollectionViewCell {
-    
+  
     @IBOutlet var colorImage: UIImageView!
     @IBOutlet var blurEffect: UIVisualEffectView!
-    
-    
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -21,6 +20,7 @@ class ShiftTypeColorCollectionVCell: UICollectionViewCell {
         blurEffect.alpha = 0
         blurEffect.layer.cornerRadius = 20
         blurEffect.clipsToBounds = true
+      
     }
 
 }
