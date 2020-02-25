@@ -68,7 +68,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         //MARK: Data preparation for the current month only
         if currentYear == presentYear && currentMonthIndex == presentMonthIndex {
             if shiftTipes.isEmpty {
-                 colorIndexes[indexPath.row] = 0
+                 colorIndexes[indexPath.row] = 18
             } else {
                 colorIndexes[indexPath.row] = shiftTypes[shift.shiftTypeIndex].shiftColorIndex
             }

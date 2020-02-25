@@ -29,9 +29,6 @@ class MainViewController: UIViewController {
     var currentYear = 0
     var presentYear = 0
     
-//    var month = 0
-//    var year = 0
-    
     var currentMonth = 0
     
     var currentMonthIndex = 0
@@ -50,7 +47,6 @@ class MainViewController: UIViewController {
         setDefaultDBRealmDirectory()
         getEmptySharedData()
         getEmptyColorIndexes()
-        
         
         currentMonthIndex = Calendar.current.component(.month, from: Date())
         currentYear = Calendar.current.component(.year, from: Date())
@@ -92,7 +88,6 @@ class MainViewController: UIViewController {
         shiftTypeTable.reloadData()
         
         shareDataInWidget()
-        
     }
     
     
@@ -209,7 +204,6 @@ class MainViewController: UIViewController {
             colorIndexes.append(18)
             counter += 1
         }
-        print(colorIndexes)
     }
     
     

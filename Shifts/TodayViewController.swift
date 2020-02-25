@@ -24,7 +24,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         
         calendarCollectionView.delegate = (self as! UICollectionViewDelegate)
-        calendarCollectionView.dataSource = (self  as! UICollectionViewDataSource)
+        calendarCollectionView.dataSource = (self as! UICollectionViewDataSource)
         
         setDesign()
     }
