@@ -41,9 +41,9 @@ extension ShiftTypeCreationView: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! ShiftTypeColorCollectionVCell
         
-        if !colorIsChoosed {
+        if !colorIsChoosed {           // Fist choice after display ShiftTypeCreationView
             let colorWasUsed = colorCheckForUse(indexPath: indexPath)
-            if colorWasUsed {
+            if colorWasUsed {          // Show animation if color was used early
                 animateChoosingColorView(colorImage: cell.colorImage, indexPath: indexPath)
             } else {
                 UIView.animate(withDuration: 0.5) {
@@ -52,11 +52,11 @@ extension ShiftTypeCreationView: UICollectionViewDelegate, UICollectionViewDataS
                 colorIsChoosed = true
                 selectedColorIndex = indexPath
             }
-        } else {
+        } else {                        // Second and next choice's after display ShiftTypeCreationView
             let previousСolorCell = collectionView.cellForItem(at: selectedColorIndex) as! ShiftTypeColorCollectionVCell
             
             let colorWasUsed = colorCheckForUse(indexPath: indexPath)
-            if colorWasUsed {
+            if colorWasUsed {           // Show animation if color was used early
                 animateChoosingColorView(colorImage: cell.colorImage, indexPath: indexPath)
             } else {
                 UIView.animate(withDuration: 0.5) {
@@ -85,7 +85,7 @@ extension ShiftTypeCreationView: UICollectionViewDelegate, UICollectionViewDataS
         return colorWasUsed
     }
     
-    // Animate color view. 
+    // Animate color view.
     func animateChoosingColorView(colorImage: UIImageView, indexPath: IndexPath) {
         UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseOut], animations: {
             colorImage.transform = .init(scaleX: 0.0, y: 0.0)
