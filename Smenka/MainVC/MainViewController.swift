@@ -22,6 +22,12 @@ class MainViewController: UIViewController {
     @IBOutlet var editButton: UIButton!
     @IBOutlet var deleteButton: UIButton!
     
+    @IBOutlet weak var navigationDaleteButton: UIBarButtonItem!
+    @IBOutlet weak var navigationEditButton: UIBarButtonItem!
+    
+    
+    
+    
     var schedulesShifts: Results<ScheduleShifts>!
     var shiftTypes: Results<ShiftType>!
     //    var staff: Results<Staff>!
@@ -163,6 +169,16 @@ class MainViewController: UIViewController {
         
         showMessageView(text: "Are you sure you want to delete the shift schedule for \(months[currentMonth]) \(currentYear)")
     }
+    
+    @IBAction func navigationEditButtonPressed(_ sender: Any) {
+        
+    }
+    
+    @IBAction func navigationDeleteButtonPressed(_ sender: Any) {
+    }
+    
+    
+    
     
     //MARK: Show view with question about deleting schedule shifts
     func showMessageView(text: String) {

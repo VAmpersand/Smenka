@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Calendar-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Smenka" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shift types" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzN-wC-k5R">
-                                <rect key="frame" x="133.66666666666666" y="473" width="146.99999999999997" height="34"/>
+                                <rect key="frame" x="133.66666666666666" y="517" width="146.99999999999997" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="AaT-v7-WrO"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147" id="OTh-lU-zDO"/>
@@ -27,7 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calendar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tf-7o-D04">
-                                <rect key="frame" x="15" y="44" width="147" height="34"/>
+                                <rect key="frame" x="15" y="88" width="147" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147" id="ZlK-b6-27P"/>
                                     <constraint firstAttribute="height" constant="34" id="cEW-Eu-UBB"/>
@@ -37,7 +37,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIp-0v-Pv6">
-                                <rect key="frame" x="114" y="94" width="186" height="34"/>
+                                <rect key="frame" x="114" y="138" width="186" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147" id="EQ9-gf-YCM"/>
                                     <constraint firstAttribute="height" constant="34" id="kyA-Gn-yf4"/>
@@ -47,7 +47,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ta9-A9-H8k">
-                                <rect key="frame" x="369" y="95.666666666666671" width="30" height="35.000000000000014"/>
+                                <rect key="frame" x="369" y="139.66666666666666" width="30" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="&gt;">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -57,7 +57,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82K-Rb-mGn">
-                                <rect key="frame" x="15" y="93.666666666666671" width="30" height="35.000000000000014"/>
+                                <rect key="frame" x="15" y="137.66666666666666" width="30" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="&lt;">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -67,17 +67,17 @@
                                 </connections>
                             </button>
                             <visualEffectView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7HO-V8-fb9">
-                                <rect key="frame" x="0.0" y="-2" width="414" height="849"/>
+                                <rect key="frame" x="0.0" y="42" width="414" height="756"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="d4w-8d-Zqo">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="849"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="systemMaterialDark"/>
                             </visualEffectView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Snt-Ax-gg4">
-                                <rect key="frame" x="321" y="59" width="78" height="33"/>
+                                <rect key="frame" x="349" y="103" width="50" height="33"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56" id="K3g-pr-Lew"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="K3g-pr-Lew"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Edit">
@@ -88,7 +88,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ih1-6h-2BS">
-                                <rect key="frame" x="250" y="59" width="56" height="33"/>
+                                <rect key="frame" x="278" y="103" width="56" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56" id="AXG-mY-Acx"/>
                                 </constraints>
@@ -101,7 +101,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ipY-AM-d8K">
-                                <rect key="frame" x="15" y="128" width="384" height="40"/>
+                                <rect key="frame" x="15" y="172" width="384" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dx-NE-prP">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
@@ -179,7 +179,7 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9DI-SY-hJO">
-                                <rect key="frame" x="15" y="168" width="384" height="293"/>
+                                <rect key="frame" x="15" y="212" width="384" height="293"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="293" id="XZj-pw-KQh"/>
@@ -232,7 +232,7 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ec4-yU-v0e">
-                                <rect key="frame" x="15" y="507" width="384" height="291"/>
+                                <rect key="frame" x="15" y="551" width="384" height="198"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="50" id="QAC-Hq-3Uv" customClass="ShiftTypeCell" customModule="Smenka" customModuleProvider="target">
@@ -318,7 +318,6 @@
                             <constraint firstItem="JIp-0v-Pv6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="114" id="UBv-KT-k7j"/>
                             <constraint firstItem="Snt-Ax-gg4" firstAttribute="leading" secondItem="Ih1-6h-2BS" secondAttribute="trailing" constant="15" id="VAs-70-0cx"/>
                             <constraint firstItem="Ih1-6h-2BS" firstAttribute="centerY" secondItem="Snt-Ax-gg4" secondAttribute="centerY" id="WgS-zg-iYg"/>
-                            <constraint firstItem="Snt-Ax-gg4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="321" id="bpn-Bz-gta"/>
                             <constraint firstItem="ec4-yU-v0e" firstAttribute="top" secondItem="DzN-wC-k5R" secondAttribute="bottom" id="d0H-uX-Hz1"/>
                             <constraint firstItem="9DI-SY-hJO" firstAttribute="top" secondItem="ipY-AM-d8K" secondAttribute="bottom" id="dRb-Ma-T12"/>
                             <constraint firstItem="82K-Rb-mGn" firstAttribute="leading" secondItem="9DI-SY-hJO" secondAttribute="leading" id="hGY-EQ-9pv"/>
@@ -336,21 +335,38 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="HVg-Ry-iug"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="tug-e2-QM9">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="edit" id="Toe-2v-oH0">
+                                <connections>
+                                    <action selector="navigationEditButtonPressed:" destination="BYZ-38-t0r" id="cpw-fl-iCd"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Delete" id="Rdk-Eu-p0r">
+                                <connections>
+                                    <action selector="navigationDeleteButtonPressed:" destination="BYZ-38-t0r" id="SOf-LR-iYm"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="blurEffect" destination="7HO-V8-fb9" id="uVL-CS-1ZE"/>
                         <outlet property="calendarCollectionView" destination="9DI-SY-hJO" id="veV-6b-pnV"/>
                         <outlet property="deleteButton" destination="Ih1-6h-2BS" id="6Eh-YP-WoZ"/>
                         <outlet property="editButton" destination="Snt-Ax-gg4" id="utS-Iv-Y9Y"/>
                         <outlet property="monthLabel" destination="JIp-0v-Pv6" id="k0H-DK-dh5"/>
+                        <outlet property="navigationDaleteButton" destination="Rdk-Eu-p0r" id="qWy-3L-m02"/>
+                        <outlet property="navigationEditButton" destination="Toe-2v-oH0" id="kyn-M0-sEg"/>
                         <outlet property="shiftTypeTable" destination="ec4-yU-v0e" id="3bd-f1-ANt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1974" y="104"/>
+            <point key="canvasLocation" x="2812" y="-328"/>
         </scene>
-        <!--Settings-->
+        <!--Settings View Controller-->
         <scene sceneID="CQp-BE-Qvg">
             <objects>
                 <viewController id="a6V-XU-tL5" customClass="SettingsViewController" customModule="Smenka" customModuleProvider="target" sceneMemberID="viewController">
@@ -359,7 +375,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibt-PP-3i3">
-                                <rect key="frame" x="15" y="44" width="196" height="34"/>
+                                <rect key="frame" x="15" y="88" width="196" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147" id="Hkt-bp-rjc"/>
                                     <constraint firstAttribute="height" constant="34" id="pVS-tN-sCU"/>
@@ -369,7 +385,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="o5I-BT-c9N">
-                                <rect key="frame" x="195" y="58" width="204" height="34"/>
+                                <rect key="frame" x="195" y="102" width="204" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lable" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9a-cl-4vG">
                                         <rect key="frame" x="0.0" y="0.0" width="147" height="34"/>
@@ -390,7 +406,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jiz-Wd-lXm">
-                                <rect key="frame" x="15" y="138" width="384" height="336"/>
+                                <rect key="frame" x="15" y="182" width="384" height="336"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="336" id="S3o-tj-H7O"/>
@@ -451,7 +467,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shift type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGh-aa-ZJ0">
-                                <rect key="frame" x="133.66666666666666" y="94" width="146.99999999999997" height="34"/>
+                                <rect key="frame" x="133.66666666666666" y="138" width="146.99999999999997" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="bwR-mi-NvL"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147" id="yGt-cQ-2Fn"/>
@@ -461,7 +477,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8z-p7-sgW">
-                                <rect key="frame" x="343" y="94.666666666666671" width="56" height="33"/>
+                                <rect key="frame" x="343" y="138.66666666666666" width="56" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56" id="AEh-sk-yem"/>
                                     <constraint firstAttribute="height" constant="33" id="IrC-Z8-Vee"/>
@@ -503,7 +519,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jF3-gT-F24"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="NYm-8X-sTe"/>
+                    <navigationItem key="navigationItem" id="91z-WL-Rvm"/>
                     <connections>
                         <outlet property="addTypeButton" destination="h8z-p7-sgW" id="J65-uT-Ao6"/>
                         <outlet property="blurEffect" destination="SHs-kg-01Y" id="y5F-De-18k"/>
@@ -514,7 +530,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4I0-pp-kzL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2675" y="104"/>
+            <point key="canvasLocation" x="2812" y="368"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Nx8-WN-UYs">
@@ -527,13 +543,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="dcg-hB-GTu"/>
-                        <segue destination="a6V-XU-tL5" kind="relationship" relationship="viewControllers" id="5Z7-Kz-M5V"/>
+                        <segue destination="XnW-mI-7uL" kind="relationship" relationship="viewControllers" id="dcg-hB-GTu"/>
+                        <segue destination="nMb-f9-mfl" kind="relationship" relationship="viewControllers" id="5Z7-Kz-M5V"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSn-lX-6Be" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1268" y="104"/>
+            <point key="canvasLocation" x="1265" y="1"/>
         </scene>
         <!--Validation Check Removal View-->
         <scene sceneID="SVU-aM-o53">
@@ -626,7 +642,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cA4-m6-xUZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1974" y="769"/>
+            <point key="canvasLocation" x="3562" y="-328"/>
+        </scene>
+        <!--Calendar-->
+        <scene sceneID="evs-4q-AIt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XnW-mI-7uL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="HVg-Ry-iug"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g5G-fn-sa5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hvh-7j-VCz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cJJ-VC-CFk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2071" y="-328"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Pxv-Eb-2FF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nMb-f9-mfl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="NYm-8X-sTe"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pjE-G4-fyd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a6V-XU-tL5" kind="relationship" relationship="rootViewController" id="xQL-XA-wiI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sV2-33-DVY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2070" y="368"/>
         </scene>
     </scenes>
     <resources>
