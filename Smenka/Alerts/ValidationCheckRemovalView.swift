@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-protocol  ButtonDelegate {
+protocol  DeleteButtonDelegate {
    func okButtonPressedWhenDeleting()
 }
 
@@ -21,7 +21,7 @@ class ValidationCheckRemovalView: UIViewController {
     @IBOutlet var cancelButton: UIButton!
     @IBOutlet var blurEffect: UIVisualEffectView!
     
-    var delegate: ButtonDelegate?
+    var delegate: DeleteButtonDelegate?
         
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -19,14 +19,9 @@ class MainViewController: UIViewController {
     
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet var blurEffect: UIVisualEffectView!
-    @IBOutlet var editButton: UIButton!
-    @IBOutlet var deleteButton: UIButton!
+
     
-    @IBOutlet weak var navigationDaleteButton: UIBarButtonItem!
-    @IBOutlet weak var navigationEditButton: UIBarButtonItem!
-    
-    
-    
+    @IBOutlet var customNavigationBar: CustomNavigationBar!
     
     var schedulesShifts: Results<ScheduleShifts>!
     var shiftTypes: Results<ShiftType>!
@@ -69,10 +64,11 @@ class MainViewController: UIViewController {
         
         calendarCollectionView.layer.cornerRadius = 15
         shiftTypeTable.layer.cornerRadius = 15
-        deleteButton.isHidden = true
         
         shiftTypeTable.delegate = self
         shiftTypeTable.dataSource = self
+        
+        customNavigationBar.delegate = self
         
         schedulesShifts = realm.objects(ScheduleShifts.self)
         shiftTypes = realm.objects(ShiftType.self)
@@ -123,60 +119,13 @@ class MainViewController: UIViewController {
         calendarCollectionView.reloadData()
     }
     
-    @IBAction func editButtonPressed(_ sender: Any) {
-        
-        editButtonPressCheck.toggle()
-        
-        if editButtonPressCheck {
-            editButton.setTitle("Save", for: .normal)
-            editButton.setTitleColor(.white, for: .normal)
-            deleteButton.isHidden = false
-            deleteButton.setTitleColor(.white, for: .normal)
-            UIView.animate(withDuration: 1) {
-                self.blurEffect.alpha = 0.9
-            }
-            
-            //MARK: Create empty schedulShifts if is has not been previously created
-            let nameIsMatch = checkTheScheduleForExistence(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
-            
-            if  !nameIsMatch {
-                let scheduleShifts = setEmptyScheduleShifts(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
-                DispatchQueue.main.async {
-                    StorageManager.saveScheduleShift(scheduleShifts)
-                }
-            }
-        } else {
-            self.editButton.setTitle("Edit", for: .normal)
-            self.editButton.setTitleColor(.blue, for: .normal)
-            self.deleteButton.isHidden = true
-            UIView.animate(withDuration: 1) {
-                self.blurEffect.alpha = 0
-            }
-            
-            //MARK: Delete empty schedulShifts if is has not been previously edited
-            let shiftIsEdited = checkTheScheduleForEmptiness(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
-            
-            if !shiftIsEdited {
-                removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
-            }
-            
-            shareDataInWidget()
-        }
-    }
+   
     
     //MARK: Delete current schedule shifts
     @IBAction func deleteCurrentScheduleShifts(_ sender: Any) {
         
         showMessageView(text: "Are you sure you want to delete the shift schedule for \(months[currentMonth]) \(currentYear)")
     }
-    
-    @IBAction func navigationEditButtonPressed(_ sender: Any) {
-        
-    }
-    
-    @IBAction func navigationDeleteButtonPressed(_ sender: Any) {
-    }
-    
     
     
     
@@ -245,14 +194,11 @@ class MainViewController: UIViewController {
     }
 }
 
-extension MainViewController: ButtonDelegate {
+extension MainViewController: DeleteButtonDelegate {
     
     func okButtonPressedWhenDeleting() {
         
         editButtonPressCheck.toggle()
-        editButton.setTitle("Edit", for: .normal)
-        editButton.setTitleColor(.blue, for: .normal)
-        deleteButton.isHidden = true
         UIView.animate(withDuration: 1) {
             self.blurEffect.alpha = 0
         }
@@ -271,6 +217,50 @@ extension MainViewController: ButtonDelegate {
         
         shareDataInWidget()
     }
+}
+
+extension MainViewController: NavigationBarDelegate {
+    
+    func editAction() {
+        
+        editButtonPressCheck.toggle()
+        
+        if editButtonPressCheck {
+            UIView.animate(withDuration: 1) {
+                self.blurEffect.alpha = 0.9
+            }
+            
+            //MARK: Create empty schedulShifts if is has not been previously created
+            let nameIsMatch = checkTheScheduleForExistence(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
+            
+            if  !nameIsMatch {
+                let scheduleShifts = setEmptyScheduleShifts(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
+                DispatchQueue.main.async {
+                    StorageManager.saveScheduleShift(scheduleShifts)
+                }
+            }
+        } else {
+            UIView.animate(withDuration: 1) {
+                self.blurEffect.alpha = 0
+            }
+            
+            //MARK: Delete empty schedulShifts if is has not been previously edited
+            let shiftIsEdited = checkTheScheduleForEmptiness(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
+            
+            if !shiftIsEdited {
+                removeSchedulleShifts(schedulesShifts: schedulesShifts, currentYear: currentYear, currentMonthIndex: currentMonthIndex)
+            }
+            
+            shareDataInWidget()
+        }
+    }
+    
+    
+    //MARK: Delete current schedule shifts
+    func deleteAction() {
+          showMessageView(text: "Are you sure you want to delete the shift schedule for \(months[currentMonth]) \(currentYear)")
+    }
+
 }
 
 
