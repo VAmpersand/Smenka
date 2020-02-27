@@ -258,7 +258,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GqY-3Z-piL" customClass="CustomNavigationBar" customModule="Smenka" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GqY-3Z-piL" customClass="CustomNavigationBarInMainVC" customModule="Smenka" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="94" id="Gn5-px-s9n"/>
@@ -329,37 +329,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibt-PP-3i3">
-                                <rect key="frame" x="15" y="44" width="196" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147" id="Hkt-bp-rjc"/>
-                                    <constraint firstAttribute="height" constant="34" id="pVS-tN-sCU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="o5I-BT-c9N">
-                                <rect key="frame" x="195" y="58" width="204" height="34"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lable" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9a-cl-4vG">
-                                        <rect key="frame" x="0.0" y="0.0" width="147" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="Jt0-sR-ly6"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147" id="Sb7-ad-Mt1"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yxh-Yy-eXS">
-                                        <rect key="frame" x="155" y="0.0" width="51" height="34"/>
-                                        <connections>
-                                            <action selector="screenModeToggle:" destination="a6V-XU-tL5" eventType="valueChanged" id="9mW-VP-OjA"/>
-                                        </connections>
-                                    </switch>
-                                </subviews>
-                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jiz-Wd-lXm">
                                 <rect key="frame" x="15" y="138" width="384" height="336"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -454,23 +423,28 @@
                                 </view>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4XP-u0-gpg" customClass="CustomNavigationBarInSettingsVC" customModule="Smenka" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="Olk-2g-plD"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="h8z-p7-sgW" firstAttribute="centerY" secondItem="qGh-aa-ZJ0" secondAttribute="centerY" id="0dz-DM-ws9"/>
+                            <constraint firstItem="4XP-u0-gpg" firstAttribute="top" secondItem="f62-3w-MeZ" secondAttribute="top" id="1Z0-Js-aec"/>
                             <constraint firstItem="h8z-p7-sgW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qGh-aa-ZJ0" secondAttribute="trailing" constant="8" symbolic="YES" id="7cO-qa-Ff2"/>
                             <constraint firstItem="qGh-aa-ZJ0" firstAttribute="centerX" secondItem="jF3-gT-F24" secondAttribute="centerX" id="8pL-fx-CAU"/>
                             <constraint firstItem="Jiz-Wd-lXm" firstAttribute="top" secondItem="qGh-aa-ZJ0" secondAttribute="bottom" constant="10" id="8qT-dX-NBO"/>
                             <constraint firstItem="Jiz-Wd-lXm" firstAttribute="centerX" secondItem="jF3-gT-F24" secondAttribute="centerX" id="DKv-va-CG1"/>
                             <constraint firstItem="jF3-gT-F24" firstAttribute="trailing" secondItem="Jiz-Wd-lXm" secondAttribute="trailing" constant="15" id="EhD-vW-qZ6"/>
+                            <constraint firstItem="4XP-u0-gpg" firstAttribute="leading" secondItem="jF3-gT-F24" secondAttribute="leading" id="HaJ-Y6-Qpt"/>
                             <constraint firstItem="Jiz-Wd-lXm" firstAttribute="leading" secondItem="jF3-gT-F24" secondAttribute="leading" constant="15" id="JSv-q3-uy1"/>
-                            <constraint firstItem="ibt-PP-3i3" firstAttribute="leading" secondItem="Jiz-Wd-lXm" secondAttribute="leading" id="RL4-8w-93e"/>
-                            <constraint firstItem="o5I-BT-c9N" firstAttribute="top" secondItem="ibt-PP-3i3" secondAttribute="bottom" constant="-20" id="Uiw-9R-oTT"/>
-                            <constraint firstItem="ibt-PP-3i3" firstAttribute="centerX" secondItem="jF3-gT-F24" secondAttribute="centerX" constant="-94" id="dNX-QF-zb3"/>
-                            <constraint firstItem="ibt-PP-3i3" firstAttribute="top" secondItem="jF3-gT-F24" secondAttribute="top" id="eBc-Zu-fZ9"/>
+                            <constraint firstItem="jF3-gT-F24" firstAttribute="trailing" secondItem="4XP-u0-gpg" secondAttribute="trailing" id="Qoh-mo-DaN"/>
                             <constraint firstItem="h8z-p7-sgW" firstAttribute="trailing" secondItem="Jiz-Wd-lXm" secondAttribute="trailing" id="f7p-TA-KEb"/>
-                            <constraint firstItem="o5I-BT-c9N" firstAttribute="trailing" secondItem="Jiz-Wd-lXm" secondAttribute="trailing" id="gCK-la-L63"/>
-                            <constraint firstItem="qGh-aa-ZJ0" firstAttribute="top" secondItem="ibt-PP-3i3" secondAttribute="bottom" constant="16" id="hdP-o3-Qw9"/>
+                            <constraint firstItem="qGh-aa-ZJ0" firstAttribute="top" secondItem="4XP-u0-gpg" secondAttribute="bottom" id="gff-eq-8jN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jF3-gT-F24"/>
                     </view>
@@ -479,8 +453,7 @@
                     <connections>
                         <outlet property="addTypeButton" destination="h8z-p7-sgW" id="J65-uT-Ao6"/>
                         <outlet property="blurEffect" destination="SHs-kg-01Y" id="y5F-De-18k"/>
-                        <outlet property="screenModeLabel" destination="x9a-cl-4vG" id="2Ya-dn-i8I"/>
-                        <outlet property="screenModeSwitch" destination="yxh-Yy-eXS" id="gfd-8f-C9d"/>
+                        <outlet property="customNavigationBar" destination="4XP-u0-gpg" id="9sW-kB-rC2"/>
                         <outlet property="shiftTypeTable" destination="Jiz-Wd-lXm" id="GwV-YT-iZX"/>
                     </connections>
                 </viewController>

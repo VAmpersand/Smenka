@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
     @IBOutlet var blurEffect: UIVisualEffectView!
 
     
-    @IBOutlet var customNavigationBar: CustomNavigationBar!
+    @IBOutlet var customNavigationBar: CustomNavigationBarInMainVC!
     
     var schedulesShifts: Results<ScheduleShifts>!
     var shiftTypes: Results<ShiftType>!
@@ -219,7 +219,7 @@ extension MainViewController: DeleteButtonDelegate {
     }
 }
 
-extension MainViewController: NavigationBarDelegate {
+extension MainViewController: MainNavigationBarDelegate {
     
     func editAction() {
         

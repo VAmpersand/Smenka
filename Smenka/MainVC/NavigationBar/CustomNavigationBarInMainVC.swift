@@ -1,5 +1,5 @@
 //
-//  CustomNavigationBar.swift
+//  CustomNavigationBarInMainVC.swift
 //  Smenka
 //
 //  Created by Viktor on 27.02.2020.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol NavigationBarDelegate: class {
+protocol MainNavigationBarDelegate: class {
     func editAction()
     func deleteAction()
 }
 
 
-@IBDesignable class CustomNavigationBar: UIView {
+@IBDesignable class CustomNavigationBarInMainVC: UIView {
     
     @IBOutlet var contentView: UIView!
     @IBOutlet var imageView: UIImageView!
@@ -22,7 +22,7 @@ protocol NavigationBarDelegate: class {
     @IBOutlet var editButton: UIButton!
     @IBOutlet var deleteButton: UIButton!
     
-    weak var delegate: NavigationBarDelegate?
+    weak var delegate: MainNavigationBarDelegate?
     var editButtonPressCheck = false
     
     override init(frame: CGRect) {
@@ -37,15 +37,14 @@ protocol NavigationBarDelegate: class {
     
     private func commonInit() {
         
-        let bundle = Bundle(for: CustomNavigationBar.self)
-        bundle.loadNibNamed("CustomNavigationBar", owner: self, options: nil)
+        let bundle = Bundle(for: CustomNavigationBarInMainVC.self)
+        bundle.loadNibNamed("CustomNavigationBarInMainVC", owner: self, options: nil)
         self.addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         deleteButton.isHidden = true
         titleLabel.text = "Calendar"
-        
     }
     
     
