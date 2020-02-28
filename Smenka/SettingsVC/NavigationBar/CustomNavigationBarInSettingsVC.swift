@@ -9,15 +9,17 @@
 import UIKit
 
 protocol SettingsNavigationBarDelegate: class {
-    func modeIsTogle()
+    func themeIsTogle()
 }
 
 @IBDesignable class CustomNavigationBarInSettingsVC: UIView {
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var modTogleButton: UIButton!
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var themeTogleButton: UIButton!
+    
+    var theme = ThemeStyle.dark
     
     weak var delegate: SettingsNavigationBarDelegate?
     
@@ -40,10 +42,21 @@ protocol SettingsNavigationBarDelegate: class {
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         titleLabel.text = "Settings"
+        self.makeShadow()
     }
     
     
-    @IBAction func modIsTogle(_ sender: Any) {
-        delegate?.modeIsTogle()
+    @IBAction func themeIsTogle(_ sender: UIButton) {
+        delegate?.themeIsTogle()
+        
+        if theme == .dark {
+            sender.titleLabel?.text = "Dark"
+            theme = .light
+            Style.themeLight()
+        } else {
+            sender.titleLabel?.text = "Light"
+            theme = .dark
+            Style.themeDark()
+        }
     }
 }

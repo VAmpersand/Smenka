@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum ThemeStyle {
+    case light
+    case dark
+}
+
+
 struct Style {
     static var bgColor = UIColor.white
     static var monthViewLblColor = UIColor.white

@@ -11,7 +11,7 @@
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="tAW-Ka-7a7"/>
                 <outlet property="imageView" destination="d2D-JV-APD" id="bxP-mh-X3h"/>
-                <outlet property="modTogleButton" destination="x28-RQ-5Sa" id="ofj-a7-cbk"/>
+                <outlet property="themeTogleButton" destination="x28-RQ-5Sa" id="yfO-rU-Jgf"/>
                 <outlet property="titleLabel" destination="TPV-zp-hft" id="0hb-1p-1ms"/>
             </connections>
         </placeholder>
@@ -47,9 +47,9 @@
                                     <constraints>
                                         <constraint firstAttribute="width" constant="45" id="oyn-UV-Pzy"/>
                                     </constraints>
-                                    <state key="normal" title="Light"/>
+                                    <state key="normal" title="Dark"/>
                                     <connections>
-                                        <action selector="modIsTogle:" destination="-1" eventType="touchUpInside" id="54L-yZ-aua"/>
+                                        <action selector="themeIsTogle:" destination="-1" eventType="touchUpInside" id="jkv-VT-jY0"/>
                                     </connections>
                                 </button>
                             </subviews>
