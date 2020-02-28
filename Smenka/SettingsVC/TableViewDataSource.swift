@@ -18,6 +18,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShiftTypeCell", for: indexPath) as! ShiftTypeTableViewCell
         
+        cell.setTheme()
+        
         guard let shiftTypes = shiftTypes else { return cell }
         let shiftType = shiftTypes[indexPath.row]
         
@@ -30,7 +32,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             cell.shiftTimeLabel.isHidden = false
         }
         cell.typeColor.backgroundColor = colors[shiftType.shiftColorIndex]
-        cell.typeColor.layer.cornerRadius = 20
         
         return cell
     }

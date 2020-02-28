@@ -10,10 +10,11 @@ import RealmSwift
 
 class SettingsViewController: UIViewController {
     
-    @IBOutlet var screenModeLabel: UILabel!
     @IBOutlet var addTypeButton: UIButton!
     @IBOutlet var shiftTypeTable: UITableView!
     @IBOutlet var blurEffect: UIVisualEffectView!
+    @IBOutlet weak var shiftTypeLabel: UILabel!
+    
     @IBOutlet weak var customNavigationBar: CustomNavigationBarInSettingsVC!
     
     var shiftTypes: Results<ShiftType>!
@@ -27,12 +28,17 @@ class SettingsViewController: UIViewController {
         shiftTypeTable.delegate = self
         shiftTypeTable.dataSource = self
         
+        customNavigationBar.delegate = self
+        
         shiftTypes = realm.objects(ShiftType.self)
-    }
-    
-    @IBAction func screenModeToggle(_ sender: Any) {
+        
+        self.view.backgroundColor = Style.backgroundColor
+        shiftTypeTable.backgroundColor = Style.backgroundColor
+        addTypeButton.tintColor = Style.buttonColor
+        shiftTypeLabel.textColor = Style.labelColor
         
     }
+    
     
     @IBAction func addShiftType(_ sender: Any) {
         
@@ -43,6 +49,7 @@ class SettingsViewController: UIViewController {
             self.blurEffect.alpha = 0.9
         }
     }
+    
 }
 
 extension SettingsViewController: ShiftTypeCreationViewDelegate {
@@ -56,5 +63,18 @@ extension SettingsViewController: ShiftTypeCreationViewDelegate {
             self.shiftTypeTable.reloadData()
         }
     }
+}
+
+extension SettingsViewController: SettingsNavigationBarDelegate {
+    
+    func themeIsTogle() {
+        
+        self.view.backgroundColor = Style.backgroundColor
+        shiftTypeTable.backgroundColor = Style.backgroundColor
+        addTypeButton.tintColor = Style.buttonColor
+        shiftTypeLabel.textColor = Style.labelColor
+        shiftTypeTable.reloadData()
+    }
+    
 }
 

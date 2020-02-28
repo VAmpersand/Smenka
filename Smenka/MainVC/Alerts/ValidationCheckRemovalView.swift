@@ -10,11 +10,11 @@ import UIKit
 import RealmSwift
 
 protocol  DeleteButtonDelegate {
-   func okButtonPressedWhenDeleting()
+    func okButtonPressedWhenDeleting()
 }
 
 class ValidationCheckRemovalView: UIViewController {
-        
+    
     @IBOutlet var messageView: UIView!
     @IBOutlet var textMessageLabel: UILabel!
     @IBOutlet var okButton: UIButton!
@@ -22,12 +22,16 @@ class ValidationCheckRemovalView: UIViewController {
     @IBOutlet var blurEffect: UIVisualEffectView!
     
     var delegate: DeleteButtonDelegate?
-        
+    
+    var customNavigationBar = CustomNavigationBarInSettingsVC()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        customNavigationBar.delegate = self
+        
         okButton.layer.cornerRadius = 4
-        okButton.setTitleColor(#colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1), for: .normal)
+        okButton.setTitleColor(Style.buttonColor, for: .normal)
         
         cancelButton.layer.cornerRadius = 4
         cancelButton.setTitleColor(#colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1), for: .normal)
@@ -35,6 +39,9 @@ class ValidationCheckRemovalView: UIViewController {
         messageView.layer.cornerRadius = 15
         moveIn()
         
+        messageView.backgroundColor = Style.backgroundColor
+        textMessageLabel.textColor = Style.labelColor
+        okButton.setTitleColor(Style.buttonColor, for: .normal)
     }
     
     @IBAction func okButtonPressed(_ sender: Any) {
@@ -68,4 +75,14 @@ class ValidationCheckRemovalView: UIViewController {
             self.view.removeFromSuperview()
         }
     }
+}
+
+extension ValidationCheckRemovalView: SettingsNavigationBarDelegate {
+    
+    func themeIsTogle() {
+        messageView.backgroundColor = Style.backgroundColor
+        textMessageLabel.textColor = Style.labelColor
+        okButton.setTitleColor(Style.buttonColor, for: .normal)
+    }
+    
 }

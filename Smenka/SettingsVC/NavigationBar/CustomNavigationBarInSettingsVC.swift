@@ -19,7 +19,7 @@ protocol SettingsNavigationBarDelegate: class {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var themeTogleButton: UIButton!
     
-    var theme = ThemeStyle.dark
+    var theme = ThemeStyle.light
     
     weak var delegate: SettingsNavigationBarDelegate?
     
@@ -42,21 +42,27 @@ protocol SettingsNavigationBarDelegate: class {
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         titleLabel.text = "Settings"
+        contentView.backgroundColor = Style.burColor
+        titleLabel.textColor = Style.labelColor
+        themeTogleButton.tintColor = Style.buttonColor
         self.makeShadow()
     }
     
-    
     @IBAction func themeIsTogle(_ sender: UIButton) {
-        delegate?.themeIsTogle()
         
         if theme == .dark {
-            sender.titleLabel?.text = "Dark"
+            sender.setTitle("Dark", for: .normal)
             theme = .light
             Style.themeLight()
         } else {
-            sender.titleLabel?.text = "Light"
+            sender.setTitle("Light", for: .normal)
             theme = .dark
             Style.themeDark()
         }
+        contentView.backgroundColor = Style.burColor
+        titleLabel.textColor = Style.labelColor
+        themeTogleButton.tintColor = Style.buttonColor
+        
+        delegate?.themeIsTogle()
     }
 }

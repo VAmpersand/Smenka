@@ -421,6 +421,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4XP-u0-gpg" customClass="CustomNavigationBarInSettingsVC" customModule="Smenka" customModuleProvider="target">
@@ -454,6 +455,7 @@
                         <outlet property="addTypeButton" destination="h8z-p7-sgW" id="J65-uT-Ao6"/>
                         <outlet property="blurEffect" destination="SHs-kg-01Y" id="y5F-De-18k"/>
                         <outlet property="customNavigationBar" destination="4XP-u0-gpg" id="9sW-kB-rC2"/>
+                        <outlet property="shiftTypeLabel" destination="qGh-aa-ZJ0" id="mZd-77-KhA"/>
                         <outlet property="shiftTypeTable" destination="Jiz-Wd-lXm" id="GwV-YT-iZX"/>
                     </connections>
                 </viewController>

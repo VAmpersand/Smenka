@@ -16,12 +16,11 @@ class MainViewController: UIViewController {
     
     @IBOutlet var calendarCollectionView: UICollectionView!
     @IBOutlet var shiftTypeTable: UITableView!
-    
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet var blurEffect: UIVisualEffectView!
-
-    
     @IBOutlet var customNavigationBar: CustomNavigationBarInMainVC!
+    
+    var themeStyleDelegate = CustomNavigationBarInSettingsVC()
     
     var schedulesShifts: Results<ScheduleShifts>!
     var shiftTypes: Results<ShiftType>!
@@ -40,7 +39,6 @@ class MainViewController: UIViewController {
     
     var editButtonPressCheck = false
     var currentIndexPath: IndexPath!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,11 +62,14 @@ class MainViewController: UIViewController {
         
         calendarCollectionView.layer.cornerRadius = 15
         shiftTypeTable.layer.cornerRadius = 15
+        self.view.backgroundColor = Style.backgroundColor
+        
         
         shiftTypeTable.delegate = self
         shiftTypeTable.dataSource = self
         
         customNavigationBar.delegate = self
+        themeStyleDelegate.delegate = self
         
         schedulesShifts = realm.objects(ScheduleShifts.self)
         shiftTypes = realm.objects(ShiftType.self)
@@ -119,15 +120,11 @@ class MainViewController: UIViewController {
         calendarCollectionView.reloadData()
     }
     
-   
-    
     //MARK: Delete current schedule shifts
     @IBAction func deleteCurrentScheduleShifts(_ sender: Any) {
         
         showMessageView(text: "Are you sure you want to delete the shift schedule for \(months[currentMonth]) \(currentYear)")
     }
-    
-    
     
     //MARK: Show view with question about deleting schedule shifts
     func showMessageView(text: String) {
@@ -151,6 +148,7 @@ class MainViewController: UIViewController {
             StorageManager.saveShiftType(shiftType)
         }
     }
+    
     
     func getEmptySharedData() {
         var counter = 0
@@ -192,6 +190,18 @@ class MainViewController: UIViewController {
         Realm.Configuration.defaultConfiguration = config
         print(directory)
     }
+    
+    //MARK: Init whith change ThemeStyle
+    convenience init(theme: ThemeStyle) {
+          self.init()
+          
+          if theme == .dark {
+              Style.themeDark()
+          } else {
+              Style.themeLight()
+          }
+
+      }
 }
 
 extension MainViewController: DeleteButtonDelegate {
@@ -222,7 +232,6 @@ extension MainViewController: DeleteButtonDelegate {
 extension MainViewController: MainNavigationBarDelegate {
     
     func editAction() {
-        
         editButtonPressCheck.toggle()
         
         if editButtonPressCheck {
@@ -261,6 +270,16 @@ extension MainViewController: MainNavigationBarDelegate {
           showMessageView(text: "Are you sure you want to delete the shift schedule for \(months[currentMonth]) \(currentYear)")
     }
 
+}
+
+extension MainViewController: SettingsNavigationBarDelegate {
+
+    func themeIsTogle() {
+        
+        self.view.backgroundColor = Style.backgroundColor
+        calendarCollectionView.backgroundColor = Style.backgroundColor
+        calendarCollectionView.reloadData()
+    }
 }
 
 
