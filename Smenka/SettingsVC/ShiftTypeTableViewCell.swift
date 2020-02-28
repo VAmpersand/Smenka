@@ -13,6 +13,5 @@ class ShiftTypeTableViewCell: UITableViewCell {
     @IBOutlet var typeNameLabel: UILabel!
     @IBOutlet var shiftTimeLabel: UILabel!
     @IBOutlet var typeColor: UIImageView!
-    
- 
+
 }

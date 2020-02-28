@@ -46,7 +46,4 @@ protocol SettingsNavigationBarDelegate: class {
     @IBAction func modIsTogle(_ sender: Any) {
         delegate?.modeIsTogle()
     }
-    
-  
-
 }

@@ -219,7 +219,6 @@
 				7793C70523E9FBE50063BBA4 /* BusinessLogic */,
 				7793C71023EDFAA00063BBA4 /* MainVC */,
 				7793C71123EDFD780063BBA4 /* SettingsVC */,
-				7783940923F88A32000BD2D4 /* Alerts */,
 				774A850C23D76A8400A653A6 /* Main.storyboard */,
 				774A850F23D76A8500A653A6 /* Assets.xcassets */,
 				774A851123D76A8500A653A6 /* LaunchScreen.storyboard */,
@@ -301,6 +300,7 @@
 				7793C70823EDE3720063BBA4 /* TableViewDataSource_Ext_MainVC.swift */,
 				7793C70C23EDEF270063BBA4 /* ShiftTypeCell.swift */,
 				77E6A11B24082EC600F4A655 /* NavigationBar */,
+				7783940923F88A32000BD2D4 /* Alerts */,
 			);
 			path = MainVC;
 			sourceTree = "<group>";
