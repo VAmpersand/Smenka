@@ -12,5 +12,17 @@ class ShiftTypeCell: UITableViewCell {
     
     @IBOutlet var typeNameLabel: UILabel!
     @IBOutlet var shiftTimeLabel: UILabel!
-    @IBOutlet var typeColor: UIImageView!  
+    @IBOutlet var typeColor: UIImageView!
+    
+    func setTheme() {
+        typeNameLabel.textColor = Style.labelColor
+        shiftTimeLabel.textColor = Style.labelColor
+        
+        self.backgroundColor = Style.backgroundColor
+        
+        typeColor.layer.cornerRadius = 20
+    }
+    
+    
+    
 }

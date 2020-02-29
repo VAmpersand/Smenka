@@ -13,7 +13,6 @@ protocol MainNavigationBarDelegate: class {
     func deleteAction()
 }
 
-
 @IBDesignable class CustomNavigationBarInMainVC: UIView {
     
     @IBOutlet var contentView: UIView!
@@ -55,12 +54,12 @@ protocol MainNavigationBarDelegate: class {
                 
                 if editButtonPressCheck {
                     editButton.setTitle("Save", for: .normal)
-//                    editButton.setTitleColor(.white, for: .normal)
+                    editButton.setTitleColor(Style.buttonColor, for: .normal)
                     deleteButton.isHidden = false
-//                    deleteButton.setTitleColor(.white, for: .normal)
+                    deleteButton.setTitleColor(Style.buttonColor, for: .normal)
                 } else {
                     self.editButton.setTitle("Edit", for: .normal)
-//                    self.editButton.setTitleColor(.blue, for: .normal)
+                    self.editButton.setTitleColor(Style.buttonColor, for: .normal)
                     self.deleteButton.isHidden = true
             }
         

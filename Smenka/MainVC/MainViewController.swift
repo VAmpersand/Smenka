@@ -17,10 +17,11 @@ class MainViewController: UIViewController {
     @IBOutlet var calendarCollectionView: UICollectionView!
     @IBOutlet var shiftTypeTable: UITableView!
     @IBOutlet var monthLabel: UILabel!
+    @IBOutlet weak var shiftTypesLabel: UILabel!
     @IBOutlet var blurEffect: UIVisualEffectView!
     @IBOutlet var customNavigationBar: CustomNavigationBarInMainVC!
-    
-    var themeStyleDelegate = CustomNavigationBarInSettingsVC()
+    @IBOutlet var nextButton: UIButton!
+    @IBOutlet var backButton: UIButton!
     
     var schedulesShifts: Results<ScheduleShifts>!
     var shiftTypes: Results<ShiftType>!
@@ -40,6 +41,11 @@ class MainViewController: UIViewController {
     var editButtonPressCheck = false
     var currentIndexPath: IndexPath!
     
+    var theme = ThemeStyle.light
+    
+    let themeStyleDelegate = CustomNavigationBarInSettingsVC()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,7 +56,7 @@ class MainViewController: UIViewController {
         currentMonthIndex = Calendar.current.component(.month, from: Date())
         currentYear = Calendar.current.component(.year, from: Date())
         todaysDate = Calendar.current.component(.day, from: Date())
-                      
+        
         presentMonthIndex = currentMonthIndex
         presentYear = currentYear
         
@@ -60,10 +66,7 @@ class MainViewController: UIViewController {
         
         monthLabel.text = "\(months[currentMonth]) \(currentYear)"
         
-        calendarCollectionView.layer.cornerRadius = 15
-        shiftTypeTable.layer.cornerRadius = 15
-        self.view.backgroundColor = Style.backgroundColor
-        
+       
         
         shiftTypeTable.delegate = self
         shiftTypeTable.dataSource = self
@@ -88,11 +91,37 @@ class MainViewController: UIViewController {
         
         // Leap year check before calendar display
         didChangeMonth(monthIndex: currentMonth, year: currentYear)
+        
+        setDesign()
         shiftTypeTable.reloadData()
+        
+        
         
         shareDataInWidget()
     }
     
+    
+    class func initMainVC(theme: ThemeStyle) -> MainViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "mainViewController") as! MainViewController
+        vc.theme = theme
+        return vc
+    }
+    
+    func setDesign() {
+        
+        self.view.backgroundColor = Style.backgroundColor
+        shiftTypeTable.backgroundColor = Style.backgroundColor
+        calendarCollectionView.backgroundColor = Style.backgroundColor
+        monthLabel.textColor = Style.labelColor
+        shiftTypesLabel.textColor = Style.labelColor
+        nextButton.setTitleColor(Style.labelColor, for: .normal)
+        backButton.setTitleColor(Style.labelColor, for: .normal)
+        
+        calendarCollectionView.layer.cornerRadius = 15
+        shiftTypeTable.layer.cornerRadius = 15
+               
+    }
     
     @IBAction func Next(_ sender: Any) {
         
@@ -190,18 +219,6 @@ class MainViewController: UIViewController {
         Realm.Configuration.defaultConfiguration = config
         print(directory)
     }
-    
-    //MARK: Init whith change ThemeStyle
-    convenience init(theme: ThemeStyle) {
-          self.init()
-          
-          if theme == .dark {
-              Style.themeDark()
-          } else {
-              Style.themeLight()
-          }
-
-      }
 }
 
 extension MainViewController: DeleteButtonDelegate {
@@ -267,18 +284,20 @@ extension MainViewController: MainNavigationBarDelegate {
     
     //MARK: Delete current schedule shifts
     func deleteAction() {
-          showMessageView(text: "Are you sure you want to delete the shift schedule for \(months[currentMonth]) \(currentYear)")
+        showMessageView(text: "Are you sure you want to delete the shift schedule for \(months[currentMonth]) \(currentYear)")
     }
-
+    
 }
 
 extension MainViewController: SettingsNavigationBarDelegate {
-
+    
     func themeIsTogle() {
         
         self.view.backgroundColor = Style.backgroundColor
+        shiftTypeTable.backgroundColor = Style.backgroundColor
         calendarCollectionView.backgroundColor = Style.backgroundColor
         calendarCollectionView.reloadData()
+        
     }
 }
 

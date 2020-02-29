@@ -63,6 +63,9 @@ protocol SettingsNavigationBarDelegate: class {
         titleLabel.textColor = Style.labelColor
         themeTogleButton.tintColor = Style.buttonColor
         
+        let mainVC = MainViewController.initMainVC(theme: theme)
+        mainVC.setDesign()
+        
         delegate?.themeIsTogle()
     }
 }
