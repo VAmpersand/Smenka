@@ -13,6 +13,7 @@
 		771943F123FC687800861758 /* Shifts.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 771943E523FC687800861758 /* Shifts.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		77302A6523FC7C21004DB165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774A850F23D76A8500A653A6 /* Assets.xcassets */; };
 		77302A6723FDC315004DB165 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771943E923FC687800861758 /* TodayViewController.swift */; };
+		77372B2E240A673600BA4BB3 /* SetEmptySaredData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77372B2D240A673600BA4BB3 /* SetEmptySaredData.swift */; };
 		774A850723D76A8400A653A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A850623D76A8400A653A6 /* AppDelegate.swift */; };
 		774A850923D76A8400A653A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A850823D76A8400A653A6 /* SceneDelegate.swift */; };
 		774A850B23D76A8400A653A6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A850A23D76A8400A653A6 /* MainViewController.swift */; };
@@ -96,6 +97,7 @@
 		771943EE23FC687800861758 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77302A6423FC7937004DB165 /* Shifts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Shifts.entitlements; sourceTree = "<group>"; };
 		77302A6623FDB577004DB165 /* Smenka.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Smenka.entitlements; sourceTree = "<group>"; };
+		77372B2D240A673600BA4BB3 /* SetEmptySaredData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEmptySaredData.swift; sourceTree = "<group>"; };
 		774A850323D76A8400A653A6 /* Smenka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smenka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		774A850623D76A8400A653A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		774A850823D76A8400A653A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				7793C70623EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift */,
 				7783940123F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift */,
 				7793C6FF23E9F5380063BBA4 /* GetIndexFirstWeekDay_Func.swift */,
+				77372B2D240A673600BA4BB3 /* SetEmptySaredData.swift */,
 				774A852023E0CA2C00A653A6 /* Ext_String.swift */,
 				774A852223E0CA4100A653A6 /* Ext_Date.swift */,
 				77D862C0240985420079EBBE /* Ext_UIView.swift */,
@@ -548,6 +551,7 @@
 				77302A6723FDC315004DB165 /* TodayViewController.swift in Sources */,
 				7793C71323F045E40063BBA4 /* SettingsViewController.swift in Sources */,
 				774A852123E0CA2C00A653A6 /* Ext_String.swift in Sources */,
+				77372B2E240A673600BA4BB3 /* SetEmptySaredData.swift in Sources */,
 				774A850B23D76A8400A653A6 /* MainViewController.swift in Sources */,
 				7793C70423E9FBD60063BBA4 /* CheckTheSchudaleForEmptiness_Func.swift in Sources */,
 				7783940223F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift in Sources */,

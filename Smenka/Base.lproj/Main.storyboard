@@ -318,6 +318,13 @@
                         <outlet property="nextButton" destination="Ta9-A9-H8k" id="Uqq-L3-vrm"/>
                         <outlet property="shiftTypeTable" destination="ec4-yU-v0e" id="3bd-f1-ANt"/>
                         <outlet property="shiftTypesLabel" destination="DzN-wC-k5R" id="dih-H9-bpZ"/>
+                        <outletCollection property="daysLabels" destination="5dx-NE-prP" collectionClass="NSMutableArray" id="alv-9g-ny8"/>
+                        <outletCollection property="daysLabels" destination="JZH-o0-tCq" collectionClass="NSMutableArray" id="FNk-MR-JwZ"/>
+                        <outletCollection property="daysLabels" destination="CpW-lK-cGD" collectionClass="NSMutableArray" id="87P-9u-GSA"/>
+                        <outletCollection property="daysLabels" destination="7o7-qD-YxW" collectionClass="NSMutableArray" id="xym-bw-piX"/>
+                        <outletCollection property="daysLabels" destination="Y1y-19-tQ3" collectionClass="NSMutableArray" id="wAl-mX-He2"/>
+                        <outletCollection property="daysLabels" destination="Pir-Lt-Gt5" collectionClass="NSMutableArray" id="NMA-Fh-b9m"/>
+                        <outletCollection property="daysLabels" destination="ijX-07-AS4" collectionClass="NSMutableArray" id="kqg-gt-ZjH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

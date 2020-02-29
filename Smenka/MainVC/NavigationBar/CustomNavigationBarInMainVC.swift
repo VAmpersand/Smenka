@@ -22,6 +22,7 @@ protocol MainNavigationBarDelegate: class {
     @IBOutlet var deleteButton: UIButton!
     
     weak var delegate: MainNavigationBarDelegate?
+    
     var editButtonPressCheck = false
     
     override init(frame: CGRect) {
@@ -42,26 +43,24 @@ protocol MainNavigationBarDelegate: class {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        deleteButton.isHidden = true
-        titleLabel.text = "Calendar"
-        self.makeShadow()
+        setDesign()
     }
     
     
     @IBAction func editButtonPressed(_ sender: Any) {
         
         editButtonPressCheck.toggle()
-                
-                if editButtonPressCheck {
-                    editButton.setTitle("Save", for: .normal)
-                    editButton.setTitleColor(Style.buttonColor, for: .normal)
-                    deleteButton.isHidden = false
-                    deleteButton.setTitleColor(Style.buttonColor, for: .normal)
-                } else {
-                    self.editButton.setTitle("Edit", for: .normal)
-                    self.editButton.setTitleColor(Style.buttonColor, for: .normal)
-                    self.deleteButton.isHidden = true
-            }
+        
+        if editButtonPressCheck {
+            editButton.setTitle("Save", for: .normal)
+            editButton.setTitleColor(Style.buttonColor, for: .normal)
+            deleteButton.isHidden = false
+            deleteButton.setTitleColor(Style.buttonColor, for: .normal)
+        } else {
+            self.editButton.setTitle("Edit", for: .normal)
+            self.editButton.setTitleColor(Style.buttonColor, for: .normal)
+            self.deleteButton.isHidden = true
+        }
         
         delegate?.editAction()
     }
@@ -70,5 +69,16 @@ protocol MainNavigationBarDelegate: class {
         delegate?.deleteAction()
     }
     
+    func setDesign() {
+        contentView.backgroundColor = Style.burColor
+        titleLabel.textColor = Style.labelColor
+        deleteButton.setTitleColor(Style.buttonColor, for: .normal)
+        editButton.setTitleColor(Style.buttonColor, for: .normal)
+        
+        deleteButton.isHidden = true
+        titleLabel.text = "Calendar"
+        self.makeShadow()
+    }  
 }
+
 

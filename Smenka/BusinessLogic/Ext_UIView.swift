@@ -11,7 +11,7 @@ import UIKit
 extension UIView {
     
     func makeShadow() {
-        self.layer.shadowColor = (UIColor.gray).cgColor
+        self.layer.shadowColor = (Style.burShadowColor).cgColor
         self.layer.shadowOpacity = 0.5
         self.layer.shadowOffset = CGSize.zero
         self.layer.shadowRadius = 2

@@ -9,15 +9,13 @@
 import UIKit
 import RealmSwift
 
-var colorIndexes: [Int] = []
-var sharedDate: [Int] = []
-
 class MainViewController: UIViewController {
     
     @IBOutlet var calendarCollectionView: UICollectionView!
     @IBOutlet var shiftTypeTable: UITableView!
     @IBOutlet var monthLabel: UILabel!
-    @IBOutlet weak var shiftTypesLabel: UILabel!
+    @IBOutlet var shiftTypesLabel: UILabel!
+    @IBOutlet var daysLabels: [UILabel]!
     @IBOutlet var blurEffect: UIVisualEffectView!
     @IBOutlet var customNavigationBar: CustomNavigationBarInMainVC!
     @IBOutlet var nextButton: UIButton!
@@ -50,7 +48,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         setDefaultDBRealmDirectory()
-        getEmptySharedData()
+        getEmptySharedDate()
         getEmptyColorIndexes()
         
         currentMonthIndex = Calendar.current.component(.month, from: Date())
@@ -95,8 +93,6 @@ class MainViewController: UIViewController {
         setDesign()
         shiftTypeTable.reloadData()
         
-        
-        
         shareDataInWidget()
     }
     
@@ -117,6 +113,12 @@ class MainViewController: UIViewController {
         shiftTypesLabel.textColor = Style.labelColor
         nextButton.setTitleColor(Style.labelColor, for: .normal)
         backButton.setTitleColor(Style.labelColor, for: .normal)
+        
+        for label in daysLabels {
+            label.textColor = Style.labelColor
+        }
+        
+        customNavigationBar.setDesign()
         
         calendarCollectionView.layer.cornerRadius = 15
         shiftTypeTable.layer.cornerRadius = 15
@@ -177,27 +179,6 @@ class MainViewController: UIViewController {
             StorageManager.saveShiftType(shiftType)
         }
     }
-    
-    
-    func getEmptySharedData() {
-        var counter = 0
-        sharedDate = []
-        
-        while counter != 37 {
-            sharedDate.append(0)
-            counter += 1
-        }
-    }
-    
-    func getEmptyColorIndexes() {
-        var counter = 0
-        colorIndexes = []
-        while counter != 37 {
-            colorIndexes.append(18)
-            counter += 1
-        }
-    }
-    
     
     func shareDataInWidget() {
         let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
@@ -289,7 +270,7 @@ extension MainViewController: MainNavigationBarDelegate {
     
 }
 
-extension MainViewController: SettingsNavigationBarDelegate {
+extension MainViewController: ThemeChangingDelegate {
     
     func themeIsTogle() {
         

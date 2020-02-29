@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SettingsNavigationBarDelegate: class {
+protocol ThemeChangingDelegate: class {
     func themeIsTogle()
 }
 
@@ -21,7 +21,7 @@ protocol SettingsNavigationBarDelegate: class {
     
     var theme = ThemeStyle.light
     
-    weak var delegate: SettingsNavigationBarDelegate?
+    weak var delegate: ThemeChangingDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)

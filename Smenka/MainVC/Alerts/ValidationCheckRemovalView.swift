@@ -77,7 +77,7 @@ class ValidationCheckRemovalView: UIViewController {
     }
 }
 
-extension ValidationCheckRemovalView: SettingsNavigationBarDelegate {
+extension ValidationCheckRemovalView: ThemeChangingDelegate {
     
     func themeIsTogle() {
         messageView.backgroundColor = Style.backgroundColor

@@ -65,7 +65,7 @@ extension SettingsViewController: ShiftTypeCreationViewDelegate {
     }
 }
 
-extension SettingsViewController: SettingsNavigationBarDelegate {
+extension SettingsViewController: ThemeChangingDelegate {
     
     func themeIsTogle() {
         
