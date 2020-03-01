@@ -62,6 +62,7 @@ protocol ThemeChangingDelegate: class {
         contentView.backgroundColor = Style.burColor
         titleLabel.textColor = Style.labelColor
         themeTogleButton.tintColor = Style.buttonColor
+        self.makeShadow()
         
         let mainVC = MainViewController.initMainVC(theme: theme)
         mainVC.setDesign()

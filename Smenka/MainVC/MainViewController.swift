@@ -96,7 +96,7 @@ class MainViewController: UIViewController {
     
     
     class func initMainVC(theme: ThemeStyle) -> MainViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "MainVCStoryboard", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "mainViewController") as! MainViewController
         vc.theme = theme
         return vc

@@ -19,7 +19,7 @@ struct Style {
     static var labelColor = UIColor.black
     static var buttonColor = UIColor.blue
     static var burColor = UIColor.white
-    static var burShadowColor = UIColor.gray
+    static var burShadowColor = UIColor.black
     static var todayMarkColor = UIColor.red
     static var todayMarkColorIfSelected = UIColor.white
     static var weekdaysLabelColor = UIColor.black
@@ -33,7 +33,7 @@ struct Style {
         labelColor = UIColor.white
         buttonColor = UIColor.blue
         burColor = UIColor.lightGray
-        burShadowColor = UIColor.gray
+        burShadowColor = UIColor.white
         todayMarkColor = UIColor.red
         todayMarkColorIfSelected = UIColor.white
         weekdaysLabelColor = UIColor.white
@@ -47,7 +47,7 @@ struct Style {
         labelColor = UIColor.black
         buttonColor = UIColor.blue
         burColor = UIColor.white
-        burShadowColor = UIColor.gray
+        burShadowColor = UIColor.black
         todayMarkColor = UIColor.red
         todayMarkColorIfSelected = UIColor.white
         weekdaysLabelColor = UIColor.black
