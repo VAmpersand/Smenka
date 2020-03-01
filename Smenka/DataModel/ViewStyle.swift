@@ -24,6 +24,9 @@ struct Style {
     static var todayMarkColorIfSelected = UIColor.white
     static var weekdaysLabelColor = UIColor.black
     static var weekendLabelColor = UIColor.gray
+    static var weekdaysLabelColorIfSelected = UIColor.white
+    static var weekendLabelColorIfSelected = UIColor.white
+    
     
     static func themeDark(){
         backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
@@ -32,9 +35,11 @@ struct Style {
         burColor = UIColor.lightGray
         burShadowColor = UIColor.gray
         todayMarkColor = UIColor.red
-        todayMarkColorIfSelected = UIColor.black
+        todayMarkColorIfSelected = UIColor.white
         weekdaysLabelColor = UIColor.white
         weekendLabelColor = UIColor.gray
+        weekdaysLabelColorIfSelected = UIColor.white
+        weekendLabelColorIfSelected = UIColor.white
     }
     
     static func themeLight(){
@@ -47,6 +52,8 @@ struct Style {
         todayMarkColorIfSelected = UIColor.white
         weekdaysLabelColor = UIColor.black
         weekendLabelColor = UIColor.gray
+        weekdaysLabelColorIfSelected = UIColor.white
+        weekendLabelColorIfSelected = UIColor.white
         
     }
 }

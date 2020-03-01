@@ -63,9 +63,7 @@ class MainViewController: UIViewController {
         firstWeekDayOfMonth = getIndexFirstWeekDay(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
         
         monthLabel.text = "\(months[currentMonth]) \(currentYear)"
-        
-       
-        
+   
         shiftTypeTable.delegate = self
         shiftTypeTable.dataSource = self
         
@@ -117,6 +115,7 @@ class MainViewController: UIViewController {
         for label in daysLabels {
             label.textColor = Style.labelColor
         }
+        calendarCollectionView.reloadData()
         
         customNavigationBar.setDesign()
         
@@ -170,35 +169,10 @@ class MainViewController: UIViewController {
         validationCheckRemovalView.textMessageLabel.text = text
     }
     
-    //MARK: Creation clear shiftType for day withaut shift
-    func setFirstClearShiftType() {
-        let shiftType = ShiftType()
-        shiftType.shiftTypeName = "Clear shift type"
-        shiftType.shiftColorIndex = 18
-        DispatchQueue.main.async {
-            StorageManager.saveShiftType(shiftType)
-        }
-    }
-    
     func shareDataInWidget() {
         let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
         widgetUserDefaults?.setValue(colorIndexes, forKey: "colorIndexes")
         widgetUserDefaults?.setValue(sharedDate, forKey: "sharedDate")
-    }
-    
-    
-    func setDefaultDBRealmDirectory() {
-        
-        let identifire = "group.Smenka.widgetShare"
-        var directory: URL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: identifire)!
-        directory.appendPathComponent("db.realm", isDirectory: true)
-        
-        let config = Realm.Configuration(
-            fileURL: directory,
-            schemaVersion: 1, migrationBlock: { migration, oldschemaVersion in })
-        
-        Realm.Configuration.defaultConfiguration = config
-        print(directory)
     }
 }
 
