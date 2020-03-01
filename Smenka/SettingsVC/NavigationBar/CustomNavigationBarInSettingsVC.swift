@@ -42,7 +42,7 @@ protocol ThemeChangingDelegate: class {
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         titleLabel.text = "Settings"
-        contentView.backgroundColor = Style.burColor
+        contentView.backgroundColor = Style.barColor
         titleLabel.textColor = Style.labelColor
         themeTogleButton.tintColor = Style.buttonColor
         self.makeShadow()
@@ -59,7 +59,7 @@ protocol ThemeChangingDelegate: class {
             theme = .dark
             Style.themeDark()
         }
-        contentView.backgroundColor = Style.burColor
+        contentView.backgroundColor = Style.barColor
         titleLabel.textColor = Style.labelColor
         themeTogleButton.tintColor = Style.buttonColor
         self.makeShadow()
@@ -67,6 +67,8 @@ protocol ThemeChangingDelegate: class {
         let mainVC = MainViewController.initMainVC(theme: theme)
         mainVC.setDesign()
         
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "light"), object: nil)
+ 
         delegate?.themeIsTogle()
     }
 }

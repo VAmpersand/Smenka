@@ -23,12 +23,12 @@ class ValidationCheckRemovalView: UIViewController {
     
     var delegate: DeleteButtonDelegate?
     
-    var customNavigationBar = CustomNavigationBarInSettingsVC()
+    var themeChangingDelegate = CustomNavigationBarInSettingsVC()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        customNavigationBar.delegate = self
+        themeChangingDelegate.delegate = self
         
         okButton.layer.cornerRadius = 4
         okButton.setTitleColor(Style.buttonColor, for: .normal)

@@ -11,6 +11,13 @@ import RealmSwift
 
 class MainViewController: UIViewController {
     
+    class func initMainVC(theme: ThemeStyle) -> MainViewController {
+        let storyboard = UIStoryboard(name: "MainVCStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "mainViewController") as! MainViewController
+        vc.theme = theme
+        return vc
+    }
+    
     @IBOutlet var calendarCollectionView: UICollectionView!
     @IBOutlet var shiftTypeTable: UITableView!
     @IBOutlet var monthLabel: UILabel!
@@ -94,13 +101,6 @@ class MainViewController: UIViewController {
         shareDataInWidget()
     }
     
-    
-    class func initMainVC(theme: ThemeStyle) -> MainViewController {
-        let storyboard = UIStoryboard(name: "MainVCStoryboard", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "mainViewController") as! MainViewController
-        vc.theme = theme
-        return vc
-    }
     
     func setDesign() {
         

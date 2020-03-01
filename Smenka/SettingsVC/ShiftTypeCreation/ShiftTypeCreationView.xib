@@ -167,6 +167,12 @@
                 <outlet property="shiftColorCollectionView" destination="aJy-ow-KWS" id="6R5-k3-FhH"/>
                 <outlet property="startTimePicker" destination="jt7-LE-f9L" id="Lko-uX-gOj"/>
                 <outlet property="typeNameTextField" destination="Zvc-dR-Jnr" id="Ftf-Vw-6Lx"/>
+                <outletCollection property="labels" destination="Gdt-lM-LGU" collectionClass="NSMutableArray" id="0Xb-bn-KqI"/>
+                <outletCollection property="labels" destination="SgA-Gp-Nql" collectionClass="NSMutableArray" id="AfO-Ln-68b"/>
+                <outletCollection property="labels" destination="IUT-Q5-0Fo" collectionClass="NSMutableArray" id="BpV-6V-8Va"/>
+                <outletCollection property="labels" destination="zqK-Zf-db8" collectionClass="NSMutableArray" id="sIr-6B-bVf"/>
+                <outletCollection property="labels" destination="F1p-FX-JKF" collectionClass="NSMutableArray" id="H31-T0-BNH"/>
+                <outletCollection property="labels" destination="v0B-Mc-sUs" collectionClass="NSMutableArray" id="UEF-mO-GHp"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="100.44642857142857"/>
         </view>

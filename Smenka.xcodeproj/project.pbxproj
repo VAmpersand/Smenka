@@ -202,6 +202,15 @@
 			path = Shifts;
 			sourceTree = "<group>";
 		};
+		77372B39240BE31E00BA4BB3 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				774A850C23D76A8400A653A6 /* Main.storyboard */,
+				77372B33240BC05200BA4BB3 /* CustomTabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
 		774A84FA23D76A8300A653A6 = {
 			isa = PBXGroup;
 			children = (
@@ -233,8 +242,7 @@
 				7793C70523E9FBE50063BBA4 /* BusinessLogic */,
 				7793C71023EDFAA00063BBA4 /* MainVC */,
 				7793C71123EDFD780063BBA4 /* SettingsVC */,
-				774A850C23D76A8400A653A6 /* Main.storyboard */,
-				77372B33240BC05200BA4BB3 /* CustomTabBarController.swift */,
+				77372B39240BE31E00BA4BB3 /* TabBarController */,
 				774A850F23D76A8500A653A6 /* Assets.xcassets */,
 				774A851123D76A8500A653A6 /* LaunchScreen.storyboard */,
 				774A851423D76A8500A653A6 /* Info.plist */,

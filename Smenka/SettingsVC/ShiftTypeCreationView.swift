@@ -27,7 +27,7 @@ class ShiftTypeCreationView: UIView {
     @IBOutlet var shiftColorCollectionView: UICollectionView!
     @IBOutlet var cancelBatton: UIButton!
     @IBOutlet var saveBatton: UIButton!
-    
+    @IBOutlet var labels: [UILabel]!
     
     var delegate: ShiftTypeCreationViewDelegate?
     var shiftTypes: Results<ShiftType>!
@@ -38,7 +38,7 @@ class ShiftTypeCreationView: UIView {
     var endTime: String!
     var indexEditableType: IndexPath!  // Editing сheck
     var selectedColorIndex: IndexPath! // Checking color selection
- 
+    
     let reuseIdentifier = "shiftTypeColorCell"
     let localeID = Locale.preferredLanguages.first
     
@@ -64,6 +64,8 @@ class ShiftTypeCreationView: UIView {
             self.frame.origin.y = 85
         })
         
+        setDesign()
+         
         viewController.view.addSubview(self)
     }
     
@@ -163,5 +165,20 @@ extension ShiftTypeCreationView {
         setColorIndex = indexesIsMatch.firstIndex(of: false) ?? 0
         return setColorIndex
     }
+    
+    func setDesign() {
+        
+        self.backgroundColor = Style.backgroundColor
+        shiftColorCollectionView.backgroundColor = Style.backgroundColor
+    
+        startTimePicker.setValue(Style.labelColor, forKey: "textColor")
+        endTimePicker.setValue(Style.labelColor, forKey: "textColor")
+        
+        typeNameTextField.backgroundColor = Style.barColor
+        
+        for label in labels {
+            label.textColor = Style.labelColor
+        }
+        
+    }
 }
-
