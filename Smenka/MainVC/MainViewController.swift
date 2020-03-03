@@ -199,6 +199,10 @@ extension MainViewController: DeleteButtonDelegate {
             }
         }
         
+        customNavigationBar.editButtonPressed.toggle()
+        customNavigationBar.deleteButton.isHidden = true
+        customNavigationBar.editButton.setTitle("Edit", for: .normal)
+        
         shareDataInWidget()
     }
 }

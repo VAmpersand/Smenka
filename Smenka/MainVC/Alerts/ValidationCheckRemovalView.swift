@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-protocol  DeleteButtonDelegate {
+protocol DeleteButtonDelegate {
     func okButtonPressedWhenDeleting()
 }
 
