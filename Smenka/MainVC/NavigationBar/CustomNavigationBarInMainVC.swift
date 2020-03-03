@@ -23,7 +23,7 @@ protocol MainNavigationBarDelegate: class {
     
     weak var delegate: MainNavigationBarDelegate?
     
-    var editButtonPressCheck = false
+    var editButtonPressed = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,9 +49,9 @@ protocol MainNavigationBarDelegate: class {
     
     @IBAction func editButtonPressed(_ sender: Any) {
         
-        editButtonPressCheck.toggle()
+        editButtonPressed.toggle()
         
-        if editButtonPressCheck {
+        if editButtonPressed {
             editButton.setTitle("Save", for: .normal)
             editButton.setTitleColor(Style.buttonColor, for: .normal)
             deleteButton.isHidden = false
@@ -75,7 +75,12 @@ protocol MainNavigationBarDelegate: class {
         deleteButton.setTitleColor(Style.buttonColor, for: .normal)
         editButton.setTitleColor(Style.buttonColor, for: .normal)
         
-        deleteButton.isHidden = true
+        if editButtonPressed {
+             deleteButton.isHidden = false
+        } else {
+            deleteButton.isHidden = true
+        }
+        
         titleLabel.text = "Calendar"
         self.makeShadow()
     }  

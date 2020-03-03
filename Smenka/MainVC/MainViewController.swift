@@ -11,10 +11,9 @@ import RealmSwift
 
 class MainViewController: UIViewController {
     
-    class func initMainVC(theme: ThemeStyle) -> MainViewController {
+    class func initMainVC() -> MainViewController {
         let storyboard = UIStoryboard(name: "MainVCStoryboard", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "mainViewController") as! MainViewController
-        vc.theme = theme
         return vc
     }
     
@@ -43,10 +42,10 @@ class MainViewController: UIViewController {
     var firstWeekDayOfMonth = 0   //(Sunday-Saturday 1-7)
     var todaysDate = 0
     
-    var editButtonPressCheck = false
+    var editButtonPressed = false
     var currentIndexPath: IndexPath!
     
-    var theme = ThemeStyle.light
+    var theme: ThemeStyle!
     
     let themeStyleDelegate = CustomNavigationBarInSettingsVC()
     
@@ -84,8 +83,6 @@ class MainViewController: UIViewController {
         if !checkTheShiftTypeForExistence(shiftTypes: shiftTypes, shiftTypeName: "Clear shift type") {
             setFirstClearShiftType()
         }
-        
-        shareDataInWidget()
     }
     
     
@@ -97,7 +94,6 @@ class MainViewController: UIViewController {
         
         setDesign()
         shiftTypeTable.reloadData()
-        
         shareDataInWidget()
     }
     
@@ -135,6 +131,9 @@ class MainViewController: UIViewController {
         monthLabel.text="\(months[currentMonth]) \(currentYear)"
         didChangeMonth(monthIndex: currentMonth, year: currentYear)
         calendarCollectionView.reloadData()
+        
+        guard let defaultTheme = defaultThemeStyle.value(forKey: "defaultTheme") as? String else { return }
+        print(defaultTheme)
     }
     
     @IBAction func Back(_ sender: Any) {
@@ -148,6 +147,8 @@ class MainViewController: UIViewController {
         monthLabel.text = "\(months[currentMonth]) \(currentYear)"
         didChangeMonth(monthIndex: currentMonth, year: currentYear)
         calendarCollectionView.reloadData()
+        
+        defaultThemeStyle.removeObject(forKey: "defaultTheme")
     }
     
     //MARK: Delete current schedule shifts
@@ -174,13 +175,14 @@ class MainViewController: UIViewController {
         widgetUserDefaults?.setValue(colorIndexes, forKey: "colorIndexes")
         widgetUserDefaults?.setValue(sharedDate, forKey: "sharedDate")
     }
+    
 }
 
 extension MainViewController: DeleteButtonDelegate {
     
     func okButtonPressedWhenDeleting() {
         
-        editButtonPressCheck.toggle()
+        editButtonPressed.toggle()
         UIView.animate(withDuration: 1) {
             self.blurEffect.alpha = 0
         }
@@ -204,9 +206,9 @@ extension MainViewController: DeleteButtonDelegate {
 extension MainViewController: MainNavigationBarDelegate {
     
     func editAction() {
-        editButtonPressCheck.toggle()
+        editButtonPressed.toggle()
         
-        if editButtonPressCheck {
+        if editButtonPressed {
             UIView.animate(withDuration: 1) {
                 self.blurEffect.alpha = 0.9
             }

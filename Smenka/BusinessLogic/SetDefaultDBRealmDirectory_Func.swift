@@ -1,5 +1,5 @@
 //
-//  SettingDefaultDBRealmDirectory.swift
+//  SetDefaultDBRealmDirectory.swift
 //  Smenka
 //
 //  Created by Viktor on 01.03.2020.

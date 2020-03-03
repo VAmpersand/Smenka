@@ -1,5 +1,5 @@
 //
-//  SettingFistClearShiftType_Func.swift
+//  SetFistClearShiftType_Func.swift
 //  Smenka
 //
 //  Created by Viktor on 01.03.2020.

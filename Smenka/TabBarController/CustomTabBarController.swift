@@ -14,6 +14,7 @@ class CustomTabBarController: UITabBarController {
         super.viewDidLoad()
         
        NotificationCenter.default.addObserver(self, selector: #selector(setDesign), name: NSNotification.Name(rawValue: "light"), object: nil)
+        setThemeFromDefaults()
         setDesign()
     }
     

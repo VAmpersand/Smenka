@@ -19,7 +19,7 @@ protocol ThemeChangingDelegate: class {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var themeTogleButton: UIButton!
     
-    var theme = ThemeStyle.light
+    var theme: ThemeStyle!
     
     weak var delegate: ThemeChangingDelegate?
     
@@ -40,35 +40,51 @@ protocol ThemeChangingDelegate: class {
         self.addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                
+        guard let defTheme = defaultThemeStyle.value(forKey: "defaultTheme") as? String else { return }
+        if defTheme == "dark" {
+            theme = .dark
+        } else {
+            theme = .light
+        }
         
         titleLabel.text = "Settings"
-        contentView.backgroundColor = Style.barColor
-        titleLabel.textColor = Style.labelColor
-        themeTogleButton.tintColor = Style.buttonColor
-        self.makeShadow()
+        setDesign()
     }
     
     @IBAction func themeIsTogle(_ sender: UIButton) {
         
         if theme == .dark {
-            sender.setTitle("Dark", for: .normal)
             theme = .light
             Style.themeLight()
         } else {
-            sender.setTitle("Light", for: .normal)
             theme = .dark
             Style.themeDark()
         }
+        
+        let mainVC = MainViewController.initMainVC()
+        mainVC.setDesign()
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "light"), object: nil)
+        
+        setDesign()
+        setThemeInDefault(theme: theme)
+        
+        delegate?.themeIsTogle()
+    }
+    
+    
+    func setDesign() {
+        
+        if theme == .dark {
+            themeTogleButton.setTitle("Light", for: .normal)
+        } else {
+            themeTogleButton.setTitle("Dark", for: .normal)
+        }
+    
         contentView.backgroundColor = Style.barColor
         titleLabel.textColor = Style.labelColor
         themeTogleButton.tintColor = Style.buttonColor
         self.makeShadow()
-        
-        let mainVC = MainViewController.initMainVC(theme: theme)
-        mainVC.setDesign()
-        
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "light"), object: nil)
- 
-        delegate?.themeIsTogle()
     }
 }

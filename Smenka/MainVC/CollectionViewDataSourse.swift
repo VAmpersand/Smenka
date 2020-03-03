@@ -101,7 +101,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         //MARK: Change shift type index
-        if editButtonPressCheck {
+        if editButtonPressed {
             
             guard let shiftTipes = shiftTypes else { return }
             newShift.shiftTypeIndex = shift.shiftTypeIndex

@@ -14,11 +14,13 @@
 		77302A6523FC7C21004DB165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774A850F23D76A8500A653A6 /* Assets.xcassets */; };
 		77302A6723FDC315004DB165 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771943E923FC687800861758 /* TodayViewController.swift */; };
 		77372B2E240A673600BA4BB3 /* SetEmptySaredData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77372B2D240A673600BA4BB3 /* SetEmptySaredData.swift */; };
-		77372B30240BB5F900BA4BB3 /* SettingDefaultDBRealmDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77372B2F240BB5F900BA4BB3 /* SettingDefaultDBRealmDirectory.swift */; };
-		77372B32240BB6C500BA4BB3 /* SettingFistClearShiftType_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77372B31240BB6C500BA4BB3 /* SettingFistClearShiftType_Func.swift */; };
+		77372B30240BB5F900BA4BB3 /* SetDefaultDBRealmDirectory_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77372B2F240BB5F900BA4BB3 /* SetDefaultDBRealmDirectory_Func.swift */; };
+		77372B32240BB6C500BA4BB3 /* SetFistClearShiftType_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77372B31240BB6C500BA4BB3 /* SetFistClearShiftType_Func.swift */; };
 		77372B34240BC05200BA4BB3 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77372B33240BC05200BA4BB3 /* CustomTabBarController.swift */; };
 		77372B36240BC4C300BA4BB3 /* MainVCStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77372B35240BC4C300BA4BB3 /* MainVCStoryboard.storyboard */; };
 		77372B38240BC60900BA4BB3 /* SettingsVCStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77372B37240BC60900BA4BB3 /* SettingsVCStoryboard.storyboard */; };
+		77372B3D240ED1C200BA4BB3 /* SetDefaultTheme_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77372B3C240ED1C200BA4BB3 /* SetDefaultTheme_Func.swift */; };
+		77372B41240EF35100BA4BB3 /* SetThemeFromDefaults_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77372B40240EF35000BA4BB3 /* SetThemeFromDefaults_Func.swift */; };
 		774A850723D76A8400A653A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A850623D76A8400A653A6 /* AppDelegate.swift */; };
 		774A850923D76A8400A653A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A850823D76A8400A653A6 /* SceneDelegate.swift */; };
 		774A850B23D76A8400A653A6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A850A23D76A8400A653A6 /* MainViewController.swift */; };
@@ -103,11 +105,13 @@
 		77302A6423FC7937004DB165 /* Shifts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Shifts.entitlements; sourceTree = "<group>"; };
 		77302A6623FDB577004DB165 /* Smenka.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Smenka.entitlements; sourceTree = "<group>"; };
 		77372B2D240A673600BA4BB3 /* SetEmptySaredData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEmptySaredData.swift; sourceTree = "<group>"; };
-		77372B2F240BB5F900BA4BB3 /* SettingDefaultDBRealmDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDefaultDBRealmDirectory.swift; sourceTree = "<group>"; };
-		77372B31240BB6C500BA4BB3 /* SettingFistClearShiftType_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFistClearShiftType_Func.swift; sourceTree = "<group>"; };
+		77372B2F240BB5F900BA4BB3 /* SetDefaultDBRealmDirectory_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDefaultDBRealmDirectory_Func.swift; sourceTree = "<group>"; };
+		77372B31240BB6C500BA4BB3 /* SetFistClearShiftType_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFistClearShiftType_Func.swift; sourceTree = "<group>"; };
 		77372B33240BC05200BA4BB3 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		77372B35240BC4C300BA4BB3 /* MainVCStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainVCStoryboard.storyboard; sourceTree = "<group>"; };
 		77372B37240BC60900BA4BB3 /* SettingsVCStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsVCStoryboard.storyboard; sourceTree = "<group>"; };
+		77372B3C240ED1C200BA4BB3 /* SetDefaultTheme_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDefaultTheme_Func.swift; sourceTree = "<group>"; };
+		77372B40240EF35000BA4BB3 /* SetThemeFromDefaults_Func.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetThemeFromDefaults_Func.swift; sourceTree = "<group>"; };
 		774A850323D76A8400A653A6 /* Smenka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smenka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		774A850623D76A8400A653A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		774A850823D76A8400A653A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -302,15 +306,17 @@
 		7793C70523E9FBE50063BBA4 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
-				7793C6FD23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift */,
 				7793C70123E9F6010063BBA4 /* CheckTheSchudaleForExistence_Func.swift */,
 				7793C70323E9FBD60063BBA4 /* CheckTheSchudaleForEmptiness_Func.swift */,
 				7793C70623EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift */,
 				7783940123F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift */,
 				7793C6FF23E9F5380063BBA4 /* GetIndexFirstWeekDay_Func.swift */,
-				77372B31240BB6C500BA4BB3 /* SettingFistClearShiftType_Func.swift */,
+				7793C6FD23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift */,
+				77372B31240BB6C500BA4BB3 /* SetFistClearShiftType_Func.swift */,
 				77372B2D240A673600BA4BB3 /* SetEmptySaredData.swift */,
-				77372B2F240BB5F900BA4BB3 /* SettingDefaultDBRealmDirectory.swift */,
+				77372B2F240BB5F900BA4BB3 /* SetDefaultDBRealmDirectory_Func.swift */,
+				77372B3C240ED1C200BA4BB3 /* SetDefaultTheme_Func.swift */,
+				77372B40240EF35000BA4BB3 /* SetThemeFromDefaults_Func.swift */,
 				774A852023E0CA2C00A653A6 /* Ext_String.swift */,
 				774A852223E0CA4100A653A6 /* Ext_Date.swift */,
 				77D862C0240985420079EBBE /* Ext_UIView.swift */,
@@ -563,6 +569,7 @@
 				7793C71F23F062870063BBA4 /* ShiftTypeCreationView.swift in Sources */,
 				7793C71523F04A960063BBA4 /* TableViewDataSource.swift in Sources */,
 				774A852B23E3572F00A653A6 /* StaffModel.swift in Sources */,
+				77372B3D240ED1C200BA4BB3 /* SetDefaultTheme_Func.swift in Sources */,
 				77E6A11A24082EBF00F4A655 /* CustomNavigationBarInMainVC.swift in Sources */,
 				7793C71723F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift in Sources */,
 				779110EB2408468E00DDFC1A /* CustomNavigationBarInSettingsVC.swift in Sources */,
@@ -572,7 +579,7 @@
 				7793C70023E9F5380063BBA4 /* GetIndexFirstWeekDay_Func.swift in Sources */,
 				7793C72123F177390063BBA4 /* ShiftTypeCreationCollectionViewDataSourse.swift in Sources */,
 				77D862C1240985420079EBBE /* Ext_UIView.swift in Sources */,
-				77372B32240BB6C500BA4BB3 /* SettingFistClearShiftType_Func.swift in Sources */,
+				77372B32240BB6C500BA4BB3 /* SetFistClearShiftType_Func.swift in Sources */,
 				774A852323E0CA4100A653A6 /* Ext_Date.swift in Sources */,
 				774A852523E2103600A653A6 /* CollectionViewDataSourse.swift in Sources */,
 				77302A6723FDC315004DB165 /* TodayViewController.swift in Sources */,
@@ -581,8 +588,9 @@
 				77372B2E240A673600BA4BB3 /* SetEmptySaredData.swift in Sources */,
 				774A850B23D76A8400A653A6 /* MainViewController.swift in Sources */,
 				7793C70423E9FBD60063BBA4 /* CheckTheSchudaleForEmptiness_Func.swift in Sources */,
+				77372B41240EF35100BA4BB3 /* SetThemeFromDefaults_Func.swift in Sources */,
 				7783940223F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift in Sources */,
-				77372B30240BB5F900BA4BB3 /* SettingDefaultDBRealmDirectory.swift in Sources */,
+				77372B30240BB5F900BA4BB3 /* SetDefaultDBRealmDirectory_Func.swift in Sources */,
 				774A850723D76A8400A653A6 /* AppDelegate.swift in Sources */,
 				774A852923E3562900A653A6 /* ShiftModel.swift in Sources */,
 				7783940423F8166F000BD2D4 /* RealmCascadeDeleteion_Ext_Realm.swift in Sources */,
