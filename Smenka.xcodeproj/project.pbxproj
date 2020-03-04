@@ -21,6 +21,8 @@
 		77372B38240BC60900BA4BB3 /* SettingsVCStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77372B37240BC60900BA4BB3 /* SettingsVCStoryboard.storyboard */; };
 		77372B3D240ED1C200BA4BB3 /* SetDefaultTheme_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77372B3C240ED1C200BA4BB3 /* SetDefaultTheme_Func.swift */; };
 		77372B41240EF35100BA4BB3 /* SetThemeFromDefaults_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77372B40240EF35000BA4BB3 /* SetThemeFromDefaults_Func.swift */; };
+		77372B4324101DA600BA4BB3 /* ShiftTypeCreationAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77372B4224101DA600BA4BB3 /* ShiftTypeCreationAlert.storyboard */; };
+		77372B4524101DD900BA4BB3 /* ShiftTypeCreationAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77372B4424101DD900BA4BB3 /* ShiftTypeCreationAlertViewController.swift */; };
 		774A850723D76A8400A653A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A850623D76A8400A653A6 /* AppDelegate.swift */; };
 		774A850923D76A8400A653A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A850823D76A8400A653A6 /* SceneDelegate.swift */; };
 		774A850B23D76A8400A653A6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A850A23D76A8400A653A6 /* MainViewController.swift */; };
@@ -112,6 +114,8 @@
 		77372B37240BC60900BA4BB3 /* SettingsVCStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsVCStoryboard.storyboard; sourceTree = "<group>"; };
 		77372B3C240ED1C200BA4BB3 /* SetDefaultTheme_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDefaultTheme_Func.swift; sourceTree = "<group>"; };
 		77372B40240EF35000BA4BB3 /* SetThemeFromDefaults_Func.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetThemeFromDefaults_Func.swift; sourceTree = "<group>"; };
+		77372B4224101DA600BA4BB3 /* ShiftTypeCreationAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShiftTypeCreationAlert.storyboard; sourceTree = "<group>"; };
+		77372B4424101DD900BA4BB3 /* ShiftTypeCreationAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeCreationAlertViewController.swift; sourceTree = "<group>"; };
 		774A850323D76A8400A653A6 /* Smenka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smenka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		774A850623D76A8400A653A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		774A850823D76A8400A653A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +217,15 @@
 				77372B33240BC05200BA4BB3 /* CustomTabBarController.swift */,
 			);
 			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		77372B4624101DE900BA4BB3 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				77372B4424101DD900BA4BB3 /* ShiftTypeCreationAlertViewController.swift */,
+				77372B4224101DA600BA4BB3 /* ShiftTypeCreationAlert.storyboard */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		774A84FA23D76A8300A653A6 = {
@@ -349,6 +362,7 @@
 				7793C71623F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift */,
 				779110EE240846BA00DDFC1A /* NavigationBar */,
 				7793C72A23F180C10063BBA4 /* ShiftTypeCreation */,
+				77372B4624101DE900BA4BB3 /* Alert */,
 			);
 			path = SettingsVC;
 			sourceTree = "<group>";
@@ -490,6 +504,7 @@
 				7793C71B23F05FC70063BBA4 /* ShiftTypeCreationView.xib in Resources */,
 				77E6A11824082BB500F4A655 /* CustomNavigationBarInMainVC.xib in Resources */,
 				779110ED240846B400DDFC1A /* CustomNavigationBarInSettingsVC.xib in Resources */,
+				77372B4324101DA600BA4BB3 /* ShiftTypeCreationAlert.storyboard in Resources */,
 				774A850E23D76A8400A653A6 /* Main.storyboard in Resources */,
 				7798341623FDD38300CB5180 /* Alert.storyboard in Resources */,
 				77372B38240BC60900BA4BB3 /* SettingsVCStoryboard.storyboard in Resources */,
@@ -558,6 +573,7 @@
 			files = (
 				7793C6FE23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift in Sources */,
 				7793C6F823E4BA8D0063BBA4 /* ShiftTypeModel.swift in Sources */,
+				77372B4524101DD900BA4BB3 /* ShiftTypeCreationAlertViewController.swift in Sources */,
 				77372B34240BC05200BA4BB3 /* CustomTabBarController.swift in Sources */,
 				774A851B23D7712500A653A6 /* DateCollectionViewCell.swift in Sources */,
 				774A851D23D772C800A653A6 /* CalendarDataSource.swift in Sources */,

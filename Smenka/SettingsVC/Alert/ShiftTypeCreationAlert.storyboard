@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Shift Type Creation Alert View Controller-->
+        <scene sceneID="XEf-fu-4wE">
+            <objects>
+                <viewController storyboardIdentifier="alertView" id="Q58-Vk-STs" customClass="ShiftTypeCreationAlertViewController" customModule="Smenka" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gBV-I8-J6M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mhb-DE-gsN">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3qO-bx-0tU">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efa-ag-BVH">
+                                <rect key="frame" x="72" y="368" width="270" height="170"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gf-Jo-B8U">
+                                        <rect key="frame" x="10" y="10" width="250" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="87" id="1uD-j8-P4s"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="1ib-b6-VrE">
+                                        <rect key="frame" x="30" y="130" width="210" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="alertView" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddo-cm-kZQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="210" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="69" id="ew5-hI-N4J"/>
+                                                    <constraint firstAttribute="height" constant="30" id="zm9-VQ-1ZI"/>
+                                                </constraints>
+                                                <state key="normal" title="OK"/>
+                                                <connections>
+                                                    <action selector="okButtonPressed:" destination="Q58-Vk-STs" eventType="touchUpInside" id="LSj-xg-chf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="1ib-b6-VrE" firstAttribute="leading" secondItem="efa-ag-BVH" secondAttribute="leading" constant="30" id="0c1-vf-Gjq"/>
+                                    <constraint firstItem="9Gf-Jo-B8U" firstAttribute="top" secondItem="efa-ag-BVH" secondAttribute="top" constant="10" id="Sfx-eT-TM1"/>
+                                    <constraint firstAttribute="height" constant="170" id="UAu-DI-UXG"/>
+                                    <constraint firstAttribute="width" constant="270" id="W91-Hu-ic8"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Gf-Jo-B8U" secondAttribute="trailing" constant="10" id="c66-94-dY4"/>
+                                    <constraint firstItem="1ib-b6-VrE" firstAttribute="top" secondItem="9Gf-Jo-B8U" secondAttribute="bottom" constant="10" id="lBe-II-cCB"/>
+                                    <constraint firstItem="9Gf-Jo-B8U" firstAttribute="leading" secondItem="efa-ag-BVH" secondAttribute="leading" constant="10" id="qr2-af-IU3"/>
+                                    <constraint firstAttribute="bottom" secondItem="1ib-b6-VrE" secondAttribute="bottom" constant="10" id="zga-NZ-hkL"/>
+                                    <constraint firstAttribute="trailing" secondItem="1ib-b6-VrE" secondAttribute="trailing" constant="30" id="ztm-rS-qbm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Mhb-DE-gsN" firstAttribute="bottom" secondItem="cD0-6E-ZWS" secondAttribute="bottom" constant="34" id="CYC-c6-D2J"/>
+                            <constraint firstItem="efa-ag-BVH" firstAttribute="centerX" secondItem="cD0-6E-ZWS" secondAttribute="centerX" id="Ocw-9t-bhl"/>
+                            <constraint firstItem="cD0-6E-ZWS" firstAttribute="trailing" secondItem="Mhb-DE-gsN" secondAttribute="trailing" id="TQ6-Zd-uSK"/>
+                            <constraint firstItem="efa-ag-BVH" firstAttribute="centerY" secondItem="cD0-6E-ZWS" secondAttribute="centerY" id="UtX-lX-qYc"/>
+                            <constraint firstItem="cD0-6E-ZWS" firstAttribute="top" secondItem="Mhb-DE-gsN" secondAttribute="top" constant="44" id="hgV-pA-bDu"/>
+                            <constraint firstItem="Mhb-DE-gsN" firstAttribute="leading" secondItem="cD0-6E-ZWS" secondAttribute="leading" id="uxe-c2-4Gr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cD0-6E-ZWS"/>
+                    </view>
+                    <connections>
+                        <outlet property="blurEffect" destination="Mhb-DE-gsN" id="gJD-0C-NKQ"/>
+                        <outlet property="messageView" destination="efa-ag-BVH" id="bkR-9l-1xu"/>
+                        <outlet property="okButton" destination="Ddo-cm-kZQ" id="aso-2t-bVM"/>
+                        <outlet property="textMessageLabel" destination="9Gf-Jo-B8U" id="Puf-Sc-47J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="elr-1p-j5A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1972" y="518"/>
+        </scene>
+    </scenes>
+</document>

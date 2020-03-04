@@ -151,12 +151,6 @@ class MainViewController: UIViewController {
         defaultThemeStyle.removeObject(forKey: "defaultTheme")
     }
     
-    //MARK: Delete current schedule shifts
-    @IBAction func deleteCurrentScheduleShifts(_ sender: Any) {
-        
-        showMessageView(text: "Are you sure you want to delete the shift schedule for \(months[currentMonth]) \(currentYear)")
-    }
-    
     //MARK: Show view with question about deleting schedule shifts
     func showMessageView(text: String) {
         

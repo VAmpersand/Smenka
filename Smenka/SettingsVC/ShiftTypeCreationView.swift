@@ -30,8 +30,8 @@ class ShiftTypeCreationView: UIView {
     @IBOutlet var labels: [UILabel]!
     
     var delegate: ShiftTypeCreationViewDelegate?
-    var shiftTypes: Results<ShiftType>!
     
+    var shiftTypes: Results<ShiftType>!
     var shiftType = ShiftType()
     
     var startTime: String!
