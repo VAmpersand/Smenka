@@ -70,7 +70,7 @@ protocol MainNavigationBarDelegate: class {
     }
     
     func setDesign() {
-        contentView.backgroundColor = Style.barColor
+        contentView.backgroundColor = Style.barBackgroundColor
         titleLabel.textColor = Style.labelColor
         deleteButton.setTitleColor(Style.buttonColor, for: .normal)
         editButton.setTitleColor(Style.buttonColor, for: .normal)

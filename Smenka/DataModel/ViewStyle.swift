@@ -18,7 +18,7 @@ struct Style {
     static var backgroundColor = UIColor.white
     static var labelColor = UIColor.black
     static var buttonColor = UIColor.blue
-    static var barColor = UIColor.white
+    static var barBackgroundColor = UIColor.white
     static var barShadowColor = UIColor.black
     static var todayMarkColor = UIColor.red
     static var todayMarkColorIfSelected = UIColor.white
@@ -35,7 +35,7 @@ struct Style {
         backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         labelColor = UIColor.white
         buttonColor = UIColor.blue
-        barColor = UIColor.lightGray
+        barBackgroundColor = UIColor.lightGray
         barShadowColor = UIColor.white
         todayMarkColor = UIColor.red
         todayMarkColorIfSelected = UIColor.white
@@ -46,14 +46,13 @@ struct Style {
         textFieldColor = UIColor.gray
         unselectedBarItemColor = UIColor.white
         selectedBarItemColor = UIColor.blue
-        
     }
     
     static func themeLight(){
         backgroundColor = UIColor.white
         labelColor = UIColor.black
         buttonColor = UIColor.blue
-        barColor = UIColor.white
+        barBackgroundColor = UIColor.white
         barShadowColor = UIColor.black
         todayMarkColor = UIColor.red
         todayMarkColorIfSelected = UIColor.white

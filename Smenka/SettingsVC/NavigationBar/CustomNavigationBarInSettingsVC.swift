@@ -82,7 +82,7 @@ protocol ThemeChangingDelegate: class {
             themeTogleButton.setTitle("Dark", for: .normal)
         }
     
-        contentView.backgroundColor = Style.barColor
+        contentView.backgroundColor = Style.barBackgroundColor
         titleLabel.textColor = Style.labelColor
         themeTogleButton.tintColor = Style.buttonColor
         self.makeShadow()

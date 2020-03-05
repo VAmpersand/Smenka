@@ -58,7 +58,6 @@ class SettingsViewController: UIViewController {
         
         let alertView = UIStoryboard(name: "ShiftTypeCreationAlert", bundle: nil).instantiateViewController(withIdentifier: "alertView") as! ShiftTypeCreationAlertViewController
         
-        
         self.addChild(alertView)
         alertView.view.frame = self.view.frame
         self.view.addSubview(alertView.view)

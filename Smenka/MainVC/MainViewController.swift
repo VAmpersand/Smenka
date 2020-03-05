@@ -69,7 +69,7 @@ class MainViewController: UIViewController {
         firstWeekDayOfMonth = getIndexFirstWeekDay(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
         
         monthLabel.text = "\(months[currentMonth]) \(currentYear)"
-   
+        
         shiftTypeTable.delegate = self
         shiftTypeTable.dataSource = self
         
@@ -85,7 +85,6 @@ class MainViewController: UIViewController {
         }
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
@@ -95,8 +94,8 @@ class MainViewController: UIViewController {
         setDesign()
         shiftTypeTable.reloadData()
         shareDataInWidget()
+        
     }
-    
     
     func setDesign() {
         
@@ -117,7 +116,6 @@ class MainViewController: UIViewController {
         
         calendarCollectionView.layer.cornerRadius = 15
         shiftTypeTable.layer.cornerRadius = 15
-               
     }
     
     @IBAction func Next(_ sender: Any) {

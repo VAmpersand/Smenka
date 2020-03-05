@@ -65,7 +65,6 @@ class ShiftTypeCreationView: UIView {
         })
         
         setDesign()
-         
         viewController.view.addSubview(self)
     }
     
@@ -147,7 +146,7 @@ extension ShiftTypeCreationView {
         endTime = endTimePicker.date.getRoundedTime()
     }
     
-    //MARK: Consistent setting of free colors
+    //MARK: Setting the first free color if the color was not manually selected
     func getColor() -> Int! {
         
         var indexesIsMatch: [Bool] = []
@@ -174,11 +173,21 @@ extension ShiftTypeCreationView {
         startTimePicker.setValue(Style.labelColor, forKey: "textColor")
         endTimePicker.setValue(Style.labelColor, forKey: "textColor")
         
-        typeNameTextField.backgroundColor = Style.barColor
+        typeNameTextField.backgroundColor = Style.barBackgroundColor
         
         for label in labels {
             label.textColor = Style.labelColor
         }
         
+        guard let defaultTheme = defaultThemeStyle.value(forKey: "defaultTheme") as? String else { return }
+        
+        if defaultTheme == "dark" {
+            typeNameTextField.keyboardAppearance = .dark
+        }
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        typeNameTextField.endEditing(true)
     }
 }

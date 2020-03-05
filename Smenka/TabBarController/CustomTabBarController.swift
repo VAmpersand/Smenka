@@ -19,10 +19,11 @@ class CustomTabBarController: UITabBarController {
     }
     
     @objc func setDesign() {
-        self.tabBar.barTintColor = Style.barColor
+        self.tabBar.barTintColor = Style.barBackgroundColor
         self.tabBar.unselectedItemTintColor = Style.unselectedBarItemColor
         self.tabBar.tintColor =  Style.selectedBarItemColor
         self.tabBar.makeShadow()
+                
     }
 }
 

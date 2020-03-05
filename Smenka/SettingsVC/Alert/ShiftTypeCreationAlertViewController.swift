@@ -12,12 +12,9 @@ import RealmSwift
 class ShiftTypeCreationAlertViewController: UIViewController {
     
     class func initShiftTypeCreationAlertViewController() ->  ShiftTypeCreationAlertViewController {
-//        let shiftTypeCreationAlert = UIStoryboard(name: "ShiftTypeCreationAlert", bundle: nil).instantiateViewController(withIdentifier: "alertView") as! ShiftTypeCreationAlertViewController
-         let shiftTypeCreationAlert = Bundle.main.loadNibNamed("ShiftTypeCreationAlert", owner: self, options: nil)![0] as! ShiftTypeCreationAlertViewController
-        
+        let shiftTypeCreationAlert = Bundle.main.loadNibNamed("ShiftTypeCreationAlert", owner: self, options: nil)![0] as! ShiftTypeCreationAlertViewController
         return shiftTypeCreationAlert
     }
-    
     
     @IBOutlet var messageView: UIView!
     @IBOutlet var textMessageLabel: UILabel!
@@ -33,15 +30,14 @@ class ShiftTypeCreationAlertViewController: UIViewController {
         okButton.setTitleColor(Style.buttonColor, for: .normal)
         
         messageView.layer.cornerRadius = 15
-        moveIn()
         
         messageView.backgroundColor = Style.backgroundColor
         textMessageLabel.textColor = Style.labelColor
         okButton.setTitleColor(Style.buttonColor, for: .normal)
+        moveIn()
     }
     
     @IBAction func okButtonPressed(_ sender: Any) {
-        
         moveOut()
     }
     

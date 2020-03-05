@@ -370,9 +370,9 @@
 		7793C72A23F180C10063BBA4 /* ShiftTypeCreation */ = {
 			isa = PBXGroup;
 			children = (
+				7793C71A23F05FC70063BBA4 /* ShiftTypeCreationView.xib */,
 				7793C71E23F062870063BBA4 /* ShiftTypeCreationView.swift */,
 				7793C72023F177390063BBA4 /* ShiftTypeCreationCollectionViewDataSourse.swift */,
-				7793C71A23F05FC70063BBA4 /* ShiftTypeCreationView.xib */,
 				7793C72B23F180ED0063BBA4 /* ColorCollecitonView */,
 			);
 			path = ShiftTypeCreation;
