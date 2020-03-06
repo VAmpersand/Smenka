@@ -8,13 +8,29 @@
 
 import UIKit
 
-class TeamShiftScheduleViewController: UITabBarController {
-
+class TeamShiftScheduleViewController: UIViewController {
+    
+    let appDel = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        appDel.myOrientation = .landscape
+        UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
+        
     }
+    
+
+    
+    func canRotate() -> Void {}
 
 
+    @IBAction func didDismissButtonPress(sender: UIButton) {
+        self.dismiss(animated: true) { () -> Void in
+            self.appDel.myOrientation = .portrait
+            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+           }
+       }
+
+    
 }

@@ -50,6 +50,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let widgetUserDefaults = UserDefaults(suiteName: "group.Smenka.widgetShare")
         widgetUserDefaults?.setValue(colorIndexes, forKey: "colorIndexes")
         widgetUserDefaults?.setValue(sharedDate, forKey: "sharedDate")
-    }  
+    }
+
 }
 

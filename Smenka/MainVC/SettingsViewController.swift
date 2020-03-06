@@ -39,7 +39,6 @@ class SettingsViewController: UIViewController {
         
     }
     
-    
     @IBAction func addShiftType(_ sender: Any) {
         
         if shiftTypes.count == 19 {
