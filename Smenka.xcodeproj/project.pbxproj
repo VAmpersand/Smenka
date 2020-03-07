@@ -66,7 +66,9 @@
 		7793C72923F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7793C72723F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib */; };
 		7798341623FDD38300CB5180 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7798341523FDD38300CB5180 /* Alert.storyboard */; };
 		77B30C8F24118CA900E92765 /* TeamSfiftSchedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B30C8E24118CA900E92765 /* TeamSfiftSchedule.storyboard */; };
-		77B30C9124118D2100E92765 /* TeamShiftScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B30C9024118D2100E92765 /* TeamShiftScheduleViewController.swift */; };
+		77B30C9124118D2100E92765 /* TeamShiftScheduleBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B30C9024118D2100E92765 /* TeamShiftScheduleBuilderViewController.swift */; };
+		77B30C9424140C0B00E92765 /* TeamShiftScheduleBuilder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B30C9324140C0B00E92765 /* TeamShiftScheduleBuilder.storyboard */; };
+		77B30C9724140D8C00E92765 /* TeamShiftScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B30C9624140D8C00E92765 /* TeamShiftScheduleViewController.swift */; };
 		77D862C1240985420079EBBE /* Ext_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D862C0240985420079EBBE /* Ext_UIView.swift */; };
 		77E6A1162405C0C500F4A655 /* ViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E6A1152405C0C500F4A655 /* ViewStyle.swift */; };
 		77E6A11824082BB500F4A655 /* CustomNavigationBarInMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77E6A11724082BB500F4A655 /* CustomNavigationBarInMainVC.xib */; };
@@ -163,7 +165,9 @@
 		7793C72723F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShiftTypeColorCollectionVCell.xib; sourceTree = "<group>"; };
 		7798341523FDD38300CB5180 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
 		77B30C8E24118CA900E92765 /* TeamSfiftSchedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamSfiftSchedule.storyboard; sourceTree = "<group>"; };
-		77B30C9024118D2100E92765 /* TeamShiftScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamShiftScheduleViewController.swift; sourceTree = "<group>"; };
+		77B30C9024118D2100E92765 /* TeamShiftScheduleBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamShiftScheduleBuilderViewController.swift; sourceTree = "<group>"; };
+		77B30C9324140C0B00E92765 /* TeamShiftScheduleBuilder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamShiftScheduleBuilder.storyboard; sourceTree = "<group>"; };
+		77B30C9624140D8C00E92765 /* TeamShiftScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamShiftScheduleViewController.swift; sourceTree = "<group>"; };
 		77D862C0240985420079EBBE /* Ext_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIView.swift; sourceTree = "<group>"; };
 		77E6A1152405C0C500F4A655 /* ViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStyle.swift; sourceTree = "<group>"; };
 		77E6A11724082BB500F4A655 /* CustomNavigationBarInMainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavigationBarInMainVC.xib; sourceTree = "<group>"; };
@@ -267,6 +271,7 @@
 				774A850F23D76A8500A653A6 /* Assets.xcassets */,
 				774A851123D76A8500A653A6 /* LaunchScreen.storyboard */,
 				77B30C9224118D3200E92765 /* TeamShiftScheduleVC */,
+				77B30C9524140D4E00E92765 /* TeamShiftScheduleBuilderVC */,
 				774A851423D76A8500A653A6 /* Info.plist */,
 			);
 			path = Smenka;
@@ -396,9 +401,18 @@
 			isa = PBXGroup;
 			children = (
 				77B30C8E24118CA900E92765 /* TeamSfiftSchedule.storyboard */,
-				77B30C9024118D2100E92765 /* TeamShiftScheduleViewController.swift */,
+				77B30C9624140D8C00E92765 /* TeamShiftScheduleViewController.swift */,
 			);
 			path = TeamShiftScheduleVC;
+			sourceTree = "<group>";
+		};
+		77B30C9524140D4E00E92765 /* TeamShiftScheduleBuilderVC */ = {
+			isa = PBXGroup;
+			children = (
+				77B30C9324140C0B00E92765 /* TeamShiftScheduleBuilder.storyboard */,
+				77B30C9024118D2100E92765 /* TeamShiftScheduleBuilderViewController.swift */,
+			);
+			path = TeamShiftScheduleBuilderVC;
 			sourceTree = "<group>";
 		};
 		77E6A11B24082EC600F4A655 /* NavigationBar */ = {
@@ -518,6 +532,7 @@
 				77372B36240BC4C300BA4BB3 /* MainVCStoryboard.storyboard in Resources */,
 				7793C71B23F05FC70063BBA4 /* ShiftTypeCreationView.xib in Resources */,
 				77E6A11824082BB500F4A655 /* CustomNavigationBarInMainVC.xib in Resources */,
+				77B30C9424140C0B00E92765 /* TeamShiftScheduleBuilder.storyboard in Resources */,
 				779110ED240846B400DDFC1A /* CustomNavigationBarInSettingsVC.xib in Resources */,
 				77372B4324101DA600BA4BB3 /* ShiftTypeCreationAlert.storyboard in Resources */,
 				774A850E23D76A8400A653A6 /* Main.storyboard in Resources */,
@@ -592,6 +607,7 @@
 				77372B34240BC05200BA4BB3 /* CustomTabBarController.swift in Sources */,
 				774A851B23D7712500A653A6 /* DateCollectionViewCell.swift in Sources */,
 				774A851D23D772C800A653A6 /* CalendarDataSource.swift in Sources */,
+				77B30C9724140D8C00E92765 /* TeamShiftScheduleViewController.swift in Sources */,
 				7783940823F88A22000BD2D4 /* ValidationCheckRemovalView.swift in Sources */,
 				7793C70223E9F6010063BBA4 /* CheckTheSchudaleForExistence_Func.swift in Sources */,
 				7793C70723EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift in Sources */,
@@ -615,7 +631,7 @@
 				774A852523E2103600A653A6 /* CollectionViewDataSourse.swift in Sources */,
 				77302A6723FDC315004DB165 /* TodayViewController.swift in Sources */,
 				7793C71323F045E40063BBA4 /* SettingsViewController.swift in Sources */,
-				77B30C9124118D2100E92765 /* TeamShiftScheduleViewController.swift in Sources */,
+				77B30C9124118D2100E92765 /* TeamShiftScheduleBuilderViewController.swift in Sources */,
 				774A852123E0CA2C00A653A6 /* Ext_String.swift in Sources */,
 				77372B2E240A673600BA4BB3 /* SetEmptySaredData.swift in Sources */,
 				774A850B23D76A8400A653A6 /* MainViewController.swift in Sources */,
