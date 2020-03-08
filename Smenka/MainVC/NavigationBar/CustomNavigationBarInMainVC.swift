@@ -81,7 +81,7 @@ protocol MainNavigationBarDelegate: class {
             deleteButton.isHidden = true
         }
         
-        titleLabel.text = "Calendar"
+        titleLabel.text = "Personal schedule"
         self.makeShadow()
     }  
 }

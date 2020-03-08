@@ -69,6 +69,8 @@
 		77B30C9124118D2100E92765 /* TeamShiftScheduleBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B30C9024118D2100E92765 /* TeamShiftScheduleBuilderViewController.swift */; };
 		77B30C9424140C0B00E92765 /* TeamShiftScheduleBuilder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B30C9324140C0B00E92765 /* TeamShiftScheduleBuilder.storyboard */; };
 		77B30C9724140D8C00E92765 /* TeamShiftScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B30C9624140D8C00E92765 /* TeamShiftScheduleViewController.swift */; };
+		77B30C992414F0DE00E92765 /* CustomNavigationBarShSchV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77B30C982414F0DE00E92765 /* CustomNavigationBarShSchV.xib */; };
+		77B30C9B2414F11800E92765 /* CustomNavigationBarTeamShSchV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B30C9A2414F11800E92765 /* CustomNavigationBarTeamShSchV.swift */; };
 		77D862C1240985420079EBBE /* Ext_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D862C0240985420079EBBE /* Ext_UIView.swift */; };
 		77E6A1162405C0C500F4A655 /* ViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E6A1152405C0C500F4A655 /* ViewStyle.swift */; };
 		77E6A11824082BB500F4A655 /* CustomNavigationBarInMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77E6A11724082BB500F4A655 /* CustomNavigationBarInMainVC.xib */; };
@@ -168,6 +170,8 @@
 		77B30C9024118D2100E92765 /* TeamShiftScheduleBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamShiftScheduleBuilderViewController.swift; sourceTree = "<group>"; };
 		77B30C9324140C0B00E92765 /* TeamShiftScheduleBuilder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamShiftScheduleBuilder.storyboard; sourceTree = "<group>"; };
 		77B30C9624140D8C00E92765 /* TeamShiftScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamShiftScheduleViewController.swift; sourceTree = "<group>"; };
+		77B30C982414F0DE00E92765 /* CustomNavigationBarShSchV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavigationBarShSchV.xib; sourceTree = "<group>"; };
+		77B30C9A2414F11800E92765 /* CustomNavigationBarTeamShSchV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarTeamShSchV.swift; sourceTree = "<group>"; };
 		77D862C0240985420079EBBE /* Ext_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIView.swift; sourceTree = "<group>"; };
 		77E6A1152405C0C500F4A655 /* ViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStyle.swift; sourceTree = "<group>"; };
 		77E6A11724082BB500F4A655 /* CustomNavigationBarInMainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavigationBarInMainVC.xib; sourceTree = "<group>"; };
@@ -267,12 +271,11 @@
 				7793C70523E9FBE50063BBA4 /* BusinessLogic */,
 				7793C71023EDFAA00063BBA4 /* MainVC */,
 				7793C71123EDFD780063BBA4 /* SettingsVC */,
-				77372B39240BE31E00BA4BB3 /* TabBarController */,
-				774A850F23D76A8500A653A6 /* Assets.xcassets */,
-				774A851123D76A8500A653A6 /* LaunchScreen.storyboard */,
 				77B30C9224118D3200E92765 /* TeamShiftScheduleVC */,
 				77B30C9524140D4E00E92765 /* TeamShiftScheduleBuilderVC */,
+				77372B39240BE31E00BA4BB3 /* TabBarController */,
 				774A851423D76A8500A653A6 /* Info.plist */,
+				774A850F23D76A8500A653A6 /* Assets.xcassets */,
 			);
 			path = Smenka;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 			children = (
 				77372B37240BC60900BA4BB3 /* SettingsVCStoryboard.storyboard */,
 				7793C71223F045E30063BBA4 /* SettingsViewController.swift */,
+				774A851123D76A8500A653A6 /* LaunchScreen.storyboard */,
 				7793C71423F04A960063BBA4 /* TableViewDataSource.swift */,
 				774F98D123F480D700596B08 /* TrailingSwipeAction.swift */,
 				7793C71623F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift */,
@@ -402,6 +406,7 @@
 			children = (
 				77B30C8E24118CA900E92765 /* TeamSfiftSchedule.storyboard */,
 				77B30C9624140D8C00E92765 /* TeamShiftScheduleViewController.swift */,
+				77B30C9C2414F12A00E92765 /* NavigationBar */,
 			);
 			path = TeamShiftScheduleVC;
 			sourceTree = "<group>";
@@ -415,11 +420,20 @@
 			path = TeamShiftScheduleBuilderVC;
 			sourceTree = "<group>";
 		};
+		77B30C9C2414F12A00E92765 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				77B30C982414F0DE00E92765 /* CustomNavigationBarShSchV.xib */,
+				77B30C9A2414F11800E92765 /* CustomNavigationBarTeamShSchV.swift */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
 		77E6A11B24082EC600F4A655 /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				77E6A11924082EBF00F4A655 /* CustomNavigationBarInMainVC.swift */,
 				77E6A11724082BB500F4A655 /* CustomNavigationBarInMainVC.xib */,
+				77E6A11924082EBF00F4A655 /* CustomNavigationBarInMainVC.swift */,
 			);
 			path = NavigationBar;
 			sourceTree = "<group>";
@@ -537,6 +551,7 @@
 				77372B4324101DA600BA4BB3 /* ShiftTypeCreationAlert.storyboard in Resources */,
 				774A850E23D76A8400A653A6 /* Main.storyboard in Resources */,
 				7798341623FDD38300CB5180 /* Alert.storyboard in Resources */,
+				77B30C992414F0DE00E92765 /* CustomNavigationBarShSchV.xib in Resources */,
 				77372B38240BC60900BA4BB3 /* SettingsVCStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -631,6 +646,7 @@
 				774A852523E2103600A653A6 /* CollectionViewDataSourse.swift in Sources */,
 				77302A6723FDC315004DB165 /* TodayViewController.swift in Sources */,
 				7793C71323F045E40063BBA4 /* SettingsViewController.swift in Sources */,
+				77B30C9B2414F11800E92765 /* CustomNavigationBarTeamShSchV.swift in Sources */,
 				77B30C9124118D2100E92765 /* TeamShiftScheduleBuilderViewController.swift in Sources */,
 				774A852123E0CA2C00A653A6 /* Ext_String.swift in Sources */,
 				77372B2E240A673600BA4BB3 /* SetEmptySaredData.swift in Sources */,

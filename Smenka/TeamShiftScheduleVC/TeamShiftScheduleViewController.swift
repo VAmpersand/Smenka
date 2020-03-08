@@ -10,10 +10,32 @@ import UIKit
 
 class TeamShiftScheduleViewController: UIViewController {
 
+    @IBOutlet var customNavigationBar: CustomNavigationBarTeamShSchV!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        customNavigationBar.delegate = self
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        customNavigationBar.setDesign()
+    }
+    
+}
+
+
+extension TeamShiftScheduleViewController: PresentShiftScheduleBuilderDelegate {
+  
+    
+    func editButtonPressed() {
+         performSegue(withIdentifier: "segueToShSchBuilder", sender: self)
+    }
+    
+    
+    
+    
 }

@@ -21,26 +21,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUT-nc-zO6">
-                                <rect key="frame" x="184" y="507" width="46" height="22"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="VrF-hY-SUw" kind="show" id="GGC-k0-QcS"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8dw-fJ-jnF" customClass="CustomNavigationBarTeamShSchV" customModule="Smenka" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="pOd-oo-zMf"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="IUT-nc-zO6" firstAttribute="top" secondItem="Y7Q-Kl-yFA" secondAttribute="bottom" constant="32.5" id="87M-dn-NMI"/>
-                            <constraint firstItem="IUT-nc-zO6" firstAttribute="width" secondItem="Y7Q-Kl-yFA" secondAttribute="width" multiplier="0.554217" id="CQA-eB-BdT"/>
                             <constraint firstItem="Y7Q-Kl-yFA" firstAttribute="centerX" secondItem="VgB-hc-icD" secondAttribute="centerX" id="GiZ-KF-dOZ"/>
+                            <constraint firstAttribute="top" secondItem="8dw-fJ-jnF" secondAttribute="top" id="TaO-L0-79t"/>
                             <constraint firstItem="Y7Q-Kl-yFA" firstAttribute="centerY" secondItem="VgB-hc-icD" secondAttribute="centerY" id="mvk-S3-8yu"/>
-                            <constraint firstItem="IUT-nc-zO6" firstAttribute="centerX" secondItem="Y7Q-Kl-yFA" secondAttribute="centerX" id="wb9-4U-uGd"/>
+                            <constraint firstItem="VgB-hc-icD" firstAttribute="trailing" secondItem="8dw-fJ-jnF" secondAttribute="trailing" id="vA3-ig-J9I"/>
+                            <constraint firstItem="8dw-fJ-jnF" firstAttribute="leading" secondItem="VgB-hc-icD" secondAttribute="leading" id="w90-QA-J9R"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VgB-hc-icD"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Team schedule" image="calendar.badge.plus" catalog="system" id="bPi-Xq-Jh4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="customNavigationBar" destination="8dw-fJ-jnF" id="h61-NW-eV6"/>
+                        <segue destination="VrF-hY-SUw" kind="show" identifier="segueToShSchBuilder" id="Dxi-xL-O5J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xG9-AA-ggc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
