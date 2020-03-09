@@ -269,6 +269,7 @@
                         <constraints>
                             <constraint firstItem="2V4-Ec-QH8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CRE-WV-5VC" secondAttribute="trailing" constant="8" symbolic="YES" id="02J-yB-vns"/>
                             <constraint firstItem="0PM-2M-v6y" firstAttribute="centerX" secondItem="bO4-JG-WaW" secondAttribute="centerX" id="19n-VA-zg6"/>
+                            <constraint firstItem="CRE-WV-5VC" firstAttribute="top" secondItem="O20-Qt-dxA" secondAttribute="bottom" id="2ib-co-vzK"/>
                             <constraint firstItem="CRE-WV-5VC" firstAttribute="centerX" secondItem="bO4-JG-WaW" secondAttribute="centerX" id="3vf-MJ-JGW"/>
                             <constraint firstItem="bO4-JG-WaW" firstAttribute="trailing" secondItem="CRE-WV-5VC" secondAttribute="trailing" constant="114" id="50J-5c-pgM"/>
                             <constraint firstItem="0PM-2M-v6y" firstAttribute="top" secondItem="xTt-Ea-lKd" secondAttribute="bottom" constant="12" id="6Y1-ha-MxU"/>
@@ -288,7 +289,6 @@
                             <constraint firstItem="PJ8-zW-w8m" firstAttribute="centerX" secondItem="bO4-JG-WaW" secondAttribute="centerX" id="S8p-52-88f"/>
                             <constraint firstItem="mSW-yQ-tfu" firstAttribute="leading" secondItem="xTt-Ea-lKd" secondAttribute="leading" id="WgA-Ht-N4M"/>
                             <constraint firstItem="bO4-JG-WaW" firstAttribute="trailing" secondItem="rIx-VW-VAl" secondAttribute="trailing" id="YY5-nf-Q3Q"/>
-                            <constraint firstItem="CRE-WV-5VC" firstAttribute="top" secondItem="bO4-JG-WaW" secondAttribute="top" constant="50" id="Znq-9J-j0e"/>
                             <constraint firstItem="CRE-WV-5VC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3s7-ky-qfs" secondAttribute="trailing" constant="8" symbolic="YES" id="bGV-ph-CCp"/>
                             <constraint firstItem="3s7-ky-qfs" firstAttribute="centerY" secondItem="CRE-WV-5VC" secondAttribute="centerY" id="dvL-ej-Rzo"/>
                             <constraint firstItem="rIx-VW-VAl" firstAttribute="bottom" secondItem="bO4-JG-WaW" secondAttribute="bottom" constant="34" id="m2t-CJ-Kpq"/>
@@ -329,7 +329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9s-tn-Byp" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4581" y="-439"/>
+            <point key="canvasLocation" x="4579.7101449275369" y="-439.28571428571428"/>
         </scene>
     </scenes>
     <resources>

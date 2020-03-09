@@ -40,7 +40,7 @@ class MainViewController: UIViewController {
     var presentMonthIndex = 0
     
     var firstWeekDayOfMonth = 0   //(Sunday-Saturday 1-7)
-    var todaysDate = 0
+    var currentDay = 0
     
     var editButtonPressed = false
     var currentIndexPath: IndexPath!
@@ -59,7 +59,7 @@ class MainViewController: UIViewController {
         
         currentMonthIndex = Calendar.current.component(.month, from: Date())
         currentYear = Calendar.current.component(.year, from: Date())
-        todaysDate = Calendar.current.component(.day, from: Date())
+        currentDay = Calendar.current.component(.day, from: Date())
         
         presentMonthIndex = currentMonthIndex
         presentYear = currentYear
@@ -129,9 +129,6 @@ class MainViewController: UIViewController {
         monthLabel.text="\(months[currentMonth]) \(currentYear)"
         didChangeMonth(monthIndex: currentMonth, year: currentYear)
         calendarCollectionView.reloadData()
-        
-        guard let defaultTheme = defaultThemeStyle.value(forKey: "defaultTheme") as? String else { return }
-        print(defaultTheme)
     }
     
     @IBAction func Back(_ sender: Any) {
@@ -145,8 +142,6 @@ class MainViewController: UIViewController {
         monthLabel.text = "\(months[currentMonth]) \(currentYear)"
         didChangeMonth(monthIndex: currentMonth, year: currentYear)
         calendarCollectionView.reloadData()
-        
-        defaultThemeStyle.removeObject(forKey: "defaultTheme")
     }
     
     //MARK: Show view with question about deleting schedule shifts

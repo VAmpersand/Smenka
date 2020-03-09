@@ -79,7 +79,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         setColorInDateLableText(cell: cell, indexPath: indexPath, shift: shift)
         
         //MARK:   Mark today in circle
-        if calcDate == todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
+        if calcDate == currentDay && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
             cell.shiftView.isHidden = false
         }
         
