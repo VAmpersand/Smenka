@@ -14,7 +14,6 @@ class TeamShiftScheduleViewController: UIViewController {
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet var collectionView: UICollectionView!
-    
     @IBOutlet var customNavigationBar: CustomNavigationBarTeamShSchV!
     
     let cellID = "cellID"
@@ -60,7 +59,7 @@ class TeamShiftScheduleViewController: UIViewController {
             currentYear += 1
         }
         
-        monthLabel.text="\(months[currentMonth]) \(currentYear)"
+        monthLabel.text = "\(months[currentMonth]) \(currentYear)"
         didChangeMonth(currentMonth: currentMonth, year: currentYear)
         collectionView.reloadData()
     }
@@ -83,12 +82,14 @@ class TeamShiftScheduleViewController: UIViewController {
         backButton.setTitleColor(Style.labelColor, for: .normal)
         monthLabel.textColor = Style.labelColor
         collectionView.backgroundColor = .clear
-        customNavigationBar.setDesign()
-        
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.reloadData()
+        
         if tempIndexPath != nil {
         collectionView.scrollToItem(at: tempIndexPath, at: .left, animated: false)
         }
+        customNavigationBar.setDesign()
+        
     }
     
     func getWeekdaysArray(currentMonth: Int, firstWeekDayOfMonth: Int) -> [String] {

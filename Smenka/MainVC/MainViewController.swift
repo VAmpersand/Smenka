@@ -126,7 +126,7 @@ class MainViewController: UIViewController {
             currentYear += 1
         }
         
-        monthLabel.text="\(months[currentMonth]) \(currentYear)"
+        monthLabel.text = "\(months[currentMonth]) \(currentYear)"
         didChangeMonth(monthIndex: currentMonth, year: currentYear)
         calendarCollectionView.reloadData()
     }

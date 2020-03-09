@@ -13,9 +13,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet var addTypeButton: UIButton!
     @IBOutlet var shiftTypeTable: UITableView!
     @IBOutlet var blurEffect: UIVisualEffectView!
-    @IBOutlet weak var shiftTypeLabel: UILabel!
+    @IBOutlet var shiftTypeLabel: UILabel!
     
-    @IBOutlet weak var customNavigationBar: CustomNavigationBarInSettingsVC!
+    @IBOutlet var customNavigationBar: CustomNavigationBarInSettingsVC!
     
     var shiftTypes: Results<ShiftType>!
     

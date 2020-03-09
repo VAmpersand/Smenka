@@ -140,7 +140,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backButton" destination="8Gz-qS-kQu" id="edq-iB-4OS"/>
-                        <outlet property="collectionView" destination="IXS-IA-WbH" id="FLR-xG-D8A"/>
+                        <outlet property="collectionView" destination="IXS-IA-WbH" id="5Z3-Sp-NPz"/>
                         <outlet property="customNavigationBar" destination="8dw-fJ-jnF" id="h61-NW-eV6"/>
                         <outlet property="monthLabel" destination="dfG-20-owB" id="srN-S0-Cv5"/>
                         <outlet property="nextButton" destination="PGQ-eu-CBw" id="JSk-XB-K69"/>

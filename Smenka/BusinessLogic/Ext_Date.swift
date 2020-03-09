@@ -53,9 +53,9 @@ extension Date {
         minute = Int(minuteInt / 15) * 15
 
         if minute == 0{
-            time = "\(hour)-00"
+            time = "\(hour):00"
         } else {
-            time = "\(hour)-\(minute)"
+            time = "\(hour):\(minute)"
         }
         return time
     }

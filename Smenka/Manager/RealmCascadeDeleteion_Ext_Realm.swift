@@ -30,6 +30,7 @@ extension Realm: CascadeDeleting {
     }
 }
 
+//MARK: Realm cascade delete
 private extension Realm {
     private func cascadeDelete(_ entity: RLMObjectBase) {
         guard let entity = entity as? Object else { return }

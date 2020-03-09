@@ -73,7 +73,6 @@
 		77B30C992414F0DE00E92765 /* CustomNavigationBarShSchV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77B30C982414F0DE00E92765 /* CustomNavigationBarShSchV.xib */; };
 		77B30C9B2414F11800E92765 /* CustomNavigationBarTeamShSchV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B30C9A2414F11800E92765 /* CustomNavigationBarTeamShSchV.swift */; };
 		77B30C9E2415386600E92765 /* TeamShSchCollectionViewDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B30C9D2415386600E92765 /* TeamShSchCollectionViewDataSourse.swift */; };
-		77B30CA7241541EC00E92765 /* TeamShSchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B30CA6241541EC00E92765 /* TeamShSchCollectionViewCell.swift */; };
 		77D862C1240985420079EBBE /* Ext_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D862C0240985420079EBBE /* Ext_UIView.swift */; };
 		77E6A1162405C0C500F4A655 /* ViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E6A1152405C0C500F4A655 /* ViewStyle.swift */; };
 		77E6A11824082BB500F4A655 /* CustomNavigationBarInMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77E6A11724082BB500F4A655 /* CustomNavigationBarInMainVC.xib */; };
@@ -177,7 +176,6 @@
 		77B30C982414F0DE00E92765 /* CustomNavigationBarShSchV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavigationBarShSchV.xib; sourceTree = "<group>"; };
 		77B30C9A2414F11800E92765 /* CustomNavigationBarTeamShSchV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarTeamShSchV.swift; sourceTree = "<group>"; };
 		77B30C9D2415386600E92765 /* TeamShSchCollectionViewDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamShSchCollectionViewDataSourse.swift; sourceTree = "<group>"; };
-		77B30CA6241541EC00E92765 /* TeamShSchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamShSchCollectionViewCell.swift; sourceTree = "<group>"; };
 		77D862C0240985420079EBBE /* Ext_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIView.swift; sourceTree = "<group>"; };
 		77E6A1152405C0C500F4A655 /* ViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStyle.swift; sourceTree = "<group>"; };
 		77E6A11724082BB500F4A655 /* CustomNavigationBarInMainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavigationBarInMainVC.xib; sourceTree = "<group>"; };
@@ -414,7 +412,6 @@
 				77B30C9624140D8C00E92765 /* TeamShiftScheduleViewController.swift */,
 				77B30C9D2415386600E92765 /* TeamShSchCollectionViewDataSourse.swift */,
 				77A73ABB24169D3100BDE801 /* CalendarScrollCollectionViewCell.swift */,
-				77B30CA6241541EC00E92765 /* TeamShSchCollectionViewCell.swift */,
 				77B30C9C2414F12A00E92765 /* NavigationBar */,
 			);
 			path = TeamShiftScheduleVC;
@@ -667,7 +664,6 @@
 				7783940223F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift in Sources */,
 				77372B30240BB5F900BA4BB3 /* SetDefaultDBRealmDirectory_Func.swift in Sources */,
 				774A850723D76A8400A653A6 /* AppDelegate.swift in Sources */,
-				77B30CA7241541EC00E92765 /* TeamShSchCollectionViewCell.swift in Sources */,
 				774A852923E3562900A653A6 /* ShiftModel.swift in Sources */,
 				7783940423F8166F000BD2D4 /* RealmCascadeDeleteion_Ext_Realm.swift in Sources */,
 				7793C70D23EDEF270063BBA4 /* ShiftTypeCell.swift in Sources */,
