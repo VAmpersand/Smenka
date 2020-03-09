@@ -64,11 +64,11 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IXS-IA-WbH">
-                                <rect key="frame" x="164" y="133" width="235" height="60"/>
+                                <rect key="frame" x="164" y="133" width="235" height="120"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="235" id="FBt-pf-n4b"/>
-                                    <constraint firstAttribute="height" constant="60" id="aEy-Ob-Rst"/>
+                                    <constraint firstAttribute="height" constant="120" id="aEy-Ob-Rst"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="avW-8X-gyr">
                                     <size key="itemSize" width="53" height="102"/>

@@ -65,6 +65,8 @@
 		7793C72823F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C72623F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.swift */; };
 		7793C72923F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7793C72723F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib */; };
 		7798341623FDD38300CB5180 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7798341523FDD38300CB5180 /* Alert.storyboard */; };
+		779FA3292416DDB100F501F4 /* CalendarDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779FA3272416DDB100F501F4 /* CalendarDataCollectionViewCell.swift */; };
+		779FA32A2416DDB100F501F4 /* CalendarDataCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779FA3282416DDB100F501F4 /* CalendarDataCollectionViewCell.xib */; };
 		77A73ABD24169D3100BDE801 /* CalendarScrollCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A73ABB24169D3100BDE801 /* CalendarScrollCollectionViewCell.swift */; };
 		77B30C8F24118CA900E92765 /* TeamSfiftSchedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B30C8E24118CA900E92765 /* TeamSfiftSchedule.storyboard */; };
 		77B30C9124118D2100E92765 /* TeamShiftScheduleBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B30C9024118D2100E92765 /* TeamShiftScheduleBuilderViewController.swift */; };
@@ -168,6 +170,8 @@
 		7793C72623F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeColorCollectionVCell.swift; sourceTree = "<group>"; };
 		7793C72723F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShiftTypeColorCollectionVCell.xib; sourceTree = "<group>"; };
 		7798341523FDD38300CB5180 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
+		779FA3272416DDB100F501F4 /* CalendarDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataCollectionViewCell.swift; sourceTree = "<group>"; };
+		779FA3282416DDB100F501F4 /* CalendarDataCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarDataCollectionViewCell.xib; sourceTree = "<group>"; };
 		77A73ABB24169D3100BDE801 /* CalendarScrollCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarScrollCollectionViewCell.swift; sourceTree = "<group>"; };
 		77B30C8E24118CA900E92765 /* TeamSfiftSchedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamSfiftSchedule.storyboard; sourceTree = "<group>"; };
 		77B30C9024118D2100E92765 /* TeamShiftScheduleBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamShiftScheduleBuilderViewController.swift; sourceTree = "<group>"; };
@@ -405,6 +409,15 @@
 			path = ColorCollecitonView;
 			sourceTree = "<group>";
 		};
+		779FA32B2416DDB600F501F4 /* CalendarDataCell */ = {
+			isa = PBXGroup;
+			children = (
+				779FA3272416DDB100F501F4 /* CalendarDataCollectionViewCell.swift */,
+				779FA3282416DDB100F501F4 /* CalendarDataCollectionViewCell.xib */,
+			);
+			path = CalendarDataCell;
+			sourceTree = "<group>";
+		};
 		77B30C9224118D3200E92765 /* TeamShiftScheduleVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,6 +425,7 @@
 				77B30C9624140D8C00E92765 /* TeamShiftScheduleViewController.swift */,
 				77B30C9D2415386600E92765 /* TeamShSchCollectionViewDataSourse.swift */,
 				77A73ABB24169D3100BDE801 /* CalendarScrollCollectionViewCell.swift */,
+				779FA32B2416DDB600F501F4 /* CalendarDataCell */,
 				77B30C9C2414F12A00E92765 /* NavigationBar */,
 			);
 			path = TeamShiftScheduleVC;
@@ -548,6 +562,7 @@
 				7793C72923F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib in Resources */,
 				774A851323D76A8500A653A6 /* LaunchScreen.storyboard in Resources */,
 				77B30C8F24118CA900E92765 /* TeamSfiftSchedule.storyboard in Resources */,
+				779FA32A2416DDB100F501F4 /* CalendarDataCollectionViewCell.xib in Resources */,
 				774A851023D76A8500A653A6 /* Assets.xcassets in Resources */,
 				77372B36240BC4C300BA4BB3 /* MainVCStoryboard.storyboard in Resources */,
 				7793C71B23F05FC70063BBA4 /* ShiftTypeCreationView.xib in Resources */,
@@ -622,6 +637,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				779FA3292416DDB100F501F4 /* CalendarDataCollectionViewCell.swift in Sources */,
 				7793C6FE23E9F0610063BBA4 /* SetEmptySchedaleShifts_Func.swift in Sources */,
 				7793C6F823E4BA8D0063BBA4 /* ShiftTypeModel.swift in Sources */,
 				77372B4524101DD900BA4BB3 /* ShiftTypeCreationAlertViewController.swift in Sources */,
