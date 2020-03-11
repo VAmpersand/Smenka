@@ -14,6 +14,7 @@ class TeamShiftScheduleViewController: UIViewController {
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var scheduleTableView: UITableView!
     @IBOutlet var customNavigationBar: CustomNavigationBarTeamShSchV!
     
     let cellID = "cellID"
@@ -41,6 +42,9 @@ class TeamShiftScheduleViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        scheduleTableView.delegate = self
+        scheduleTableView.dataSource = self
         
         customNavigationBar.delegate = self
     }

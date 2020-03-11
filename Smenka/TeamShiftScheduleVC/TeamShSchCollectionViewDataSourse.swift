@@ -15,7 +15,11 @@ extension TeamShiftScheduleViewController: UICollectionViewDelegate, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return weekdays.count
+        if section == 1 {
+            return weekdays.count
+        }
+        return 2
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -5,12 +5,10 @@ PODS:
   - Realm/Headers (4.3.2)
   - RealmSwift (4.3.2):
     - Realm (= 4.3.2)
-  - Spring (1.0.6)
 
 DEPENDENCIES:
   - Alamofire
   - RealmSwift
-  - Spring (from `https://github.com/MengTo/Spring.git`)
 
 SPEC REPOS:
   trunk:
@@ -18,21 +16,11 @@ SPEC REPOS:
     - Realm
     - RealmSwift
 
-EXTERNAL SOURCES:
-  Spring:
-    :git: https://github.com/MengTo/Spring.git
-
-CHECKOUT OPTIONS:
-  Spring:
-    :commit: 50d92a5b9e08848387ae95bf44c6ad20834f7083
-    :git: https://github.com/MengTo/Spring.git
-
 SPEC CHECKSUMS:
   Alamofire: 58ff2bfb8daaacaa233d5c36e37b10a5248f59b1
   Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
   RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
-  Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
 
-PODFILE CHECKSUM: b623a4799e7e4288164119ad08ba2fd19df40011
+PODFILE CHECKSUM: 5f5f2cc1fe2b23f7c0e22018375690641d1e85f5
 
 COCOAPODS: 1.9.0.beta.3

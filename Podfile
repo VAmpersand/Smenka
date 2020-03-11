@@ -9,7 +9,6 @@ target 'Smenka' do
 
 
   pod 'RealmSwift'
-  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
   pod 'Alamofire'
 
 	
