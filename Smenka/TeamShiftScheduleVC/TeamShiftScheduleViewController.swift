@@ -85,13 +85,17 @@ class TeamShiftScheduleViewController: UIViewController {
         nextButton.setTitleColor(Style.labelColor, for: .normal)
         backButton.setTitleColor(Style.labelColor, for: .normal)
         monthLabel.textColor = Style.labelColor
+        
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.reloadData()
         
+        scheduleTableView.reloadData()
+        
         if tempIndexPath != nil {
         collectionView.scrollToItem(at: tempIndexPath, at: .left, animated: false)
         }
+        
         customNavigationBar.setDesign()
         
     }

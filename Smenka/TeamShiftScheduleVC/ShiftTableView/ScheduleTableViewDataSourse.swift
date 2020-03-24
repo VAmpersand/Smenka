@@ -27,23 +27,22 @@ extension TeamShiftScheduleViewController: UITableViewDelegate, UITableViewDataS
         
         if indexPath.section == 0 {
             cell.staffLabel.text = "\(indexPath.row + 1)"
-            cell.shiftCollectionView.backgroundColor = .red
+//            cell.shiftCollectionView.backgroundColor = .red
         
             return cell
         }
-
-                
+    
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 1 {
-                  return 60
-              }
-        return 30
+        return 35
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0{
+            return 0
+        }
         return 8
     }
     
@@ -52,5 +51,9 @@ extension TeamShiftScheduleViewController: UITableViewDelegate, UITableViewDataS
         view.backgroundColor = .clear
         return view
     }
+    
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+          tableView.deselectRow(at: indexPath, animated: true)
+      }
     
 }

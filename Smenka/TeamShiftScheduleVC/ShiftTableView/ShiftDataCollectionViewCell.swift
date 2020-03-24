@@ -14,12 +14,19 @@ class ShiftDataCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         setDesign()
     }
     
     func setDesign() {
+        backgroundColor = .clear
+
         shiftTypeLabel.textColor = Style.labelColor
+        shiftTypeLabel.backgroundColor = Style.barBackgroundColor
+        shiftTypeLabel.layer.cornerRadius = 3
+        shiftTypeLabel.clipsToBounds = true
+        
+        
+
     }
 
 }

@@ -16,13 +16,10 @@ class TeamShiftScheduleTableViewCell: UITableViewCell, UICollectionViewDelegate,
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
+        shiftCollectionView.delegate = self
+        shiftCollectionView.dataSource = self
+        setDesign()
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -33,11 +30,21 @@ class TeamShiftScheduleTableViewCell: UITableViewCell, UICollectionViewDelegate,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shiftTypeCell", for: indexPath) as! ShiftDataCollectionViewCell
         
         cell.shiftTypeLabel.text = "\(indexPath.row)"
-        
-        cell.backgroundColor = .red
-      
+
         return cell
     }
     
-    
+    func setDesign() {
+        staffLabel.layer.cornerRadius = 3
+        staffLabel.clipsToBounds = true
+        staffLabel.backgroundColor = Style.barBackgroundColor
+        staffLabel.textColor = Style.labelColor
+        
+        shiftCollectionView.showsHorizontalScrollIndicator = false
+        shiftCollectionView.backgroundColor = .clear
+        backgroundColor = .clear
+        
+        shiftCollectionView.reloadData()
+    }
 }
+
