@@ -9,9 +9,9 @@
 import UIKit
 import RealmSwift
 
-func setEmptyScheduleShifts(currentYear: Int, currentMonthIndex: Int) -> ScheduleShifts {
+func setEmptyScheduleShifts(currentYear: Int, currentMonthIndex: Int) -> PersonalScheduleShifts {
     
-    let scheduleShifts = ScheduleShifts()
+    let scheduleShifts = PersonalScheduleShifts()
     scheduleShifts.monthlyScheduleName = "\(currentYear)-\(currentMonthIndex)"
     
     var emptyCellsCounter = 0

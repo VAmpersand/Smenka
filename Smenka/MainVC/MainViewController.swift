@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var backButton: UIButton!
     
-    var schedulesShifts: Results<ScheduleShifts>!
+    var schedulesShifts: Results<PersonalScheduleShifts>!
     var shiftTypes: Results<ShiftType>!
     //    var staff: Results<Staff>!
     
@@ -76,7 +76,7 @@ class MainViewController: UIViewController {
         customNavigationBar.delegate = self
         themeStyleDelegate.delegate = self
         
-        schedulesShifts = realm.objects(ScheduleShifts.self)
+        schedulesShifts = realm.objects(PersonalScheduleShifts.self)
         shiftTypes = realm.objects(ShiftType.self)
         //        staff = realm.objects(Staff.self)
         

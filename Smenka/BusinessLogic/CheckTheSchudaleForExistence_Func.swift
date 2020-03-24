@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-func checkTheScheduleForExistence(schedulesShifts: Results<ScheduleShifts>!, currentYear: Int, currentMonthIndex: Int) -> Bool {
+func checkTheScheduleForExistence(schedulesShifts: Results<PersonalScheduleShifts>!, currentYear: Int, currentMonthIndex: Int) -> Bool {
     
     let currentSchedalName = "\(currentYear)-\(currentMonthIndex)"
     var nameIsMatch = false

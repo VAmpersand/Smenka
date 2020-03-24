@@ -13,19 +13,19 @@ let realm = try! Realm()
 class StorageManager {
     
     //   Action with scheduleShift
-    static func saveScheduleShift(_ scheduleShifts: ScheduleShifts) {
+    static func saveScheduleShift(_ scheduleShifts: PersonalScheduleShifts) {
         try! realm.write {
             realm.add(scheduleShifts)
         }
     }
     
-    static func removeScheduleShift(_ scheduleShifts: ScheduleShifts) {
+    static func removeScheduleShift(_ scheduleShifts: PersonalScheduleShifts) {
         try! realm.write {
             realm.delete(scheduleShifts, cascading: true)
         }
     }
     
-    static func editScheduleShift(_ scheduleShifts: ScheduleShifts, _ newScheduleShifts: ScheduleShifts) {
+    static func editScheduleShift(_ scheduleShifts: PersonalScheduleShifts, _ newScheduleShifts: PersonalScheduleShifts) {
         try! realm.write {
             scheduleShifts.shifts = newScheduleShifts.shifts
         }

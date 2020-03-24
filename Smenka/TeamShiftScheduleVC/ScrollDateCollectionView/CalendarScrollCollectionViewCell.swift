@@ -10,8 +10,8 @@ import UIKit
 
 class CalendarScrollCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var dayLabel: UILabel!
-    @IBOutlet weak var weekdayLabel: UILabel!
+    @IBOutlet var dayLabel: UILabel!
+    @IBOutlet var weekdayLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

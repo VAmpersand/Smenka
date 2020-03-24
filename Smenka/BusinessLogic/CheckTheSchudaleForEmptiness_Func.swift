@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-func checkTheScheduleForEmptiness(schedulesShifts: Results<ScheduleShifts>!, currentYear: Int, currentMonthIndex: Int) -> Bool {
+func checkTheScheduleForEmptiness(schedulesShifts: Results<PersonalScheduleShifts>!, currentYear: Int, currentMonthIndex: Int) -> Bool {
     
     var shiftIsEdited = false
     

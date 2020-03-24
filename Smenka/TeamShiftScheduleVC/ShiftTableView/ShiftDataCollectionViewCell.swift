@@ -10,11 +10,16 @@ import UIKit
 
 class ShiftDataCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var shiftTypeLabel: UILabel!
+    @IBOutlet var shiftTypeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        setDesign()
+    }
+    
+    func setDesign() {
+        shiftTypeLabel.textColor = Style.labelColor
     }
 
 }

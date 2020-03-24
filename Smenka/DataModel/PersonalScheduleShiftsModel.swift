@@ -1,5 +1,5 @@
 //
-//  ScheduleShiftsModel.swift
+//  PersonalScheduleShiftsModel.swift
 //  Smenka
 //
 //  Created by Viktor on 03.02.2020.
@@ -9,9 +9,10 @@
 import UIKit
 import RealmSwift
 
-@objcMembers class ScheduleShifts: Object, Decodable {
+@objcMembers class PersonalScheduleShifts: Object, Decodable {
     
     dynamic var monthlyScheduleName = "yyyy-MM"
+    dynamic var employee: Staff!
     var shifts = List<Shift>()
 
     override var description: String {
