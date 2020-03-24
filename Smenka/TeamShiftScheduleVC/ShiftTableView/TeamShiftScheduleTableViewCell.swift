@@ -29,15 +29,20 @@ class TeamShiftScheduleTableViewCell: UITableViewCell, UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shiftTypeCell", for: indexPath) as! ShiftDataCollectionViewCell
         
+        cell.setDesign()
+        
         cell.shiftTypeLabel.text = "\(indexPath.row)"
-
+        
+       
         return cell
     }
     
     func setDesign() {
         staffLabel.layer.cornerRadius = 3
+        staffLabel.layer.borderColor = (Style.teamScheduleBorderColor).cgColor
+        staffLabel.layer.borderWidth = 1
         staffLabel.clipsToBounds = true
-        staffLabel.backgroundColor = Style.barBackgroundColor
+        staffLabel.backgroundColor = Style.teamScheduleSistemColor
         staffLabel.textColor = Style.labelColor
         
         shiftCollectionView.showsHorizontalScrollIndicator = false

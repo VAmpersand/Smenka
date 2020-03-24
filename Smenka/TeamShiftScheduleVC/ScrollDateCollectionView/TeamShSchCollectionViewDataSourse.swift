@@ -31,5 +31,5 @@ extension TeamShiftScheduleViewController: UICollectionViewDelegate, UICollectio
 //        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //            tempIndexPath = indexPath
 //        }
-    
+
 }

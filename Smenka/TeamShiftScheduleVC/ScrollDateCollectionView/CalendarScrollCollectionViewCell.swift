@@ -18,16 +18,20 @@ class CalendarScrollCollectionViewCell: UICollectionViewCell {
         
         setDesign()
     }
-
+    
     func setDesign() {
         dayLabel.textColor = Style.labelColor
-        dayLabel.backgroundColor = Style.barBackgroundColor
+        dayLabel.backgroundColor = Style.teamScheduleSistemColor
         dayLabel.layer.cornerRadius = 3
         dayLabel.clipsToBounds = true
+        dayLabel.layer.borderColor = (Style.teamScheduleBorderColor).cgColor
+        dayLabel.layer.borderWidth = 1
         
         weekdayLabel.textColor = Style.labelColor
-        weekdayLabel.backgroundColor = Style.barBackgroundColor
+        weekdayLabel.backgroundColor = Style.teamScheduleSistemColor
         weekdayLabel.layer.cornerRadius = 3
         weekdayLabel.clipsToBounds = true
+        weekdayLabel.layer.borderColor = (Style.teamScheduleBorderColor).cgColor
+        weekdayLabel.layer.borderWidth = 1
     }
 }

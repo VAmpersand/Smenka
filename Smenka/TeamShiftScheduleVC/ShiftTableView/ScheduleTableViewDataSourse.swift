@@ -25,13 +25,16 @@ extension TeamShiftScheduleViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath) as! TeamShiftScheduleTableViewCell
         
+        cell.setDesign()
+        
         if indexPath.section == 0 {
             cell.staffLabel.text = "\(indexPath.row + 1)"
-//            cell.shiftCollectionView.backgroundColor = .red
         
             return cell
         }
-    
+        
+        cell.shiftCollectionView.backgroundColor = .lightGray
+        cell.shiftCollectionView.layer.cornerRadius = 3
         return cell
     }
     
@@ -55,5 +58,5 @@ extension TeamShiftScheduleViewController: UITableViewDelegate, UITableViewDataS
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
           tableView.deselectRow(at: indexPath, animated: true)
       }
-    
+
 }

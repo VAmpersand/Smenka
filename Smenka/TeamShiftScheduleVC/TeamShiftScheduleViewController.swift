@@ -27,7 +27,7 @@ class TeamShiftScheduleViewController: UIViewController {
     
     var firstWeekDayOfMonth = 0
     var weekdays: [String] = []
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,8 +35,11 @@ class TeamShiftScheduleViewController: UIViewController {
         currentMonthIndex = Calendar.current.component(.month, from: Date())
         currentDay = Calendar.current.component(.day, from: Date())
         
+        currentMonth = currentMonthIndex - 1
+        
         firstWeekDayOfMonth = getIndexFirstWeekDay(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
         weekdays = getWeekdaysArray(currentMonth: currentMonth, firstWeekDayOfMonth: firstWeekDayOfMonth)
+        
         
         monthLabel.text = "\(months[currentMonth]) \(currentYear)"
         
@@ -47,6 +50,7 @@ class TeamShiftScheduleViewController: UIViewController {
         scheduleTableView.dataSource = self
         
         customNavigationBar.delegate = self
+            
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,11 +90,11 @@ class TeamShiftScheduleViewController: UIViewController {
         backButton.setTitleColor(Style.labelColor, for: .normal)
         monthLabel.textColor = Style.labelColor
         
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = .lightGray
+        collectionView.layer.cornerRadius = 3
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.reloadData()
         
-        scheduleTableView.reloadData()
         
         if tempIndexPath != nil {
         collectionView.scrollToItem(at: tempIndexPath, at: .left, animated: false)
@@ -98,6 +102,8 @@ class TeamShiftScheduleViewController: UIViewController {
         
         customNavigationBar.setDesign()
         
+        scheduleTableView.reloadData()
+       
     }
     
     func getWeekdaysArray(currentMonth: Int, firstWeekDayOfMonth: Int) -> [String] {
@@ -146,6 +152,7 @@ class TeamShiftScheduleViewController: UIViewController {
         firstWeekDayOfMonth = getIndexFirstWeekDay(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
         weekdays = getWeekdaysArray(currentMonth: currentMonth, firstWeekDayOfMonth: firstWeekDayOfMonth)
     }
+    
 }
 
 

@@ -29,39 +29,49 @@ struct Style {
     static var textFieldColor = UIColor.white
     static var unselectedBarItemColor = UIColor.gray
     static var selectedBarItemColor = UIColor.blue
+    static var teamScheduleSistemColor = UIColor.lightGray
+    static var teamScheduleCalendarDefaultColor = UIColor.gray
+    static var teamScheduleBorderColor = UIColor.darkGray
     
     
     static func themeDark(){
         backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
-        labelColor = UIColor.white
-        buttonColor = UIColor.blue
-        barBackgroundColor = UIColor.lightGray
-        barShadowColor = UIColor.white
-        todayMarkColor = UIColor.red
-        todayMarkColorIfSelected = UIColor.white
-        weekdaysLabelColor = UIColor.white
-        weekendLabelColor = UIColor.gray
-        weekdaysLabelColorIfSelected = UIColor.white
-        weekendLabelColorIfSelected = UIColor.white
-        textFieldColor = UIColor.gray
-        unselectedBarItemColor = UIColor.white
-        selectedBarItemColor = UIColor.blue
+        labelColor = .white
+        buttonColor = .blue
+        barBackgroundColor = .lightGray
+        barShadowColor = .white
+        todayMarkColor = .red
+        todayMarkColorIfSelected = .white
+        weekdaysLabelColor = .white
+        weekendLabelColor = .gray
+        weekdaysLabelColorIfSelected = .white
+        weekendLabelColorIfSelected = .white
+        textFieldColor = .gray
+        unselectedBarItemColor = .white
+        selectedBarItemColor = .blue
+        teamScheduleSistemColor = UIColor.lightGray
+        teamScheduleCalendarDefaultColor = UIColor.gray
+        teamScheduleBorderColor = UIColor.white
     }
     
     static func themeLight(){
-        backgroundColor = UIColor.white
-        labelColor = UIColor.black
-        buttonColor = UIColor.blue
-        barBackgroundColor = UIColor.white
-        barShadowColor = UIColor.black
-        todayMarkColor = UIColor.red
-        todayMarkColorIfSelected = UIColor.white
-        weekdaysLabelColor = UIColor.black
-        weekendLabelColor = UIColor.gray
-        weekdaysLabelColorIfSelected = UIColor.white
-        weekendLabelColorIfSelected = UIColor.white
-        textFieldColor = UIColor.white
-        unselectedBarItemColor = UIColor.gray
-        selectedBarItemColor = UIColor.blue
+        backgroundColor = .white
+        labelColor = .black
+        buttonColor = .blue
+        barBackgroundColor = .white
+        barShadowColor = .black
+        todayMarkColor = .red
+        todayMarkColorIfSelected = .white
+        weekdaysLabelColor = .black
+        weekendLabelColor = .gray
+        weekdaysLabelColorIfSelected = .white
+        weekendLabelColorIfSelected = .white
+        textFieldColor = .white
+        unselectedBarItemColor = .gray
+        selectedBarItemColor = .blue
+        teamScheduleSistemColor = UIColor.lightGray
+        teamScheduleCalendarDefaultColor = UIColor.gray
+        teamScheduleBorderColor = UIColor.darkGray
+        
     }
 }
