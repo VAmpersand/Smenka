@@ -15,56 +15,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nrt-ok-Y8D">
-                                <rect key="frame" x="407" y="186" width="83" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="af0-Ak-3Gy">
-                                <rect key="frame" x="105" y="55" width="83" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88Q-Jj-P5z">
-                                <rect key="frame" x="721" y="309" width="83" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dag-pH-W43">
-                                <rect key="frame" x="425.5" y="67" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="831" y="15" width="50" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="5fe-FD-mM1"/>
+                                    <constraint firstAttribute="height" constant="25" id="KfF-7S-JIe"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="didDismissButtonPressWithSender:" destination="Izo-uM-i1B" eventType="touchUpInside" id="EJY-Ou-6HN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxs-PH-PIE">
+                                <rect key="frame" x="765" y="15" width="63" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="63" id="8CL-8E-NBP"/>
+                                </constraints>
+                                <state key="normal" title="Add staff"/>
+                                <connections>
+                                    <action selector="addStaffButtonPressed:" destination="Izo-uM-i1B" eventType="touchUpInside" id="WWh-uS-218"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="af0-Ak-3Gy" firstAttribute="top" secondItem="H0G-cn-t0P" secondAttribute="top" constant="55" id="1MJ-3B-0vi"/>
-                            <constraint firstItem="Nrt-ok-Y8D" firstAttribute="top" secondItem="H0G-cn-t0P" secondAttribute="top" constant="186" id="20q-Wd-nAM"/>
-                            <constraint firstItem="H0G-cn-t0P" firstAttribute="trailing" secondItem="af0-Ak-3Gy" secondAttribute="trailing" constant="664" id="42i-ll-0x1"/>
-                            <constraint firstItem="H0G-cn-t0P" firstAttribute="bottom" secondItem="Nrt-ok-Y8D" secondAttribute="bottom" constant="165" id="9Vw-HH-foZ"/>
-                            <constraint firstItem="88Q-Jj-P5z" firstAttribute="top" secondItem="H0G-cn-t0P" secondAttribute="top" constant="309" id="N0A-c3-RJx"/>
-                            <constraint firstItem="H0G-cn-t0P" firstAttribute="bottom" secondItem="af0-Ak-3Gy" secondAttribute="bottom" constant="296" id="PCh-oV-lqC"/>
-                            <constraint firstItem="Nrt-ok-Y8D" firstAttribute="leading" secondItem="H0G-cn-t0P" secondAttribute="leading" constant="363" id="RV5-ba-tdl"/>
-                            <constraint firstItem="H0G-cn-t0P" firstAttribute="trailing" secondItem="Nrt-ok-Y8D" secondAttribute="trailing" constant="362" id="VLO-HI-lZ4"/>
-                            <constraint firstItem="88Q-Jj-P5z" firstAttribute="leading" secondItem="H0G-cn-t0P" secondAttribute="leading" constant="677" id="bpj-QV-E7p"/>
-                            <constraint firstItem="af0-Ak-3Gy" firstAttribute="leading" secondItem="H0G-cn-t0P" secondAttribute="leading" constant="61" id="eHB-bV-cNN"/>
-                            <constraint firstItem="dag-pH-W43" firstAttribute="top" secondItem="Nrt-ok-Y8D" secondAttribute="bottom" constant="-161" id="fJd-hD-h5J"/>
-                            <constraint firstItem="H0G-cn-t0P" firstAttribute="trailing" secondItem="88Q-Jj-P5z" secondAttribute="trailing" constant="48" id="kQb-jq-DtE"/>
-                            <constraint firstItem="H0G-cn-t0P" firstAttribute="bottom" secondItem="88Q-Jj-P5z" secondAttribute="bottom" constant="42" id="o3m-OO-Ql2"/>
-                            <constraint firstItem="dag-pH-W43" firstAttribute="centerX" secondItem="Nrt-ok-Y8D" secondAttribute="centerX" id="tVL-pf-lPb"/>
+                            <constraint firstItem="dag-pH-W43" firstAttribute="leading" secondItem="cxs-PH-PIE" secondAttribute="trailing" constant="3" id="8Ce-XL-yHb"/>
+                            <constraint firstItem="cxs-PH-PIE" firstAttribute="height" secondItem="dag-pH-W43" secondAttribute="height" id="eag-EP-0eu"/>
+                            <constraint firstItem="dag-pH-W43" firstAttribute="trailing" secondItem="X1d-Iw-WfZ" secondAttribute="trailing" constant="-15" id="hhg-t5-dw6"/>
+                            <constraint firstItem="cxs-PH-PIE" firstAttribute="centerY" secondItem="dag-pH-W43" secondAttribute="centerY" id="i8y-Wp-pNY"/>
+                            <constraint firstItem="dag-pH-W43" firstAttribute="top" secondItem="H0G-cn-t0P" secondAttribute="top" constant="15" id="yCR-OJ-b4n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H0G-cn-t0P"/>
                     </view>
                     <navigationItem key="navigationItem" id="v1e-mL-Qag"/>
+                    <connections>
+                        <outlet property="addStaffButton" destination="cxs-PH-PIE" id="Tvz-Cj-B9E"/>
+                        <outlet property="backButton" destination="dag-pH-W43" id="3N1-xT-PDf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9P2-cM-Kpg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="361" y="-330"/>
+            <point key="canvasLocation" x="360.9375" y="-330.43478260869568"/>
         </scene>
     </scenes>
 </document>

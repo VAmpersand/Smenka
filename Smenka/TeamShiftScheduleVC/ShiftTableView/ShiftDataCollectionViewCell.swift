@@ -21,7 +21,6 @@ class ShiftDataCollectionViewCell: UICollectionViewCell {
         backgroundColor = .clear
 
         shiftTypeLabel.textColor = Style.labelColor
-//        shiftTypeLabel.backgroundColor = Style.teamScheduleCalendarDefaultColor
         shiftTypeLabel.layer.cornerRadius = 3
         shiftTypeLabel.clipsToBounds = true
         shiftTypeLabel.layer.borderColor = (Style.teamScheduleBorderColor).cgColor

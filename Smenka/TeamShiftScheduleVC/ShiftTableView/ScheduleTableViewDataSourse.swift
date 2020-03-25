@@ -28,12 +28,18 @@ extension TeamShiftScheduleViewController: UITableViewDelegate, UITableViewDataS
         cell.setDesign()
         
         if indexPath.section == 0 {
-            cell.staffLabel.text = "\(indexPath.row + 1)"
+            cell.staffLabel.text = ""
         
             return cell
         }
         
-        cell.shiftCollectionView.backgroundColor = .lightGray
+        cell.staffLabel.textAlignment = .right
+        cell.staffLabel.font = UIFont(name: "Helvetica neue", size: 13)
+        cell.staffLabel.numberOfLines = 2
+        cell.staffLabel.text = "The number of employees"
+        cell.staffLabel.backgroundColor = .clear
+        cell.staffLabel.layer.borderColor = (UIColor.clear).cgColor
+        cell.shiftCollectionView.backgroundColor = Style.teamScheduleSistemColor
         cell.shiftCollectionView.layer.cornerRadius = 3
         return cell
     }

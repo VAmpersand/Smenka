@@ -49,9 +49,9 @@ struct Style {
         textFieldColor = .gray
         unselectedBarItemColor = .white
         selectedBarItemColor = .blue
-        teamScheduleSistemColor = UIColor.lightGray
-        teamScheduleCalendarDefaultColor = UIColor.gray
-        teamScheduleBorderColor = UIColor.white
+        teamScheduleSistemColor = .gray
+        teamScheduleCalendarDefaultColor = .gray
+        teamScheduleBorderColor = .white
     }
     
     static func themeLight(){
@@ -69,9 +69,9 @@ struct Style {
         textFieldColor = .white
         unselectedBarItemColor = .gray
         selectedBarItemColor = .blue
-        teamScheduleSistemColor = UIColor.lightGray
-        teamScheduleCalendarDefaultColor = UIColor.gray
-        teamScheduleBorderColor = UIColor.darkGray
+        teamScheduleSistemColor = .lightGray
+        teamScheduleCalendarDefaultColor = .gray
+        teamScheduleBorderColor = .darkGray
         
     }
 }

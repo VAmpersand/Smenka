@@ -24,6 +24,7 @@ class TeamShiftScheduleViewController: UIViewController {
     var currentDay = 0
     
     var tempIndexPath: IndexPath!
+    var currentContentOffset: CGPoint!
     
     var firstWeekDayOfMonth = 0
     var weekdays: [String] = []
@@ -50,7 +51,6 @@ class TeamShiftScheduleViewController: UIViewController {
         scheduleTableView.dataSource = self
         
         customNavigationBar.delegate = self
-            
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,22 +90,19 @@ class TeamShiftScheduleViewController: UIViewController {
         backButton.setTitleColor(Style.labelColor, for: .normal)
         monthLabel.textColor = Style.labelColor
         
-        collectionView.backgroundColor = .lightGray
+        collectionView.backgroundColor = Style.teamScheduleSistemColor
         collectionView.layer.cornerRadius = 3
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.reloadData()
         
-        
-        if tempIndexPath != nil {
-        collectionView.scrollToItem(at: tempIndexPath, at: .left, animated: false)
-        }
+        collectionView.scrollToItem(at: IndexPath(row: currentDay - 1, section: 0), at: .left, animated: false)
         
         customNavigationBar.setDesign()
         
         scheduleTableView.reloadData()
-       
     }
     
+    //MARK: Creating data array for present in table header in teamShiftScheduleVC 
     func getWeekdaysArray(currentMonth: Int, firstWeekDayOfMonth: Int) -> [String] {
         
         var daysCount = numbersOfDaysInMonth[currentMonth]
@@ -152,7 +149,6 @@ class TeamShiftScheduleViewController: UIViewController {
         firstWeekDayOfMonth = getIndexFirstWeekDay(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
         weekdays = getWeekdaysArray(currentMonth: currentMonth, firstWeekDayOfMonth: firstWeekDayOfMonth)
     }
-    
 }
 
 

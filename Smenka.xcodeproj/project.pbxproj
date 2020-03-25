@@ -77,8 +77,9 @@
 		77B30C9B2414F11800E92765 /* CustomNavigationBarTeamShSchV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B30C9A2414F11800E92765 /* CustomNavigationBarTeamShSchV.swift */; };
 		77B30C9E2415386600E92765 /* TeamShSchCollectionViewDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B30C9D2415386600E92765 /* TeamShSchCollectionViewDataSourse.swift */; };
 		77D3F1CF2429D7DE009606F0 /* TeamScheduleShiftsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3F1CE2429D7DE009606F0 /* TeamScheduleShiftsModel.swift */; };
-		77D3F1D1242A3448009606F0 /* SynchroScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3F1D0242A3448009606F0 /* SynchroScrollView.swift */; };
 		77D862C1240985420079EBBE /* Ext_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D862C0240985420079EBBE /* Ext_UIView.swift */; };
+		77DE3F9D242BC6FC00C0CB3A /* AddStaffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE3F9C242BC6FC00C0CB3A /* AddStaffViewController.swift */; };
+		77DE3F9F242BC72600C0CB3A /* AddStaff.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DE3F9E242BC72600C0CB3A /* AddStaff.storyboard */; };
 		77E6A1162405C0C500F4A655 /* ViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E6A1152405C0C500F4A655 /* ViewStyle.swift */; };
 		77E6A11824082BB500F4A655 /* CustomNavigationBarInMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77E6A11724082BB500F4A655 /* CustomNavigationBarInMainVC.xib */; };
 		77E6A11A24082EBF00F4A655 /* CustomNavigationBarInMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E6A11924082EBF00F4A655 /* CustomNavigationBarInMainVC.swift */; };
@@ -185,8 +186,9 @@
 		77B30C9A2414F11800E92765 /* CustomNavigationBarTeamShSchV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarTeamShSchV.swift; sourceTree = "<group>"; };
 		77B30C9D2415386600E92765 /* TeamShSchCollectionViewDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamShSchCollectionViewDataSourse.swift; sourceTree = "<group>"; };
 		77D3F1CE2429D7DE009606F0 /* TeamScheduleShiftsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamScheduleShiftsModel.swift; sourceTree = "<group>"; };
-		77D3F1D0242A3448009606F0 /* SynchroScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchroScrollView.swift; sourceTree = "<group>"; };
 		77D862C0240985420079EBBE /* Ext_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIView.swift; sourceTree = "<group>"; };
+		77DE3F9C242BC6FC00C0CB3A /* AddStaffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStaffViewController.swift; sourceTree = "<group>"; };
+		77DE3F9E242BC72600C0CB3A /* AddStaff.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddStaff.storyboard; sourceTree = "<group>"; };
 		77E6A1152405C0C500F4A655 /* ViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStyle.swift; sourceTree = "<group>"; };
 		77E6A11724082BB500F4A655 /* CustomNavigationBarInMainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavigationBarInMainVC.xib; sourceTree = "<group>"; };
 		77E6A11924082EBF00F4A655 /* CustomNavigationBarInMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarInMainVC.swift; sourceTree = "<group>"; };
@@ -389,9 +391,9 @@
 				7793C71423F04A960063BBA4 /* TableViewDataSource.swift */,
 				774F98D123F480D700596B08 /* TrailingSwipeAction.swift */,
 				7793C71623F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift */,
-				779110EE240846BA00DDFC1A /* NavigationBar */,
 				7793C72A23F180C10063BBA4 /* ShiftTypeCreation */,
 				77372B4624101DE900BA4BB3 /* Alert */,
+				779110EE240846BA00DDFC1A /* NavigationBar */,
 			);
 			path = SettingsVC;
 			sourceTree = "<group>";
@@ -421,7 +423,6 @@
 			children = (
 				77B30C8E24118CA900E92765 /* TeamSfiftSchedule.storyboard */,
 				77B30C9624140D8C00E92765 /* TeamShiftScheduleViewController.swift */,
-				77D3F1D0242A3448009606F0 /* SynchroScrollView.swift */,
 				77B90BB32429D2AB00B07CF8 /* ShiftTableView */,
 				77B90BB42429D2D500B07CF8 /* ScrollDateCollectionView */,
 				77B30C9C2414F12A00E92765 /* NavigationBar */,
@@ -434,6 +435,7 @@
 			children = (
 				77B30C9324140C0B00E92765 /* TeamShiftScheduleBuilder.storyboard */,
 				77B30C9024118D2100E92765 /* TeamShiftScheduleBuilderViewController.swift */,
+				77DE3FA0242BC99900C0CB3A /* AddStaffVC */,
 			);
 			path = TeamShiftScheduleBuilderVC;
 			sourceTree = "<group>";
@@ -464,6 +466,15 @@
 				77A73ABB24169D3100BDE801 /* CalendarScrollCollectionViewCell.swift */,
 			);
 			path = ScrollDateCollectionView;
+			sourceTree = "<group>";
+		};
+		77DE3FA0242BC99900C0CB3A /* AddStaffVC */ = {
+			isa = PBXGroup;
+			children = (
+				77DE3F9E242BC72600C0CB3A /* AddStaff.storyboard */,
+				77DE3F9C242BC6FC00C0CB3A /* AddStaffViewController.swift */,
+			);
+			path = AddStaffVC;
 			sourceTree = "<group>";
 		};
 		77E6A11B24082EC600F4A655 /* NavigationBar */ = {
@@ -577,6 +588,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7793C72923F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib in Resources */,
+				77DE3F9F242BC72600C0CB3A /* AddStaff.storyboard in Resources */,
 				774A851323D76A8500A653A6 /* LaunchScreen.storyboard in Resources */,
 				77B30C8F24118CA900E92765 /* TeamSfiftSchedule.storyboard in Resources */,
 				774A851023D76A8500A653A6 /* Assets.xcassets in Resources */,
@@ -665,6 +677,7 @@
 				7793C70223E9F6010063BBA4 /* CheckTheSchudaleForExistence_Func.swift in Sources */,
 				7793C70723EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift in Sources */,
 				774A852E23E35C5C00A653A6 /* StorageManager.swift in Sources */,
+				77DE3F9D242BC6FC00C0CB3A /* AddStaffViewController.swift in Sources */,
 				7793C70923EDE3720063BBA4 /* TableViewDataSource_Ext_MainVC.swift in Sources */,
 				7793C71F23F062870063BBA4 /* ShiftTypeCreationView.swift in Sources */,
 				7793C71523F04A960063BBA4 /* TableViewDataSource.swift in Sources */,
@@ -691,7 +704,6 @@
 				77B30C9B2414F11800E92765 /* CustomNavigationBarTeamShSchV.swift in Sources */,
 				77B30C9124118D2100E92765 /* TeamShiftScheduleBuilderViewController.swift in Sources */,
 				774A852123E0CA2C00A653A6 /* Ext_String.swift in Sources */,
-				77D3F1D1242A3448009606F0 /* SynchroScrollView.swift in Sources */,
 				77372B2E240A673600BA4BB3 /* SetEmptySaredData.swift in Sources */,
 				774A850B23D76A8400A653A6 /* MainViewController.swift in Sources */,
 				7793C70423E9FBD60063BBA4 /* CheckTheSchudaleForEmptiness_Func.swift in Sources */,
