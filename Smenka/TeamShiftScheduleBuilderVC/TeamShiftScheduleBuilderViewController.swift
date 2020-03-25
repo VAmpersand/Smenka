@@ -36,6 +36,12 @@ class TeamShiftScheduleBuilderViewController: UIViewController {
     
     @IBAction func addStaffButtonPressed(_ sender: Any) {
         
+              let addStaffVC = UIStoryboard(name: "AddStaff", bundle: nil).instantiateViewController(withIdentifier: "addStaff") as! AddStaffViewController
+              
+              self.addChild(addStaffVC)
+              addStaffVC.view.frame = self.view.frame
+              self.view.addSubview(addStaffVC.view)
+              addStaffVC.didMove(toParent: self)
     }
     
     

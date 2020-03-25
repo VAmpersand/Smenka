@@ -26,14 +26,7 @@ class ShiftTypeCreationAlertViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        okButton.layer.cornerRadius = 4
-        okButton.setTitleColor(Style.buttonColor, for: .normal)
-        
-        messageView.layer.cornerRadius = 15
-        
-        messageView.backgroundColor = Style.backgroundColor
-        textMessageLabel.textColor = Style.labelColor
-        okButton.setTitleColor(Style.buttonColor, for: .normal)
+        setDesign()
         moveIn()
     }
     
@@ -62,5 +55,16 @@ class ShiftTypeCreationAlertViewController: UIViewController {
         }){ _ in
             self.view.removeFromSuperview()
         }
+    }
+    
+    func setDesign() {
+        
+        okButton.layer.cornerRadius = 4
+        okButton.setTitleColor(Style.buttonColor, for: .normal)
+        
+        messageView.layer.cornerRadius = 15
+        messageView.backgroundColor = Style.backgroundColor
+        
+        textMessageLabel.textColor = Style.labelColor
     }
 }
