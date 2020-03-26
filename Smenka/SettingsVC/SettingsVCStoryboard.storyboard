@@ -100,16 +100,6 @@
                                     <action selector="addShiftType:" destination="cJd-0x-nhJ" eventType="touchUpInside" id="UK0-z5-QR5"/>
                                 </connections>
                             </button>
-                            <visualEffectView opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a78-qJ-pSV">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="3Zu-1y-efn">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <blurEffect style="dark"/>
-                            </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OVR-bG-W8u" customClass="CustomNavigationBarInSettingsVC" customModule="Smenka" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -139,7 +129,6 @@
                     <navigationItem key="navigationItem" id="LTJ-9G-Hgp"/>
                     <connections>
                         <outlet property="addTypeButton" destination="YQt-Tm-K7f" id="MY5-Gw-a1m"/>
-                        <outlet property="blurEffect" destination="a78-qJ-pSV" id="Jky-gN-Fia"/>
                         <outlet property="customNavigationBar" destination="OVR-bG-W8u" id="Eu9-ch-cea"/>
                         <outlet property="shiftTypeLabel" destination="wub-1C-xmb" id="EbV-M1-u0U"/>
                         <outlet property="shiftTypeTable" destination="9a4-mw-Fdh" id="4BY-oU-1MA"/>

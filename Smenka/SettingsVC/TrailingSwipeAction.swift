@@ -13,22 +13,23 @@ extension SettingsViewController  {
     func editingShiftType(at indexPath: IndexPath) -> UIContextualAction {
         let button = UIContextualAction(style: .normal, title: "Editing") { (_, action, completion) in
             
-            let shiftTypeCreation = ShiftTypeCreationView.initShiftTypeCreationView(delegate: self)
-            shiftTypeCreation.showShiftTypeCreationViewInController(viewController: self)
-            shiftTypeCreation.indexEditableType = indexPath
-            self.currentIndexPath = indexPath
+            let shiftTypeCreationVC = UIStoryboard(name: "ShiftTypeCreation", bundle: nil).instantiateViewController(withIdentifier: "shiftTypeCreation") as! ShiftTypeCreationVC
             
+            shiftTypeCreationVC.delegate = self
+            
+            self.addChild(shiftTypeCreationVC)
+            shiftTypeCreationVC.view.frame = self.view.frame
+            self.view.addSubview(shiftTypeCreationVC.view)
+            shiftTypeCreationVC.didMove(toParent: self)
+            
+            shiftTypeCreationVC.indexEditableType = indexPath
+      
             let shiftType = self.shiftTypes[indexPath.row]
             
             // Set shift type parametr's when editing
-            shiftTypeCreation.typeNameTextField.text = shiftType.shiftTypeName
-            shiftTypeCreation.startTimePicker.setDate(shiftType.startTime.roundedTimeStr!, animated: false)
-            shiftTypeCreation.endTimePicker.setDate(shiftType.endTime.roundedTimeStr!, animated: false)
-            
-            UIView.animate(withDuration: 1) {
-                self.blurEffect.alpha = 0.9
-            }
-            
+            shiftTypeCreationVC.typeNameTextField.text = shiftType.shiftTypeName
+            shiftTypeCreationVC.startTimePicker.setDate(shiftType.startTime.roundedTimeStr!, animated: false)
+            shiftTypeCreationVC.endTimePicker.setDate(shiftType.endTime.roundedTimeStr!, animated: false)
             completion(true)
         }
         button.backgroundColor = .gray

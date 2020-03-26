@@ -60,11 +60,6 @@
 		7793C71323F045E40063BBA4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C71223F045E30063BBA4 /* SettingsViewController.swift */; };
 		7793C71523F04A960063BBA4 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C71423F04A960063BBA4 /* TableViewDataSource.swift */; };
 		7793C71723F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C71623F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift */; };
-		7793C71B23F05FC70063BBA4 /* ShiftTypeCreationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7793C71A23F05FC70063BBA4 /* ShiftTypeCreationView.xib */; };
-		7793C71F23F062870063BBA4 /* ShiftTypeCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C71E23F062870063BBA4 /* ShiftTypeCreationView.swift */; };
-		7793C72123F177390063BBA4 /* ShiftTypeCreationCollectionViewDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C72023F177390063BBA4 /* ShiftTypeCreationCollectionViewDataSourse.swift */; };
-		7793C72823F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C72623F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.swift */; };
-		7793C72923F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7793C72723F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib */; };
 		7798341623FDD38300CB5180 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7798341523FDD38300CB5180 /* Alert.storyboard */; };
 		779FA32E2416DF4400F501F4 /* ShiftDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779FA32C2416DF4400F501F4 /* ShiftDataCollectionViewCell.swift */; };
 		779FA33A2417817600F501F4 /* ScheduleTableViewDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779FA3392417817600F501F4 /* ScheduleTableViewDataSourse.swift */; };
@@ -80,6 +75,10 @@
 		77D862C1240985420079EBBE /* Ext_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D862C0240985420079EBBE /* Ext_UIView.swift */; };
 		77DE3F9D242BC6FC00C0CB3A /* AddStaffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE3F9C242BC6FC00C0CB3A /* AddStaffViewController.swift */; };
 		77DE3F9F242BC72600C0CB3A /* AddStaff.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DE3F9E242BC72600C0CB3A /* AddStaff.storyboard */; };
+		77DE3FA4242CC0E300C0CB3A /* ShiftTypeCreation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DE3FA3242CC0E300C0CB3A /* ShiftTypeCreation.storyboard */; };
+		77DE3FA7242CEA2200C0CB3A /* ShiftTypeCreationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE3FA6242CEA2200C0CB3A /* ShiftTypeCreationVC.swift */; };
+		77DE3FA9242D056A00C0CB3A /* TypeColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE3FA8242D056A00C0CB3A /* TypeColorCollectionViewCell.swift */; };
+		77DE3FAB242D0C7000C0CB3A /* TypeColorCollectionDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE3FAA242D0C7000C0CB3A /* TypeColorCollectionDataSourse.swift */; };
 		77E6A1162405C0C500F4A655 /* ViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E6A1152405C0C500F4A655 /* ViewStyle.swift */; };
 		77E6A11824082BB500F4A655 /* CustomNavigationBarInMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77E6A11724082BB500F4A655 /* CustomNavigationBarInMainVC.xib */; };
 		77E6A11A24082EBF00F4A655 /* CustomNavigationBarInMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E6A11924082EBF00F4A655 /* CustomNavigationBarInMainVC.swift */; };
@@ -169,11 +168,6 @@
 		7793C71223F045E30063BBA4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = /Users/viktor/Developer/Smenka/Smenka/MainVC/SettingsViewController.swift; sourceTree = "<absolute>"; };
 		7793C71423F04A960063BBA4 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		7793C71623F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeTableViewCell.swift; sourceTree = "<group>"; };
-		7793C71A23F05FC70063BBA4 /* ShiftTypeCreationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShiftTypeCreationView.xib; sourceTree = "<group>"; };
-		7793C71E23F062870063BBA4 /* ShiftTypeCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShiftTypeCreationView.swift; path = /Users/viktor/Developer/Smenka/Smenka/SettingsVC/ShiftTypeCreationView.swift; sourceTree = "<absolute>"; };
-		7793C72023F177390063BBA4 /* ShiftTypeCreationCollectionViewDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeCreationCollectionViewDataSourse.swift; sourceTree = "<group>"; };
-		7793C72623F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeColorCollectionVCell.swift; sourceTree = "<group>"; };
-		7793C72723F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShiftTypeColorCollectionVCell.xib; sourceTree = "<group>"; };
 		7798341523FDD38300CB5180 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
 		779FA32C2416DF4400F501F4 /* ShiftDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftDataCollectionViewCell.swift; sourceTree = "<group>"; };
 		779FA3392417817600F501F4 /* ScheduleTableViewDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewDataSourse.swift; sourceTree = "<group>"; };
@@ -189,6 +183,10 @@
 		77D862C0240985420079EBBE /* Ext_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIView.swift; sourceTree = "<group>"; };
 		77DE3F9C242BC6FC00C0CB3A /* AddStaffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStaffViewController.swift; sourceTree = "<group>"; };
 		77DE3F9E242BC72600C0CB3A /* AddStaff.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddStaff.storyboard; sourceTree = "<group>"; };
+		77DE3FA3242CC0E300C0CB3A /* ShiftTypeCreation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShiftTypeCreation.storyboard; sourceTree = "<group>"; };
+		77DE3FA6242CEA2200C0CB3A /* ShiftTypeCreationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeCreationVC.swift; sourceTree = "<group>"; };
+		77DE3FA8242D056A00C0CB3A /* TypeColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		77DE3FAA242D0C7000C0CB3A /* TypeColorCollectionDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeColorCollectionDataSourse.swift; sourceTree = "<group>"; };
 		77E6A1152405C0C500F4A655 /* ViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStyle.swift; sourceTree = "<group>"; };
 		77E6A11724082BB500F4A655 /* CustomNavigationBarInMainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavigationBarInMainVC.xib; sourceTree = "<group>"; };
 		77E6A11924082EBF00F4A655 /* CustomNavigationBarInMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarInMainVC.swift; sourceTree = "<group>"; };
@@ -401,21 +399,12 @@
 		7793C72A23F180C10063BBA4 /* ShiftTypeCreation */ = {
 			isa = PBXGroup;
 			children = (
-				7793C71A23F05FC70063BBA4 /* ShiftTypeCreationView.xib */,
-				7793C71E23F062870063BBA4 /* ShiftTypeCreationView.swift */,
-				7793C72023F177390063BBA4 /* ShiftTypeCreationCollectionViewDataSourse.swift */,
-				7793C72B23F180ED0063BBA4 /* ColorCollecitonView */,
+				77DE3FA3242CC0E300C0CB3A /* ShiftTypeCreation.storyboard */,
+				77DE3FA6242CEA2200C0CB3A /* ShiftTypeCreationVC.swift */,
+				77DE3FAA242D0C7000C0CB3A /* TypeColorCollectionDataSourse.swift */,
+				77DE3FA8242D056A00C0CB3A /* TypeColorCollectionViewCell.swift */,
 			);
 			path = ShiftTypeCreation;
-			sourceTree = "<group>";
-		};
-		7793C72B23F180ED0063BBA4 /* ColorCollecitonView */ = {
-			isa = PBXGroup;
-			children = (
-				7793C72623F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.swift */,
-				7793C72723F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib */,
-			);
-			path = ColorCollecitonView;
 			sourceTree = "<group>";
 		};
 		77B30C9224118D3200E92765 /* TeamShiftScheduleVC */ = {
@@ -587,14 +576,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7793C72923F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.xib in Resources */,
 				77DE3F9F242BC72600C0CB3A /* AddStaff.storyboard in Resources */,
 				774A851323D76A8500A653A6 /* LaunchScreen.storyboard in Resources */,
 				77B30C8F24118CA900E92765 /* TeamSfiftSchedule.storyboard in Resources */,
 				774A851023D76A8500A653A6 /* Assets.xcassets in Resources */,
 				77372B36240BC4C300BA4BB3 /* MainVCStoryboard.storyboard in Resources */,
-				7793C71B23F05FC70063BBA4 /* ShiftTypeCreationView.xib in Resources */,
 				77E6A11824082BB500F4A655 /* CustomNavigationBarInMainVC.xib in Resources */,
+				77DE3FA4242CC0E300C0CB3A /* ShiftTypeCreation.storyboard in Resources */,
 				77B30C9424140C0B00E92765 /* TeamShiftScheduleBuilder.storyboard in Resources */,
 				779110ED240846B400DDFC1A /* CustomNavigationBarInSettingsVC.xib in Resources */,
 				77372B4324101DA600BA4BB3 /* ShiftTypeCreationAlert.storyboard in Resources */,
@@ -677,9 +665,9 @@
 				7793C70223E9F6010063BBA4 /* CheckTheSchudaleForExistence_Func.swift in Sources */,
 				7793C70723EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift in Sources */,
 				774A852E23E35C5C00A653A6 /* StorageManager.swift in Sources */,
+				77DE3FA9242D056A00C0CB3A /* TypeColorCollectionViewCell.swift in Sources */,
 				77DE3F9D242BC6FC00C0CB3A /* AddStaffViewController.swift in Sources */,
 				7793C70923EDE3720063BBA4 /* TableViewDataSource_Ext_MainVC.swift in Sources */,
-				7793C71F23F062870063BBA4 /* ShiftTypeCreationView.swift in Sources */,
 				7793C71523F04A960063BBA4 /* TableViewDataSource.swift in Sources */,
 				774A852B23E3572F00A653A6 /* EmployeeModel.swift in Sources */,
 				77372B3D240ED1C200BA4BB3 /* SetDefaultTheme_Func.swift in Sources */,
@@ -692,10 +680,9 @@
 				77A73ABD24169D3100BDE801 /* CalendarScrollCollectionViewCell.swift in Sources */,
 				774F98D223F480D700596B08 /* TrailingSwipeAction.swift in Sources */,
 				7793C6FA23E840C00063BBA4 /* PersonalScheduleShiftsModel.swift in Sources */,
-				7793C72823F1808E0063BBA4 /* ShiftTypeColorCollectionVCell.swift in Sources */,
 				7793C70023E9F5380063BBA4 /* GetIndexFirstWeekDay_Func.swift in Sources */,
-				7793C72123F177390063BBA4 /* ShiftTypeCreationCollectionViewDataSourse.swift in Sources */,
 				77D862C1240985420079EBBE /* Ext_UIView.swift in Sources */,
+				77DE3FAB242D0C7000C0CB3A /* TypeColorCollectionDataSourse.swift in Sources */,
 				77372B32240BB6C500BA4BB3 /* SetFistClearShiftType_Func.swift in Sources */,
 				774A852323E0CA4100A653A6 /* Ext_Date.swift in Sources */,
 				774A852523E2103600A653A6 /* CollectionViewDataSourse.swift in Sources */,
@@ -707,6 +694,7 @@
 				77372B2E240A673600BA4BB3 /* SetEmptySaredData.swift in Sources */,
 				774A850B23D76A8400A653A6 /* MainViewController.swift in Sources */,
 				7793C70423E9FBD60063BBA4 /* CheckTheSchudaleForEmptiness_Func.swift in Sources */,
+				77DE3FA7242CEA2200C0CB3A /* ShiftTypeCreationVC.swift in Sources */,
 				77372B41240EF35100BA4BB3 /* SetThemeFromDefaults_Func.swift in Sources */,
 				7783940223F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift in Sources */,
 				77372B30240BB5F900BA4BB3 /* SetDefaultDBRealmDirectory_Func.swift in Sources */,

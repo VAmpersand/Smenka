@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shift type's" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PM-2M-v6y">
-                                <rect key="frame" x="133.5" y="473" width="147" height="34"/>
+                                <rect key="frame" x="133.5" y="469" width="147" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Fmb-7L-qmK"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147" id="Ilf-Ye-9tC"/>
@@ -196,7 +196,7 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mSW-yQ-tfu">
-                                <rect key="frame" x="15" y="507" width="384" height="291"/>
+                                <rect key="frame" x="15" y="503" width="384" height="295"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="50" id="vig-2O-taA" customClass="ShiftTypeCell" customModule="Smenka" customModuleProvider="target">
@@ -272,7 +272,7 @@
                             <constraint firstItem="CRE-WV-5VC" firstAttribute="top" secondItem="O20-Qt-dxA" secondAttribute="bottom" id="2ib-co-vzK"/>
                             <constraint firstItem="CRE-WV-5VC" firstAttribute="centerX" secondItem="bO4-JG-WaW" secondAttribute="centerX" id="3vf-MJ-JGW"/>
                             <constraint firstItem="bO4-JG-WaW" firstAttribute="trailing" secondItem="CRE-WV-5VC" secondAttribute="trailing" constant="114" id="50J-5c-pgM"/>
-                            <constraint firstItem="0PM-2M-v6y" firstAttribute="top" secondItem="xTt-Ea-lKd" secondAttribute="bottom" constant="12" id="6Y1-ha-MxU"/>
+                            <constraint firstItem="0PM-2M-v6y" firstAttribute="top" secondItem="xTt-Ea-lKd" secondAttribute="bottom" constant="8" id="6Y1-ha-MxU"/>
                             <constraint firstItem="bO4-JG-WaW" firstAttribute="trailing" secondItem="xTt-Ea-lKd" secondAttribute="trailing" constant="15" id="85s-lg-1cu"/>
                             <constraint firstItem="mSW-yQ-tfu" firstAttribute="trailing" secondItem="xTt-Ea-lKd" secondAttribute="trailing" id="95E-Oi-WNc"/>
                             <constraint firstItem="bO4-JG-WaW" firstAttribute="bottom" secondItem="mSW-yQ-tfu" secondAttribute="bottom" constant="15" id="BHb-14-V3m"/>

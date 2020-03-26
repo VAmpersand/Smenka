@@ -1,51 +1,41 @@
 //
-//  ShiftTypeCreationCollectionVC.swift
+//  TypeColorCollectionDataSourse.swift
 //  Smenka
 //
-//  Created by Viktor on 10.02.2020.
+//  Created by Viktor on 26.03.2020.
 //  Copyright © 2020 Viktor. All rights reserved.
 //
 
 import UIKit
 
-extension ShiftTypeCreationView: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        shiftColorCollectionView.delegate = self
-        shiftColorCollectionView.dataSource = self
-        shiftColorCollectionView.register(UINib.init(nibName: "ShiftTypeColorCollectionVCell", bundle: nil), forCellWithReuseIdentifier: "shiftTypeColorCell")
-        
-    }
-    
+extension ShiftTypeCreationVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return colors.count - 1
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shiftTypeColorCell", for: indexPath) as! ShiftTypeColorCollectionVCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TypeColorCollectionViewCell
+        
+        cell.setDesign()
         
         let colorWasUsed = colorCheckForUse(indexPath: indexPath)
         if colorWasUsed {
             cell.blurEffect.alpha = 1
         }
         
-        cell.colorImage.backgroundColor = colors[indexPath.row]
-        
+        cell.colorView.backgroundColor = colors[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! ShiftTypeColorCollectionVCell
+        let cell = collectionView.cellForItem(at: indexPath) as! TypeColorCollectionViewCell
         
         // Fist choice after display ShiftTypeCreationView
         let colorWasUsed = colorCheckForUse(indexPath: indexPath)
         if colorWasUsed {          // Show animation if color was used early
             cell.blurEffect.alpha = 1
-            animateChoosingColorView(colorImage: cell.colorImage, indexPath: indexPath)
+            animateChoosingColorView(colorView: cell.colorView, indexPath: indexPath)
         } else {
             UIView.animate(withDuration: 0.5) {
                 cell.blurEffect.alpha = 1
@@ -55,7 +45,7 @@ extension ShiftTypeCreationView: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! ShiftTypeColorCollectionVCell
+        let cell = collectionView.cellForItem(at: indexPath) as! TypeColorCollectionViewCell
         
         let colorWasUsed = colorCheckForUse(indexPath: indexPath)
         if colorWasUsed {
@@ -82,12 +72,12 @@ extension ShiftTypeCreationView: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     // Animate color view.
-    func animateChoosingColorView(colorImage: UIImageView, indexPath: IndexPath) {
+    func animateChoosingColorView(colorView: UIView, indexPath: IndexPath) {
         UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseOut], animations: {
-            colorImage.transform = .init(scaleX: 0.0, y: 0.0)
+            colorView.transform = .init(scaleX: 0.0, y: 0.0)
         }) { (finished) in
             UIView.animate(withDuration: 0.3, animations: {
-                colorImage.transform = .identity
+                colorView.transform = .identity
             })
         }
     }

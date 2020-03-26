@@ -13,8 +13,8 @@ class AddStaffViewController: UIViewController {
     
     // Init AddStaffViewController
     class func initAddStaffViewController() -> AddStaffViewController {
-        let addStaffViewController = Bundle.main.loadNibNamed("AddStaff", owner: self, options: nil)![0] as! AddStaffViewController
-        return addStaffViewController
+        let addStaffVC = Bundle.main.loadNibNamed("AddStaff", owner: self, options: nil)![0] as! AddStaffViewController
+        return addStaffVC
     }
     
     @IBOutlet var scrollView: UIScrollView!
@@ -32,9 +32,16 @@ class AddStaffViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registeForKeyboardNotifications()
+        
         staffList = realm.objects(Employee.self)
         
+        //Add gestureRecogniser for tapped ad screen if used UIScrollView
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(self.touch))
+        recognizer.numberOfTapsRequired = 1
+        recognizer.numberOfTouchesRequired = 1
+        scrollView.addGestureRecognizer(recognizer)
+        
+        registeForKeyboardNotifications()
         setDesign()
         moveIn()
     }
@@ -114,15 +121,8 @@ class AddStaffViewController: UIViewController {
     }
     
     //Hide keyboard by click on screen
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        nameTextField.endEditing(true)
-        surnameTextField.endEditing(true)
-        positionTextField.endEditing(true)
-        
-        nameTextField.resignFirstResponder()
-        surnameTextField.resignFirstResponder()
-        positionTextField.resignFirstResponder()
-        
+    @objc func touch() {
+        self.view.endEditing(true)
     }
     
     //Add observer at the showing and hiding of the keyboard

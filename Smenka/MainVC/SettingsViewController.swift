@@ -12,16 +12,11 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet var addTypeButton: UIButton!
     @IBOutlet var shiftTypeTable: UITableView!
-    @IBOutlet var blurEffect: UIVisualEffectView!
     @IBOutlet var shiftTypeLabel: UILabel!
-    
     @IBOutlet var customNavigationBar: CustomNavigationBarInSettingsVC!
     
     var shiftTypes: Results<ShiftType>!
-    
-    var currentIndexPath: IndexPath!
-    
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,11 +39,16 @@ class SettingsViewController: UIViewController {
         if shiftTypes.count == 19 {
             showMessageView(text: "You have created a limit on the number of shifts. Remove unused.")
         } else {
-            let shiftTypeCreation = ShiftTypeCreationView.initShiftTypeCreationView(delegate: self)
-            shiftTypeCreation.showShiftTypeCreationViewInController(viewController: self)
-            UIView.animate(withDuration: 1) {
-                self.blurEffect.alpha = 0.9
-            }
+            
+            // Present addStaffVC
+            let shiftTypeCreationVC = UIStoryboard(name: "ShiftTypeCreation", bundle: nil).instantiateViewController(withIdentifier: "shiftTypeCreation") as! ShiftTypeCreationVC
+            
+            shiftTypeCreationVC.delegate = self
+
+            self.addChild(shiftTypeCreationVC)
+            shiftTypeCreationVC.view.frame = self.view.frame
+            self.view.addSubview(shiftTypeCreationVC.view)
+            shiftTypeCreationVC.didMove(toParent: self)
         }
     }
     
@@ -63,16 +63,11 @@ class SettingsViewController: UIViewController {
         alertView.didMove(toParent: self)
         alertView.textMessageLabel.text = text
     }
-    
 }
 
-extension SettingsViewController: ShiftTypeCreationViewDelegate {
+extension SettingsViewController: ShiftTypeCreationVCDelegate {
     
     func pushButton() {
-        
-        UIView.animate(withDuration: 1) {
-            self.blurEffect.alpha = 0
-        }
         DispatchQueue.main.async {
             self.shiftTypeTable.reloadData()
         }
