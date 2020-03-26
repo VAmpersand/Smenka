@@ -35,7 +35,7 @@
 		774A852323E0CA4100A653A6 /* Ext_Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A852223E0CA4100A653A6 /* Ext_Date.swift */; };
 		774A852523E2103600A653A6 /* CollectionViewDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A852423E2103600A653A6 /* CollectionViewDataSourse.swift */; };
 		774A852923E3562900A653A6 /* ShiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A852823E3562900A653A6 /* ShiftModel.swift */; };
-		774A852B23E3572F00A653A6 /* StaffModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A852A23E3572F00A653A6 /* StaffModel.swift */; };
+		774A852B23E3572F00A653A6 /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A852A23E3572F00A653A6 /* EmployeeModel.swift */; };
 		774A852E23E35C5C00A653A6 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A852D23E35C5C00A653A6 /* StorageManager.swift */; };
 		774F98D223F480D700596B08 /* TrailingSwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774F98D123F480D700596B08 /* TrailingSwipeAction.swift */; };
 		776AF2CF2418BD4A0018EA54 /* TeamShiftScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AF2CE2418BD4A0018EA54 /* TeamShiftScheduleTableViewCell.swift */; };
@@ -144,7 +144,7 @@
 		774A852223E0CA4100A653A6 /* Ext_Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_Date.swift; sourceTree = "<group>"; };
 		774A852423E2103600A653A6 /* CollectionViewDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSourse.swift; sourceTree = "<group>"; };
 		774A852823E3562900A653A6 /* ShiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftModel.swift; sourceTree = "<group>"; };
-		774A852A23E3572F00A653A6 /* StaffModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffModel.swift; sourceTree = "<group>"; };
+		774A852A23E3572F00A653A6 /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
 		774A852D23E35C5C00A653A6 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		774F98D123F480D700596B08 /* TrailingSwipeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingSwipeAction.swift; sourceTree = "<group>"; };
 		776AF2CE2418BD4A0018EA54 /* TeamShiftScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamShiftScheduleTableViewCell.swift; sourceTree = "<group>"; };
@@ -304,7 +304,7 @@
 				7793C6F923E840C00063BBA4 /* PersonalScheduleShiftsModel.swift */,
 				774A852823E3562900A653A6 /* ShiftModel.swift */,
 				7793C6F723E4BA8D0063BBA4 /* ShiftTypeModel.swift */,
-				774A852A23E3572F00A653A6 /* StaffModel.swift */,
+				774A852A23E3572F00A653A6 /* EmployeeModel.swift */,
 				7793C70E23EDF6760063BBA4 /* ShiftStaffModel.swift */,
 				774A851C23D772C800A653A6 /* CalendarDataSource.swift */,
 				77E6A1152405C0C500F4A655 /* ViewStyle.swift */,
@@ -681,7 +681,7 @@
 				7793C70923EDE3720063BBA4 /* TableViewDataSource_Ext_MainVC.swift in Sources */,
 				7793C71F23F062870063BBA4 /* ShiftTypeCreationView.swift in Sources */,
 				7793C71523F04A960063BBA4 /* TableViewDataSource.swift in Sources */,
-				774A852B23E3572F00A653A6 /* StaffModel.swift in Sources */,
+				774A852B23E3572F00A653A6 /* EmployeeModel.swift in Sources */,
 				77372B3D240ED1C200BA4BB3 /* SetDefaultTheme_Func.swift in Sources */,
 				77E6A11A24082EBF00F4A655 /* CustomNavigationBarInMainVC.swift in Sources */,
 				77D3F1CF2429D7DE009606F0 /* TeamScheduleShiftsModel.swift in Sources */,

@@ -71,23 +71,23 @@ class StorageManager {
     
     
     //   Action with staff
-    static func saveStaff(_ staff: Staff) {
+    static func saveEmployee(_ employee: Employee) {
         try! realm.write {
-            realm.add(staff)
+            realm.add(employee)
         }
     }
     
-    static func removeStaff(_ staff: Staff) {
+    static func removeEmployee(_ employee: Employee) {
         try! realm.write {
-            realm.delete(staff)
+            realm.delete(employee)
         }
     }
     
-    static func editStaff(_ staff: Staff, _ newStaff: Staff) {
+    static func editEmployee(_ employee: Employee, _ newEmployee: Employee) {
         try! realm.write {
-            staff.employeeName = newStaff.employeeName
-            staff.employeeSurname = newStaff.employeeSurname
-            staff.employeePosition = newStaff.employeePosition
+            employee.employeeName = newEmployee.employeeName
+            employee.employeeSurname = newEmployee.employeeSurname
+            employee.employeePosition = newEmployee.employeePosition
         }
     }
     

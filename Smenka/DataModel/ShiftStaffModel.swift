@@ -11,7 +11,7 @@ import RealmSwift
 
 @objcMembers class ShiftStaff: Object, Decodable {
     
-    dynamic var employee: Staff!
+    dynamic var employee: Employee!
     dynamic var shiftType: ShiftType!
     
 }

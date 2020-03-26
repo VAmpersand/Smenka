@@ -7,16 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AddStaffViewController: UIViewController {
     
-    class func initclassAddStaffViewController() -> AddStaffViewController {
+    // Init AddStaffViewController
+    class func initAddStaffViewController() -> AddStaffViewController {
         let addStaffViewController = Bundle.main.loadNibNamed("AddStaff", owner: self, options: nil)![0] as! AddStaffViewController
         return addStaffViewController
     }
     
-    
-    
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var contentView: UIView!
     @IBOutlet var blurEffect: UIVisualEffectView!
     @IBOutlet var labels: [UILabel]!
@@ -26,11 +27,20 @@ class AddStaffViewController: UIViewController {
     @IBOutlet var cancelButton: UIButton!
     @IBOutlet var saveButton: UIButton!
     
+    var staffList: Results<Employee>!
+    var employee = Employee()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        registeForKeyboardNotifications()
+        staffList = realm.objects(Employee.self)
         
         setDesign()
         moveIn()
+    }
+    
+    deinit {
+        removeKeyboardNotifications()
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
@@ -38,9 +48,18 @@ class AddStaffViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
+        employee.employeeName = nameTextField.text ?? "Employee name"
+        employee.employeeSurname = surnameTextField.text ?? "Employee surname"
+        employee.employeePosition = positionTextField.text ?? "Employee position"
+        
+        DispatchQueue.main.async {
+            StorageManager.saveEmployee(self.employee)
+        }
+        
         moveOut()
     }
     
+    // Move in animation
     func moveIn() {
         self.view.transform = CGAffineTransform(scaleX: 1.35, y: 1.35)
         self.view.alpha = 0.0
@@ -52,7 +71,7 @@ class AddStaffViewController: UIViewController {
         }
     }
     
-    //MARK: Move out alert animation
+    // Move out animation
     func moveOut() {
         UIView.animate(withDuration: 0.5, animations: {
             self.view.transform = CGAffineTransform(scaleX: 1.35, y: 1.35)
@@ -78,9 +97,56 @@ class AddStaffViewController: UIViewController {
         surnameTextField.backgroundColor = Style.textFieldColor
         positionTextField.backgroundColor = Style.textFieldColor
         
+        guard let defaultTheme = defaultThemeStyle.value(forKey: "defaultTheme") as? String else { return }
+        if defaultTheme == "dark" {
+            nameTextField.keyboardAppearance = .dark
+            surnameTextField.keyboardAppearance = .dark
+            positionTextField.keyboardAppearance = .dark
+        } else {
+            nameTextField.keyboardAppearance = .light
+            surnameTextField.keyboardAppearance = .light
+            positionTextField.keyboardAppearance = .light
+            
+        }
         for label in labels {
             label.textColor = Style.labelColor
         }
     }
     
+    //Hide keyboard by click on screen
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        nameTextField.endEditing(true)
+        surnameTextField.endEditing(true)
+        positionTextField.endEditing(true)
+        
+        nameTextField.resignFirstResponder()
+        surnameTextField.resignFirstResponder()
+        positionTextField.resignFirstResponder()
+        
+    }
+    
+    //Add observer at the showing and hiding of the keyboard
+    private func registeForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+    }
+    
+    @objc func keyboardWillShow(_ notification: NSNotification) {
+        let userInfo = notification.userInfo
+        let keyboardFrameSize = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+                
+        scrollView.contentOffset = CGPoint(x: 0, y: (keyboardFrameSize.height - 105))
+        
+    }
+    
+    @objc func keyboardWillHide() {
+        scrollView.contentOffset = CGPoint.zero
+    }
+    
+    //Remove observer
+    private func removeKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
 }

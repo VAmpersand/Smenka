@@ -12,7 +12,7 @@ import RealmSwift
 @objcMembers class PersonalScheduleShifts: Object, Decodable {
     
     dynamic var monthlyScheduleName = "yyyy-MM"
-    dynamic var employee: Staff!
+    dynamic var employee: Employee!
     var shifts = List<Shift>()
 
     override var description: String {
