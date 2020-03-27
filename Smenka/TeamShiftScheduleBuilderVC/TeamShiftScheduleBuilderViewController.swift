@@ -43,8 +43,5 @@ class TeamShiftScheduleBuilderViewController: UIViewController {
               addStaffVC.view.frame = self.view.frame
               self.view.addSubview(addStaffVC.view)
               addStaffVC.didMove(toParent: self)
-    }
-    
-    
-    
+    } 
 }

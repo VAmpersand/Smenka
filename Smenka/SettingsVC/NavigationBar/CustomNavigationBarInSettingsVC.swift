@@ -48,7 +48,6 @@ protocol ThemeChangingDelegate: class {
             theme = .light
         }
         
-        titleLabel.text = "Settings"
         setDesign()
     }
     
@@ -84,6 +83,7 @@ protocol ThemeChangingDelegate: class {
     
         contentView.backgroundColor = Style.barBackgroundColor
         titleLabel.textColor = Style.labelColor
+        titleLabel.text = "Settings"
         themeTogleButton.tintColor = Style.buttonColor
         self.makeShadow()
     }

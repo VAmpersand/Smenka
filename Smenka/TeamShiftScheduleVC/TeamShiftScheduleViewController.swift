@@ -42,7 +42,6 @@ class TeamShiftScheduleViewController: UIViewController {
         firstWeekDayOfMonth = getIndexFirstWeekDay(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
         weekdays = getWeekdaysArray(currentMonth: currentMonth, firstWeekDayOfMonth: firstWeekDayOfMonth)
         
-        
         monthLabel.text = "\(months[currentMonth]) \(currentYear)"
         
         collectionView.delegate = self
@@ -56,12 +55,10 @@ class TeamShiftScheduleViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
         setDesign()
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
-        
         currentMonth += 1
         if currentMonth > 11 {
             currentMonth = 0

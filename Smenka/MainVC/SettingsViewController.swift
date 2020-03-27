@@ -24,14 +24,14 @@ class SettingsViewController: UIViewController {
         shiftTypeTable.dataSource = self
         
         customNavigationBar.delegate = self
+        customNavigationBar.setDesign()
         
         shiftTypes = realm.objects(ShiftType.self)
         
         self.view.backgroundColor = Style.backgroundColor
         shiftTypeTable.backgroundColor = Style.backgroundColor
         addTypeButton.tintColor = Style.buttonColor
-        shiftTypeLabel.textColor = Style.labelColor
-        
+        shiftTypeLabel.textColor = Style.labelColor      
     }
     
     @IBAction func addShiftType(_ sender: Any) {
