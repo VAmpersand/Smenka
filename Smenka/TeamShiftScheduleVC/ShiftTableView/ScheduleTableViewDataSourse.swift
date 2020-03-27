@@ -14,7 +14,6 @@ extension TeamShiftScheduleViewController: UITableViewDelegate, UITableViewDataS
         return 2
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1 {
             return 1
@@ -39,6 +38,7 @@ extension TeamShiftScheduleViewController: UITableViewDelegate, UITableViewDataS
         cell.staffLabel.text = "The number of employees"
         cell.staffLabel.backgroundColor = .clear
         cell.staffLabel.layer.borderColor = (UIColor.clear).cgColor
+        
         cell.shiftCollectionView.backgroundColor = Style.teamScheduleSistemColor
         cell.shiftCollectionView.layer.cornerRadius = 3
         return cell

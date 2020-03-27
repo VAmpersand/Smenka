@@ -12,11 +12,6 @@ class ShiftDataCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var shiftTypeLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setDesign()
-    }
-    
     func setDesign() {
         backgroundColor = .clear
 

@@ -1,36 +1,34 @@
 //
-//  TeamShiftScheduleTableViewCell.swift
+//  TeamShiftScheduleBuilderTableViewCell.swift
 //  Smenka
 //
-//  Created by Viktor on 11.03.2020.
+//  Created by Viktor on 27.03.2020.
 //  Copyright © 2020 Viktor. All rights reserved.
 //
 
 import UIKit
 
-class TeamShiftScheduleTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+class TeamShiftScheduleBuilderTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet var staffLabel: UILabel!
     @IBOutlet var shiftCollectionView: UICollectionView!
     
-    let teamShiftSchedulVC = TeamShiftScheduleViewController()
-    
-    override func awakeFromNib() {
+      override func awakeFromNib() {
         super.awakeFromNib()
         shiftCollectionView.delegate = self
         shiftCollectionView.dataSource = self
         setDesign()
     }
-    
+        
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        31
+        return 31
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shiftTypeCell", for: indexPath) as! ShiftDataCollectionViewCell
-
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shiftTypeCell", for: indexPath) as! TeamShiftScheduleBuilderCollectionViewCell
+        
         cell.setDesign()
-        cell.shiftTypeLabel.text = ""
+        cell.cellLabel.text = "\(indexPath.row + 1)"
         
         return cell
     }
@@ -49,5 +47,9 @@ class TeamShiftScheduleTableViewCell: UITableViewCell, UICollectionViewDelegate,
         
         shiftCollectionView.reloadData()
     }
-}
+    
+    
+    
+    
 
+}

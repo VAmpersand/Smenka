@@ -10,9 +10,10 @@ import UIKit
 
 class TeamShiftScheduleBuilderViewController: UIViewController {
     
-    @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var addStaffButton: UIButton!
-    
+    @IBOutlet var backButton: UIButton!
+    @IBOutlet var addStaffButton: UIButton!
+    @IBOutlet var shiftSchedalTableView: UITableView!
+  
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -22,6 +23,13 @@ class TeamShiftScheduleBuilderViewController: UIViewController {
         appDelegate.myOrientation = .landscapeRight
         UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
         
+        shiftSchedalTableView.delegate = self
+        shiftSchedalTableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setDesign()
     }
     
     //MARK: Return to portrait orientation
@@ -43,5 +51,18 @@ class TeamShiftScheduleBuilderViewController: UIViewController {
               addStaffVC.view.frame = self.view.frame
               self.view.addSubview(addStaffVC.view)
               addStaffVC.didMove(toParent: self)
-    } 
+    }
+    
+    func setDesign() {
+        self.view.backgroundColor = Style.backgroundColor
+        addStaffButton.setTitleColor(Style.buttonColor, for: .normal)
+        backButton.setTitleColor(Style.buttonColor, for: .normal)
+
+        shiftSchedalTableView.backgroundColor = Style.teamScheduleSistemColor
+        shiftSchedalTableView.layer.cornerRadius = 10
+        shiftSchedalTableView.separatorStyle = .none
+        shiftSchedalTableView.showsVerticalScrollIndicator = false
+        shiftSchedalTableView.reloadData()
+ 
+    }
 }

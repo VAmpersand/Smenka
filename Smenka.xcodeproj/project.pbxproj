@@ -39,6 +39,9 @@
 		774A852E23E35C5C00A653A6 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774A852D23E35C5C00A653A6 /* StorageManager.swift */; };
 		774F98D223F480D700596B08 /* TrailingSwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774F98D123F480D700596B08 /* TrailingSwipeAction.swift */; };
 		776AF2CF2418BD4A0018EA54 /* TeamShiftScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AF2CE2418BD4A0018EA54 /* TeamShiftScheduleTableViewCell.swift */; };
+		7778934F242E0FC8004FB852 /* TeamShiftScheduleBuilderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7778934E242E0FC8004FB852 /* TeamShiftScheduleBuilderTableViewCell.swift */; };
+		77789351242E1672004FB852 /* TeamShiftScheduleBuilderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77789350242E1672004FB852 /* TeamShiftScheduleBuilderCollectionViewCell.swift */; };
+		77789353242E2020004FB852 /* TeamShiftScheduleTableViewDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77789352242E2020004FB852 /* TeamShiftScheduleTableViewDataSourse.swift */; };
 		7783940223F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783940123F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift */; };
 		7783940423F8166F000BD2D4 /* RealmCascadeDeleteion_Ext_Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783940323F8166F000BD2D4 /* RealmCascadeDeleteion_Ext_Realm.swift */; };
 		7783940823F88A22000BD2D4 /* ValidationCheckRemovalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783940723F88A22000BD2D4 /* ValidationCheckRemovalView.swift */; };
@@ -147,6 +150,9 @@
 		774A852D23E35C5C00A653A6 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		774F98D123F480D700596B08 /* TrailingSwipeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingSwipeAction.swift; sourceTree = "<group>"; };
 		776AF2CE2418BD4A0018EA54 /* TeamShiftScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamShiftScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		7778934E242E0FC8004FB852 /* TeamShiftScheduleBuilderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamShiftScheduleBuilderTableViewCell.swift; sourceTree = "<group>"; };
+		77789350242E1672004FB852 /* TeamShiftScheduleBuilderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamShiftScheduleBuilderCollectionViewCell.swift; sourceTree = "<group>"; };
+		77789352242E2020004FB852 /* TeamShiftScheduleTableViewDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamShiftScheduleTableViewDataSourse.swift; sourceTree = "<group>"; };
 		7783940123F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTheShiftTypeForExistence_Func.swift; sourceTree = "<group>"; };
 		7783940323F8166F000BD2D4 /* RealmCascadeDeleteion_Ext_Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCascadeDeleteion_Ext_Realm.swift; sourceTree = "<group>"; };
 		7783940723F88A22000BD2D4 /* ValidationCheckRemovalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationCheckRemovalView.swift; sourceTree = "<group>"; };
@@ -424,6 +430,9 @@
 			children = (
 				77B30C9324140C0B00E92765 /* TeamShiftScheduleBuilder.storyboard */,
 				77B30C9024118D2100E92765 /* TeamShiftScheduleBuilderViewController.swift */,
+				77789352242E2020004FB852 /* TeamShiftScheduleTableViewDataSourse.swift */,
+				7778934E242E0FC8004FB852 /* TeamShiftScheduleBuilderTableViewCell.swift */,
+				77789350242E1672004FB852 /* TeamShiftScheduleBuilderCollectionViewCell.swift */,
 				77DE3FA0242BC99900C0CB3A /* AddStaffVC */,
 			);
 			path = TeamShiftScheduleBuilderVC;
@@ -663,8 +672,10 @@
 				7783940823F88A22000BD2D4 /* ValidationCheckRemovalView.swift in Sources */,
 				776AF2CF2418BD4A0018EA54 /* TeamShiftScheduleTableViewCell.swift in Sources */,
 				7793C70223E9F6010063BBA4 /* CheckTheSchudaleForExistence_Func.swift in Sources */,
+				7778934F242E0FC8004FB852 /* TeamShiftScheduleBuilderTableViewCell.swift in Sources */,
 				7793C70723EA092C0063BBA4 /* RemoveScheduleShifts_Func.swift in Sources */,
 				774A852E23E35C5C00A653A6 /* StorageManager.swift in Sources */,
+				77789353242E2020004FB852 /* TeamShiftScheduleTableViewDataSourse.swift in Sources */,
 				77DE3FA9242D056A00C0CB3A /* TypeColorCollectionViewCell.swift in Sources */,
 				77DE3F9D242BC6FC00C0CB3A /* AddStaffViewController.swift in Sources */,
 				7793C70923EDE3720063BBA4 /* TableViewDataSource_Ext_MainVC.swift in Sources */,
@@ -691,6 +702,7 @@
 				77B30C9B2414F11800E92765 /* CustomNavigationBarTeamShSchV.swift in Sources */,
 				77B30C9124118D2100E92765 /* TeamShiftScheduleBuilderViewController.swift in Sources */,
 				774A852123E0CA2C00A653A6 /* Ext_String.swift in Sources */,
+				77789351242E1672004FB852 /* TeamShiftScheduleBuilderCollectionViewCell.swift in Sources */,
 				77372B2E240A673600BA4BB3 /* SetEmptySaredData.swift in Sources */,
 				774A850B23D76A8400A653A6 /* MainViewController.swift in Sources */,
 				7793C70423E9FBD60063BBA4 /* CheckTheSchudaleForEmptiness_Func.swift in Sources */,

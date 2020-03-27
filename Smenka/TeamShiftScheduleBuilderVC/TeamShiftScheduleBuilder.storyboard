@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Izo-uM-i1B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Izo-uM-i1B">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dag-pH-W43">
-                                <rect key="frame" x="831" y="15" width="50" height="25"/>
+                                <rect key="frame" x="826" y="10" width="50" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="5fe-FD-mM1"/>
                                     <constraint firstAttribute="height" constant="25" id="KfF-7S-JIe"/>
@@ -27,7 +28,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxs-PH-PIE">
-                                <rect key="frame" x="765" y="15" width="63" height="25"/>
+                                <rect key="frame" x="753" y="10" width="63" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="63" id="8CL-8E-NBP"/>
                                 </constraints>
@@ -36,14 +37,101 @@
                                     <action selector="addStaffButtonPressed:" destination="Izo-uM-i1B" eventType="touchUpInside" id="WWh-uS-218"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eYj-Bf-tjl">
+                                <rect key="frame" x="41" y="41" width="835" height="267"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="teamTableViewCell" rowHeight="30" id="8oo-50-DEs" customClass="TeamShiftScheduleBuilderTableViewCell" customModule="Smenka" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="835" height="30"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8oo-50-DEs" id="54l-BB-82l">
+                                            <rect key="frame" x="3" y="0.0" width="808" height="30"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7l-3m-1hf">
+                                                    <rect key="frame" x="0.0" y="1" width="143" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="143" id="0YX-4q-qoo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d1K-GI-EXz">
+                                                    <rect key="frame" x="148" y="0.0" width="660" height="30"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="L5E-VQ-51W"/>
+                                                    </constraints>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Dl2-mt-mSR">
+                                                        <size key="itemSize" width="40" height="30"/>
+                                                        <size key="estimatedItemSize" width="40" height="30"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="shiftTypeCell" id="Hkx-rD-Jfi" customClass="TeamShiftScheduleBuilderCollectionViewCell" customModule="Smenka" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XSg-o2-SQo">
+                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebj-ut-0Lo">
+                                                                        <rect key="frame" x="1" y="1" width="38" height="28"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="38" id="WmC-gn-Qd2"/>
+                                                                            <constraint firstAttribute="height" constant="28" id="gES-X2-aE2"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="ebj-ut-0Lo" secondAttribute="trailing" constant="1" id="04t-99-Oei"/>
+                                                                    <constraint firstItem="ebj-ut-0Lo" firstAttribute="leading" secondItem="XSg-o2-SQo" secondAttribute="leading" constant="1" id="0F8-jp-hlB"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="ebj-ut-0Lo" secondAttribute="bottom" constant="1" id="998-tK-hNp"/>
+                                                                    <constraint firstItem="ebj-ut-0Lo" firstAttribute="top" secondItem="XSg-o2-SQo" secondAttribute="top" constant="1" id="Zr1-J9-0Wf"/>
+                                                                </constraints>
+                                                            </collectionViewCellContentView>
+                                                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <size key="customSize" width="40" height="30"/>
+                                                            <connections>
+                                                                <outlet property="cellLabel" destination="ebj-ut-0Lo" id="CLg-rc-XVo"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="p7l-3m-1hf" firstAttribute="leading" secondItem="54l-BB-82l" secondAttribute="leading" id="HTi-FJ-liu"/>
+                                                <constraint firstAttribute="bottom" secondItem="p7l-3m-1hf" secondAttribute="bottom" constant="1" id="P9y-QJ-2ap"/>
+                                                <constraint firstAttribute="trailing" secondItem="d1K-GI-EXz" secondAttribute="trailing" id="RCc-WV-L5c"/>
+                                                <constraint firstAttribute="bottom" secondItem="d1K-GI-EXz" secondAttribute="bottom" id="Xp0-cw-0PY"/>
+                                                <constraint firstItem="d1K-GI-EXz" firstAttribute="leading" secondItem="p7l-3m-1hf" secondAttribute="trailing" constant="5" id="lR1-fe-PJI"/>
+                                                <constraint firstItem="p7l-3m-1hf" firstAttribute="top" secondItem="54l-BB-82l" secondAttribute="top" constant="1" id="lSt-57-JUb"/>
+                                                <constraint firstItem="d1K-GI-EXz" firstAttribute="top" secondItem="54l-BB-82l" secondAttribute="top" id="nqJ-NP-09r"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="shiftCollectionView" destination="d1K-GI-EXz" id="TEt-vR-wEy"/>
+                                            <outlet property="staffLabel" destination="p7l-3m-1hf" id="2t7-Zc-0OH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="dag-pH-W43" firstAttribute="leading" secondItem="cxs-PH-PIE" secondAttribute="trailing" constant="3" id="8Ce-XL-yHb"/>
+                            <constraint firstItem="dag-pH-W43" firstAttribute="leading" secondItem="cxs-PH-PIE" secondAttribute="trailing" constant="10" id="8Ce-XL-yHb"/>
                             <constraint firstItem="cxs-PH-PIE" firstAttribute="height" secondItem="dag-pH-W43" secondAttribute="height" id="eag-EP-0eu"/>
-                            <constraint firstItem="dag-pH-W43" firstAttribute="trailing" secondItem="X1d-Iw-WfZ" secondAttribute="trailing" constant="-15" id="hhg-t5-dw6"/>
+                            <constraint firstItem="dag-pH-W43" firstAttribute="trailing" secondItem="X1d-Iw-WfZ" secondAttribute="trailing" constant="-20" id="hhg-t5-dw6"/>
                             <constraint firstItem="cxs-PH-PIE" firstAttribute="centerY" secondItem="dag-pH-W43" secondAttribute="centerY" id="i8y-Wp-pNY"/>
-                            <constraint firstItem="dag-pH-W43" firstAttribute="top" secondItem="H0G-cn-t0P" secondAttribute="top" constant="15" id="yCR-OJ-b4n"/>
+                            <constraint firstItem="dag-pH-W43" firstAttribute="top" secondItem="H0G-cn-t0P" secondAttribute="top" constant="10" id="yCR-OJ-b4n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H0G-cn-t0P"/>
                     </view>
@@ -51,11 +139,12 @@
                     <connections>
                         <outlet property="addStaffButton" destination="cxs-PH-PIE" id="Tvz-Cj-B9E"/>
                         <outlet property="backButton" destination="dag-pH-W43" id="3N1-xT-PDf"/>
+                        <outlet property="shiftSchedalTableView" destination="eYj-Bf-tjl" id="Tfo-LS-WSL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9P2-cM-Kpg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="360.9375" y="-330.43478260869568"/>
+            <point key="canvasLocation" x="468.75" y="-536.231884057971"/>
         </scene>
     </scenes>
 </document>
