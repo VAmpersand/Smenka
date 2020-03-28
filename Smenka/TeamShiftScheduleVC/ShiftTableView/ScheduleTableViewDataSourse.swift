@@ -41,6 +41,7 @@ extension TeamShiftScheduleViewController: UITableViewDelegate, UITableViewDataS
         
         cell.shiftCollectionView.backgroundColor = Style.teamScheduleSistemColor
         cell.shiftCollectionView.layer.cornerRadius = 3
+
         return cell
     }
     

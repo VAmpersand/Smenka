@@ -18,8 +18,6 @@ extension TeamShiftScheduleViewController: UICollectionViewDelegate, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! CalendarScrollCollectionViewCell
         
-        //        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(scrollCalendar))
-        //        cell.addGestureRecognizer(panGestureRecognizer)
         cell.setDesign()
         
         cell.dayLabel.text = "\(indexPath.row + 1)"
@@ -30,27 +28,9 @@ extension TeamShiftScheduleViewController: UICollectionViewDelegate, UICollectio
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//
-//    }
-    
-
     func collectionView(_ collectionView: UICollectionView, targetContentOffsetForProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
 
         
         return CGPoint(x: proposedContentOffset.x, y: proposedContentOffset.y)
     }
-    
-    //    @objc func scrollCalendar(recognizer: UIPanGestureRecognizer) {
-    //
-    //        if recognizer.state == .began {
-    //            print("Gesture began")
-    //        } else if recognizer.state == .changed {
-    //
-    //            let translation = recognizer.translation(in: self.view)
-    //
-    //        } else if recognizer.state == .ended {
-    //
-    //        }
-    //    }
 }

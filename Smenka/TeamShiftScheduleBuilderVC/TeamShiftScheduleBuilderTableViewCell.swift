@@ -13,13 +13,13 @@ class TeamShiftScheduleBuilderTableViewCell: UITableViewCell, UICollectionViewDe
     @IBOutlet var staffLabel: UILabel!
     @IBOutlet var shiftCollectionView: UICollectionView!
     
-      override func awakeFromNib() {
+    override func awakeFromNib() {
         super.awakeFromNib()
         shiftCollectionView.delegate = self
         shiftCollectionView.dataSource = self
         setDesign()
     }
-        
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 31
     }
@@ -28,7 +28,7 @@ class TeamShiftScheduleBuilderTableViewCell: UITableViewCell, UICollectionViewDe
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shiftTypeCell", for: indexPath) as! TeamShiftScheduleBuilderCollectionViewCell
         
         cell.setDesign()
-        cell.cellLabel.text = "\(indexPath.row + 1)"
+        cell.cellLabel.text = ""
         
         return cell
     }
@@ -48,8 +48,10 @@ class TeamShiftScheduleBuilderTableViewCell: UITableViewCell, UICollectionViewDe
         shiftCollectionView.reloadData()
     }
     
-    
-    
-    
-
 }
+
+
+
+
+
+

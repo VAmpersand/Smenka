@@ -34,7 +34,6 @@ extension ShiftTypeCreationVC: UICollectionViewDelegate, UICollectionViewDataSou
         // Fist choice after display ShiftTypeCreationView
         let colorWasUsed = colorCheckForUse(indexPath: indexPath)
         if colorWasUsed {          // Show animation if color was used early
-            cell.blurEffect.alpha = 1
             animateChoosingColorView(colorView: cell.colorView, indexPath: indexPath)
         } else {
             UIView.animate(withDuration: 0.5) {

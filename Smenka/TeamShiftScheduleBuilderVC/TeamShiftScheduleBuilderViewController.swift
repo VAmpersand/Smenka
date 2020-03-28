@@ -13,7 +13,7 @@ class TeamShiftScheduleBuilderViewController: UIViewController {
     @IBOutlet var backButton: UIButton!
     @IBOutlet var addStaffButton: UIButton!
     @IBOutlet var shiftSchedalTableView: UITableView!
-  
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -58,7 +58,6 @@ class TeamShiftScheduleBuilderViewController: UIViewController {
         addStaffButton.setTitleColor(Style.buttonColor, for: .normal)
         backButton.setTitleColor(Style.buttonColor, for: .normal)
 
-        shiftSchedalTableView.backgroundColor = Style.teamScheduleSistemColor
         shiftSchedalTableView.layer.cornerRadius = 10
         shiftSchedalTableView.separatorStyle = .none
         shiftSchedalTableView.showsVerticalScrollIndicator = false

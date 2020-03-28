@@ -17,7 +17,7 @@ class TeamShiftScheduleViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var scheduleTableView: UITableView!
     @IBOutlet var customNavigationBar: CustomNavigationBarTeamShSchV!
-        
+    
     let cellID = "cellID"
     var currentYear = 0
     var currentMonthIndex = 0
@@ -29,7 +29,7 @@ class TeamShiftScheduleViewController: UIViewController {
     
     var firstWeekDayOfMonth = 0
     var weekdays: [String] = []
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -113,9 +113,9 @@ class TeamShiftScheduleViewController: UIViewController {
                 daysCount = 28
             }
         }
-      
+        
         var currentWeekday = firstWeekDayOfMonth - 1
-   
+        
         var weekdays: [String] = []
         var counter = 1
         
@@ -148,7 +148,6 @@ class TeamShiftScheduleViewController: UIViewController {
         weekdays = getWeekdaysArray(currentMonth: currentMonth, firstWeekDayOfMonth: firstWeekDayOfMonth)
     }
 }
-
 
 extension TeamShiftScheduleViewController: PresentShiftScheduleBuilderDelegate {
     
