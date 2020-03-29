@@ -62,7 +62,7 @@ class ScheduleLineCell: BaseCell, UICollectionViewDelegate, UICollectionViewData
         
         shiftCollectionView.register(CalendarCollectionViewCell.self, forCellWithReuseIdentifier: calendarCollectionViewCellIdentifire)
         
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-30-[v0(140)]-5-[v1]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": staffLabel, "v1": shiftCollectionView]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-52-[v0(140)]-5-[v1]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": staffLabel, "v1": shiftCollectionView]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-1-[v0]-1-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": staffLabel]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": shiftCollectionView]))
         
