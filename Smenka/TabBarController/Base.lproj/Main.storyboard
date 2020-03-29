@@ -48,6 +48,7 @@
                     </tabBar>
                     <connections>
                         <outlet property="tabBar" destination="nHI-KW-z17" id="gCx-p5-za7"/>
+                        <segue destination="Wa4-yL-e6r" kind="relationship" relationship="viewControllers" id="sON-7Y-2ZI"/>
                         <segue destination="M6G-cs-aG8" kind="relationship" relationship="viewControllers" id="bhc-ZP-2bz"/>
                         <segue destination="i8S-OW-Vdx" kind="relationship" relationship="viewControllers" id="Y3y-IP-BUr"/>
                     </connections>

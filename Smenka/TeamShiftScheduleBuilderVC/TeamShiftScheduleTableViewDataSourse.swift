@@ -25,13 +25,13 @@ extension TeamShiftScheduleBuilderViewController: UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "teamTableViewCell", for: indexPath) as! TeamShiftScheduleBuilderTableViewCell
-        
+
         if indexPath.section == 0 {
             cell.staffLabel.text = ""
             cell.staffLabel.backgroundColor = .clear
             cell.staffLabel.layer.borderColor = (UIColor.clear).cgColor
             cell.shiftCollectionView.backgroundColor = Style.teamScheduleSistemColor
-            
+
         } else if indexPath.section == 1 {
             cell.staffLabel.text = "Test"
             cell.staffLabel.textAlignment = .left
@@ -40,7 +40,7 @@ extension TeamShiftScheduleBuilderViewController: UITableViewDelegate, UITableVi
             cell.staffLabel.backgroundColor = .clear
             cell.staffLabel.layer.borderColor = (Style.labelColor).cgColor
             cell.staffLabel.backgroundColor = Style.teamScheduleSistemColor
-            
+
         } else {
             cell.staffLabel.textAlignment = .right
             cell.staffLabel.font = UIFont(name: "Helvetica neue", size: 10)
@@ -50,12 +50,12 @@ extension TeamShiftScheduleBuilderViewController: UITableViewDelegate, UITableVi
             cell.staffLabel.layer.borderColor = (UIColor.clear).cgColor
             cell.shiftCollectionView.backgroundColor = Style.teamScheduleSistemColor
         }
-        
+
         cell.shiftCollectionView.layer.cornerRadius = 3
-        
+
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
             return 0

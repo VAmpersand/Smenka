@@ -152,6 +152,9 @@ class TeamShiftScheduleViewController: UIViewController {
 extension TeamShiftScheduleViewController: PresentShiftScheduleBuilderDelegate {
     
     func editButtonPressed() {
-        performSegue(withIdentifier: "segueToShSchBuilder", sender: self)
+//        performSegue(withIdentifier: "segueToShSchBuilder", sender: self)
+        
+        let teamScheduleVC = TeamScheduleViewController()
+             self.present(teamScheduleVC, animated: true, completion: nil)
     }
 }

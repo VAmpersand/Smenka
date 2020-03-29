@@ -11,15 +11,16 @@ import UIKit
 class TeamShiftScheduleBuilderCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var cellLabel: UILabel!
-        
+    
     func setDesign() {
         backgroundColor = .clear
-
+        
         cellLabel.textColor = Style.labelColor
         cellLabel.layer.cornerRadius = 3
         cellLabel.clipsToBounds = true
         cellLabel.layer.borderColor = (Style.teamScheduleBorderColor).cgColor
         cellLabel.layer.borderWidth = 1
-
+        
     }
 }
+

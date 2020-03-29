@@ -64,6 +64,11 @@
 		7793C71523F04A960063BBA4 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C71423F04A960063BBA4 /* TableViewDataSource.swift */; };
 		7793C71723F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793C71623F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift */; };
 		7798341623FDD38300CB5180 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7798341523FDD38300CB5180 /* Alert.storyboard */; };
+		779C31AB2430B1F500C11B77 /* TeamScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779C31AA2430B1F500C11B77 /* TeamScheduleViewController.swift */; };
+		779C31AD2430B25100C11B77 /* CustomCollectionViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779C31AC2430B25100C11B77 /* CustomCollectionViewCells.swift */; };
+		779C31AF2430DE4900C11B77 /* TeamScheduleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779C31AE2430DE4900C11B77 /* TeamScheduleHeader.swift */; };
+		779C31B12430DE6100C11B77 /* TeemSchedale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779C31B02430DE6100C11B77 /* TeemSchedale.swift */; };
+		779C31B32430DE7C00C11B77 /* TeamScheduleFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779C31B22430DE7C00C11B77 /* TeamScheduleFooter.swift */; };
 		779FA32E2416DF4400F501F4 /* ShiftDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779FA32C2416DF4400F501F4 /* ShiftDataCollectionViewCell.swift */; };
 		779FA33A2417817600F501F4 /* ScheduleTableViewDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779FA3392417817600F501F4 /* ScheduleTableViewDataSourse.swift */; };
 		77A73ABD24169D3100BDE801 /* CalendarScrollCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A73ABB24169D3100BDE801 /* CalendarScrollCollectionViewCell.swift */; };
@@ -175,6 +180,11 @@
 		7793C71423F04A960063BBA4 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		7793C71623F04B2E0063BBA4 /* ShiftTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftTypeTableViewCell.swift; sourceTree = "<group>"; };
 		7798341523FDD38300CB5180 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
+		779C31AA2430B1F500C11B77 /* TeamScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamScheduleViewController.swift; sourceTree = "<group>"; };
+		779C31AC2430B25100C11B77 /* CustomCollectionViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCells.swift; sourceTree = "<group>"; };
+		779C31AE2430DE4900C11B77 /* TeamScheduleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamScheduleHeader.swift; sourceTree = "<group>"; };
+		779C31B02430DE6100C11B77 /* TeemSchedale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeemSchedale.swift; sourceTree = "<group>"; };
+		779C31B22430DE7C00C11B77 /* TeamScheduleFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamScheduleFooter.swift; sourceTree = "<group>"; };
 		779FA32C2416DF4400F501F4 /* ShiftDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftDataCollectionViewCell.swift; sourceTree = "<group>"; };
 		779FA3392417817600F501F4 /* ScheduleTableViewDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewDataSourse.swift; sourceTree = "<group>"; };
 		77A73ABB24169D3100BDE801 /* CalendarScrollCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarScrollCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -433,6 +443,11 @@
 				77789352242E2020004FB852 /* TeamShiftScheduleTableViewDataSourse.swift */,
 				7778934E242E0FC8004FB852 /* TeamShiftScheduleBuilderTableViewCell.swift */,
 				77789350242E1672004FB852 /* TeamShiftScheduleBuilderCollectionViewCell.swift */,
+				779C31AA2430B1F500C11B77 /* TeamScheduleViewController.swift */,
+				779C31AE2430DE4900C11B77 /* TeamScheduleHeader.swift */,
+				779C31B02430DE6100C11B77 /* TeemSchedale.swift */,
+				779C31B22430DE7C00C11B77 /* TeamScheduleFooter.swift */,
+				779C31AC2430B25100C11B77 /* CustomCollectionViewCells.swift */,
 				77DE3FA0242BC99900C0CB3A /* AddStaffVC */,
 			);
 			path = TeamShiftScheduleBuilderVC;
@@ -711,8 +726,13 @@
 				7783940223F7E657000BD2D4 /* CheckTheShiftTypeForExistence_Func.swift in Sources */,
 				77372B30240BB5F900BA4BB3 /* SetDefaultDBRealmDirectory_Func.swift in Sources */,
 				774A850723D76A8400A653A6 /* AppDelegate.swift in Sources */,
+				779C31B12430DE6100C11B77 /* TeemSchedale.swift in Sources */,
 				774A852923E3562900A653A6 /* ShiftModel.swift in Sources */,
 				7783940423F8166F000BD2D4 /* RealmCascadeDeleteion_Ext_Realm.swift in Sources */,
+				779C31AD2430B25100C11B77 /* CustomCollectionViewCells.swift in Sources */,
+				779C31AF2430DE4900C11B77 /* TeamScheduleHeader.swift in Sources */,
+				779C31AB2430B1F500C11B77 /* TeamScheduleViewController.swift in Sources */,
+				779C31B32430DE7C00C11B77 /* TeamScheduleFooter.swift in Sources */,
 				7793C70D23EDEF270063BBA4 /* ShiftTypeCell.swift in Sources */,
 				77E6A1162405C0C500F4A655 /* ViewStyle.swift in Sources */,
 				779FA32E2416DF4400F501F4 /* ShiftDataCollectionViewCell.swift in Sources */,
@@ -772,7 +792,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "VP-P.Smenka.Shifts";
+				PRODUCT_BUNDLE_IDENTIFIER = "VP-P.com.Smenka.Shifts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -794,7 +814,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "VP-P.Smenka.Shifts";
+				PRODUCT_BUNDLE_IDENTIFIER = "VP-P.com.Smenka.Shifts";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -931,7 +951,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "VP-P.Smenka";
+				PRODUCT_BUNDLE_IDENTIFIER = "VP-P.com.Smenka";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -952,7 +972,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "VP-P.Smenka";
+				PRODUCT_BUNDLE_IDENTIFIER = "VP-P.com.Smenka";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
