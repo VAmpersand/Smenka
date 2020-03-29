@@ -24,13 +24,14 @@ class CalendarHeaderLineCell: BaseCell, UICollectionViewDelegate, UICollectionVi
     }()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 31
+        return weekdays.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: calendarHeaderCollectionViewCellIdentifire, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: calendarHeaderCollectionViewCellIdentifire, for: indexPath) as! CalendarHeaderCollectionViewCell
         
-        cell.backgroundColor = .clear
+        cell.dateLabel.text = "\(indexPath.row + 1)"
+        cell.weekdayLabel.text = weekdays[indexPath.row]
         
         return cell
     }

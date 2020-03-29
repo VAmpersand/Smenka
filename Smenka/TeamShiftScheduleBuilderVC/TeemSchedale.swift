@@ -37,14 +37,14 @@ class ScheduleLineCell: BaseCell, UICollectionViewDelegate, UICollectionViewData
     }()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 31
+        return weekdays.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: calendarCollectionViewCellIdentifire, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: calendarCollectionViewCellIdentifire, for: indexPath) as! CalendarCollectionViewCell
         
-        cell.backgroundColor = .clear
-        
+        cell.shftLabel.text = ""
+
         return cell
     }
     

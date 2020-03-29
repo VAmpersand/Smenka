@@ -60,7 +60,6 @@ class CalendarHeaderCollectionViewCell: BaseCell {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-1-[v0]-1-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": dateLabel]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-1-[v0]-1-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": weekdayLabel]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-1-[v0(22)]-1-[v1(22)]-1-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": dateLabel, "v1": weekdayLabel]))
-        
     }
 }
 

@@ -22,7 +22,7 @@ extension TeamShiftScheduleViewController: UICollectionViewDelegate, UICollectio
         
         cell.dayLabel.text = "\(indexPath.row + 1)"
         
-        let weekdays = getWeekdaysArray(currentMonth: currentMonth, firstWeekDayOfMonth: firstWeekDayOfMonth)
+        let weekdays = getWeekdaysArray(currentMonth: currentMonth, firstWeekDayOfMonth: firstWeekDayOfMonth, currentYear: currentYear)
         cell.weekdayLabel.text = weekdays[indexPath.row]
         
         return cell

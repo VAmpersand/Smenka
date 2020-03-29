@@ -40,7 +40,7 @@ class TeamShiftScheduleViewController: UIViewController {
         currentMonth = currentMonthIndex - 1
         
         firstWeekDayOfMonth = getIndexFirstWeekDay(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
-        weekdays = getWeekdaysArray(currentMonth: currentMonth, firstWeekDayOfMonth: firstWeekDayOfMonth)
+        weekdays = getWeekdaysArray(currentMonth: currentMonth, firstWeekDayOfMonth: firstWeekDayOfMonth, currentYear: currentYear)
         
         monthLabel.text = "\(months[currentMonth]) \(currentYear)"
         
@@ -100,36 +100,36 @@ class TeamShiftScheduleViewController: UIViewController {
         scheduleTableView.reloadData()
     }
     
-    //MARK: Creating data array for present in table header in teamShiftScheduleVC 
-    func getWeekdaysArray(currentMonth: Int, firstWeekDayOfMonth: Int) -> [String] {
-        
-        var daysCount = numbersOfDaysInMonth[currentMonth]
-        
-        //    For leap year, make february month of 29 days
-        if currentMonth == 1 {
-            if currentYear % 4 == 0 {
-                daysCount = 29
-            } else {
-                daysCount = 28
-            }
-        }
-        
-        var currentWeekday = firstWeekDayOfMonth - 1
-        
-        var weekdays: [String] = []
-        var counter = 1
-        
-        while counter != daysCount + 1 {
-            weekdays.append(daysOfWeek[currentWeekday])
-            currentWeekday += 1
-            if currentWeekday == 7 {
-                currentWeekday = 0
-            }
-            counter += 1
-        }
-        
-        return weekdays
-    }
+//    //MARK: Creating data array for present in table header in teamShiftScheduleVC
+//    func getWeekdaysArray(currentMonth: Int, firstWeekDayOfMonth: Int) -> [String] {
+//
+//        var daysCount = numbersOfDaysInMonth[currentMonth]
+//
+//        //    For leap year, make february month of 29 days
+//        if currentMonth == 1 {
+//            if currentYear % 4 == 0 {
+//                daysCount = 29
+//            } else {
+//                daysCount = 28
+//            }
+//        }
+//
+//        var currentWeekday = firstWeekDayOfMonth - 1
+//
+//        var weekdays: [String] = []
+//        var counter = 1
+//
+//        while counter != daysCount + 1 {
+//            weekdays.append(daysOfWeek[currentWeekday])
+//            currentWeekday += 1
+//            if currentWeekday == 7 {
+//                currentWeekday = 0
+//            }
+//            counter += 1
+//        }
+//
+//        return weekdays
+//    }
     
     func didChangeMonth(currentMonth: Int, year: Int) {
         currentMonthIndex = currentMonth + 1
@@ -145,7 +145,7 @@ class TeamShiftScheduleViewController: UIViewController {
         }
         
         firstWeekDayOfMonth = getIndexFirstWeekDay(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
-        weekdays = getWeekdaysArray(currentMonth: currentMonth, firstWeekDayOfMonth: firstWeekDayOfMonth)
+        weekdays = getWeekdaysArray(currentMonth: currentMonth, firstWeekDayOfMonth: firstWeekDayOfMonth, currentYear: currentYear)
     }
 }
 

@@ -8,10 +8,20 @@
 
 import UIKit
 
+var weekdays: [String] = []
+
 class TeamScheduleViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // Delegate allowing chenged screen orientation
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    var currentYear = 0
+    var currentMonthIndex = 0
+    var currentMonth = 0
+    var currentDay = 0
+    
+    var firstWeekDayOfMonth = 0
+   
     
     let collectionViewCellIdentifire = "collectionViewCell"
     let headerCollectionViewCellIdentifire = "headerCollectionViewCell"
@@ -32,6 +42,15 @@ class TeamScheduleViewController: UIViewController, UICollectionViewDelegate, UI
         teamScheduleCollectionView.register(ScheduleLineCell.self, forCellWithReuseIdentifier: collectionViewCellIdentifire)
         teamScheduleCollectionView.register(CalendarHeaderLineCell.self, forCellWithReuseIdentifier: headerCollectionViewCellIdentifire)
         teamScheduleCollectionView.register(CalendarFooterLineCell.self, forCellWithReuseIdentifier: footerCollectionViewCellIdentifire)
+        
+        currentYear = Calendar.current.component(.year, from: Date())
+        currentMonthIndex = Calendar.current.component(.month, from: Date())
+        currentDay = Calendar.current.component(.day, from: Date())
+        
+        currentMonth = currentMonthIndex - 1
+        
+        firstWeekDayOfMonth = getIndexFirstWeekDay(currentYear: currentYear, currentMonthIndex: currentMonthIndex)
+        weekdays = getWeekdaysArray(currentMonth: currentMonth, firstWeekDayOfMonth: firstWeekDayOfMonth, currentYear: currentYear)
         
         
         // Set landscapeLeft orientaion for this VC
@@ -60,7 +79,7 @@ class TeamScheduleViewController: UIViewController, UICollectionViewDelegate, UI
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: footerCollectionViewCellIdentifire, for: indexPath) as! CalendarFooterLineCell
-                       return cell
+            return cell
         }
     }
     
