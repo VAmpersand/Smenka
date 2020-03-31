@@ -7,20 +7,20 @@
 //
 
 import UIKit
-
-class ShiftDataCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet var shiftTypeLabel: UILabel!
-    
-    func setDesign() {
-        backgroundColor = .clear
-
-        shiftTypeLabel.textColor = Style.labelColor
-        shiftTypeLabel.layer.cornerRadius = 3
-        shiftTypeLabel.clipsToBounds = true
-        shiftTypeLabel.layer.borderColor = (Style.teamScheduleBorderColor).cgColor
-        shiftTypeLabel.layer.borderWidth = 1
-
-    }
-
-}
+//
+//class ShiftDataCollectionViewCell: UICollectionViewCell {
+//    
+//    @IBOutlet var shiftTypeLabel: UILabel!
+//    
+//    func setDesign() {
+//        backgroundColor = .clear
+//
+//        shiftTypeLabel.textColor = Style.labelColor
+//        shiftTypeLabel.layer.cornerRadius = 3
+//        shiftTypeLabel.clipsToBounds = true
+//        shiftTypeLabel.layer.borderColor = (Style.teamScheduleBorderColor).cgColor
+//        shiftTypeLabel.layer.borderWidth = 1
+//
+//    }
+//
+//}

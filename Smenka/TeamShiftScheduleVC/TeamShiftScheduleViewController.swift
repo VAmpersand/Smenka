@@ -9,14 +9,29 @@
 import UIKit
 import RealmSwift
 
-class TeamShiftScheduleViewController: UIViewController {
+var weekdays: [String] = []
+
+class TeamShiftScheduleViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet var backButton: UIButton!
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var monthLabel: UILabel!
-    @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var scheduleTableView: UITableView!
     @IBOutlet var customNavigationBar: CustomNavigationBarTeamShSchV!
+    
+    let schedulesCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 0
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
+    }()
+    
+    let headerCollectionViewCellIdentifire = "headerCollectionViewCell"
+    let schedulesCellIdentifire = "schedulesCell"
+    let footerCollectionViewCellIdentifire = "footerCollectionViewCell"
     
     let cellID = "cellID"
     var currentYear = 0
@@ -28,10 +43,11 @@ class TeamShiftScheduleViewController: UIViewController {
     var currentContentOffset: CGPoint!
     
     var firstWeekDayOfMonth = 0
-    var weekdays: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupViews()
         
         currentYear = Calendar.current.component(.year, from: Date())
         currentMonthIndex = Calendar.current.component(.month, from: Date())
@@ -44,11 +60,12 @@ class TeamShiftScheduleViewController: UIViewController {
         
         monthLabel.text = "\(months[currentMonth]) \(currentYear)"
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        schedulesCollectionView.delegate = self
+        schedulesCollectionView.dataSource = self
         
-        scheduleTableView.delegate = self
-        scheduleTableView.dataSource = self
+        schedulesCollectionView.register(CalendarHeaderLineCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerCollectionViewCellIdentifire)
+        schedulesCollectionView.register(CalendarFooterLineCell.self, forCellWithReuseIdentifier: footerCollectionViewCellIdentifire)
+        schedulesCollectionView.register(SchedulesCell.self, forCellWithReuseIdentifier: schedulesCellIdentifire)
         
         customNavigationBar.delegate = self
     }
@@ -67,7 +84,7 @@ class TeamShiftScheduleViewController: UIViewController {
         
         monthLabel.text = "\(months[currentMonth]) \(currentYear)"
         didChangeMonth(currentMonth: currentMonth, year: currentYear)
-        collectionView.reloadData()
+        schedulesCollectionView.reloadData()
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -79,7 +96,7 @@ class TeamShiftScheduleViewController: UIViewController {
         
         monthLabel.text = "\(months[currentMonth]) \(currentYear)"
         didChangeMonth(currentMonth: currentMonth, year: currentYear)
-        collectionView.reloadData()
+        schedulesCollectionView.reloadData()
     }
     
     func setDesign() {
@@ -88,48 +105,59 @@ class TeamShiftScheduleViewController: UIViewController {
         backButton.setTitleColor(Style.labelColor, for: .normal)
         monthLabel.textColor = Style.labelColor
         
-        collectionView.backgroundColor = Style.teamScheduleSistemColor
-        collectionView.layer.cornerRadius = 3
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.reloadData()
-        
-        collectionView.scrollToItem(at: IndexPath(row: currentDay - 1, section: 0), at: .left, animated: false)
-        
         customNavigationBar.setDesign()
-        
-        scheduleTableView.reloadData()
     }
     
-//    //MARK: Creating data array for present in table header in teamShiftScheduleVC
-//    func getWeekdaysArray(currentMonth: Int, firstWeekDayOfMonth: Int) -> [String] {
-//
-//        var daysCount = numbersOfDaysInMonth[currentMonth]
-//
-//        //    For leap year, make february month of 29 days
-//        if currentMonth == 1 {
-//            if currentYear % 4 == 0 {
-//                daysCount = 29
-//            } else {
-//                daysCount = 28
-//            }
-//        }
-//
-//        var currentWeekday = firstWeekDayOfMonth - 1
-//
-//        var weekdays: [String] = []
-//        var counter = 1
-//
-//        while counter != daysCount + 1 {
-//            weekdays.append(daysOfWeek[currentWeekday])
-//            currentWeekday += 1
-//            if currentWeekday == 7 {
-//                currentWeekday = 0
-//            }
-//            counter += 1
-//        }
-//
-//        return weekdays
-//    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if indexPath.section == 0{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: schedulesCellIdentifire, for: indexPath) as! SchedulesCell
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: footerCollectionViewCellIdentifire, for: indexPath) as! CalendarFooterLineCell
+            return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 0 {
+            let height = view.frame.height - 300 - CGFloat(Int(view.frame.height - 300) % 27)
+            return CGSize(width: view.frame.width, height: height)
+        }
+        return CGSize(width: view.frame.width, height: 30)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 0 {
+            return CGSize(width: view.frame.width, height: 45)
+        }
+        return CGSize(width: view.frame.width, height: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerCollectionViewCellIdentifire, for: indexPath)
+    }
+    
+    
+    
+    func  setupViews() {
+        
+        view.addSubview(schedulesCollectionView)
+        let colectionViewHeight = String(Int(view.frame.size.width))
+        
+        
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(-25)-[v0(\(colectionViewHeight))]-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": schedulesCollectionView]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-130-[v0]-90-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": schedulesCollectionView]))
+    }
     
     func didChangeMonth(currentMonth: Int, year: Int) {
         currentMonthIndex = currentMonth + 1
@@ -152,9 +180,7 @@ class TeamShiftScheduleViewController: UIViewController {
 extension TeamShiftScheduleViewController: PresentShiftScheduleBuilderDelegate {
     
     func editButtonPressed() {
-//        performSegue(withIdentifier: "segueToShSchBuilder", sender: self)
-        
         let teamScheduleVC = TeamScheduleViewController()
-             self.present(teamScheduleVC, animated: true, completion: nil)
+        self.present(teamScheduleVC, animated: true, completion: nil)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  TeemSchedale.swift
+//  TeemSchedale_Shifts.swift
 //  Smenka
 //
 //  Created by Viktor on 29.03.2020.
@@ -7,6 +7,54 @@
 //
 
 import UIKit
+
+class SchedulesCell: BaseCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    let schedulesCollectionViewCellIdentifire = "shedulesViewCell"
+    
+    let calendarCollectionViewCellIdentifire = "calendarCollectionViewCell"
+    
+    let cellID = "cellID"
+    
+    let schedulesCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 0
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
+    }()
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 30
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! ScheduleLineCell
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: frame.width, height: 27)
+    }
+    
+    
+    override func setupViews() {
+        addSubview(schedulesCollectionView)
+        
+        schedulesCollectionView.delegate = self
+        schedulesCollectionView.dataSource = self
+        
+        schedulesCollectionView.register(ScheduleLineCell.self, forCellWithReuseIdentifier: cellID)
+        
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": schedulesCollectionView]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": schedulesCollectionView]))
+        
+    }
+}
+
 
 class ScheduleLineCell: BaseCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -44,7 +92,7 @@ class ScheduleLineCell: BaseCell, UICollectionViewDelegate, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: calendarCollectionViewCellIdentifire, for: indexPath) as! CalendarCollectionViewCell
         
         cell.shftLabel.text = ""
-
+        
         return cell
     }
     
@@ -69,3 +117,4 @@ class ScheduleLineCell: BaseCell, UICollectionViewDelegate, UICollectionViewData
     }
     
 }
+
