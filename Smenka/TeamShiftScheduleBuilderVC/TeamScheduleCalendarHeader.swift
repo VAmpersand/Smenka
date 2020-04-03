@@ -16,6 +16,7 @@ class CalendarHeaderLineCell: BaseCell, UICollectionViewDelegate, UICollectionVi
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
+        layout.sectionInsetReference = .fromSafeArea
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
@@ -51,7 +52,7 @@ class CalendarHeaderLineCell: BaseCell, UICollectionViewDelegate, UICollectionVi
         
         shiftCollectionView.register(CalendarHeaderCollectionViewCell.self, forCellWithReuseIdentifier: calendarHeaderCollectionViewCellIdentifire)
         
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-145-[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": shiftCollectionView]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-155-[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": shiftCollectionView]))
    
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": shiftCollectionView]))
     }

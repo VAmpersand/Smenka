@@ -39,30 +39,4 @@ class DateCollectionViewCell: UICollectionViewCell {
         shiftView.layer.backgroundColor = UIColor.clear.cgColor
     }
     
-//    func drowCircleForSelectedDay(color: UIColor) {
-//        
-//        let center = shiftColorView.center
-//        
-//        let circlePath = UIBezierPath(arcCenter: center, radius: (shiftColorView.bounds.width / 2 - 13), startAngle: (3 * CGFloat.pi / 2), endAngle: (9 * CGFloat.pi / 2), clockwise: true)
-//        
-//        let circleLayer = CAShapeLayer()
-//        circleLayer.path = circlePath.cgPath
-//        circleLayer.strokeColor = color.cgColor
-//        circleLayer.lineWidth = 15
-//        circleLayer.strokeEnd = 0
-//        circleLayer.fillColor = UIColor.clear.cgColor
-//        circleLayer.lineCap = CAShapeLayerLineCap.round
-//        
-//        let animation = CABasicAnimation(keyPath: "strokeEnd")
-//        animation.duration = 0.5
-//        animation.toValue = 1
-//        animation.fillMode = CAMediaTimingFillMode.forwards
-//        animation.isRemovedOnCompletion = false
-//        
-//        circleLayer.add(animation, forKey: nil)
-//        
-//        shiftColorView.layer.addSublayer(circleLayer)
-//        shiftColorView.layer.backgroundColor = UIColor.clear.cgColor
-//    }
-    
 }

@@ -22,6 +22,7 @@ class TeamShiftScheduleViewController: UIViewController, UICollectionViewDelegat
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 0
+        layout.sectionInsetReference = .fromSafeArea
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
         collectionView.showsVerticalScrollIndicator = false
@@ -46,8 +47,6 @@ class TeamShiftScheduleViewController: UIViewController, UICollectionViewDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupViews()
         
         currentYear = Calendar.current.component(.year, from: Date())
         currentMonthIndex = Calendar.current.component(.month, from: Date())
@@ -147,16 +146,21 @@ class TeamShiftScheduleViewController: UIViewController, UICollectionViewDelegat
         return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerCollectionViewCellIdentifire, for: indexPath)
     }
     
-    
-    
-    func  setupViews() {
+    override func viewSafeAreaInsetsDidChange() {
+        super.viewSafeAreaInsetsDidChange()
+        
+        let newInsets = view.safeAreaInsets
+        let leftMargin = newInsets.left > 0 ? newInsets.left : 15
+        let rightMargin = newInsets.right > 0 ? newInsets.right : 15
+
+        let metrics = [
+            "leftMargin": leftMargin,
+            "rightMargin": rightMargin]
         
         view.addSubview(schedulesCollectionView)
-        let colectionViewHeight = String(Int(view.frame.size.width))
         
-        
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(-25)-[v0(\(colectionViewHeight))]-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": schedulesCollectionView]))
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-130-[v0]-90-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": schedulesCollectionView]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-leftMargin-[v0]-rightMargin-|", options: NSLayoutConstraint.FormatOptions(), metrics: metrics, views: ["v0": schedulesCollectionView]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-130-[v0]-90-|", options: NSLayoutConstraint.FormatOptions(), metrics: metrics, views: ["v0": schedulesCollectionView]))
     }
     
     func didChangeMonth(currentMonth: Int, year: Int) {
