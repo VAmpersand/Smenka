@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class SchedulesCell: BaseCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -48,15 +49,9 @@ class SchedulesCell: BaseCell, UICollectionViewDelegate, UICollectionViewDataSou
         
         schedulesCollectionView.register(ScheduleLineCell.self, forCellWithReuseIdentifier: cellID)
         
-        schedulesCollectionView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
-        schedulesCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
-        schedulesCollectionView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
-        schedulesCollectionView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": schedulesCollectionView]))
         
-//        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": schedulesCollectionView]))
-//
-//        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": schedulesCollectionView]))
-//
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": schedulesCollectionView]))
     }
 }
 
@@ -117,15 +112,9 @@ class ScheduleLineCell: BaseCell, UICollectionViewDelegate, UICollectionViewData
         shiftCollectionView.register(CalendarCollectionViewCell.self, forCellWithReuseIdentifier: calendarCollectionViewCellIdentifire)
         
         
-        staffLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 1).isActive = true
-        staffLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 1).isActive = true
-        staffLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 44).isActive = true
-        staffLabel.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        
-        shiftCollectionView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
-        shiftCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
-        shiftCollectionView.leftAnchor.constraint(equalTo: staffLabel.rightAnchor, constant: 5).isActive = true
-        shiftCollectionView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0(150)]-5-[v1]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": staffLabel, "v1": shiftCollectionView]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-1-[v0]-1-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": staffLabel]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": shiftCollectionView]))
     }
     
 }

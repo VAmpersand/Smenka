@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 
+
 var weekdays: [String] = []
 
 class TeamShiftScheduleViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -20,15 +21,17 @@ class TeamShiftScheduleViewController: UIViewController, UICollectionViewDelegat
     
     let schedulesCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 0
+        layout.sectionHeadersPinToVisibleBounds = true
         layout.sectionInsetReference = .fromSafeArea
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
         collectionView.showsVerticalScrollIndicator = false
+        collectionView.alwaysBounceVertical = true
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
+    
     
     let headerCollectionViewCellIdentifire = "headerCollectionViewCell"
     let schedulesCellIdentifire = "schedulesCell"
@@ -104,6 +107,8 @@ class TeamShiftScheduleViewController: UIViewController, UICollectionViewDelegat
         backButton.setTitleColor(Style.labelColor, for: .normal)
         monthLabel.textColor = Style.labelColor
         
+        schedulesCollectionView.reloadData()
+
         customNavigationBar.setDesign()
     }
     
@@ -128,11 +133,18 @@ class TeamShiftScheduleViewController: UIViewController, UICollectionViewDelegat
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // Calc height
+        let height = view.frame.height - 300 - CGFloat(Int(view.frame.height - 300) % 27)
+        
+        // Calc width
+        var width = collectionView.frame.width
+        let contentInset = collectionView.contentInset
+        width = width - contentInset.left - contentInset.right
+        
         if indexPath.section == 0 {
-            let height = view.frame.height - 300 - CGFloat(Int(view.frame.height - 300) % 27)
-            return CGSize(width: view.frame.width, height: height)
+            return CGSize(width: width, height: height)
         }
-        return CGSize(width: view.frame.width, height: 30)
+        return CGSize(width: width, height: 30)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -141,6 +153,7 @@ class TeamShiftScheduleViewController: UIViewController, UICollectionViewDelegat
         }
         return CGSize(width: view.frame.width, height: 0)
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerCollectionViewCellIdentifire, for: indexPath)
@@ -152,7 +165,7 @@ class TeamShiftScheduleViewController: UIViewController, UICollectionViewDelegat
         let newInsets = view.safeAreaInsets
         let leftMargin = newInsets.left > 0 ? newInsets.left : 15
         let rightMargin = newInsets.right > 0 ? newInsets.right : 15
-
+        
         let metrics = [
             "leftMargin": leftMargin,
             "rightMargin": rightMargin]

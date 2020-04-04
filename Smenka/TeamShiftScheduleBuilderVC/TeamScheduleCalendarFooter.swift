@@ -54,6 +54,7 @@ class CalendarFooterLineCell: BaseCell, UICollectionViewDataSource, UICollection
     }
     
     override func setupViews() {
+        
         addSubview(staffLabel)
         addSubview(shiftCollectionView)
         
@@ -65,15 +66,13 @@ class CalendarFooterLineCell: BaseCell, UICollectionViewDataSource, UICollection
         
         staffLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 1).isActive = true
         staffLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 1).isActive = true
-        staffLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 44).isActive = true
+        staffLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
         staffLabel.widthAnchor.constraint(equalToConstant: 150).isActive = true
         
         shiftCollectionView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
         shiftCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
         shiftCollectionView.leftAnchor.constraint(equalTo: staffLabel.rightAnchor, constant: 5).isActive = true
         shiftCollectionView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
-        
-    
         
 //        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0(150)]-5-[v1]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": staffLabel, "v1": shiftCollectionView]))
 //        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-1-[v0]-1-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": staffLabel]))

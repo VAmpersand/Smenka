@@ -17,8 +17,19 @@ class TeamScheduleViewController: UIViewController, UICollectionViewDelegate, UI
     let schedulesCellIdentifire = "schedulesCell"
     let footerCollectionViewCellIdentifire = "footerCollectionViewCell"
     
-    let teamScheduleCollectionView = TeamScheduleCollectionView()
-        
+    let teamScheduleCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 0
+        layout.sectionHeadersPinToVisibleBounds = true
+        layout.sectionInsetReference = .fromSafeArea
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.alwaysBounceVertical = true
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
+    }()
+    
     let monthLabel: UILabel = {
         let label = UILabel()
         label.text = "March 2020"
@@ -56,14 +67,16 @@ class TeamScheduleViewController: UIViewController, UICollectionViewDelegate, UI
         teamScheduleCollectionView.dataSource = self
         
         teamScheduleCollectionView.register(CalendarHeaderLineCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerCollectionViewCellIdentifire)
-        teamScheduleCollectionView.register(CalendarFooterLineCell.self, forCellWithReuseIdentifier: footerCollectionViewCellIdentifire)
+        
         teamScheduleCollectionView.register(SchedulesCell.self, forCellWithReuseIdentifier: schedulesCellIdentifire)
+        
+        teamScheduleCollectionView.register(CalendarFooterLineCell.self, forCellWithReuseIdentifier: footerCollectionViewCellIdentifire)
         
         // Set landscapeLeft orientaion for this VC
         appDelegate.myOrientation = .landscapeRight
         UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
     }
-    
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
@@ -89,10 +102,10 @@ class TeamScheduleViewController: UIViewController, UICollectionViewDelegate, UI
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
-        let height = view.frame.height - 142 - CGFloat(Int(view.frame.height - 142) % 27)
-        return CGSize(width: view.frame.width, height: height)
+            let height = view.frame.height - 142 - CGFloat(Int(view.frame.height - 142) % 27)
+            return CGSize(width: (view.safeAreaLayoutGuide.layoutFrame.width), height: height)
         }
-        return CGSize(width: view.frame.width, height: 30)
+        return CGSize(width: (view.safeAreaLayoutGuide.layoutFrame.width), height: 30)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -104,36 +117,36 @@ class TeamScheduleViewController: UIViewController, UICollectionViewDelegate, UI
     
     
     override func viewSafeAreaInsetsDidChange() {
-         super.viewSafeAreaInsetsDidChange()
+        super.viewSafeAreaInsetsDidChange()
         
-         let newInsets = view.safeAreaInsets
-         let leftMargin = newInsets.left > 0 ? newInsets.left : 15
-         let rightMargin = newInsets.right > 0 ? newInsets.right : 15
-         let topMargin = newInsets.top > 0 ? newInsets.top : 15
-         let bottomMargin = newInsets.bottom > 0 ? newInsets.bottom : 15
-         
-         let metrics = [
-           "topMargin": topMargin,
-           "bottomMargin": bottomMargin,
-           "leftMargin": leftMargin,
-           "rightMargin": rightMargin]
+        let newInsets = view.safeAreaInsets
+        let leftMargin = newInsets.left > 0 ? newInsets.left : 15
+        let rightMargin = newInsets.right > 0 ? newInsets.right : 15
+        let topMargin = newInsets.top > 0 ? newInsets.top : 15
+        let bottomMargin = newInsets.bottom > 0 ? newInsets.bottom : 15
         
-    
+        let metrics = [
+            "topMargin": topMargin,
+            "bottomMargin": bottomMargin,
+            "leftMargin": leftMargin,
+            "rightMargin": rightMargin]
+        
+        
         view.addSubview(monthLabel)
         view.addSubview(addStaffButton)
         view.addSubview(backButton)
         view.addSubview(teamScheduleCollectionView)
-
+        
         backButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
         addStaffButton.addTarget(self, action: #selector(addStaffButtonPressed), for: .touchUpInside)
         
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-leftMargin-[v0]-rightMargin-|", options: NSLayoutConstraint.FormatOptions(), metrics: metrics, views: ["v0": teamScheduleCollectionView]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-60-[v0(150)]-500@900-[v1(80)]-[v2(80)]-60-|", options: NSLayoutConstraint.FormatOptions(), metrics: metrics, views: ["v0": monthLabel, "v1": addStaffButton, "v2": backButton]))
-            
+        
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-10-[v0]-5-[v1]-bottomMargin-|", options: NSLayoutConstraint.FormatOptions(), metrics: metrics, views: ["v0": backButton, "v1": teamScheduleCollectionView]))
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-10-[v0]-5-[v1]-bottomMargin-|", options: NSLayoutConstraint.FormatOptions(), metrics: metrics, views: ["v0": addStaffButton, "v1": teamScheduleCollectionView]))
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-10-[v0]-5-[v1]-bottomMargin-|", options: NSLayoutConstraint.FormatOptions(), metrics: metrics, views: ["v0": monthLabel, "v1": teamScheduleCollectionView]))
-    
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-10@1000-[v0]-150@250-|", options: NSLayoutConstraint.FormatOptions(), metrics: metrics, views: ["v0": addStaffButton]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-10@1000-[v0]-150@250-|", options: NSLayoutConstraint.FormatOptions(), metrics: metrics, views: ["v0": monthLabel]))
+        
     }
     
     @objc func backButtonPressed() {
@@ -155,39 +168,9 @@ class TeamScheduleViewController: UIViewController, UICollectionViewDelegate, UI
         self.view.addSubview(addStaffVC.view)
         addStaffVC.didMove(toParent: self)
     }
-    
-   
 }
 
-class TeamScheduleCollectionView: BaseCollectionView {
-    
-    override func setupViews() {
-        backgroundColor = .clear
-        showsVerticalScrollIndicator = false
-        alwaysBounceVertical = true
-        translatesAutoresizingMaskIntoConstraints = false
-    }
-}
 
-class BaseCollectionView: UICollectionView {
-    
-    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 0
-        layout.sectionHeadersPinToVisibleBounds = true
-        super.init(frame: frame, collectionViewLayout: layout)
-        setupViews()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupViews() {
-        
-    }
-    
-}
 
 
 
