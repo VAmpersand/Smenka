@@ -12,7 +12,7 @@ import RealmSwift
 
 var weekdays: [String] = []
 
-class TeamShiftScheduleViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class TeamShiftScheduleViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet var backButton: UIButton!
     @IBOutlet var nextButton: UIButton!
@@ -172,7 +172,7 @@ class TeamShiftScheduleViewController: UIViewController, UICollectionViewDelegat
         
         view.addSubview(schedulesCollectionView)
         
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-leftMargin-[v0]-rightMargin-|", options: NSLayoutConstraint.FormatOptions(), metrics: metrics, views: ["v0": schedulesCollectionView]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[v0]-|", options: NSLayoutConstraint.FormatOptions(), metrics: metrics, views: ["v0": schedulesCollectionView]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-130-[v0]-90-|", options: NSLayoutConstraint.FormatOptions(), metrics: metrics, views: ["v0": schedulesCollectionView]))
     }
     
@@ -197,7 +197,10 @@ class TeamShiftScheduleViewController: UIViewController, UICollectionViewDelegat
 extension TeamShiftScheduleViewController: PresentShiftScheduleBuilderDelegate {
     
     func editButtonPressed() {
-        let teamScheduleVC = TeamScheduleViewController()
-        self.present(teamScheduleVC, animated: true, completion: nil)
+//        let teamScheduleVC = TeamScheduleViewController()
+//        self.present(teamScheduleVC, animated: true, completion: nil)
+        
+        performSegue(withIdentifier: "segueToScheduleBuilder", sender: self)
+        
     }
 }

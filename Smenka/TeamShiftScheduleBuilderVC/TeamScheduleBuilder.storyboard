@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X6f-iz-JAI">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Team Schedule Builder View Controller-->
+        <scene sceneID="FMs-Zy-xCt">
+            <objects>
+                <viewController storyboardIdentifier="scheduleBuilderVC" id="X6f-iz-JAI" customClass="TeamScheduleBuilderViewController" customModule="Smenka" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PPC-gf-g0e">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDS-1f-rrK" customClass="SpreadsheetView" customModule="SpreadsheetView">
+                                <rect key="frame" x="44" y="15" width="758" height="378"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwg-62-zLD">
+                                <rect key="frame" x="810" y="15" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="kr9-Os-msl"/>
+                                    <constraint firstAttribute="width" constant="60" id="li9-kw-c0L"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="X6f-iz-JAI" eventType="touchUpInside" id="wmc-Vd-BOa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHa-0X-qoT">
+                                <rect key="frame" x="810" y="53" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="El1-cz-ZCR"/>
+                                    <constraint firstAttribute="width" constant="60" id="Gdd-Je-yOm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Add staff"/>
+                                <connections>
+                                    <action selector="addStaffButtonPressed:" destination="X6f-iz-JAI" eventType="touchUpInside" id="vdn-4v-5qf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="S00-pD-aQV" firstAttribute="trailing" secondItem="QDS-1f-rrK" secondAttribute="trailing" constant="50" id="52P-Tf-HvG"/>
+                            <constraint firstItem="JHa-0X-qoT" firstAttribute="centerX" secondItem="vwg-62-zLD" secondAttribute="centerX" id="CBG-cA-5GT"/>
+                            <constraint firstItem="QDS-1f-rrK" firstAttribute="leading" secondItem="S00-pD-aQV" secondAttribute="leading" id="QrU-5s-9C4"/>
+                            <constraint firstItem="vwg-62-zLD" firstAttribute="leading" secondItem="QDS-1f-rrK" secondAttribute="trailing" constant="8" id="STd-0I-hWp"/>
+                            <constraint firstItem="QDS-1f-rrK" firstAttribute="top" secondItem="S00-pD-aQV" secondAttribute="top" constant="15" id="Tqu-fw-7Hn"/>
+                            <constraint firstItem="JHa-0X-qoT" firstAttribute="top" secondItem="vwg-62-zLD" secondAttribute="bottom" constant="8" id="pME-rP-Abg"/>
+                            <constraint firstItem="vwg-62-zLD" firstAttribute="top" secondItem="QDS-1f-rrK" secondAttribute="top" id="q1p-Q0-ZQN"/>
+                            <constraint firstItem="S00-pD-aQV" firstAttribute="bottom" secondItem="QDS-1f-rrK" secondAttribute="bottom" id="rb5-c1-lKZ"/>
+                            <constraint firstItem="vwg-62-zLD" firstAttribute="trailing" secondItem="S00-pD-aQV" secondAttribute="trailing" constant="18" id="ug4-E3-vSu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="S00-pD-aQV"/>
+                    </view>
+                    <connections>
+                        <outlet property="addStaffButton" destination="JHa-0X-qoT" id="V9O-ua-xPM"/>
+                        <outlet property="backButton" destination="vwg-62-zLD" id="IAp-U9-jbR"/>
+                        <outlet property="teamScheduleView" destination="QDS-1f-rrK" id="Nsj-a9-Uag"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wMo-Il-eOI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86.383928571428569" y="101.44927536231884"/>
+        </scene>
+    </scenes>
+</document>

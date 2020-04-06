@@ -81,17 +81,17 @@
                         <outlet property="customNavigationBar" destination="8dw-fJ-jnF" id="h61-NW-eV6"/>
                         <outlet property="monthLabel" destination="dfG-20-owB" id="srN-S0-Cv5"/>
                         <outlet property="nextButton" destination="PGQ-eu-CBw" id="JSk-XB-K69"/>
-                        <segue destination="VrF-hY-SUw" kind="show" identifier="segueToShSchBuilder" id="Dxi-xL-O5J"/>
+                        <segue destination="VrF-hY-SUw" kind="show" identifier="segueToScheduleBuilder" id="Dxi-xL-O5J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xG9-AA-ggc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-360.86956521739131" y="-330.13392857142856"/>
         </scene>
-        <!--TeamShiftScheduleBuilder-->
+        <!--TeamScheduleBuilder-->
         <scene sceneID="Eko-yR-GiJ">
             <objects>
-                <viewControllerPlaceholder storyboardName="TeamShiftScheduleBuilder" id="VrF-hY-SUw" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="TeamScheduleBuilder" id="VrF-hY-SUw" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="X5T-Iv-8pm"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fVq-xo-RDS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

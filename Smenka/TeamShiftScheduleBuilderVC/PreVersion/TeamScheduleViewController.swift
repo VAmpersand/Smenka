@@ -76,7 +76,8 @@ class TeamScheduleViewController: UIViewController, UICollectionViewDelegate, UI
         appDelegate.myOrientation = .landscapeRight
         UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
     }
-
+    
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
@@ -101,11 +102,19 @@ class TeamScheduleViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        // Calc height
+        let height = view.frame.height - 142 - CGFloat(Int(view.frame.height - 142) % 27)
+        
+        // Calc width
+        var width = collectionView.frame.width
+        let contentInset = collectionView.contentInset
+        width = width - contentInset.left - contentInset.right
+        
         if indexPath.section == 0 {
-            let height = view.frame.height - 142 - CGFloat(Int(view.frame.height - 142) % 27)
-            return CGSize(width: (view.safeAreaLayoutGuide.layoutFrame.width), height: height)
+            return CGSize(width: width, height: height)
         }
-        return CGSize(width: (view.safeAreaLayoutGuide.layoutFrame.width), height: 30)
+        return CGSize(width: width, height: 30)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -140,7 +149,7 @@ class TeamScheduleViewController: UIViewController, UICollectionViewDelegate, UI
         backButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
         addStaffButton.addTarget(self, action: #selector(addStaffButtonPressed), for: .touchUpInside)
         
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-leftMargin-[v0]-rightMargin-|", options: NSLayoutConstraint.FormatOptions(), metrics: metrics, views: ["v0": teamScheduleCollectionView]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-leftMargin-[v0]-80-|", options: NSLayoutConstraint.FormatOptions(), metrics: metrics, views: ["v0": teamScheduleCollectionView]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-60-[v0(150)]-500@900-[v1(80)]-[v2(80)]-60-|", options: NSLayoutConstraint.FormatOptions(), metrics: metrics, views: ["v0": monthLabel, "v1": addStaffButton, "v2": backButton]))
         
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-10-[v0]-5-[v1]-bottomMargin-|", options: NSLayoutConstraint.FormatOptions(), metrics: metrics, views: ["v0": backButton, "v1": teamScheduleCollectionView]))

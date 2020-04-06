@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SnapKit
+
 
 class SchedulesCell: BaseCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
