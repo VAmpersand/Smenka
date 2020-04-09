@@ -18,6 +18,10 @@ class TeamScheduleBuilderViewController: UIViewController  {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var addStaffButton: UIButton!
     
+    var weekendsIndexes: [Int] = []
+    let testNuberOfRows = 15
+    
+    let gridlineColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +29,12 @@ class TeamScheduleBuilderViewController: UIViewController  {
         teamScheduleView.delegate = self
         teamScheduleView.dataSource = self
         
-        teamScheduleView.intercellSpacing = CGSize(width: 5, height: 5)
+        weekendsIndexes = getWeekendsIndexesForCurrentMonth(weekdays: weekdays)
+        print(weekendsIndexes)
+        
+//        teamScheduleView.intercellSpacing = CGSize(width: 5, height: 5)
         teamScheduleView.backgroundColor = .clear
-        teamScheduleView.register(Cell.self, forCellWithReuseIdentifier: "cellID")
+        teamScheduleView.register(SpreadsheetViewCell.self, forCellWithReuseIdentifier: "cellID")
         
         // Set landscapeLeft orientaion for this VC
         appDelegate.myOrientation = .landscapeRight
@@ -53,8 +60,6 @@ class TeamScheduleBuilderViewController: UIViewController  {
          self.view.addSubview(addStaffVC.view)
          addStaffVC.didMove(toParent: self)
     }
-    
-    
 }
 
 

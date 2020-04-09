@@ -78,6 +78,7 @@
 		77C3314D243B3FCE008F4574 /* TeamScheduleBuilder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77C3314C243B3FCE008F4574 /* TeamScheduleBuilder.storyboard */; };
 		77C3314F243B4047008F4574 /* TeamScheduleBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C3314E243B4047008F4574 /* TeamScheduleBuilderViewController.swift */; };
 		77C33152243B47B2008F4574 /* SpreadsheetViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C33151243B47B2008F4574 /* SpreadsheetViewDataSource.swift */; };
+		77C33154243B4B71008F4574 /* SpreadsheetViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C33153243B4B71008F4574 /* SpreadsheetViewCell.swift */; };
 		77D3F1CF2429D7DE009606F0 /* TeamScheduleShiftsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3F1CE2429D7DE009606F0 /* TeamScheduleShiftsModel.swift */; };
 		77D862C1240985420079EBBE /* Ext_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D862C0240985420079EBBE /* Ext_UIView.swift */; };
 		77DE3F9D242BC6FC00C0CB3A /* AddStaffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE3F9C242BC6FC00C0CB3A /* AddStaffViewController.swift */; };
@@ -193,6 +194,7 @@
 		77C3314C243B3FCE008F4574 /* TeamScheduleBuilder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamScheduleBuilder.storyboard; sourceTree = "<group>"; };
 		77C3314E243B4047008F4574 /* TeamScheduleBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamScheduleBuilderViewController.swift; sourceTree = "<group>"; };
 		77C33151243B47B2008F4574 /* SpreadsheetViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadsheetViewDataSource.swift; sourceTree = "<group>"; };
+		77C33153243B4B71008F4574 /* SpreadsheetViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadsheetViewCell.swift; sourceTree = "<group>"; };
 		77D3F1CE2429D7DE009606F0 /* TeamScheduleShiftsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamScheduleShiftsModel.swift; sourceTree = "<group>"; };
 		77D862C0240985420079EBBE /* Ext_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIView.swift; sourceTree = "<group>"; };
 		77DE3F9C242BC6FC00C0CB3A /* AddStaffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStaffViewController.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 				77C3314C243B3FCE008F4574 /* TeamScheduleBuilder.storyboard */,
 				77C3314E243B4047008F4574 /* TeamScheduleBuilderViewController.swift */,
 				77C33151243B47B2008F4574 /* SpreadsheetViewDataSource.swift */,
+				77C33153243B4B71008F4574 /* SpreadsheetViewCell.swift */,
 				77C33150243B4393008F4574 /* PreVersion */,
 				77DE3FA0242BC99900C0CB3A /* AddStaffVC */,
 				772CF21C2430FF4A0019C5D0 /* First Builder */,
@@ -730,6 +733,7 @@
 				779C31B32430DE7C00C11B77 /* TeamScheduleCalendarFooter.swift in Sources */,
 				7793C70D23EDEF270063BBA4 /* ShiftTypeCell.swift in Sources */,
 				77E6A1162405C0C500F4A655 /* ViewStyle.swift in Sources */,
+				77C33154243B4B71008F4574 /* SpreadsheetViewCell.swift in Sources */,
 				774A850923D76A8400A653A6 /* SceneDelegate.swift in Sources */,
 				77C33152243B47B2008F4574 /* SpreadsheetViewDataSource.swift in Sources */,
 				7793C70F23EDF6760063BBA4 /* ShiftStaffModel.swift in Sources */,
